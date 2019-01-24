@@ -26,14 +26,21 @@
 package net.runelite.client.plugins.slayer;
 
 import com.google.common.annotations.VisibleForTesting;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.stream.JsonReader;
 import com.google.inject.Provides;
 import java.awt.Color;
 import java.awt.image.BufferedImage;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
+import java.lang.reflect.Type;
 import java.time.Duration;
 import java.time.Instant;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.inject.Inject;
@@ -146,6 +153,10 @@ public class SlayerPlugin extends Plugin
 
 	@Getter(AccessLevel.PACKAGE)
 	private List<NPC> highlightedTargets = new ArrayList<>();
+
+	@Getter(AccessLevel.PACKAGE)
+	@Setter(AccessLevel.PACKAGE)
+	private String npcName;
 
 	@Getter(AccessLevel.PACKAGE)
 	@Setter(AccessLevel.PACKAGE)
@@ -277,9 +288,11 @@ public class SlayerPlugin extends Plugin
 	public void onGameTick(GameTick tick)
 	{
 		Widget npcDialog = client.getWidget(WidgetInfo.DIALOG_NPC_TEXT);
+		Widget npcDialogName = client.getWidget(WidgetInfo.DIALOG_NPC_NAME);
 		if (npcDialog != null)
 		{
 			String npcText = Text.sanitizeMultilineText(npcDialog.getText()); //remove color and linebreaks
+			npcName = Text.sanitizeMultilineText(npcDialogName.getText());
 			final Matcher mAssign = NPC_ASSIGN_MESSAGE.matcher(npcText); //number, name
 			final Matcher mAssignFirst = NPC_ASSIGN_FIRST_MESSAGE.matcher(npcText); //name, number
 			final Matcher mAssignBoss = NPC_ASSIGN_BOSS_MESSAGE.matcher(npcText); // name, number, points
@@ -603,6 +616,14 @@ public class SlayerPlugin extends Plugin
 		}
 	}
 
+	private class TaskLogItem {
+		private String time;
+		private String npcName;
+		private String taskName;
+		private int amount;
+		private int initialAmount;
+	}
+
 	private void setTask(String name, int amt, int initAmt)
 	{
 		taskName = name;
@@ -616,6 +637,34 @@ public class SlayerPlugin extends Plugin
 		Task task = Task.getTask(name);
 		rebuildTargetNames(task);
 		rebuildTargetList();
+
+		Type REVIEW_TYPE = new TypeToken<List<TaskLogItem>>() {
+		}.getType();
+		List<TaskLogItem> taskLogItems = new ArrayList<>();
+		try (JsonReader reader = new JsonReader(new FileReader("TaskLog.json"));) {
+			Gson gson = new Gson();
+			taskLogItems = gson.fromJson(reader, REVIEW_TYPE);
+		} catch(IOException ex) {
+			System.out.println (ex.toString());
+		}
+		TaskLogItem log = new TaskLogItem();
+		log.time = infoTimer.toString();
+		log.npcName = npcName;
+		log.taskName = taskName.substring(0, 1).toUpperCase() + taskName.substring(1).toLowerCase();
+		log.amount = amount;
+		log.initialAmount = initialAmount;
+		TaskLogItem last = taskLogItems.get(taskLogItems.size()-1);
+		if (last.initialAmount == log.initialAmount && last.taskName.equals(log.taskName) && log.amount <= last.amount) {
+
+		} else {
+			taskLogItems.add(log);
+			try (Writer writer = new FileWriter("TaskLog.json")) {
+				Gson gson = new GsonBuilder().create();
+				gson.toJson(taskLogItems, writer);
+			} catch (IOException ex) {
+				System.out.println(ex.toString());
+			}
+		}
 	}
 
 	private void addCounter()
