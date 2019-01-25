@@ -34,6 +34,7 @@ in vec4 Color;
 in float fHsl;
 in vec4 fUv;
 in float fogAmount;
+in float grayAmount;
 
 out vec4 FragColor;
 
@@ -60,5 +61,8 @@ void main() {
   }
 
   vec3 mixedColor = mix(smoothColor.rgb, fogColor.rgb, fogAmount);
-  FragColor = vec4(mixedColor, smoothColor.a);
+  float gray = dot(mixedColor.rgb, vec3(0.299, 0.587, 0.114));
+  vec3 grayColor = vec3(gray);
+  vec3 finalColor = mix(mixedColor.rgb, grayColor.rgb, grayAmount);
+  FragColor = vec4(finalColor, smoothColor.a);
 }

@@ -35,9 +35,8 @@ import com.jogamp.opengl.GLDrawable;
 import com.jogamp.opengl.GLDrawableFactory;
 import com.jogamp.opengl.GLException;
 import com.jogamp.opengl.GLProfile;
-import java.awt.Canvas;
-import java.awt.Dimension;
-import java.awt.Image;
+
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
 import java.nio.ByteBuffer;
@@ -62,6 +61,7 @@ import net.runelite.api.SceneTileModel;
 import net.runelite.api.SceneTilePaint;
 import net.runelite.api.Texture;
 import net.runelite.api.TextureProvider;
+import net.runelite.api.coords.LocalPoint;
 import net.runelite.api.events.GameStateChanged;
 import net.runelite.api.hooks.DrawCallbacks;
 import net.runelite.client.callback.ClientThread;
@@ -86,6 +86,7 @@ import static net.runelite.client.plugins.gpu.GLUtil.inputStreamToString;
 import net.runelite.client.plugins.gpu.config.AntiAliasingMode;
 import net.runelite.client.plugins.gpu.template.Template;
 import net.runelite.client.ui.DrawManager;
+import net.runelite.client.ui.overlay.components.LineComponent;
 import net.runelite.client.util.OSType;
 
 @PluginDescriptor(
@@ -171,6 +172,9 @@ public class GpuPlugin extends Plugin implements DrawCallbacks
 	private final IntBuffer uniformBuffer = GpuIntBuffer.allocateDirect(5 + 3 + 2048 * 4);
 	private final float[] textureOffsets = new float[128];
 
+	private final int[] loadedLockedRegions = new int[9];
+	private final int[] regionCoords = new int[36];
+
 	private GpuIntBuffer vertexBuffer;
 	private GpuFloatBuffer uvBuffer;
 
@@ -230,6 +234,10 @@ public class GpuPlugin extends Plugin implements DrawCallbacks
 	private int uniBlockLarge;
 	private int uniBlockMain;
 	private int uniSmoothBanding;
+
+	private int uniBaseX;
+	private int uniBaseY;
+	private int uniLockedRegions;
 
 	@Override
 	protected void startUp()
@@ -517,6 +525,10 @@ public class GpuPlugin extends Plugin implements DrawCallbacks
 		uniFogDepth = gl.glGetUniformLocation(glProgram, "fogDepth");
 		uniDrawDistance = gl.glGetUniformLocation(glProgram, "drawDistance");
 
+		uniBaseX = gl.glGetUniformLocation(glProgram, "baseX");
+		uniBaseY = gl.glGetUniformLocation(glProgram, "baseY");
+		uniLockedRegions = gl.glGetUniformLocation(glProgram, "lockedRegions");
+
 		uniTex = gl.glGetUniformLocation(glUiProgram, "tex");
 		uniTextures = gl.glGetUniformLocation(glProgram, "textures");
 		uniTextureOffsets = gl.glGetUniformLocation(glProgram, "textureOffsets");
@@ -720,6 +732,39 @@ public class GpuPlugin extends Plugin implements DrawCallbacks
 		gl.glUniformMatrix4fv(uniProjectionMatrix, 1, false, matrix, 0);
 
 		gl.glUseProgram(0);
+	}
+
+	private void createLockedRegions() {
+		int bx = client.getBaseX()*128, by = client.getBaseY()*128;
+		gl.glUniform1i(uniBaseX, bx);
+		gl.glUniform1i(uniBaseY, by);
+
+		for (int i = 0; i < loadedLockedRegions.length; i++) {
+			loadedLockedRegions[i] = 0;
+		}
+
+		for (int i = 0; i < client.getMapRegions().length; i++)
+		{
+			int region = client.getMapRegions()[i];
+			if (region == 12850 || region == 12594 || region == 7769) {
+				loadedLockedRegions[i] = region;
+			}
+		}
+
+		for (int i = 0; i < loadedLockedRegions.length; i++) {
+			int region = loadedLockedRegions[i];
+			int j = i*4;
+			regionCoords[j+0] = (region >> 8) << 13;
+			regionCoords[j+1] = (region & 255) << 13;
+			regionCoords[j+2] = regionCoords[j+0] + 8192;
+			regionCoords[j+3] = regionCoords[j+1] + 8192;
+		}
+
+		for (int i = 0; i < regionCoords.length; i++) {
+			int coord = regionCoords[i];
+		}
+
+		gl.glUniform4iv(uniLockedRegions, 36, regionCoords, 0);
 	}
 
 	@Override
@@ -1031,6 +1076,8 @@ public class GpuPlugin extends Plugin implements DrawCallbacks
 			gl.glUniform4f(uniFogColor, (sky >> 16 & 0xFF) / 255f, (sky >> 8 & 0xFF) / 255f, (sky & 0xFF) / 255f, 1f);
 			gl.glUniform1i(uniFogDepth, fogDepth);
 			gl.glUniform1i(uniDrawDistance, drawDistance * Perspective.LOCAL_TILE_SIZE);
+
+			createLockedRegions();
 
 			// Brightness happens to also be stored in the texture provider, so we use that
 			gl.glUniform1f(uniBrightness, (float) textureProvider.getBrightness());
