@@ -1,0 +1,2957 @@
+{
+  "4918": {
+    "name": "South of Mount Quidamortem",
+    "monsters": [
+      "Bear cub",
+      "Grizzly bear",
+      "Mountain troll"
+    ],
+    "below": {},
+    "strongest": "Mountain troll"
+  },
+  "4919": {
+    "name": "Mount Quidamortem",
+    "monsters": [
+      "Mountain troll"
+    ],
+    "below": {},
+    "strongest": "Mountain troll"
+  },
+  "4920": {
+    "name": "Kebos Swampland (Middle)",
+    "monsters": [],
+    "below": {},
+    "strongest": null
+  },
+  "4921": {
+    "name": "South of Farming Guild",
+    "monsters": [
+      "Chicken",
+      "Cow",
+      "Rat"
+    ],
+    "below": {},
+    "strongest": "Cow"
+  },
+  "4922": {
+    "name": "Farming Guild",
+    "monsters": [
+      "Duck"
+    ],
+    "below": {
+      "name": "Karuulm Slayer Dungeon (South West)",
+      "monsters": [
+        "Wyrm"
+      ]
+    },
+    "strongest": "Wyrm"
+  },
+  "4923": {
+    "name": "West of Mount Karuulm",
+    "monsters": [],
+    "below": {
+      "name": "Karuulm Slayer Dungeon (Middle West)",
+      "monsters": [
+        "Fire giant",
+        "Greater demon",
+        "Wyrm"
+      ]
+    },
+    "strongest": "Wyrm"
+  },
+  "5174": {
+    "name": "South of Lizardman Settlement",
+    "monsters": [
+      "Goblin"
+    ],
+    "below": {},
+    "strongest": "Goblin"
+  },
+  "5175": {
+    "name": "Lizardman Settlement",
+    "monsters": [
+      "Lizardman",
+      "Lizardman brute"
+    ],
+    "below": {
+      "name": "Lizardman Caves",
+      "monsters": [
+        "Lizardman shaman"
+      ]
+    },
+    "strongest": "Lizardman shaman"
+  },
+  "5176": {
+    "name": "Kebos Swampland (East)",
+    "monsters": [
+      "Lizardman",
+      "Lizardman brute"
+    ],
+    "below": {},
+    "strongest": "Lizardman brute"
+  },
+  "5177": {
+    "name": "Molch",
+    "monsters": [
+      "Lizardman",
+      "Rat"
+    ],
+    "below": {
+      "name": "Lizardman Temple",
+      "monsters": [
+        "Lizardman shaman"
+      ]
+    },
+    "strongest": "Lizardman shaman"
+  },
+  "5178": {
+    "name": "Karuulm Fairy Ring",
+    "monsters": [
+      "Cow"
+    ],
+    "below": {
+      "name": "Karuulm Slayer Dungeon (South Middle)",
+      "monsters": [
+        "Sulphur lizard"
+      ]
+    },
+    "strongest": "Sulphur lizard"
+  },
+  "5179": {
+    "name": "Mount Karuulm",
+    "monsters": [
+      "Giant bat"
+    ],
+    "below": {
+      "name": "Karuulm Slayer Dungeon (Middle Middle)",
+      "monsters": [
+        "Drake",
+        "Fire giant",
+        "Greater demon",
+        "Hellhound",
+        "Hydra",
+        "Sulphur lizard"
+      ]
+    },
+    "strongest": "Drake"
+  },
+  "5180": {
+    "name": "North of Mount Karuulm",
+    "monsters": [
+      "Giant bat"
+    ],
+    "below": {
+      "name": "Karuulm Slayer Dungeon (North Middle)",
+      "monsters": [
+        "Hydra"
+      ]
+    },
+    "strongest": "Hydra"
+  },
+  "5430": {
+    "name": "Shayziens' Walls (North West)",
+    "monsters": [
+      "Lizardman",
+      "Lizardman brute",
+      "Rat"
+    ],
+    "below": {},
+    "strongest": "Lizardman brute"
+  },
+  "5431": {
+    "name": "Shayziens' Walls (South West)",
+    "monsters": [
+      "Lizardman",
+      "Lizardman brute"
+    ],
+    "below": {},
+    "strongest": "Lizardman brute"
+  },
+  "5432": {
+    "name": "Molch Island",
+    "monsters": [],
+    "below": {},
+    "strongest": null
+  },
+  "5433": {
+    "name": "Battlefront (South)",
+    "monsters": [
+      "Lizardman",
+      "Lizardman brute"
+    ],
+    "below": {},
+    "strongest": "Lizardman brute"
+  },
+  "5434": {
+    "name": "Battlefront (North)",
+    "monsters": [
+      "Lizardman",
+      "Lizardman brute"
+    ],
+    "below": {},
+    "strongest": "Lizardman brute"
+  },
+  "5435": {
+    "name": "The Forsaken Tower",
+    "monsters": [
+      "Giant bat"
+    ],
+    "below": {
+      "name": "Karuulm Slayer Dungeon (Middle East)",
+      "monsters": [
+        "Sulphur lizard"
+      ]
+    },
+    "strongest": "Sulphur lizard"
+  },
+  "5436": {
+    "name": "North of the Forsaken Tower",
+    "monsters": [],
+    "below": {
+      "name": "Karuulm Slayer Dungeon (North East)",
+      "monsters": [
+        "Alchemical hydra",
+        "Drake"
+      ]
+    },
+    "strongest": "Alchemical hydra"
+  },
+  "5686": {
+    "name": "Shayziens' Walls (South East)",
+    "monsters": [
+      "Skeleton"
+    ],
+    "below": {},
+    "strongest": "Skeleton"
+  },
+  "5687": {
+    "name": "Shayziens' Walls (North East)",
+    "monsters": [
+      "Bat",
+      "Giant spider"
+    ],
+    "below": {},
+    "strongest": "Giant spider"
+  },
+  "5688": {
+    "name": "Shayzien Pier",
+    "monsters": [
+      "Bat",
+      "Hill giant"
+    ],
+    "below": {},
+    "strongest": "Hill giant"
+  },
+  "5689": {
+    "name": "Chasm of Fire Entrance",
+    "monsters": [
+      "Lizardman",
+      "Lizardman shaman"
+    ],
+    "below": {
+      "name": "Chasm of Fire",
+      "monsters": [
+        "Black demon",
+        "Greater demon",
+        "Lesser demon"
+      ]
+    },
+    "strongest": "Black demon"
+  },
+  "5690": {
+    "name": "Shayzien Armourers (South)",
+    "monsters": [
+      "Giant rat",
+      "Lizardman",
+      "Lizardman shaman",
+      "Rat",
+      "Spider"
+    ],
+    "below": {},
+    "strongest": "Lizardman shaman"
+  },
+  "5691": {
+    "name": "Shayzien Armourers (North)",
+    "monsters": [
+      "King scorpion",
+      "Rat",
+      "Skeleton"
+    ],
+    "below": {},
+    "strongest": "King scorpion"
+  },
+  "5692": {
+    "name": "Sulpur Mine",
+    "monsters": [
+      "Spider"
+    ],
+    "below": {},
+    "strongest": "Spider"
+  },
+  "5941": {
+    "name": "Land's End",
+    "monsters": [
+      "Bear cub",
+      "Grizzly bear"
+    ],
+    "below": {},
+    "strongest": "Grizzly bear"
+  },
+  "5942": {
+    "name": "Old Memorial",
+    "monsters": [
+      "Chicken",
+      "Giant rat",
+      "Moss giant"
+    ],
+    "below": {},
+    "strongest": "Moss giant"
+  },
+  "5943": {
+    "name": "Graveyard of Heroes",
+    "monsters": [
+      "Bat",
+      "Zombie"
+    ],
+    "below": {
+      "name": "Graveyard of Heroes Crypt",
+      "monsters": [
+        "Skeleton",
+        "Zombie"
+      ]
+    },
+    "strongest": "Zombie"
+  },
+  "5944": {
+    "name": "Shayzien Bank",
+    "monsters": [],
+    "below": {},
+    "strongest": null
+  },
+  "5945": {
+    "name": "Lizardman Canyon (West)",
+    "monsters": [
+      "Lizardman"
+    ],
+    "below": {},
+    "strongest": "Lizardman"
+  },
+  "5946": {
+    "name": "Lovakengj Assembly",
+    "monsters": [
+      "Bat",
+      "Dwarf",
+      "Giant bat",
+      "Spider"
+    ],
+    "below": {},
+    "strongest": "Giant bat"
+  },
+  "5947": {
+    "name": "Xeric's Inferno",
+    "monsters": [
+      "Bat",
+      "Dwarf",
+      "Spider"
+    ],
+    "below": {},
+    "strongest": "Dwarf"
+  },
+  "5948": {
+    "name": "Blast Mine",
+    "monsters": [
+      "Spider"
+    ],
+    "below": {},
+    "strongest": "Spider"
+  },
+  "6197": {
+    "name": "Woodland Barbarian Outpost",
+    "monsters": [],
+    "below": {},
+    "strongest": null
+  },
+  "6198": {
+    "name": "Woodcutting Guild (West)",
+    "monsters": [],
+    "below": {},
+    "strongest": null
+  },
+  "6199": {
+    "name": "Xeric's Lookout",
+    "monsters": [],
+    "below": {},
+    "strongest": null
+  },
+  "6200": {
+    "name": "Shayzien Combat Ring",
+    "monsters": [
+      "Bear cub",
+      "Grizzly bear"
+    ],
+    "below": {},
+    "strongest": "Grizzly bear"
+  },
+  "6201": {
+    "name": "Lizardman Canyon (East)",
+    "monsters": [],
+    "below": {},
+    "strongest": null
+  },
+  "6202": {
+    "name": "Lovakengj Pub",
+    "monsters": [
+      "Bat",
+      "Dwarf",
+      "Giant bat",
+      "Rat",
+      "Spider"
+    ],
+    "below": {},
+    "strongest": "Giant bat"
+  },
+  "6203": {
+    "name": "Tower of Magic",
+    "monsters": [
+      "Bat",
+      "Dwarf",
+      "Rat",
+      "Spider"
+    ],
+    "below": {},
+    "strongest": "Dwarf"
+  },
+  "6204": {
+    "name": "Settlement Ruins",
+    "monsters": [
+      "Ice giant",
+      "Ice spider",
+      "Ice wolf"
+    ],
+    "below": {},
+    "strongest": "Ice wolf"
+  },
+  "6453": {
+    "name": "Sand Crab Cave Entrance",
+    "monsters": [],
+    "below": {},
+    "strongest": null
+  },
+  "6454": {
+    "name": "Woodcutting Guild (East)",
+    "monsters": [
+      "Duck"
+    ],
+    "below": {},
+    "strongest": "Duck"
+  },
+  "6455": {
+    "name": "Hosidius Station",
+    "monsters": [],
+    "below": {},
+    "strongest": null
+  },
+  "6456": {
+    "name": "Hosidius Mess",
+    "monsters": [],
+    "below": {
+      "name": "Catacombs of Kourend (South West)",
+      "monsters": [
+        "Ankou",
+        "Banshee",
+        "Bloodveld",
+        "Cyclops",
+        "Dagannoth",
+        "Ghost",
+        "Hill giant",
+        "Hill giant",
+        "Magic axe",
+        "Moss giant",
+        "Shade",
+        "Skeleton",
+        "Aberrant spectre"
+      ]
+    },
+    "strongest": "Aberrant spectre"
+  },
+  "6457": {
+    "name": "Kourend Castle",
+    "monsters": [
+      "Guard dog",
+      "Lesser demon"
+    ],
+    "below": {
+      "name": "Catacombs of Kourend (North West)",
+      "monsters": [
+        "Bronze dragon",
+        "Brutal black dragon",
+        "Brutal blue dragon",
+        "Brutal red dragon",
+        "Dark beast",
+        "Fire giant",
+        "Hellhound",
+        "Hill giant",
+        "Iron dragon",
+        "Skeleton",
+        "Steel dragon"
+      ]
+    },
+    "strongest": "Dark beast"
+  },
+  "6458": {
+    "name": "Arceuus Bank",
+    "monsters": [
+      "Bat",
+      "Rat"
+    ],
+    "below": {},
+    "strongest": "Bat"
+  },
+  "6459": {
+    "name": "Arceuus Library",
+    "monsters": [
+      "Bat"
+    ],
+    "below": {},
+    "strongest": "Bat"
+  },
+  "6460": {
+    "name": "Arceuus Fairy Ring",
+    "monsters": [
+      "Bat",
+      "Giant bat"
+    ],
+    "below": {},
+    "strongest": "Giant bat"
+  },
+  "6461": {
+    "name": "Wintertodt Camp",
+    "monsters": [],
+    "below": {},
+    "strongest": null
+  },
+  "6710": {
+    "name": "Salpetre Mine (South)",
+    "monsters": [
+      "Spider"
+    ],
+    "below": {
+      "name": "Skotizo's Lair",
+      "monsters": [
+        "Skotizo"
+      ]
+    },
+    "strongest": "Skotizo"
+  },
+  "6711": {
+    "name": "Salpetre Mine (North)",
+    "monsters": [],
+    "below": {},
+    "strongest": null
+  },
+  "6712": {
+    "name": "East of Hosidius Mess",
+    "monsters": [],
+    "below": {
+      "name": "Catacombs of Kourend (South East)",
+      "monsters": [
+        "Bloodveld",
+        "Dagannoth",
+        "Dust devil",
+        "Ghost",
+        "Jelly",
+        "Moss giant"
+      ]
+    },
+    "strongest": "Dust devil"
+  },
+  "6713": {
+    "name": "The Golden Field",
+    "monsters": [
+      "Bat",
+      "Giant bat",
+      "Spider"
+    ],
+    "below": {
+      "name": "Catacombs of Kourend (North East)",
+      "monsters": [
+        "Abyssal demon",
+        "Black demon",
+        "Bloodveld",
+        "Ghost",
+        "Greater demon",
+        "Hill giant",
+        "Jelly",
+        "Moss giant",
+        "Nechryael"
+      ]
+    },
+    "strongest": "Abyssal demon"
+  },
+  "6714": {
+    "name": "Arceuus Shops",
+    "monsters": [
+      "Bat",
+      "Giant bat"
+    ],
+    "below": {},
+    "strongest": "Giant bat"
+  },
+  "6715": {
+    "name": "Blood Altar",
+    "monsters": [],
+    "below": {},
+    "strongest": null
+  },
+  "6716": {
+    "name": "Dark Altar",
+    "monsters": [
+      "Bat",
+      "Giant bat",
+      "Skeleton"
+    ],
+    "below": {},
+    "strongest": "Giant bat"
+  },
+  "6717": {
+    "name": "Fishing Hamlet",
+    "monsters": [],
+    "below": {},
+    "strongest": null
+  },
+  "6966": {
+    "name": "Xeric's Glade",
+    "monsters": [
+      "Guard dog"
+    ],
+    "below": {},
+    "strongest": "Guard dog"
+  },
+  "6967": {
+    "name": "Tithe Farm (South)",
+    "monsters": [],
+    "below": {},
+    "strongest": null
+  },
+  "6968": {
+    "name": "Tithe Farm (North)",
+    "monsters": [],
+    "below": {},
+    "strongest": null
+  },
+  "6969": {
+    "name": "Piscarilius Station",
+    "monsters": [
+      "Rat",
+      "Spider"
+    ],
+    "below": {},
+    "strongest": "Rat"
+  },
+  "6970": {
+    "name": "Piscarilius (South West)",
+    "monsters": [
+      "Rat"
+    ],
+    "below": {
+      "name": "The Warrens (West)",
+      "monsters": [
+        "Rat"
+      ]
+    },
+    "strongest": "Rat"
+  },
+  "6971": {
+    "name": "Piscarilius (North West)",
+    "monsters": [
+      "Rat"
+    ],
+    "below": {},
+    "strongest": "Rat"
+  },
+  "6972": {
+    "name": "Dark Essence Mine",
+    "monsters": [
+      "Bat",
+      "Ghost",
+      "Giant bat",
+      "Skeleton"
+    ],
+    "below": {},
+    "strongest": "Giant bat"
+  },
+  "7222": {
+    "name": "Hosidius Herb Patch",
+    "monsters": [
+      "Cow"
+    ],
+    "below": {},
+    "strongest": "Cow"
+  },
+  "7223": {
+    "name": "Vinery",
+    "monsters": [],
+    "below": {},
+    "strongest": null
+  },
+  "7224": {
+    "name": "Hosidius Hobgoblin Peninsula",
+    "monsters": [
+      "Hobgoblin"
+    ],
+    "below": {},
+    "strongest": "Hobgoblin"
+  },
+  "7225": {
+    "name": "Piscarilius Docks",
+    "monsters": [
+      "Seagull",
+      "Spider"
+    ],
+    "below": {},
+    "strongest": "Seagull"
+  },
+  "7226": {
+    "name": "Piscarilius (South East)",
+    "monsters": [
+      "Rat",
+      "Spider"
+    ],
+    "below": {
+      "name": "The Warrens (East)",
+      "monsters": [
+        "Rat"
+      ]
+    },
+    "strongest": "Rat"
+  },
+  "7227": {
+    "name": "Piscarilius Bank",
+    "monsters": [],
+    "below": {},
+    "strongest": null
+  },
+  "7228": {
+    "name": "Soul Altar",
+    "monsters": [
+      "Ghost"
+    ],
+    "below": {},
+    "strongest": "Ghost"
+  },
+  "9016": {
+    "name": "Kraken Cove Entrance",
+    "monsters": [],
+    "below": {
+      "name": "Kraken Cove",
+      "monsters": [
+        "Cave kraken",
+        "Kraken",
+        "Waterfiend"
+      ]
+    },
+    "strongest": "Kraken"
+  },
+  "9263": {
+    "name": "South West of Castle Wars",
+    "monsters": [
+      "Chompy bird"
+    ],
+    "below": {
+      "name": "Smoke Devil Dungeon (West)",
+      "monsters": [
+        "Thermonuclear smoke devil"
+      ]
+    },
+    "strongest": "Thermonuclear smoke devil"
+  },
+  "9270": {
+    "name": "Eagles' Peak",
+    "monsters": [],
+    "below": {},
+    "strongest": null
+  },
+  "9273": {
+    "name": "Piscatoris Fishing Colony",
+    "monsters": [
+      "Skeleton mage"
+    ],
+    "below": {},
+    "strongest": "Skeleton mage"
+  },
+  "9519": {
+    "name": "South of Castle Wars",
+    "monsters": [
+      "Chompy bird"
+    ],
+    "below": {
+      "name": "Smoke Devil Dungeon (East)",
+      "monsters": [
+        "Smoke devil"
+      ]
+    },
+    "strongest": "Smoke devil"
+  },
+  "9524": {
+    "name": "Arandar Entrance",
+    "monsters": [
+      "Giant spider",
+      "Grizzly bear"
+    ],
+    "below": {
+      "name": "Stronghold Slayer Cave (South West)",
+      "monsters": [
+        "Fire giant",
+        "Hellhound"
+      ]
+    },
+    "strongest": "Hellhound"
+  },
+  "9525": {
+    "name": "Brimstail Cave Entrance",
+    "monsters": [
+      "Duck",
+      "Hill giant",
+      "Mounted terrorbird gnome",
+      "Terrorbird"
+    ],
+    "below": {
+      "name": "Brimstail Cave",
+      "monsters": [
+        "Hellhound"
+      ]
+    },
+    "strongest": "Hellhound"
+  },
+  "9526": {
+    "name": "Gnome Ball Field",
+    "monsters": [],
+    "below": {},
+    "strongest": null
+  },
+  "9540": {
+    "name": "Zanaris (South West)",
+    "monsters": [
+      "Mutated zygomite"
+    ],
+    "below": {},
+    "strongest": "Mutated zygomite"
+  },
+  "9541": {
+    "name": "Zanaris (North West)",
+    "monsters": [
+      "Mutated zygomite",
+      "Otherworldly being"
+    ],
+    "below": {},
+    "strongest": "Mutated zygomite"
+  },
+  "9773": {
+    "name": "North of Myths' Guild",
+    "monsters": [
+      "Big wolf",
+      "Wolf"
+    ],
+    "below": {},
+    "strongest": "Big wolf"
+  },
+  "9774": {
+    "name": "South of Jiggig",
+    "monsters": [
+      "Skogre",
+      "Zogre"
+    ],
+    "below": {
+      "name": "Jiggig Cave (South)",
+      "monsters": [
+        "Skogre",
+        "Zogre"
+      ]
+    },
+    "strongest": "Skogre"
+  },
+  "9775": {
+    "name": "Jiggig",
+    "monsters": [
+      "Skogre",
+      "Zogre"
+    ],
+    "below": {
+      "name": "Jiggig Cave (North)",
+      "monsters": [
+        "Skogre",
+        "Zogre"
+      ]
+    },
+    "strongest": "Skogre"
+  },
+  "9777": {
+    "name": "Observatory",
+    "monsters": [
+      "Black bear",
+      "Grizzly bear",
+      "Rat"
+    ],
+    "below": {},
+    "strongest": "Grizzly bear"
+  },
+  "9780": {
+    "name": "Outpost",
+    "monsters": [
+      "Hobgoblin",
+      "Mounted terrorbird gnome",
+      "Wolf"
+    ],
+    "below": {
+      "name": "Stronghold Slayer Cave (South East)",
+      "monsters": [
+        "Aberrant spectre",
+        "Hellhound"
+      ]
+    },
+    "strongest": "Aberrant spectre"
+  },
+  "9781": {
+    "name": "Stronghold Agilty Course",
+    "monsters": [
+      "Mounted terrorbird gnome",
+      "Terrorbird"
+    ],
+    "below": {
+      "name": "Stronghold Slayer Cave (North East)",
+      "monsters": [
+        "Aberrant spectre",
+        "Ankou",
+        "Bloodveld"
+      ]
+    },
+    "strongest": "Aberrant spectre"
+  },
+  "9782": {
+    "name": "Grand Tree",
+    "monsters": [
+      "Mounted terrorbird gnome"
+    ],
+    "below": {
+      "name": "Grand Tree Dungeon",
+      "monsters": [
+        "Giant rat",
+        "Rat"
+      ]
+    },
+    "strongest": "Mounted terrorbird gnome"
+  },
+  "9796": {
+    "name": "Evil Chicken's Lair",
+    "monsters": [
+      "Black dragon"
+    ],
+    "below": {},
+    "strongest": "Black dragon"
+  },
+  "9797": {
+    "name": "Zanaris (North East)",
+    "monsters": [
+      "Cow"
+    ],
+    "below": {},
+    "strongest": "Cow"
+  },
+  "10028": {
+    "name": "Corsair Cove (West)",
+    "monsters": [
+      "Seagull"
+    ],
+    "below": {},
+    "strongest": "Seagull"
+  },
+  "10030": {
+    "name": "Feldip Hills (North West)",
+    "monsters": [
+      "Chompy bird",
+      "Giant spider",
+      "Ogre",
+      "Wolf"
+    ],
+    "below": {},
+    "strongest": "Ogre"
+  },
+  "10031": {
+    "name": "Gu'Tanoth",
+    "monsters": [
+      "Ogre"
+    ],
+    "below": {},
+    "strongest": "Ogre"
+  },
+  "10032": {
+    "name": "Yanille (West)",
+    "monsters": [
+      "Ogre"
+    ],
+    "below": {},
+    "strongest": "Ogre"
+  },
+  "10033": {
+    "name": "Tree Gnome Village",
+    "monsters": [
+      "Black bear",
+      "Giant rat",
+      "Goblin",
+      "Hill giant",
+      "Rat",
+      "Spider",
+      "Terrorbird"
+    ],
+    "below": {
+      "name": "Tree Gnome Village Dungeon",
+      "monsters": [
+        "Giant bat",
+        "Hobgoblin",
+        "Zombie"
+      ]
+    },
+    "strongest": "Hill giant"
+  },
+  "10034": {
+    "name": "Battlefield of Khazard",
+    "monsters": [
+      "Mounted terrorbird gnome"
+    ],
+    "below": {},
+    "strongest": "Mounted terrorbird gnome"
+  },
+  "10036": {
+    "name": "Combat Training Camp",
+    "monsters": [
+      "Ogre"
+    ],
+    "below": {},
+    "strongest": "Ogre"
+  },
+  "10037": {
+    "name": "Glarial's Tomb Entrance",
+    "monsters": [
+      "Goblin",
+      "Moss giant"
+    ],
+    "below": {
+      "name": "Glarial's Tomb",
+      "monsters": [
+        "Moss giant",
+        "Skeleton",
+        "Zombie"
+      ]
+    },
+    "strongest": "Moss giant"
+  },
+  "10038": {
+    "name": "Baxtorian Falls",
+    "monsters": [
+      "Guard (Dwarf)"
+    ],
+    "below": {},
+    "strongest": "Guard (Dwarf)"
+  },
+  "10039": {
+    "name": "Barbarian Outpost",
+    "monsters": [
+      "Chicken"
+    ],
+    "below": {},
+    "strongest": "Chicken"
+  },
+  "10040": {
+    "name": "Lighthouse",
+    "monsters": [],
+    "below": {
+      "name": "Lighthouse Cellar",
+      "monsters": [
+        "Dagannoth"
+      ]
+    },
+    "strongest": "Dagannoth"
+  },
+  "10284": {
+    "name": "Corsair Cove (East)",
+    "monsters": [
+      "Seagull"
+    ],
+    "below": {},
+    "strongest": "Seagull"
+  },
+  "10286": {
+    "name": "Feldip Hills (North East)",
+    "monsters": [
+      "Chompy bird",
+      "Ogre",
+      "Ogre chieftain",
+      "Wolf"
+    ],
+    "below": {},
+    "strongest": "Ogre chieftain"
+  },
+  "10287": {
+    "name": "East of Gu'Tanoth",
+    "monsters": [
+      "Black bear",
+      "Dwarf",
+      "Ogre"
+    ],
+    "below": {
+      "name": "Ogre Enclave",
+      "monsters": [
+        "Blue dragon",
+        "Giant bat",
+        "Greater demon",
+        "Ogre chieftain",
+        "Ogre shaman",
+        "Skeleton",
+        "Spider"
+      ]
+    },
+    "strongest": "Ogre shaman"
+  },
+  "10288": {
+    "name": "Yanille (East)",
+    "monsters": [
+      "Cow"
+    ],
+    "below": {
+      "name": "Yanille Agility Dungeon (South)",
+      "monsters": [
+        "Giant bat",
+        "Skeleton",
+        "Zombie"
+      ]
+    },
+    "strongest": "Giant bat"
+  },
+  "10289": {
+    "name": "Fight Arena",
+    "monsters": [],
+    "below": {
+      "name": "Yanille Agility Dungeon (North)",
+      "monsters": [
+        "Poison spider"
+      ]
+    },
+    "strongest": "Poison spider"
+  },
+  "10290": {
+    "name": "Clocktower",
+    "monsters": [],
+    "below": {
+      "name": "Clocktower Dungeon",
+      "monsters": [
+        "Dungeon rat",
+        "Giant spider",
+        "Goblin",
+        "Hobgoblin",
+        "Ogre",
+        "Rat"
+      ]
+    },
+    "strongest": "Ogre"
+  },
+  "10291": {
+    "name": "East Ardougne (West)",
+    "monsters": [
+      "Cyclops",
+      "Monkey",
+      "Penguin",
+      "Scorpion",
+      "Wolf"
+    ],
+    "below": {
+      "name": "Ardougne Sewers (North Middle)",
+      "monsters": [
+        "Dungeon rat",
+        "Rat"
+      ]
+    },
+    "strongest": "Cyclops"
+  },
+  "10292": {
+    "name": "Chaos Druid Tower",
+    "monsters": [],
+    "below": {
+      "name": "Chaos Druid Tower Cellar",
+      "monsters": [
+        "Giant bat",
+        "Ogre"
+      ]
+    },
+    "strongest": "Ogre"
+  },
+  "10293": {
+    "name": "Fishing Guild",
+    "monsters": [
+      "Duck",
+      "Goblin",
+      "Rat"
+    ],
+    "below": {
+      "name": "Goblin Cave",
+      "monsters": [
+        "Dungeon rat",
+        "Giant bat",
+        "Goblin",
+        "Rat"
+      ]
+    },
+    "strongest": "Giant bat"
+  },
+  "10294": {
+    "name": "Coal Trucks",
+    "monsters": [
+      "Duck",
+      "Giant bat",
+      "Goblin",
+      "Guard (Dwarf)",
+      "Rat"
+    ],
+    "below": {
+      "name": "Waterfall Dungeon",
+      "monsters": [
+        "Fire giant",
+        "Shadow spider",
+        "Skeleton",
+        "Skeleton mage"
+      ]
+    },
+    "strongest": "Fire giant"
+  },
+  "10297": {
+    "name": "Rellekka (South West)",
+    "monsters": [],
+    "below": {},
+    "strongest": null
+  },
+  "10542": {
+    "name": "Rantz' Cave Entrance",
+    "monsters": [],
+    "below": {},
+    "strongest": null
+  },
+  "10544": {
+    "name": "Hazelmere's House",
+    "monsters": [
+      "Jungle spider",
+      "Spider"
+    ],
+    "below": {
+      "name": "Brimhaven Dungeon (Middle West)",
+      "monsters": [
+        "Fire giant",
+        "Moss giant",
+        "Wild dog"
+      ]
+    },
+    "strongest": "Fire giant"
+  },
+  "10545": {
+    "name": "Port Khazard",
+    "monsters": [],
+    "below": {
+      "name": "Brimhaven Dungeon (North West)",
+      "monsters": [
+        "Moss giant"
+      ]
+    },
+    "strongest": "Moss giant"
+  },
+  "10546": {
+    "name": "Tower of Life",
+    "monsters": [],
+    "below": {},
+    "strongest": null
+  },
+  "10547": {
+    "name": "East Ardougne (East)",
+    "monsters": [
+      "Grizzly bear",
+      "Guard dog"
+    ],
+    "below": {
+      "name": "Ardougne Sewers (North East)",
+      "monsters": [
+        "Giant rat",
+        "Rat",
+        "Zombie"
+      ]
+    },
+    "strongest": "Guard dog"
+  },
+  "10548": {
+    "name": "Ardougne Farm",
+    "monsters": [
+      "Cow"
+    ],
+    "below": {
+      "name": "Temple of Ikov (South West)",
+      "monsters": [
+        "Giant spider"
+      ]
+    },
+    "strongest": "Cow"
+  },
+  "10549": {
+    "name": "Ranging Guild",
+    "monsters": [
+      "Chicken"
+    ],
+    "below": {
+      "name": "Temple of Ikov (Middle West)",
+      "monsters": [
+        "Giant bat",
+        "Scorpion",
+        "Skeleton"
+      ]
+    },
+    "strongest": "Giant bat"
+  },
+  "10550": {
+    "name": "McGrubor's Wood",
+    "monsters": [
+      "Guard dog"
+    ],
+    "below": {},
+    "strongest": "Guard dog"
+  },
+  "10551": {
+    "name": "Road to Rellekka",
+    "monsters": [],
+    "below": {},
+    "strongest": null
+  },
+  "10552": {
+    "name": "Rellekka Gate",
+    "monsters": [
+      "Wolf"
+    ],
+    "below": {},
+    "strongest": "Wolf"
+  },
+  "10553": {
+    "name": "Rellekka (South East)",
+    "monsters": [
+      "Chicken",
+      "Rooster"
+    ],
+    "below": {},
+    "strongest": "Rooster"
+  },
+  "10554": {
+    "name": "Rellekka (North East)",
+    "monsters": [
+      "Hobgoblin"
+    ],
+    "below": {},
+    "strongest": "Hobgoblin"
+  },
+  "10801": {
+    "name": "Brimhaven Jungle (South)",
+    "monsters": [
+      "Monkey"
+    ],
+    "below": {
+      "name": "Brimhaven Dungeon (North East)",
+      "monsters": [
+        "Red dragon"
+      ]
+    },
+    "strongest": "Red dragon"
+  },
+  "10802": {
+    "name": "Brimhaven Jungle (North)",
+    "monsters": [
+      "Moss giant",
+      "Poison scorpion"
+    ],
+    "below": {},
+    "strongest": "Moss giant"
+  },
+  "10803": {
+    "name": "Witchhaven",
+    "monsters": [
+      "Chicken"
+    ],
+    "below": {
+      "name": "Witchhaven Dungeon",
+      "monsters": [
+        "Hellhound",
+        "Hobgoblin",
+        "Ogre"
+      ]
+    },
+    "strongest": "Hellhound"
+  },
+  "10804": {
+    "name": "Legends' Guild",
+    "monsters": [
+      "Grizzly bear"
+    ],
+    "below": {
+      "name": "Legends' Guild Cellar",
+      "monsters": [
+        "Giant bat",
+        "Pit scorpion",
+        "Shadow warrior"
+      ]
+    },
+    "strongest": "Shadow warrior"
+  },
+  "10805": {
+    "name": "Sorcerer's Tower",
+    "monsters": [],
+    "below": {
+      "name": "Temple of Ikov (South East)",
+      "monsters": [
+        "Ice spider"
+      ]
+    },
+    "strongest": "Ice spider"
+  },
+  "10806": {
+    "name": "Seers' Village",
+    "monsters": [],
+    "below": {},
+    "strongest": null
+  },
+  "10807": {
+    "name": "Sinclair Mansion",
+    "monsters": [
+      "Chicken",
+      "Cow",
+      "Rat",
+      "Wolf"
+    ],
+    "below": {
+      "name": "Fremennik Slayer Dungeon (South West)",
+      "monsters": [
+        "Kurask"
+      ]
+    },
+    "strongest": "Kurask"
+  },
+  "10808": {
+    "name": "Doogle Tree",
+    "monsters": [
+      "Bear cub",
+      "Grizzly bear"
+    ],
+    "below": {
+      "name": "Fremennik Slayer Dungeon (North West)",
+      "monsters": [
+        "Basilisk",
+        "Jelly",
+        "Kurask",
+        "Turoth"
+      ]
+    },
+    "strongest": "Kurask"
+  },
+  "10810": {
+    "name": "Keldagrim Entrance",
+    "monsters": [],
+    "below": {
+      "name": "Brine Rat Cavern",
+      "monsters": [
+        "Brine rat",
+        "Giant bat",
+        "Skeleton fremennik"
+      ]
+    },
+    "strongest": "Brine rat"
+  },
+  "10811": {
+    "name": "Polar Hunter Area",
+    "monsters": [],
+    "below": {},
+    "strongest": null
+  },
+  "10833": {
+    "name": "Dorgesh-Kaan South Dungeon",
+    "monsters": [
+      "Cave bug",
+      "Cave crawler",
+      "Cave slime",
+      "Molanisk",
+      "Rockslug"
+    ],
+    "below": {},
+    "strongest": "Molanisk"
+  },
+  "10834": {
+    "name": "Dorgesh-Kaan (South)",
+    "monsters": [],
+    "below": {},
+    "strongest": null
+  },
+  "10835": {
+    "name": "Dorgesh-Kaan (North)",
+    "monsters": [
+      "Guard (Goblin)"
+    ],
+    "below": {},
+    "strongest": "Guard (Goblin)"
+  },
+  "11053": {
+    "name": "Kharazi Jungle (West)",
+    "monsters": [
+      "Jungle wolf",
+      "Oomlie bird"
+    ],
+    "below": {
+      "name": "Viyeldi Caves",
+      "monsters": [
+        "Death wing",
+        "Lesser demon"
+      ]
+    },
+    "strongest": "Death wing"
+  },
+  "11054": {
+    "name": "Cairn Isle",
+    "monsters": [
+      "Hobgoblin",
+      "Jungle spider",
+      "Monkey",
+      "Scorpion"
+    ],
+    "below": {},
+    "strongest": "Jungle spider"
+  },
+  "11055": {
+    "name": "Tai Bwo Wannai (South)",
+    "monsters": [
+      "Chicken",
+      "Jungle spider"
+    ],
+    "below": {},
+    "strongest": "Jungle spider"
+  },
+  "11056": {
+    "name": "Tai Bwo Wannai (North)",
+    "monsters": [
+      "Jungle spider"
+    ],
+    "below": {},
+    "strongest": "Jungle spider"
+  },
+  "11057": {
+    "name": "Brimhaven",
+    "monsters": [
+      "Guard dog",
+      "Monkey",
+      "Rat"
+    ],
+    "below": {},
+    "strongest": "Guard dog"
+  },
+  "11058": {
+    "name": "Brimhaven Harbour",
+    "monsters": [
+      "Jungle spider"
+    ],
+    "below": {},
+    "strongest": "Jungle spider"
+  },
+  "11060": {
+    "name": "Entrana (West)",
+    "monsters": [
+      "Black bear"
+    ],
+    "below": {},
+    "strongest": "Black bear"
+  },
+  "11061": {
+    "name": "Catherby (West)",
+    "monsters": [
+      "Giant bat"
+    ],
+    "below": {
+      "name": "Slieve's Black Dragons",
+      "monsters": [
+        "Black dragon"
+      ]
+    },
+    "strongest": "Black dragon"
+  },
+  "11062": {
+    "name": "Camelot",
+    "monsters": [
+      "Ice giant"
+    ],
+    "below": {},
+    "strongest": "Ice giant"
+  },
+  "11064": {
+    "name": "Golden Apple Tree",
+    "monsters": [],
+    "below": {
+      "name": "Fremennik Slayer Dungeon (North East)",
+      "monsters": [
+        "Cave crawler",
+        "Cockatrice",
+        "Pyrefiend",
+        "Rockslug"
+      ]
+    },
+    "strongest": "Pyrefiend"
+  },
+  "11065": {
+    "name": "Mountain Camp",
+    "monsters": [],
+    "below": {},
+    "strongest": null
+  },
+  "11066": {
+    "name": "Troll Weiss Mountain (South)",
+    "monsters": [],
+    "below": {
+      "name": "Keldagrim Underground Entrance",
+      "monsters": [
+        "Mountain troll"
+      ]
+    },
+    "strongest": "Mountain troll"
+  },
+  "11067": {
+    "name": "Troll Weiss Mountain (Middle)",
+    "monsters": [],
+    "below": {
+      "name": "Ice Path Cave",
+      "monsters": [
+        "Ice troll"
+      ]
+    },
+    "strongest": "Ice troll"
+  },
+  "11309": {
+    "name": "Kharazi Jungle (Middle)",
+    "monsters": [
+      "Jungle wolf",
+      "Oomlie bird"
+    ],
+    "below": {},
+    "strongest": "Jungle wolf"
+  },
+  "11310": {
+    "name": "Shilo Village",
+    "monsters": [
+      "Undead one"
+    ],
+    "below": {},
+    "strongest": "Undead one"
+  },
+  "11311": {
+    "name": "Nature Altar",
+    "monsters": [
+      "Jungle spider",
+      "Monkey"
+    ],
+    "below": {},
+    "strongest": "Jungle spider"
+  },
+  "11312": {
+    "name": "Hardwood Grove",
+    "monsters": [
+      "Harpie bug swarm",
+      "Jungle spider"
+    ],
+    "below": {},
+    "strongest": "Harpie bug swarm"
+  },
+  "11313": {
+    "name": "Karamja Vulcano",
+    "monsters": [
+      "Monkey",
+      "Scorpion"
+    ],
+    "below": {
+      "name": "Karamja Dungeon",
+      "monsters": [
+        "Deadly red spider",
+        "Giant bat",
+        "Lesser demon",
+        "Skeleton"
+      ]
+    },
+    "strongest": "Lesser demon"
+  },
+  "11314": {
+    "name": "Crandor (South)",
+    "monsters": [
+      "Moss giant",
+      "Skeleton"
+    ],
+    "below": {
+      "name": "Crandor Dungeon",
+      "monsters": [
+        "Lesser demon",
+        "Rat",
+        "Skeleton"
+      ]
+    },
+    "strongest": "Lesser demon"
+  },
+  "11315": {
+    "name": "Crandor (North)",
+    "monsters": [
+      "Hobgoblin",
+      "King scorpion",
+      "Lesser demon"
+    ],
+    "below": {},
+    "strongest": "Lesser demon"
+  },
+  "11316": {
+    "name": "Entrana (East)",
+    "monsters": [
+      "Chicken",
+      "Entrana firebird"
+    ],
+    "below": {
+      "name": "Taverly Dungeon (Middle West)",
+      "monsters": [
+        "Black demon",
+        "Greater demon",
+        "Zombie"
+      ]
+    },
+    "strongest": "Black demon"
+  },
+  "11317": {
+    "name": "Catherby (East)",
+    "monsters": [
+      "White wolf"
+    ],
+    "below": {
+      "name": "Taverly Dungeon (North West)",
+      "monsters": [
+        "Black demon",
+        "Black dragon",
+        "Hellhound",
+        "Poison spider"
+      ]
+    },
+    "strongest": "Black dragon"
+  },
+  "11318": {
+    "name": "White Wolf Mountain",
+    "monsters": [
+      "Big wolf",
+      "Ice giant",
+      "Ice warrior",
+      "White wolf"
+    ],
+    "below": {
+      "name": "Dwarven Tunnel",
+      "monsters": [
+        "Dwarf",
+        "Ice warrior"
+      ]
+    },
+    "strongest": "Big wolf"
+  },
+  "11319": {
+    "name": "Warriors' Guild",
+    "monsters": [
+      "Chicken",
+      "Cyclops",
+      "Rooster"
+    ],
+    "below": {
+      "name": "Ice Queen's Lair",
+      "monsters": [
+        "Ice spider",
+        "Ice warrior"
+      ]
+    },
+    "strongest": "Cyclops"
+  },
+  "11320": {
+    "name": "Death Plateau",
+    "monsters": [
+      "Mountain troll",
+      "Rock (Troll)",
+      "Stick (Troll)",
+      "Thrower troll"
+    ],
+    "below": {},
+    "strongest": "Rock (Troll)"
+  },
+  "11321": {
+    "name": "Troll Stronghold",
+    "monsters": [
+      "Mountain troll"
+    ],
+    "below": {
+      "name": "Troll Stronghold Caves",
+      "monsters": [
+        "Mountain troll",
+        "Troll general"
+      ]
+    },
+    "strongest": "Troll general"
+  },
+  "11322": {
+    "name": "North of Troll Stronghold",
+    "monsters": [
+      "Ice troll"
+    ],
+    "below": {
+      "name": "Keldagrim (South West)",
+      "monsters": [
+        "Dwarf"
+      ]
+    },
+    "strongest": "Ice troll"
+  },
+  "11325": {
+    "name": "Weiss (West)",
+    "monsters": [
+      "Ice wolf"
+    ],
+    "below": {},
+    "strongest": "Ice wolf"
+  },
+  "11565": {
+    "name": "Kharazi Jungle (East)",
+    "monsters": [
+      "Jungle wolf",
+      "Oomlie bird"
+    ],
+    "below": {
+      "name": "Ah Za Rhoon (South)",
+      "monsters": [
+        "Undead one"
+      ]
+    },
+    "strongest": "Jungle wolf"
+  },
+  "11566": {
+    "name": "East of Shilo Village",
+    "monsters": [
+      "Jungle spider"
+    ],
+    "below": {
+      "name": "Ah Za Rhoon (North)",
+      "monsters": [
+        "Undead one"
+      ]
+    },
+    "strongest": "Undead one"
+  },
+  "11567": {
+    "name": "Karamja Gnome Glider",
+    "monsters": [
+      "Jungle spider"
+    ],
+    "below": {},
+    "strongest": "Jungle spider"
+  },
+  "11568": {
+    "name": "Karambwan Fishing Spot",
+    "monsters": [
+      "Monkey"
+    ],
+    "below": {},
+    "strongest": "Monkey"
+  },
+  "11569": {
+    "name": "Musa Point",
+    "monsters": [],
+    "below": {},
+    "strongest": null
+  },
+  "11570": {
+    "name": "Melzar's Maze",
+    "monsters": [
+      "Ghost",
+      "Rat"
+    ],
+    "below": {},
+    "strongest": "Ghost"
+  },
+  "11571": {
+    "name": "Crafting Guild",
+    "monsters": [
+      "Cow",
+      "Hobgoblin"
+    ],
+    "below": {
+      "name": "Taverley Dungeon (South East)",
+      "monsters": [
+        "Dwarf",
+        "Rat"
+      ]
+    },
+    "strongest": "Hobgoblin"
+  },
+  "11572": {
+    "name": "Dark Wizards' Tower",
+    "monsters": [],
+    "below": {
+      "name": "Taverley Dungeon (Middle East)",
+      "monsters": [
+        "Blue dragon",
+        "Chaos dwarf",
+        "Hill giant",
+        "Lesser demon",
+        "Poison scorpion"
+      ]
+    },
+    "strongest": "Blue dragon"
+  },
+  "11573": {
+    "name": "Taverly",
+    "monsters": [],
+    "below": {
+      "name": "Taverley Dungeon (North East)",
+      "monsters": [
+        "Blue dragon",
+        "Ghost",
+        "Giant bat",
+        "Lesser demon",
+        "Skeleton",
+        "Spider"
+      ]
+    },
+    "strongest": "Blue dragon"
+  },
+  "11574": {
+    "name": "Heroes' Guild",
+    "monsters": [],
+    "below": {
+      "name": "Heroes' Guild Cellar",
+      "monsters": [
+        "Blue dragon",
+        "Giant bat"
+      ]
+    },
+    "strongest": "Blue dragon"
+  },
+  "11575": {
+    "name": "Burthorpe",
+    "monsters": [],
+    "below": {
+      "name": "Warriors' Guild Cellar",
+      "monsters": [
+        "Cyclops",
+        "Ice giant",
+        "Ice spider"
+      ]
+    },
+    "strongest": "Ice spider"
+  },
+  "11576": {
+    "name": "Troll Arena",
+    "monsters": [
+      "Mountain troll",
+      "Troll spectator"
+    ],
+    "below": {
+      "name": "Mountain Path Cave",
+      "monsters": [
+        "Mountain troll"
+      ]
+    },
+    "strongest": "Troll spectator"
+  },
+  "11577": {
+    "name": "Trollheim",
+    "monsters": [
+      "Thrower troll"
+    ],
+    "below": {},
+    "strongest": "Thrower troll"
+  },
+  "11578": {
+    "name": "God Wars Dungeon Entrance",
+    "monsters": [
+      "Ice wolf"
+    ],
+    "below": {},
+    "strongest": "Ice wolf"
+  },
+  "11579": {
+    "name": "North of God Wars Dungeon",
+    "monsters": [],
+    "below": {
+      "name": "Keldagrim (North East)",
+      "monsters": [
+        "Black guard (Dwarf)"
+      ]
+    },
+    "strongest": "Black guard (Dwarf)"
+  },
+  "11824": {
+    "name": "Mudskipper Point",
+    "monsters": [
+      "Mogre"
+    ],
+    "below": {},
+    "strongest": "Mogre"
+  },
+  "11825": {
+    "name": "Thurgo's Hut",
+    "monsters": [
+      "Giant rat"
+    ],
+    "below": {},
+    "strongest": "Giant rat"
+  },
+  "11826": {
+    "name": "Rimmington",
+    "monsters": [
+      "Goblin",
+      "Rat"
+    ],
+    "below": {},
+    "strongest": "Goblin"
+  },
+  "11827": {
+    "name": "Rimmington Wizards",
+    "monsters": [],
+    "below": {},
+    "strongest": null
+  },
+  "11828": {
+    "name": "Falador (West)",
+    "monsters": [
+      "Duck"
+    ],
+    "below": {},
+    "strongest": "Duck"
+  },
+  "11829": {
+    "name": "Doric's Anvil",
+    "monsters": [],
+    "below": {
+      "name": "Dwarven Mine (North West)",
+      "monsters": [
+        "Blue dragon",
+        "Dwarf",
+        "Rat"
+      ]
+    },
+    "strongest": "Blue dragon"
+  },
+  "11830": {
+    "name": "Goblin Village",
+    "monsters": [
+      "Goblin",
+	  "Icefiend"
+    ],
+    "below": {},
+    "strongest": "Icefiend"
+  },
+  "11831": {
+    "name": "North of Goblin Village",
+    "monsters": [],
+    "below": {},
+    "strongest": null
+  },
+  "11832": {
+    "name": "Dragon Pit",
+    "monsters": [
+      "Green dragon"
+    ],
+    "below": {},
+    "strongest": "Green dragon"
+  },
+  "11833": {
+    "name": "Ruins",
+    "monsters": [
+      "Crazy archaeologist",
+      "Giant rat",
+      "Grizzly bear",
+      "Rat"
+    ],
+    "below": {},
+    "strongest": "Crazy archaeologist"
+  },
+  "11834": {
+    "name": "The Forgotten Cemetary",
+    "monsters": [
+      "Ankou",
+      "Ghost"
+    ],
+    "below": {},
+    "strongest": "Ankou"
+  },
+  "11835": {
+    "name": "Wilderness Altar",
+    "monsters": [],
+    "below": {},
+    "strongest": null
+  },
+  "11836": {
+    "name": "Frozen Waste Plateau",
+    "monsters": [
+      "Chaos fanatic",
+      "Ice giant",
+      "Ice warrior"
+    ],
+    "below": {},
+    "strongest": "Chaos fanatic"
+  },
+  "11837": {
+    "name": "Wilderness Agililty Course",
+    "monsters": [
+      "Ice giant",
+      "Ice spider",
+      "Ice warrior",
+      "Skeleton",
+      "White wolf"
+    ],
+    "below": {
+      "name": "Wilderness Agility Course Dungeon",
+      "monsters": [
+        "Skeleton"
+      ]
+    },
+    "strongest": "Ice spider"
+  },
+  "12081": {
+    "name": "Port Sarim Jail",
+    "monsters": [
+      "Rat"
+    ],
+    "below": {
+      "name": "Asgarnian Ice Dungeon (East)",
+      "monsters": [
+        "Hobgoblin",
+        "Ice giant",
+        "Ice warrior",
+        "Skeletal wyvern"
+      ]
+    },
+    "strongest": "Skeletal wyvern"
+  },
+  "12082": {
+    "name": "Port Sarim",
+    "monsters": [
+      "Seagull"
+    ],
+    "below": {
+      "name": "Rat pits",
+      "monsters": [
+        "Rat"
+      ]
+    },
+    "strongest": "Seagull"
+  },
+  "12083": {
+    "name": "Falador Farm",
+    "monsters": [
+      "Chicken",
+      "Cow",
+      "Rat"
+    ],
+    "below": {},
+    "strongest": "Cow"
+  },
+  "12084": {
+    "name": "Falador (East)",
+    "monsters": [
+      "Dwarf"
+    ],
+    "below": {
+      "name": "Dwarven Mine (South East)",
+      "monsters": [
+        "King scorpion",
+        "Rat",
+        "Scorpion"
+      ]
+    },
+    "strongest": "King scorpion"
+  },
+  "12085": {
+    "name": "Dwarven Mine Entrance",
+    "monsters": [
+      "Dwarf"
+    ],
+    "below": {
+      "name": "Dwarven Mine (North East)",
+      "monsters": [
+        "Dwarf",
+        "Rat",
+        "Scorpion"
+      ]
+    },
+    "strongest": "Scorpion"
+  },
+  "12086": {
+    "name": "Monastery",
+    "monsters": [
+      "Dwarf",
+      "Icefiend"
+    ],
+    "below": {},
+    "strongest": "Icefiend"
+  },
+  "12087": {
+    "name": "North of Monastary",
+    "monsters": [
+      "Scorpion"
+    ],
+    "below": {},
+    "strongest": "Scorpion"
+  },
+  "12088": {
+    "name": "Dark Warriors' Fortress",
+    "monsters": [
+      "Dark warrior",
+      "Skeleton"
+    ],
+    "below": {},
+    "strongest": "Dark warrior"
+  },
+  "12089": {
+    "name": "Bandit Camp",
+    "monsters": [
+      "Bandit",
+      "Giant rat"
+    ],
+    "below": {},
+    "strongest": "Bandit"
+  },
+  "12090": {
+    "name": "Obelisk 27",
+    "monsters": [
+      "Chaos dwarf"
+    ],
+    "below": {
+      "name": "Wilderness God Wars Dungeon",
+      "monsters": [
+        "Aviansie",
+        "Bloodveld",
+        "Spiritual mage",
+        "Spiritual warrior"
+      ]
+    },
+    "strongest": "Spiritual mage"
+  },
+  "12091": {
+    "name": "Lava Maze (South West)",
+    "monsters": [
+      "King scorpion"
+    ],
+    "below": {},
+    "strongest": "King scorpion"
+  },
+  "12092": {
+    "name": "Lava Maze (North West)",
+    "monsters": [
+      "Deadly red spider",
+      "Lesser demon"
+    ],
+    "below": {
+      "name": "Lava Maze Dungeon",
+      "monsters": [
+        "Black dragon",
+        "Greater demon",
+        "Poison spider"
+      ]
+    },
+    "strongest": "Black dragon"
+  },
+  "12093": {
+    "name": "Pirates' Hideout",
+    "monsters": [],
+    "below": {
+      "name": "Deep Wilderness Dungeon",
+      "monsters": [
+        "Chaos dwarf",
+        "Fire giant",
+        "Hill giant",
+        "Shadow spider"
+      ]
+    },
+    "strongest": "Fire giant"
+  },
+  "12337": {
+    "name": "Wizard Tower",
+    "monsters": [
+      "Lesser demon"
+    ],
+    "below": {
+      "name": "Wizard Tower Cellar",
+      "monsters": [
+        "Chicken"
+      ]
+    },
+    "strongest": "Lesser demon"
+  },
+  "12338": {
+    "name": "Draynor Village (South)",
+    "monsters": [
+      "Goblin"
+    ],
+    "below": {
+      "name": "Draynor Sewers (South)",
+      "monsters": [
+        "Zombie"
+      ]
+    },
+    "strongest": "Zombie"
+  },
+  "12339": {
+    "name": "Draynor Village (North)",
+    "monsters": [
+      "Goblin",
+      "Rat"
+    ],
+    "below": {
+      "name": "Draynor Sewers (North)",
+      "monsters": [
+        "Rat",
+        "Skeleton",
+        "Zombie"
+      ]
+    },
+    "strongest": "Zombie"
+  },
+  "12340": {
+    "name": "Draynor Manor",
+    "monsters": [
+      "Ghost",
+      "Rat",
+      "Skeleton"
+    ],
+    "below": {
+      "name": "Draynor Manor Cellar",
+      "monsters": [
+        "Rat",
+        "Spider"
+      ]
+    },
+    "strongest": "Skeleton"
+  },
+  "12341": {
+    "name": "Barbarian Village",
+    "monsters": [
+      "Goblin"
+    ],
+    "below": {
+      "name": "Edgeville Dungeon (South)",
+      "monsters": [
+        "Hill giant",
+        "Obor"
+      ]
+    },
+    "strongest": "Obor"
+  },
+  "12342": {
+    "name": "Edgeville",
+    "monsters": [],
+    "below": {
+      "name": "Edgeville Dungeon (Middle)",
+      "monsters": [
+        "Giant rat",
+        "Hobgoblin",
+        "Rat",
+        "Skeleton",
+        "Zombie"
+      ]
+    },
+    "strongest": "Hobgoblin"
+  },
+  "12343": {
+    "name": "Obelisk of Air",
+    "monsters": [
+      "Skeleton"
+    ],
+    "below": {
+      "name": "Edgeville Dungeon (North)",
+      "monsters": [
+        "Black demon",
+        "Chaos druid",
+        "Earth warrior",
+        "Poison spider",
+        "Red spider",
+        "Skeleton"
+      ]
+    },
+    "strongest": "Black demon"
+  },
+  "12344": {
+    "name": "Statue of a Warrior",
+    "monsters": [
+      "Grizzly bear"
+    ],
+    "below": {
+      "name": "Edgeville Dungeon Tip",
+      "monsters": [
+        "Earth warrior"
+      ]
+    },
+    "strongest": "Earth warrior"
+  },
+  "12345": {
+    "name": "Ghost Pit",
+    "monsters": [
+      "Ghost",
+      "Grizzly bear"
+    ],
+    "below": {},
+    "strongest": "Grizzly bear"
+  },
+  "12346": {
+    "name": "Bandit Camp Mine",
+    "monsters": [
+      "Hobgoblin"
+    ],
+    "below": {},
+    "strongest": "Hobgoblin"
+  },
+  "12347": {
+    "name": "Lava Maze (South East)",
+    "monsters": [
+      "Green dragon"
+    ],
+    "below": {},
+    "strongest": "Green dragon"
+  },
+  "12348": {
+    "name": "Lava Maze (North East)",
+    "monsters": [
+      "Hill giant",
+      "Lesser demon"
+    ],
+    "below": {},
+    "strongest": "Lesser demon"
+  },
+  "12349": {
+    "name": "Mage Arena",
+    "monsters": [
+      "Giant bat",
+      "Rogue"
+    ],
+    "below": {},
+    "strongest": "Rogue"
+  },
+  "12593": {
+    "name": "Lumbridge Swamp (West)",
+    "monsters": [
+      "Rat"
+    ],
+    "below": {
+      "name": "Lumbridge Swamp Caves (West)",
+      "monsters": [
+        "Cave bug",
+        "Cave crawler",
+        "Cave slime",
+        "Wall beast"
+      ]
+    },
+    "strongest": "Wall beast"
+  },
+  "12594": {
+    "name": "Lumbridge (South West)",
+    "monsters": [
+      "Giant spider",
+      "Goblin",
+      "Rat"
+    ],
+    "below": {},
+    "strongest": "Goblin"
+  },
+  "12595": {
+    "name": "Lumbridge (North West)",
+    "monsters": [
+      "Chicken",
+      "Cow",
+      "Goblin"
+    ],
+    "below": {},
+    "strongest": "Goblin"
+  },
+  "12596": {
+    "name": "Champions' Guild",
+    "monsters": [
+      "Chicken",
+      "Cow",
+      "Duck",
+      "Evil chicken",
+      "Goblin"
+    ],
+    "below": {},
+    "strongest": "Evil chicken"
+  },
+  "12597": {
+    "name": "Varrock West Bank",
+    "monsters": [
+      "Rat"
+    ],
+    "below": {},
+    "strongest": "Rat"
+  },
+  "12598": {
+    "name": "Grand Exchange",
+    "monsters": [],
+    "below": {
+      "name": "Varrock Sewers (West)",
+      "monsters": [
+        "Deadly red spider",
+        "Moss giant",
+        "Skeleton",
+        "Zombie"
+      ]
+    },
+    "strongest": "Deadly red spider"
+  },
+  "12599": {
+    "name": "North of Grand Exchange",
+    "monsters": [],
+    "below": {},
+    "strongest": null
+  },
+  "12600": {
+    "name": "Obelisk 13",
+    "monsters": [
+      "Mammoth",
+      "Rat"
+    ],
+    "below": {},
+    "strongest": "Mammoth"
+  },
+  "12601": {
+    "name": "Graveyard of Shadows",
+    "monsters": [
+      "Green dragon",
+      "Zombie"
+    ],
+    "below": {
+      "name": "Revenant Caves (South West)",
+      "monsters": [
+        "Hellhound",
+        "Lesser demon"
+      ]
+    },
+    "strongest": "Hellhound"
+  },
+  "12602": {
+    "name": "Black Chinchompas",
+    "monsters": [
+      "Deadly red spider",
+      "Rat",
+      "Zombie"
+    ],
+    "below": {
+      "name": "Revenant Caves (Middle West)",
+      "monsters": [
+        "Black demon",
+        "Ice giant",
+        "Lesser demon"
+      ]
+    },
+    "strongest": "Black demon"
+  },
+  "12603": {
+    "name": "Lava Dragon Isle (South West)",
+    "monsters": [
+      "Lava dragon",
+      "Moss giant",
+      "Skeleton"
+    ],
+    "below": {
+      "name": "Revenant Caves (North West)",
+      "monsters": [
+        "Ankou"
+      ]
+    },
+    "strongest": "Lava dragon"
+  },
+  "12604": {
+    "name": "Spider Den",
+    "monsters": [
+      "Giant spider",
+      "Spider"
+    ],
+    "below": {},
+    "strongest": "Giant spider"
+  },
+  "12605": {
+    "name": "Deserted Keep",
+    "monsters": [
+      "Hellhound",
+      "Magic axe"
+    ],
+    "below": {},
+    "strongest": "Hellhound"
+  },
+  "12849": {
+    "name": "Lumbridge Swamp (East)",
+    "monsters": [
+      "Rat"
+    ],
+    "below": {
+      "name": "Lumbridge Swamp Caves (East)",
+      "monsters": [
+        "Cave bug",
+        "Cave crawler",
+        "Cave goblin",
+        "Cave slime",
+        "Rockslug",
+        "Wall beast"
+      ]
+    },
+    "strongest": "Wall beast"
+  },
+  "12850": {
+    "name": "Lumbridge Castle",
+    "monsters": [
+      "Cow",
+      "Duck",
+      "Giant spider",
+      "Goblin",
+      "Rat"
+    ],
+    "below": {
+      "name": "Lumbridge Castle Cellar",
+      "monsters": [
+        "Spider"
+      ]
+    },
+    "strongest": "Goblin"
+  },
+  "12851": {
+    "name": "Lumbridge (North East)",
+    "monsters": [
+      "Chicken",
+      "Cow",
+      "Duck",
+      "Goblin"
+    ],
+    "below": {},
+    "strongest": "Goblin"
+  },
+  "12852": {
+    "name": "Varrock Stone Circle",
+    "monsters": [
+      "Duck",
+      "Goblin"
+    ],
+    "below": {},
+    "strongest": "Goblin"
+  },
+  "12853": {
+    "name": "Varrock Square",
+    "monsters": [],
+    "below": {},
+    "strongest": null
+  },
+  "12854": {
+    "name": "Varrock Palace",
+    "monsters": [
+      "Grizzly bear"
+    ],
+    "below": {
+      "name": "Varrock Sewers (Middle)",
+      "monsters": [
+        "Ghost",
+        "Giant rat",
+        "Giant spider",
+        "Rat",
+        "Scorpion",
+        "Skeleton",
+        "Spider",
+        "Zombie"
+      ]
+    },
+    "strongest": "Zombie"
+  },
+  "12855": {
+    "name": "South of Chaos Temple",
+    "monsters": [
+      "Giant rat"
+    ],
+    "below": {
+      "name": "Bryophyta's Liar",
+      "monsters": [
+        "Bryophyta"
+      ]
+    },
+    "strongest": "Bryophyta"
+  },
+  "12856": {
+    "name": "Chaos Temple",
+    "monsters": [
+      "Elder chaos druid"
+    ],
+    "below": {},
+    "strongest": "Elder chaos druid"
+  },
+  "12857": {
+    "name": "Obelisk 19",
+    "monsters": [
+      "Ent",
+      "Rat"
+    ],
+    "below": {
+      "name": "Revenant Caves (South East)",
+      "monsters": [
+        "Green dragon",
+        "Hellhound"
+      ]
+    },
+    "strongest": "Hellhound"
+  },
+  "12858": {
+    "name": "Bone Yard",
+    "monsters": [
+      "Skeleton"
+    ],
+    "below": {
+      "name": "Revenant Caves (Middle East)",
+      "monsters": [
+        "Greater demon",
+        "Ice giant",
+        "Revenant"
+      ]
+    },
+    "strongest": "Revenant"
+  },
+  "12859": {
+    "name": "Lava Dragon Isle (South East)",
+    "monsters": [
+      "Chaos dwarf",
+      "Lava dragon",
+      "Vet'ion"
+    ],
+    "below": {
+      "name": "Revenant Caves (North East)",
+      "monsters": [
+        "Black dragon",
+        "Revenant"
+      ]
+    },
+    "strongest": "Vet'ion"
+  },
+  "12860": {
+    "name": "Lava Dragon Isle (North East)",
+    "monsters": [
+      "Lava dragon"
+    ],
+    "below": {},
+    "strongest": "Lava dragon"
+  },
+  "12861": {
+    "name": "Scorpion Pit",
+    "monsters": [
+      "Scorpion",
+      "Wolf"
+    ],
+    "below": {
+      "name": "Scorpia's Lair",
+      "monsters": [
+        "Scorpia"
+      ]
+    },
+    "strongest": "Scorpia"
+  },
+  "13100": {
+    "name": "North of Sophanem",
+    "monsters": [
+      "Crocodile",
+      "Jackal",
+      "Vulture"
+    ],
+    "below": {
+      "name": "Sophanem Dungeon",
+      "monsters": [
+        "Scarabite"
+      ]
+    },
+    "strongest": "Scarabite"
+  },
+  "13105": {
+    "name": "Al Kharid (South)",
+    "monsters": [
+      "Scorpion",
+      "Spider"
+    ],
+    "below": {},
+    "strongest": "Scorpion"
+  },
+  "13106": {
+    "name": "Al Kharid (North)",
+    "monsters": [
+      "Rat"
+    ],
+    "below": {
+      "name": "Goblin mine",
+      "monsters": [
+        "Cave goblin guard",
+        "Cave goblin miner"
+      ]
+    },
+    "strongest": "Cave goblin guard"
+  },
+  "13107": {
+    "name": "Al Kharid Mine",
+    "monsters": [
+      "Scorpion"
+    ],
+    "below": {},
+    "strongest": "Scorpion"
+  },
+  "13108": {
+    "name": "Varrock Mine (South East)",
+    "monsters": [
+      "Black bear",
+      "Giant rat",
+      "Goblin"
+    ],
+    "below": {},
+    "strongest": "Black bear"
+  },
+  "13109": {
+    "name": "East of Varrock",
+    "monsters": [],
+    "below": {},
+    "strongest": null
+  },
+  "13110": {
+    "name": "Sawmill",
+    "monsters": [],
+    "below": {
+      "name": "Varrock Sewers (East)",
+      "monsters": [
+        "Giant rat",
+        "Skeleton",
+        "Spider",
+        "Zombie"
+      ]
+    },
+    "strongest": "Zombie"
+  },
+  "13111": {
+    "name": "South of Ent Forest",
+    "monsters": [],
+    "below": {},
+    "strongest": null
+  },
+  "13112": {
+    "name": "Ent Forest",
+    "monsters": [
+      "Ent"
+    ],
+    "below": {},
+    "strongest": "Ent"
+  },
+  "13113": {
+    "name": "Black Salamanders",
+    "monsters": [
+      "Ghost",
+      "Hill giant"
+    ],
+    "below": {},
+    "strongest": "Hill giant"
+  },
+  "13114": {
+    "name": "Venenatis",
+    "monsters": [
+      "Skeleton",
+      "Venenatis"
+    ],
+    "below": {},
+    "strongest": "Venenatis"
+  },
+  "13115": {
+    "name": "South of Callisto",
+    "monsters": [
+      "Poison spider"
+    ],
+    "below": {},
+    "strongest": "Poison spider"
+  },
+  "13116": {
+    "name": "Demonic Ruins",
+    "monsters": [
+      "Callisto",
+      "Greater demon",
+      "Lesser demon"
+    ],
+    "below": {},
+    "strongest": "Callisto"
+  },
+  "13117": {
+    "name": "Rogues' Castle",
+    "monsters": [
+      "Chaos elemental",
+      "Rogue"
+    ],
+    "below": {},
+    "strongest": "Chaos elemental"
+  },
+  "13356": {
+    "name": "Agility Pyramid",
+    "monsters": [
+      "Vulture"
+    ],
+    "below": {},
+    "strongest": "Vulture"
+  },
+  "13363": {
+    "name": "Mage Training Arena",
+    "monsters": [],
+    "below": {},
+    "strongest": null
+  },
+  "13369": {
+    "name": "East of Black Salamanders",
+    "monsters": [
+      "Green dragon"
+    ],
+    "below": {},
+    "strongest": "Green dragon"
+  },
+  "13613": {
+    "name": "Nardah",
+    "monsters": [],
+    "below": {},
+    "strongest": null
+  },
+  "13872": {
+    "name": "Ruins of Uzer",
+    "monsters": [],
+    "below": {
+      "name": "Kalphite Hives",
+      "monsters": [
+        "Kalphite guardian",
+        "Kalphite queen",
+        "Kalphite soldier",
+        "Kalphite worker"
+      ]
+    },
+    "strongest": "Kalphite queen"
+  },
+  "13364": {
+    "name": "Exam Centre",
+    "monsters": [],
+    "below": {
+      "name": "Digsite Dungeon (South)",
+      "monsters": [
+        "Skeleton"
+      ]
+    },
+    "strongest": "Skeleton"
+  },
+  "13365": {
+    "name": "Digsite",
+    "monsters": [],
+    "below": {
+      "name": "Digsite Dungeon (North)",
+      "monsters": [
+        "Skeleton"
+      ]
+    },
+    "strongest": "Skeleton"
+  }
+}

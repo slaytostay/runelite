@@ -123,6 +123,10 @@ class WorldMapRegionOverlay extends Overlay
 				int labelWidth = (int) textBounds.getWidth() + 2 * LABEL_PADDING;
 				int labelHeight = (int) textBounds.getHeight() + 2 * LABEL_PADDING;
 				graphics.fillRect(xPos, yPos, labelWidth, labelHeight);
+				if (regionId != 12850 && regionId != 12594) {
+					graphics.setColor(new Color(0, 38, 72, 127));
+					graphics.fillRect(xPos, yPos, regionPixelSize, regionPixelSize);
+				}
 				graphics.setColor(Color.BLACK);
 				graphics.drawString(regionText, xPos + LABEL_PADDING, yPos + (int) textBounds.getHeight() + LABEL_PADDING);
 			}

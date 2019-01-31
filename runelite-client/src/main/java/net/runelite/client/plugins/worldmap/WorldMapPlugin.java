@@ -25,21 +25,37 @@
  */
 package net.runelite.client.plugins.worldmap;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.stream.JsonReader;
 import com.google.inject.Inject;
 import com.google.inject.Provides;
 import java.awt.image.BufferedImage;
-import java.util.Arrays;
-import net.runelite.api.Client;
-import net.runelite.api.Experience;
-import net.runelite.api.Skill;
+import java.io.FileReader;
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.*;
+import java.util.concurrent.ScheduledExecutorService;
+
+import net.runelite.api.*;
+import net.runelite.api.coords.WorldPoint;
 import net.runelite.api.events.ConfigChanged;
 import net.runelite.api.events.ExperienceChanged;
+import net.runelite.api.events.GameStateChanged;
+import net.runelite.client.callback.ClientThread;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
+import net.runelite.client.game.ItemManager;
 import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
+import net.runelite.client.plugins.slayerarea.SlayerArea;
+import net.runelite.client.plugins.slayerarea.SlayerAreaPoint;
+import net.runelite.client.plugins.slayerarea.SlayerAreas;
+import net.runelite.client.ui.overlay.worldmap.WorldMapPoint;
 import net.runelite.client.ui.overlay.worldmap.WorldMapPointManager;
 import net.runelite.client.util.ImageUtil;
+import net.runelite.client.plugins.slayer.Task;
 
 @PluginDescriptor(
 	name = "World Map",
@@ -51,6 +67,7 @@ public class WorldMapPlugin extends Plugin
 	static final BufferedImage BLANK_ICON;
 	private static final BufferedImage FAIRY_TRAVEL_ICON;
 	private static final BufferedImage NOPE_ICON;
+	private static final BufferedImage AREA_ICON;
 
 	static final String CONFIG_KEY = "worldmap";
 	static final String CONFIG_KEY_FAIRY_RING_TOOLTIPS = "fairyRingTooltips";
@@ -74,6 +91,7 @@ public class WorldMapPlugin extends Plugin
 		final int iconBufferSize = 17;
 
 		BLANK_ICON = new BufferedImage(iconBufferSize, iconBufferSize, BufferedImage.TYPE_INT_ARGB);
+		AREA_ICON =  ImageUtil.getResourceStreamFromClass(WorldMapPlugin.class, "royal_seed_pod_teleport_icon.png");
 
 		FAIRY_TRAVEL_ICON = new BufferedImage(iconBufferSize, iconBufferSize, BufferedImage.TYPE_INT_ARGB);
 		final BufferedImage fairyTravelIcon = ImageUtil.getResourceStreamFromClass(WorldMapPlugin.class, "fairy_ring_travel.png");
@@ -92,6 +110,15 @@ public class WorldMapPlugin extends Plugin
 
 	@Inject
 	private WorldMapPointManager worldMapPointManager;
+
+    @Inject
+    private ItemManager itemManager;
+
+    @Inject
+    private ClientThread clientThread;
+
+    @Inject
+    private ScheduledExecutorService executor;
 
 	private int agilityLevel = 0;
 
@@ -119,6 +146,14 @@ public class WorldMapPlugin extends Plugin
 		worldMapPointManager.removeIf(FarmingPatchPoint.class::isInstance);
 		agilityLevel = 0;
 	}
+
+    @Subscribe
+    public void onGameStateChanged(GameStateChanged event)
+    {
+        if (event.getGameState().ordinal() >= GameState.LOGIN_SCREEN.ordinal()) {
+            updateShownIcons();
+        }
+    }
 
 	@Subscribe
 	public void onConfigChanged(ConfigChanged event)
@@ -224,5 +259,33 @@ public class WorldMapPlugin extends Plugin
 				}
 			}).map(TeleportPoint::new)
 			.forEach(worldMapPointManager::add);
+
+		SlayerAreas slayerAreas = new SlayerAreas();
+		Map<String, SlayerArea> areas = slayerAreas.getAreas();
+
+		for (Map.Entry<String, SlayerArea> entry : areas.entrySet()) {
+			int id = Integer.parseInt(entry.getKey());
+			SlayerArea area = entry.getValue();
+
+			int x = SlayerArea.getX(id) + 32;
+			int y = SlayerArea.getY(id) + 32;
+
+			WorldPoint point = new WorldPoint(x,y,0);
+			String tip = area.strongest;
+			if (client.getGameState().ordinal() >= GameState.LOGIN_SCREEN.ordinal()) {
+				clientThread.invoke(() -> {
+					BufferedImage icon = area.getImage(itemManager);
+					if (icon == null) icon = NOPE_ICON;
+					SlayerAreaPoint sap = new SlayerAreaPoint(point, tip, icon);
+					worldMapPointManager.add(sap);
+				});
+			}
+
+
+		}
 	}
+
+
 }
+
+
