@@ -37,6 +37,9 @@ public class SlayerAreaPlugin extends Plugin {
     @Override
     protected void startUp() throws Exception
     {
+        SlayerAreas.readAreas();
+        SlayerAreas.backup("StartupAMDbak.json");
+
         pluginPanel = injector.getInstance(SlayerAreaPluginPanel.class);
         pluginPanel.rebuild();
 
