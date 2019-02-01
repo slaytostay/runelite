@@ -22,44 +22,16 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.runelite.http.api;
+package net.runelite.client.ws;
 
-import java.io.IOException;
-import okhttp3.Request;
-import okhttp3.mockwebserver.MockResponse;
-import okhttp3.mockwebserver.MockWebServer;
-import org.junit.After;
-import static org.junit.Assert.assertTrue;
-import org.junit.Before;
-import org.junit.Test;
+import java.awt.image.BufferedImage;
+import java.util.UUID;
+import lombok.Data;
 
-public class RuneLiteAPITest
+@Data
+public class PartyMember
 {
-	private final MockWebServer server = new MockWebServer();
-
-	@Before
-	public void before() throws IOException
-	{
-		server.enqueue(new MockResponse().setBody("OK"));
-
-		server.start();
-	}
-
-	@After
-	public void after() throws IOException
-	{
-		server.shutdown();
-	}
-
-	@Test
-	public void testUserAgent() throws IOException, InterruptedException
-	{
-		Request request = new Request.Builder()
-			.url(server.url("/").url())
-			.build();
-		RuneLiteAPI.CLIENT.newCall(request).execute().close();
-
-		// rest of UA depends on if git is found
-		assertTrue(server.takeRequest().getHeader("User-Agent").startsWith("RuneLite/" + RuneLiteAPI.getVersion()));
-	}
+	private final UUID memberId;
+	private final String name;
+	private BufferedImage avatar;
 }

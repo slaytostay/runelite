@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018, Adam <Adam@sigterm.info>
+ * Copyright (c) 2018, Tomas Slusny <slusnucky@gmail.com>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -22,44 +22,14 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.runelite.http.api;
+package net.runelite.http.api.ws.messages.party;
 
-import java.io.IOException;
-import okhttp3.Request;
-import okhttp3.mockwebserver.MockResponse;
-import okhttp3.mockwebserver.MockWebServer;
-import org.junit.After;
-import static org.junit.Assert.assertTrue;
-import org.junit.Before;
-import org.junit.Test;
+import java.util.UUID;
+import lombok.Value;
+import net.runelite.http.api.ws.WebsocketMessage;
 
-public class RuneLiteAPITest
+@Value
+public class UserPart extends WebsocketMessage
 {
-	private final MockWebServer server = new MockWebServer();
-
-	@Before
-	public void before() throws IOException
-	{
-		server.enqueue(new MockResponse().setBody("OK"));
-
-		server.start();
-	}
-
-	@After
-	public void after() throws IOException
-	{
-		server.shutdown();
-	}
-
-	@Test
-	public void testUserAgent() throws IOException, InterruptedException
-	{
-		Request request = new Request.Builder()
-			.url(server.url("/").url())
-			.build();
-		RuneLiteAPI.CLIENT.newCall(request).execute().close();
-
-		// rest of UA depends on if git is found
-		assertTrue(server.takeRequest().getHeader("User-Agent").startsWith("RuneLite/" + RuneLiteAPI.getVersion()));
-	}
+	private final UUID memberId;
 }

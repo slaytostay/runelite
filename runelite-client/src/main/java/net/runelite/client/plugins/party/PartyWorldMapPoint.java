@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018, Adam <Adam@sigterm.info>
+ * Copyright (c) 2019, Tomas Slusny <slusnucky@gmail.com>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -22,44 +22,45 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.runelite.http.api;
+package net.runelite.client.plugins.party;
 
-import java.io.IOException;
-import okhttp3.Request;
-import okhttp3.mockwebserver.MockResponse;
-import okhttp3.mockwebserver.MockWebServer;
-import org.junit.After;
-import static org.junit.Assert.assertTrue;
-import org.junit.Before;
-import org.junit.Test;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import net.runelite.api.Point;
+import net.runelite.api.coords.WorldPoint;
+import net.runelite.client.ui.overlay.worldmap.WorldMapPoint;
+import net.runelite.client.util.ImageUtil;
+import net.runelite.client.ws.PartyMember;
 
-public class RuneLiteAPITest
+class PartyWorldMapPoint extends WorldMapPoint
 {
-	private final MockWebServer server = new MockWebServer();
+	private static final BufferedImage ARROW = ImageUtil.getResourceStreamFromClass(PartyWorldMapPoint.class, "/util/clue_arrow.png");
 
-	@Before
-	public void before() throws IOException
+	private BufferedImage partyImage;
+	private PartyMember member;
+
+	PartyWorldMapPoint(WorldPoint worldPoint, PartyMember member)
 	{
-		server.enqueue(new MockResponse().setBody("OK"));
-
-		server.start();
+		super(worldPoint, null);
+		this.member = member;
+		this.setSnapToEdge(true);
+		this.setJumpOnClick(true);
+		this.setImagePoint(new Point(
+			ARROW.getWidth() / 2,
+			ARROW.getHeight()));
 	}
 
-	@After
-	public void after() throws IOException
+	@Override
+	public BufferedImage getImage()
 	{
-		server.shutdown();
-	}
+		if (partyImage == null && member != null && member.getAvatar() != null)
+		{
+			partyImage = new BufferedImage(ARROW.getWidth(), ARROW.getHeight(), BufferedImage.TYPE_INT_ARGB);
+			Graphics g = partyImage.getGraphics();
+			g.drawImage(ARROW, 0, 0, null);
+			g.drawImage(ImageUtil.resizeImage(member.getAvatar(), 28, 28), 2, 2, null);
+		}
 
-	@Test
-	public void testUserAgent() throws IOException, InterruptedException
-	{
-		Request request = new Request.Builder()
-			.url(server.url("/").url())
-			.build();
-		RuneLiteAPI.CLIENT.newCall(request).execute().close();
-
-		// rest of UA depends on if git is found
-		assertTrue(server.takeRequest().getHeader("User-Agent").startsWith("RuneLite/" + RuneLiteAPI.getVersion()));
+		return partyImage;
 	}
 }

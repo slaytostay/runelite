@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018, Adam <Adam@sigterm.info>
+ * Copyright (c) 2018, Tomas Slusny <slusnucky@gmail.com>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -22,44 +22,53 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.runelite.http.api;
+package net.runelite.client.plugins.party;
 
-import java.io.IOException;
-import okhttp3.Request;
-import okhttp3.mockwebserver.MockResponse;
-import okhttp3.mockwebserver.MockWebServer;
-import org.junit.After;
-import static org.junit.Assert.assertTrue;
-import org.junit.Before;
-import org.junit.Test;
+import net.runelite.client.config.Config;
+import net.runelite.client.config.ConfigGroup;
+import net.runelite.client.config.ConfigItem;
 
-public class RuneLiteAPITest
+@ConfigGroup("party")
+public interface PartyConfig extends Config
 {
-	private final MockWebServer server = new MockWebServer();
-
-	@Before
-	public void before() throws IOException
+	@ConfigItem(
+		keyName = "stats",
+		name = "Stats",
+		description = "Enables party stats overlay showing HP, prayer and player name"
+	)
+	default boolean stats()
 	{
-		server.enqueue(new MockResponse().setBody("OK"));
-
-		server.start();
+		return true;
 	}
 
-	@After
-	public void after() throws IOException
+	@ConfigItem(
+		keyName = "pings",
+		name = "Pings",
+		description = "Enables party pings (shift + left-click)"
+	)
+	default boolean pings()
 	{
-		server.shutdown();
+		return true;
 	}
 
-	@Test
-	public void testUserAgent() throws IOException, InterruptedException
+	@ConfigItem(
+		keyName = "sounds",
+		name = "Sound on ping",
+		description = "Enables sound notification on party ping"
+	)
+	default boolean sounds()
 	{
-		Request request = new Request.Builder()
-			.url(server.url("/").url())
-			.build();
-		RuneLiteAPI.CLIENT.newCall(request).execute().close();
+		return true;
+	}
 
-		// rest of UA depends on if git is found
-		assertTrue(server.takeRequest().getHeader("User-Agent").startsWith("RuneLite/" + RuneLiteAPI.getVersion()));
+
+	@ConfigItem(
+		keyName = "messages",
+		name = "Join messages",
+		description = "Enables join/leave game messages"
+	)
+	default boolean messages()
+	{
+		return true;
 	}
 }

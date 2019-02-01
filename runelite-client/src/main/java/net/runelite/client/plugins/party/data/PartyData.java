@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018, Adam <Adam@sigterm.info>
+ * Copyright (c) 2019, Tomas Slusny <slusnucky@gmail.com>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -22,44 +22,27 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.runelite.http.api;
+package net.runelite.client.plugins.party.data;
 
-import java.io.IOException;
-import okhttp3.Request;
-import okhttp3.mockwebserver.MockResponse;
-import okhttp3.mockwebserver.MockWebServer;
-import org.junit.After;
-import static org.junit.Assert.assertTrue;
-import org.junit.Before;
-import org.junit.Test;
+import java.util.UUID;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import net.runelite.client.ui.overlay.components.PanelComponent;
+import net.runelite.client.ui.overlay.worldmap.WorldMapPoint;
 
-public class RuneLiteAPITest
+@Setter
+@Getter
+@RequiredArgsConstructor
+public class PartyData
 {
-	private final MockWebServer server = new MockWebServer();
+	private final UUID memberId;
+	private final String name;
+	private final WorldMapPoint worldMapPoint;
+	private final PanelComponent panel = new PanelComponent();
 
-	@Before
-	public void before() throws IOException
-	{
-		server.enqueue(new MockResponse().setBody("OK"));
-
-		server.start();
-	}
-
-	@After
-	public void after() throws IOException
-	{
-		server.shutdown();
-	}
-
-	@Test
-	public void testUserAgent() throws IOException, InterruptedException
-	{
-		Request request = new Request.Builder()
-			.url(server.url("/").url())
-			.build();
-		RuneLiteAPI.CLIENT.newCall(request).execute().close();
-
-		// rest of UA depends on if git is found
-		assertTrue(server.takeRequest().getHeader("User-Agent").startsWith("RuneLite/" + RuneLiteAPI.getVersion()));
-	}
+	private int hitpoints;
+	private int maxHitpoints;
+	private int prayer;
+	private int maxPrayer;
 }
