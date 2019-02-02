@@ -6,58 +6,34 @@ import net.runelite.client.ui.ColorScheme;
 import org.apache.commons.text.similarity.JaroWinklerDistance;
 
 import javax.swing.*;
+import javax.swing.text.JTextComponent;
 import java.awt.*;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class AreaPanelItem extends JPanel {
     private static final JaroWinklerDistance DISTANCE = new JaroWinklerDistance();
-    private GridBagConstraints gbc;
+    protected GridBagConstraints gbc;
 
     public int id;
     public SlayerArea area;
-
+    protected SlayerArea oldArea;
 
     public AreaPanelItem(int id, SlayerArea area) {
         this.id = id;
-        this.area = area;
-
-        gbc = buildConstraints();
+        this.area = new SlayerArea(area);
+        this.oldArea = new SlayerArea(area);
 
         setLayout(new GridBagLayout());
         setBackground(ColorScheme.DARKER_GRAY_COLOR);
         setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
 
-        add(new JLabel("Name ("+id+")"), gbc);
-        gbc.gridy++;
-        add(buildAreaName(), gbc);
-        gbc.gridy++;
-
-        add(new JLabel("Monsters"), gbc);
-        gbc.gridy++;
-        add(buildAreaMonsters(), gbc);
-        gbc.gridy++;
-
-        if (area.below != null && area.below.name != null && !area.below.name.equals("") && area.below.monsters != null) {
-            add(new JLabel("Below Name"), gbc);
-            gbc.gridy++;
-            add(buildBelowName(), gbc);
-            gbc.gridy++;
-
-            add(new JLabel("Below Monsters"), gbc);
-            gbc.gridy++;
-            add(buildBelowMonsters(), gbc);
-            gbc.gridy++;
-        }
-
-        add(new JLabel("Strongest"), gbc);
-        gbc.gridy++;
-        add(buildAreaStrongest(), gbc);
-        gbc.gridy++;
+        buildPanel();
     }
 
-    public static GridBagConstraints buildConstraints() {
+    static GridBagConstraints buildConstraints() {
         GridBagConstraints constraints = new GridBagConstraints();
         constraints.fill = GridBagConstraints.HORIZONTAL;
         constraints.weightx = 1;
@@ -66,88 +42,135 @@ public class AreaPanelItem extends JPanel {
         return constraints;
     }
 
-    public JTextField buildAreaName() {
-        JTextField nameField = new JTextField();
-        nameField.setText(area.name);
-        nameField.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
-        nameField.addFocusListener(new FocusAdapter()
-        {
-            @Override
-            public void focusLost(FocusEvent e)
-            {
-                area.name = nameField.getText();
-                SlayerAreas.setArea(id, area);
-            }
-        });
-        return nameField;
+    public void childPanel() {
+        addButtons();
     }
 
-    public JTextArea buildAreaMonsters() {
-        JTextArea monstersField = new JTextArea();
-        monstersField.setLineWrap(true);
-        monstersField.setWrapStyleWord(true);
-        monstersField.setText(String.join(", ", area.monsters));
-        monstersField.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
-        monstersField.addFocusListener(new FocusAdapter()
-        {
-            @Override
-            public void focusLost(FocusEvent e)
-            {
-                area.monsters = Arrays.asList(monstersField.getText().split(", "));
-                SlayerAreas.setArea(id, area);
+    private void buildPanel() {
+        gbc = buildConstraints();
+
+        addElement("ID", Integer.toString(id), (field) -> {
+            try {
+                id = Integer.parseInt(field.getText());
+            } catch (NumberFormatException n) {
+                id = -1;
             }
         });
-        return monstersField;
+
+        addElement("Name", area.name, (field) -> {
+            area.name = field.getText();
+        });
+
+        addElement("Monsters", area.monsters, (field) -> {
+            if (field.getText().equals("")) {
+                area.monsters = new ArrayList<>();
+                return;
+            }
+            area.monsters = Arrays.asList(field.getText().split(", "));
+        });
+
+        if (area.below == null) area.below = new SlayerArea(true);
+        if (area.below.name == null) area.below.name = "";
+        if (area.below.monsters == null) area.below.monsters = new ArrayList<>();
+
+        addElement("Below Name", area.below.name, (field) -> {
+            area.below.name = field.getText();
+        });
+
+        addElement("Below Monsters", area.below.monsters, (field) -> {
+            if (field.getText().equals("")) {
+                area.below.monsters = new ArrayList<>();
+                return;
+            };
+            area.below.monsters = Arrays.asList(field.getText().split(", "));
+        });
+
+        if (area.strongest == null) area.strongest = "";
+
+        addElement("Strongest", area.strongest, (field) -> {
+            area.strongest = field.getText();
+        });
+
+        childPanel();
     }
 
-    public JTextField buildBelowName() {
-        JTextField nameField = new JTextField();
-        nameField.setText(area.below.name);
-        nameField.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
-        nameField.addFocusListener(new FocusAdapter()
+    private void addElement(String name, Object e, AreaTextRunnable r) {
+        final JTextComponent field = buildText(e);
+        if (field == null) return;
+        field.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+        field.addFocusListener(new FocusAdapter()
         {
             @Override
             public void focusLost(FocusEvent e)
             {
-                area.below.name = nameField.getText();
-                SlayerAreas.setArea(id, area);
+                r.run(field);
             }
         });
-        return nameField;
+
+        addLabel(name);
+        add(field, gbc);
+        gbc.gridy++;
     }
 
-    public JTextArea buildBelowMonsters() {
-        JTextArea monstersField = new JTextArea();
-        monstersField.setLineWrap(true);
-        monstersField.setWrapStyleWord(true);
-        monstersField.setText(String.join(", ", area.below.monsters));
-        monstersField.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
-        monstersField.addFocusListener(new FocusAdapter()
-        {
-            @Override
-            public void focusLost(FocusEvent e)
-            {
-                area.below.monsters = Arrays.asList(monstersField.getText().split(", "));
-                SlayerAreas.setArea(id, area);
-            }
-        });
-        return monstersField;
+    private void addLabel(String name) {
+        JLabel label = new JLabel(name);
+        label.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+        add(label, gbc);
+        gbc.gridy++;
     }
 
-    public JTextField buildAreaStrongest() {
-        JTextField strongestField = new JTextField();
-        strongestField.setText(area.strongest);
-        strongestField.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
-        strongestField.addFocusListener(new FocusAdapter()
-        {
-            @Override
-            public void focusLost(FocusEvent e)
-            {
-                area.strongest = strongestField.getText();
-                SlayerAreas.setArea(id, area);
-            }
+    private void addButtons() {
+        JButton resetButton = new JButton("Reset");
+        resetButton.addActionListener(e -> {
+            area = new SlayerArea(oldArea);
+            rebuild();
         });
-        return strongestField;
+        add(resetButton, gbc);
+        gbc.gridy++;
+
+        JButton saveButton = new JButton("Save");
+        saveButton.addActionListener(e -> {
+            SlayerAreas.removeArea(id);
+            if (id < 0) {
+                rebuild();
+                return;
+            }
+            oldArea = new SlayerArea(area);
+            SlayerAreas.addArea(id, area);
+        });
+        add(saveButton, gbc);
+    }
+
+    private JTextComponent buildText(Object e) {
+        JTextComponent text = null;
+        if (e instanceof String) {
+            text = buildTextField((String)e);
+        } else if (e instanceof ArrayList<?>) {
+            text = buildTextArea((ArrayList<String>)e);
+        }
+        return text;
+    }
+
+    private JTextField buildTextField(String s) {
+        JTextField textField = new JTextField();
+        if (s.equals("-1")) s = "";
+        textField.setText(s);
+        return textField;
+    }
+
+    private JTextArea buildTextArea(ArrayList<String> s) {
+        JTextArea textArea = new JTextArea();
+        textArea.setLineWrap(true);
+        textArea.setWrapStyleWord(true);
+        textArea.setText(String.join(", ", s));
+        return textArea;
+    }
+
+    protected void rebuild() {
+        removeAll();
+        revalidate();
+        repaint();
+        buildPanel();
     }
 
     boolean matchesSearchTerms(String[] searchTerms)

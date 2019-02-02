@@ -16,6 +16,29 @@ public class SlayerArea {
     public SlayerArea below;
     public String strongest;
 
+    public SlayerArea() {
+        name = "";
+        monsters = new ArrayList<>();
+        below = new SlayerArea(true);
+        strongest = "";
+    }
+
+    public SlayerArea(Boolean b) {
+        name = "";
+        monsters = new ArrayList<>();
+        below = null;
+        strongest = "";
+    }
+
+    public SlayerArea(SlayerArea area) {
+        if (area.name == null) return;
+        name = area.name;
+        monsters = new ArrayList<>();
+        area.monsters.forEach(m -> monsters.add(m));
+        if (area.below != null) below = new SlayerArea(area.below);
+        if (area.strongest != null) strongest = area.strongest;
+    }
+
     public BufferedImage getImage(ItemManager itemManager) {
         if (strongest == null || strongest.equals("")) return null;
         Task task = Task.getTask(strongest);

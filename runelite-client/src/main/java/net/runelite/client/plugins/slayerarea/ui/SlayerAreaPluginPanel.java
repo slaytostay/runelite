@@ -50,9 +50,12 @@ public class SlayerAreaPluginPanel extends PluginPanel {
         setBorder(new EmptyBorder(10, 10, 10, 10));
 
         topPanel = new JPanel();
-        topPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
+        topPanel.setBorder(new EmptyBorder(0, 0, 10, 0));
         topPanel.setLayout(new BorderLayout(0, 6));
         add(topPanel, BorderLayout.NORTH);
+
+        AreaCreateItem createItem = new AreaCreateItem(this);
+        topPanel.add(createItem, BorderLayout.NORTH);
 
         centerPanel = new JPanel(new BorderLayout());
         centerPanel.setBackground(ColorScheme.DARK_GRAY_COLOR);
@@ -61,14 +64,7 @@ public class SlayerAreaPluginPanel extends PluginPanel {
         searchBar.setPreferredSize(new Dimension(PluginPanel.PANEL_WIDTH - 20, 30));
         searchBar.setBackground(ColorScheme.DARKER_GRAY_COLOR);
         searchBar.setHoverBackgroundColor(ColorScheme.DARK_GRAY_HOVER_COLOR);
-        searchBar.addActionListener(new ActionListener()
-        {
-            @Override
-            public void actionPerformed(ActionEvent e)
-            {
-                onSearchBarChanged();
-            }
-        });
+        searchBar.addActionListener(e -> onSearchBarChanged());
 
         buildAreaList();
         markerView.setBackground(ColorScheme.DARK_GRAY_COLOR);
@@ -77,7 +73,7 @@ public class SlayerAreaPluginPanel extends PluginPanel {
         centerPanel.add(markerView, BorderLayout.CENTER);
         add(centerPanel, BorderLayout.CENTER);
 
-        topPanel.add(searchBar);
+        topPanel.add(searchBar, BorderLayout.CENTER);
         searchBar.requestFocusInWindow();
         validate();
     }
@@ -146,6 +142,10 @@ public class SlayerAreaPluginPanel extends PluginPanel {
         gbc.gridy++;
     }
 
+    public void addArea(int id, SlayerArea area) {
+        areaPanelList.add(0, new AreaPanelItem(id, area));
+    }
+
     public void buildAreaList() {
         Map<Integer, SlayerArea> areas = SlayerAreas.getAreas();
         for (Map.Entry<Integer, SlayerArea> entry : areas.entrySet()) {
@@ -161,5 +161,9 @@ public class SlayerAreaPluginPanel extends PluginPanel {
         repaint();
         revalidate();
         init();
+    }
+
+    public void refresh() {
+        onSearchBarChanged();
     }
 }

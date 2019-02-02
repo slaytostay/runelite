@@ -1,0 +1,68 @@
+package net.runelite.client.plugins.slayerarea.ui;
+
+import net.runelite.client.plugins.slayerarea.SlayerArea;
+import net.runelite.client.plugins.slayerarea.SlayerAreas;
+import net.runelite.client.ui.ColorScheme;
+
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import java.awt.*;
+
+public class AreaCreateItem extends AreaPanelItem {
+    private SlayerAreaPluginPanel parent;
+    private Boolean hide;
+    AreaCreateItem(SlayerAreaPluginPanel parent) {
+        super(-1, new SlayerArea());
+        this.parent = parent;
+        setBackground(new Color(.10f,.15f,.25f));
+    }
+
+    @Override
+    public void childPanel() {
+        if (hide == null) hide = true;
+        addButtons();
+        if (hide) removeAll();
+        addHideButton();
+    }
+
+    private void addHideButton() {
+        JButton hideButton = new JButton(hide ? "Show" : "Hide");
+        hideButton.addActionListener(e -> {
+            hide = !hide;
+            rebuild();
+        });
+        add(hideButton, gbc);
+        gbc.gridy++;
+    }
+
+    private void addButtons() {
+        JButton resetButton = new JButton("Reset");
+        resetButton.setLayout(new BorderLayout(0, 6));
+        resetButton.addActionListener(e -> {
+            area = new SlayerArea(oldArea);
+            rebuild();
+        });
+        add(resetButton, gbc);
+        gbc.gridy++;
+
+        JButton calcButton = new JButton("Calculate");
+        calcButton.setLayout(new BorderLayout(0, 6));
+        calcButton.addActionListener(e -> {
+            area = new SlayerArea();
+            rebuild();
+        });
+        add(calcButton, gbc);
+        gbc.gridy++;
+
+        JButton saveButton = new JButton("Save");
+        calcButton.setLayout(new BorderLayout(0, 6));
+        saveButton.addActionListener(e -> {
+            oldArea = new SlayerArea(area);
+            SlayerAreas.addArea(id, area);
+            parent.addArea(id, area);
+            parent.refresh();
+        });
+        add(saveButton, gbc);
+        gbc.gridy++;
+    }
+}

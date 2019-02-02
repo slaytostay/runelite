@@ -40,6 +40,14 @@ public class SlayerAreas {
         }
     }
 
+    public static void sortAreas() {
+        areas = new TreeMap<>(areas);
+    }
+
+    public static void saveAreas() {
+        sortAreas();
+        backup("SavedAreaData");
+    }
 
     public static void setArea(int id, SlayerArea area) {
         if (area.name.equals("")) {
@@ -47,13 +55,19 @@ public class SlayerAreas {
             return;
         }
         areas.replace(id, area);
-        areas = new TreeMap<>(areas);
-        backup("SavedAreaData");
+        saveAreas();
     }
 
     public static void addArea(int id, SlayerArea area) {
+        if (areas.containsKey(id)) setArea(id, area);
         areas.put(id, area);
-        areas = new TreeMap<>(areas);
+        saveAreas();
+    }
+
+    public static void removeArea(int id) {
+        if (!areas.containsKey(id)) return;
+        areas.remove(id);
+        saveAreas();
     }
 
 }
