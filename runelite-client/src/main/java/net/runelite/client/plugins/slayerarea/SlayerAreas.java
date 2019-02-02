@@ -17,12 +17,12 @@ import java.util.TreeMap;
 public class SlayerAreas {
 
     @Getter
-    private static Map<String, SlayerArea> areas;
+    private static Map<Integer, SlayerArea> areas;
 
     private static final String AREA_FILE = "AreaMonsterData.json";
 
     public static void readAreas() {
-        Type mapType = new TypeToken<Map<String, SlayerArea>>(){}.getType();
+        Type mapType = new TypeToken<Map<Integer, SlayerArea>>(){}.getType();
         try (JsonReader reader = new JsonReader(new FileReader(AREA_FILE));) {
             Gson gson = new Gson();
             areas = gson.fromJson(reader, mapType);
@@ -32,7 +32,7 @@ public class SlayerAreas {
     }
 
     public static void backup(String fname) {
-        try (Writer writer = new FileWriter(fname);) {
+        try (Writer writer = new FileWriter(fname + ".json");) {
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
             gson.toJson(areas, writer);
         } catch(IOException ex) {
@@ -42,18 +42,17 @@ public class SlayerAreas {
 
 
     public static void setArea(int id, SlayerArea area) {
-        String key = Integer.toString(id);
         if (area.name.equals("")) {
-            areas.remove(key);
+            areas.remove(id);
             return;
         }
-        areas.replace(key, area);
+        areas.replace(id, area);
         areas = new TreeMap<>(areas);
+        backup("SavedAreaData");
     }
 
     public static void addArea(int id, SlayerArea area) {
-        String key = Integer.toString(id);
-        areas.put(key, area);
+        areas.put(id, area);
         areas = new TreeMap<>(areas);
     }
 

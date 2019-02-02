@@ -295,9 +295,9 @@ public class WorldMapPlugin extends Plugin
 			}).map(TeleportPoint::new)
 			.forEach(worldMapPointManager::add);
 
-		Map<String, SlayerArea> areas = SlayerAreas.getAreas();
-		for (Map.Entry<String, SlayerArea> entry : areas.entrySet()) {
-			int id = Integer.parseInt(entry.getKey());
+		Map<Integer, SlayerArea> areas = SlayerAreas.getAreas();
+		for (Map.Entry<Integer, SlayerArea> entry : areas.entrySet()) {
+			int id = entry.getKey();
 			SlayerArea area = entry.getValue();
 
 			int x = SlayerArea.getX(id) + 32;

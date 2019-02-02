@@ -52,7 +52,7 @@ public enum Task
 	BEARS("Bears", ItemID.ENSOULED_BEAR_HEAD, "Bear cub", "Black bear", "Grizzly bear"),
 	ENTS("Ents", ItemID.NICE_TREE, "Ent"),
 	LAVA_DRAGONS("Lava Dragons", ItemID.LAVA_SCALE, "Lava dragon"),
-	BIRDS("Birds", ItemID.FEATHER, "Chicken", "Rooster", "Duck", "Evil chicken", "Terrorbird", "Seagull", "Mounted terrorbird gnome", "Vulture"),
+	BIRDS("Birds", ItemID.FEATHER, "Chicken", "Rooster", "Duck", "Evil chicken", "Terrorbird", "Seagull", "Mounted terrorbird gnome", "Vulture", "Chompy bird"),
 	BLACK_DEMONS("Black demons", ItemID.BLACK_DEMON_MASK),
 	BLACK_DRAGONS("Black dragons", ItemID.BLACK_DRAGON_MASK),
 	BLOODVELD("Bloodveld", ItemID.BLOODVELD),
@@ -228,5 +228,14 @@ public enum Task
 			if (tlist.contains(taskName.toLowerCase())) task = v;
 		}
 		return task;
+	}
+
+	public static Task searchTask(String term) {
+		for (Task v : tasks.values()) {
+			if (v.name.toLowerCase().contains(term.toLowerCase())) {
+				return v;
+			}
+		}
+		return null;
 	}
 }
