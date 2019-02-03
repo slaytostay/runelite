@@ -86,13 +86,14 @@ public class SlayerAreaPluginPanel extends PluginPanel {
 
         showMatchingPlugins(text);
 
+        repaint();
         revalidate();
     }
 
     private void showMatchingPlugins(String text) {
 
         gbc = AreaPanelItem.buildConstraints();
-        areaPanelList.forEach(markerView::remove);
+        markerView.removeAll();
 
         if (text.isEmpty()) {
             areaPanelList.forEach(item -> {
@@ -100,35 +101,7 @@ public class SlayerAreaPluginPanel extends PluginPanel {
             });
             return;
         }
-        /*
-        if (text.startsWith("s:")) {
-            final String s = text.substring(2);
-            areaPanelList.forEach(item -> {
-                if (item.area.strongest != null && item.area.strongest.toLowerCase().contains(s)) {
-                    addAreaPanel(item);
-                }
-            });
-            return;
-        }
 
-        if (text.startsWith("t:")) {
-            final String s = text.substring(2);
-            Task t = Task.getTask(s);
-            if (t == null) return;
-            List<String> monsters = Arrays.asList(t.getTargetNames());
-            monsters.replaceAll(String::toLowerCase);
-            areaPanelList.forEach(item -> {
-                if (item.area.strongest != null) {
-                    if (t.getName().toLowerCase().equals(item.area.strongest.toLowerCase()) ||
-                        t.getName().toLowerCase().equals(item.area.strongest.toLowerCase() + "s") ||
-                        monsters.contains(item.area.strongest.toLowerCase())) {
-                        addAreaPanel(item);
-                    }
-                }
-            });
-            return;
-        }
-        */
         final String[] searchTerms = text.toLowerCase().split(",");
         areaPanelList.forEach(item -> {
             if (item.matchesSearchTerms(searchTerms)) {

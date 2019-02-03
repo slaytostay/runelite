@@ -217,12 +217,12 @@ public class AreaPanelItem extends JPanel {
             if (term.startsWith("s:")) {
                 final String s = term.substring(2);
                 if (area.strongest != null && area.strongest.toLowerCase().contains(s)) {
-                    return true;
+                    //return true;
+                } else {
+                    return false;
                 }
-                return false;
-            }
 
-            if (term.startsWith("t:")) {
+            } else if (term.startsWith("t:")) {
                 final String s = term.substring(2);
                 Task t = Task.getTask(s);
                 if (t == null) return false;
@@ -232,21 +232,24 @@ public class AreaPanelItem extends JPanel {
                     if (t.getName().toLowerCase().equals(area.strongest.toLowerCase()) ||
                             t.getName().toLowerCase().equals(area.strongest.toLowerCase() + "s") ||
                             monsters.contains(area.strongest.toLowerCase())) {
-                        return true;
+                        // return true;
+                    } else {
+                        return false;
                     }
                 }
-                return false;
-            }
-
-            if (term.startsWith("unlocked")) {
-                return area.unlocked;
-            }
-
-            if (Integer.toString(id).contains(term)) return true;
-            if (area.getValues().stream().noneMatch((t) -> t.contains(term) ||
-                    DISTANCE.apply(t, term) > 0.9))
-            {
-                return false;
+            } else if (term.startsWith("unlocked")) {
+                if (!area.unlocked) return false;
+            } else if (term.startsWith("locked")) {
+                if (area.unlocked) return false;
+            } else {
+                List<String> values = area.getValues();
+                values.add(Integer.toString(id));
+                if (values.stream().noneMatch((t) ->
+                        t.contains(term) ||
+                                DISTANCE.apply(t, term) > 0.9
+                )) {
+                    return false;
+                }
             }
         }
         return true;
