@@ -5,6 +5,7 @@ import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.google.inject.Inject;
 import com.sun.org.apache.xpath.internal.operations.Bool;
+import net.runelite.client.plugins.config.ConfigPanel;
 import net.runelite.client.plugins.slayer.Task;
 import net.runelite.client.plugins.slayerarea.SlayerArea;
 import net.runelite.client.plugins.slayerarea.SlayerAreaPlugin;
@@ -14,6 +15,7 @@ import net.runelite.client.ui.ColorScheme;
 import net.runelite.client.ui.PluginPanel;
 import net.runelite.client.ui.components.FlatTextField;
 import net.runelite.client.ui.components.IconTextField;
+import net.runelite.client.util.ImageUtil;
 import net.runelite.client.util.Text;
 
 import javax.swing.*;
@@ -25,6 +27,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
+import java.awt.image.BufferedImage;
 import java.io.FileReader;
 import java.io.IOException;
 import java.lang.reflect.Type;
@@ -97,7 +100,7 @@ public class SlayerAreaPluginPanel extends PluginPanel {
             });
             return;
         }
-
+        /*
         if (text.startsWith("s:")) {
             final String s = text.substring(2);
             areaPanelList.forEach(item -> {
@@ -125,8 +128,8 @@ public class SlayerAreaPluginPanel extends PluginPanel {
             });
             return;
         }
-
-        final String[] searchTerms = text.toLowerCase().split(" ");
+        */
+        final String[] searchTerms = text.toLowerCase().split(",");
         areaPanelList.forEach(item -> {
             if (item.matchesSearchTerms(searchTerms)) {
                 addAreaPanel(item);

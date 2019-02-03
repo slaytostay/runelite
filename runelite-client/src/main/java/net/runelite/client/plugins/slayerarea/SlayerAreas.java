@@ -19,15 +19,35 @@ public class SlayerAreas {
     @Getter
     private static Map<Integer, SlayerArea> areas;
 
-    private static final String AREA_FILE = "AreaMonsterData.json";
+    private static final String AREA_FILE = "AreaMonsterData";
+
+    public static Boolean configLockedShader = true;
+    public static Boolean configSlayerIcons = true;
+    public static Boolean configLockedMap = true;
+    public static Boolean configRegionId = true;
+    public static Boolean isUnlocked(int id) {
+        return areas.get(id).unlocked;
+    }
 
     public static void readAreas() {
         Type mapType = new TypeToken<Map<Integer, SlayerArea>>(){}.getType();
-        try (JsonReader reader = new JsonReader(new FileReader(AREA_FILE));) {
+        try (JsonReader reader = new JsonReader(new FileReader(AREA_FILE + ".json"));) {
             Gson gson = new Gson();
             areas = gson.fromJson(reader, mapType);
         } catch(IOException ex) {
             System.out.println(ex.toString());
+        }
+        fixBelow();
+    }
+
+    public static void fixBelow() {
+        for (Map.Entry<Integer, SlayerArea> entry : areas.entrySet()) {
+            int id = entry.getKey();
+            SlayerArea area = entry.getValue();
+            if (area.below.below != null) {
+                area.below.below = null;
+                areas.replace(id, area);
+            }
         }
     }
 
@@ -46,7 +66,7 @@ public class SlayerAreas {
 
     public static void saveAreas() {
         sortAreas();
-        backup("SavedAreaData");
+        backup(AREA_FILE);
     }
 
     public static void setArea(int id, SlayerArea area) {

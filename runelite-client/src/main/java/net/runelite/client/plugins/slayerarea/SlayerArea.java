@@ -15,12 +15,14 @@ public class SlayerArea {
     public List<String> monsters;
     public SlayerArea below;
     public String strongest;
+    public Boolean unlocked;
 
     public SlayerArea() {
         name = "";
         monsters = new ArrayList<>();
         below = new SlayerArea(true);
         strongest = "";
+        unlocked = false;
     }
 
     public SlayerArea(Boolean b) {
@@ -28,6 +30,7 @@ public class SlayerArea {
         monsters = new ArrayList<>();
         below = null;
         strongest = "";
+        unlocked = false;
     }
 
     public SlayerArea(SlayerArea area) {
@@ -35,8 +38,11 @@ public class SlayerArea {
         name = area.name;
         monsters = new ArrayList<>();
         area.monsters.forEach(m -> monsters.add(m));
-        if (area.below != null) below = new SlayerArea(area.below);
+        if (area.below != null) below = new SlayerArea(true);
+        below.name = area.below.name;
+        area.below.monsters.forEach(m -> below.monsters.add(m));
         if (area.strongest != null) strongest = area.strongest;
+        unlocked = area.unlocked;
     }
 
     public BufferedImage getImage(ItemManager itemManager) {

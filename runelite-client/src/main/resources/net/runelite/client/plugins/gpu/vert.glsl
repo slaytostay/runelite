@@ -96,7 +96,7 @@ void main()
   for (int i = 0; i < LOCKED_REGIONS_SIZE; i++) {
     ivec4 region = lockedRegions[i];
     if (region.x == 0) { continue; }
-    if ((vertex.x + baseX) > region.x && (vertex.x + baseX) < region.z && (vertex.z + baseY) > region.y && (vertex.z + baseY) < region.w) {
+    if ((vertex.x + baseX) >= region.x && (vertex.x + baseX) <= region.z && (vertex.z + baseY) >= region.y && (vertex.z + baseY) <= region.w) {
     //if ((vertex.x + baseX) == region.x || (vertex.x + baseX) == region.z || (vertex.z + baseY) == region.y || (vertex.z + baseY) == region.w) {
       gray = 0;
       break;

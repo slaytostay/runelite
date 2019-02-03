@@ -36,6 +36,7 @@ import net.runelite.api.Point;
 import net.runelite.api.RenderOverview;
 import net.runelite.api.widgets.Widget;
 import net.runelite.api.widgets.WidgetInfo;
+import net.runelite.client.plugins.slayerarea.SlayerAreas;
 import net.runelite.client.ui.overlay.Overlay;
 import net.runelite.client.ui.overlay.OverlayLayer;
 import net.runelite.client.ui.overlay.OverlayPosition;
@@ -104,7 +105,7 @@ class WorldMapRegionOverlay extends Overlay
 		{
 			for (int y = yRegionMin; y < yRegionMax; y += REGION_SIZE)
 			{
-				graphics.setColor(WHITE_TRANSLUCENT);
+				graphics.setColor(new Color(0, 19, 36, 127));
 
 				int yTileOffset = -(yTileMin - y);
 				int xTileOffset = x + widthInTiles / 2 - worldMapPosition.getX();
@@ -122,12 +123,12 @@ class WorldMapRegionOverlay extends Overlay
 				Rectangle2D textBounds = fm.getStringBounds(regionText, graphics);
 				int labelWidth = (int) textBounds.getWidth() + 2 * LABEL_PADDING;
 				int labelHeight = (int) textBounds.getHeight() + 2 * LABEL_PADDING;
-				graphics.fillRect(xPos, yPos, labelWidth, labelHeight);
-				if (regionId != 12850 && regionId != 12594) {
+				//graphics.fillRect(xPos, yPos, labelWidth, labelHeight);
+				if ((!SlayerAreas.getAreas().containsKey(regionId) || !SlayerAreas.getAreas().get(regionId).unlocked)) {
 					graphics.setColor(new Color(0, 38, 72, 127));
 					graphics.fillRect(xPos, yPos, regionPixelSize, regionPixelSize);
 				}
-				graphics.setColor(Color.BLACK);
+				graphics.setColor(WHITE_TRANSLUCENT);
 				graphics.drawString(regionText, xPos + LABEL_PADDING, yPos + (int) textBounds.getHeight() + LABEL_PADDING);
 			}
 		}

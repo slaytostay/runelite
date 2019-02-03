@@ -1,8 +1,12 @@
 package net.runelite.client.plugins.slayerarea.ui;
 
+import net.runelite.client.plugins.config.ConfigPanel;
+import net.runelite.client.plugins.slayer.Task;
 import net.runelite.client.plugins.slayerarea.SlayerArea;
 import net.runelite.client.plugins.slayerarea.SlayerAreas;
 import net.runelite.client.ui.ColorScheme;
+import net.runelite.client.ui.components.IconButton;
+import net.runelite.client.util.ImageUtil;
 import org.apache.commons.text.similarity.JaroWinklerDistance;
 
 import javax.swing.*;
@@ -10,16 +14,35 @@ import javax.swing.text.JTextComponent;
 import java.awt.*;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class AreaPanelItem extends JPanel {
     private static final JaroWinklerDistance DISTANCE = new JaroWinklerDistance();
+    private static final ImageIcon ON_SWITCHER;
+    private static final ImageIcon OFF_SWITCHER;
     protected GridBagConstraints gbc;
 
     public int id;
     public SlayerArea area;
     protected SlayerArea oldArea;
+
+    static
+    {
+        BufferedImage onSwitcher = ImageUtil.getResourceStreamFromClass(ConfigPanel.class, "switcher_on.png");
+        ON_SWITCHER = new ImageIcon(onSwitcher);
+        BufferedImage offSwitcherImage = ImageUtil.flipImage(
+                ImageUtil.grayscaleOffset(
+                        ImageUtil.grayscaleImage(onSwitcher),
+                        0.61f
+                ),
+                true,
+                false
+        );
+        OFF_SWITCHER = new ImageIcon(offSwitcherImage);
+    }
 
     public AreaPanelItem(int id, SlayerArea area) {
         this.id = id;
@@ -120,6 +143,15 @@ public class AreaPanelItem extends JPanel {
     }
 
     private void addButtons() {
+        IconButton toggleButton = new IconButton(OFF_SWITCHER);
+        updateToggleButton(toggleButton);
+        toggleButton.addActionListener(e -> {
+            area.unlocked = !area.unlocked;
+            updateToggleButton(toggleButton);
+        });
+        add(toggleButton, gbc);
+        gbc.gridy++;
+
         JButton resetButton = new JButton("Reset");
         resetButton.addActionListener(e -> {
             area = new SlayerArea(oldArea);
@@ -173,10 +205,43 @@ public class AreaPanelItem extends JPanel {
         buildPanel();
     }
 
+    private void updateToggleButton(IconButton button)
+    {
+        button.setIcon(area.unlocked ? ON_SWITCHER : OFF_SWITCHER);
+    }
+
     boolean matchesSearchTerms(String[] searchTerms)
     {
         for (String term : searchTerms)
         {
+            if (term.startsWith("s:")) {
+                final String s = term.substring(2);
+                if (area.strongest != null && area.strongest.toLowerCase().contains(s)) {
+                    return true;
+                }
+                return false;
+            }
+
+            if (term.startsWith("t:")) {
+                final String s = term.substring(2);
+                Task t = Task.getTask(s);
+                if (t == null) return false;
+                List<String> monsters = Arrays.asList(t.getTargetNames());
+                monsters.replaceAll(String::toLowerCase);
+                if (area.strongest != null) {
+                    if (t.getName().toLowerCase().equals(area.strongest.toLowerCase()) ||
+                            t.getName().toLowerCase().equals(area.strongest.toLowerCase() + "s") ||
+                            monsters.contains(area.strongest.toLowerCase())) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+            if (term.startsWith("unlocked")) {
+                return area.unlocked;
+            }
+
             if (Integer.toString(id).contains(term)) return true;
             if (area.getValues().stream().noneMatch((t) -> t.contains(term) ||
                     DISTANCE.apply(t, term) > 0.9))

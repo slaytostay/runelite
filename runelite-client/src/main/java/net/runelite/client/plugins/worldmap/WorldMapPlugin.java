@@ -149,7 +149,7 @@ public class WorldMapPlugin extends Plugin
 		worldMapPointManager.removeIf(MinigamePoint.class::isInstance);
 		worldMapPointManager.removeIf(FarmingPatchPoint.class::isInstance);
 		worldMapPointManager.removeIf(RareTreePoint.class::isInstance);
-		worldMapPointManager.removeIf(SlayerAreaPoint.class::isInstance);
+		if (SlayerAreas.configSlayerIcons) worldMapPointManager.removeIf(SlayerAreaPoint.class::isInstance);
 		agilityLevel = 0;
 		woodcuttingLevel = 0;
 	}
@@ -296,9 +296,12 @@ public class WorldMapPlugin extends Plugin
 			.forEach(worldMapPointManager::add);
 
 		Map<Integer, SlayerArea> areas = SlayerAreas.getAreas();
+		if (areas == null || areas.size() <= 0) return;
 		for (Map.Entry<Integer, SlayerArea> entry : areas.entrySet()) {
 			int id = entry.getKey();
 			SlayerArea area = entry.getValue();
+
+			if (area.unlocked) continue;
 
 			int x = SlayerArea.getX(id) + 32;
 			int y = SlayerArea.getY(id) + 32;

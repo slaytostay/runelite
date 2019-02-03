@@ -74,6 +74,8 @@ import static net.runelite.client.plugins.gpu.GLUtil.glGenVertexArrays;
 import static net.runelite.client.plugins.gpu.GLUtil.inputStreamToString;
 import net.runelite.client.plugins.gpu.config.AntiAliasingMode;
 import net.runelite.client.plugins.gpu.template.Template;
+import net.runelite.client.plugins.slayerarea.SlayerArea;
+import net.runelite.client.plugins.slayerarea.SlayerAreas;
 import net.runelite.client.ui.DrawManager;
 import net.runelite.client.ui.overlay.components.LineComponent;
 import net.runelite.client.util.OSType;
@@ -735,8 +737,11 @@ public class GpuPlugin extends Plugin implements DrawCallbacks
 		for (int i = 0; i < client.getMapRegions().length; i++)
 		{
 			int region = client.getMapRegions()[i];
-			if (region == 12850 || region == 12853 || region == 12953) {
-				loadedLockedRegions[i] = region;
+			if (!SlayerAreas.configLockedShader) loadedLockedRegions[i] = region;
+			if (SlayerAreas.getAreas().containsKey(region)) {
+				if (SlayerAreas.getAreas().get(region).unlocked) {
+					loadedLockedRegions[i] = region;
+				}
 			}
 		}
 
