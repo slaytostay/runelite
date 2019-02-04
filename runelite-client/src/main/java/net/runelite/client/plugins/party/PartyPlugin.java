@@ -119,13 +119,13 @@ public class PartyPlugin extends Plugin implements KeyListener
 	private ChatMessageManager chatMessageManager;
 
 	@Getter
-	private final Map<UUID, PartyData> partyDataMap = new HashMap<>();
+	private final Map<UUID, PartyData> partyDataMap = Collections.synchronizedMap(new HashMap<>());
 
 	@Getter
 	private final List<PartyTilePingData> pendingTilePings = Collections.synchronizedList(new ArrayList<>());
 
 	private int lastHp, lastPray;
-	private boolean hotkeyDown;
+	private boolean hotkeyDown, doSync;
 
 	@Override
 	public void configure(Binder binder)
@@ -142,6 +142,7 @@ public class PartyPlugin extends Plugin implements KeyListener
 		wsClient.registerMessage(TilePing.class);
 		wsClient.registerMessage(LocationUpdate.class);
 		keyManager.registerKeyListener(this);
+		doSync = true; // Delay sync so eventbus can process correctly.
 	}
 
 	@Override
@@ -157,6 +158,7 @@ public class PartyPlugin extends Plugin implements KeyListener
 		wsClient.unregisterMessage(LocationUpdate.class);
 		keyManager.unregisterKeyListener(this);
 		hotkeyDown = false;
+		doSync = false;
 	}
 
 	@Provides
@@ -271,6 +273,14 @@ public class PartyPlugin extends Plugin implements KeyListener
 	@Subscribe
 	public void onGameTick(final GameTick event)
 	{
+		if (doSync && !party.getMembers().isEmpty())
+		{
+			// Request sync
+			ws.send(new UserSync(party.getLocalMember().getMemberId()));
+		}
+
+		doSync = false;
+
 		final int currentHealth = client.getBoostedSkillLevel(Skill.HITPOINTS);
 		final int currentPrayer = client.getBoostedSkillLevel(Skill.PRAYER);
 		final int realHealth = client.getRealSkillLevel(Skill.HITPOINTS);
@@ -354,7 +364,9 @@ public class PartyPlugin extends Plugin implements KeyListener
 			.runeLiteFormattedMessage(joinMessage)
 			.build());
 
-		if (partyData.getMemberId().equals(party.getLocalMember().getMemberId()))
+		final PartyMember localMember = party.getLocalMember();
+
+		if (localMember != null && partyData.getMemberId().equals(localMember.getMemberId()))
 		{
 			final String helpMessage = new ChatMessageBuilder()
 				.append(ChatColorType.HIGHLIGHT)
