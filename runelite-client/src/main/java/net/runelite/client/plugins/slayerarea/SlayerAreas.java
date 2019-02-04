@@ -25,8 +25,13 @@ public class SlayerAreas {
     public static Boolean configSlayerIcons = true;
     public static Boolean configLockedMap = true;
     public static Boolean configRegionId = true;
+
     public static Boolean isUnlocked(int id) {
-        return areas.get(id).unlocked;
+        SlayerArea area = areas.get(id);
+        if (area != null) return area.unlocked;
+        area = areas.get(id-100);
+        if (area != null) return area.unlocked;
+        return false;
     }
 
     public static void readAreas() {

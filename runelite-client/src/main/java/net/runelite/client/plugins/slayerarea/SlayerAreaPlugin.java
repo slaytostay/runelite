@@ -3,8 +3,11 @@ package net.runelite.client.plugins.slayerarea;
 import com.google.inject.Provides;
 import net.runelite.api.Client;
 import net.runelite.api.events.ConfigChanged;
+import net.runelite.api.events.GameStateChanged;
+import net.runelite.client.callback.ClientThread;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
+import net.runelite.client.game.ItemManager;
 import net.runelite.client.input.MouseManager;
 import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
@@ -12,6 +15,7 @@ import net.runelite.client.plugins.slayerarea.ui.SlayerAreaPluginPanel;
 import net.runelite.client.ui.ClientToolbar;
 import net.runelite.client.ui.NavigationButton;
 import net.runelite.client.ui.overlay.OverlayManager;
+import net.runelite.client.ui.overlay.worldmap.WorldMapPointManager;
 import net.runelite.client.util.ImageUtil;
 
 import javax.inject.Inject;
@@ -42,6 +46,15 @@ public class SlayerAreaPlugin extends Plugin {
     private SlayerAreaConfig config;
 
     @Inject
+    private WorldMapPointManager worldMapPointManager;
+
+    @Inject
+    private ItemManager itemManager;
+
+    @Inject
+    private ClientThread clientThread;
+
+    @Inject
     private OverlayManager overlayManager;
 
     @Inject
@@ -49,6 +62,7 @@ public class SlayerAreaPlugin extends Plugin {
 
     private SlayerAreaPluginPanel pluginPanel;
     private NavigationButton navigationButton;
+    private SlayerAreaMapIcons slayerAreaMapIcons;
 
     @Provides
     SlayerAreaConfig provideConfig(ConfigManager configManager)
@@ -78,6 +92,7 @@ public class SlayerAreaPlugin extends Plugin {
         clientToolbar.addNavigation(navigationButton);
 
         overlayManager.add(slayerAreaOverlay);
+        slayerAreaMapIcons = new SlayerAreaMapIcons(client, config, worldMapPointManager, itemManager, clientThread);
     }
 
     @Override
@@ -85,13 +100,19 @@ public class SlayerAreaPlugin extends Plugin {
     {
         clientToolbar.removeNavigation(navigationButton);
         overlayManager.remove(slayerAreaOverlay);
+        slayerAreaMapIcons.stop();
 
         pluginPanel = null;
         navigationButton = null;
     }
 
     @Subscribe
-    private void onConfigChanged(ConfigChanged event)
+    public void onGameStateChanged(GameStateChanged event) {
+        slayerAreaMapIcons.gameStateChanged(event);
+    }
+
+    @Subscribe
+    public void onConfigChanged(ConfigChanged event)
     {
         if (!event.getGroup().equals(CONFIG_KEY))
         {
@@ -99,12 +120,13 @@ public class SlayerAreaPlugin extends Plugin {
         }
 
         setConfig();
+        slayerAreaMapIcons.configChanged(event);
     }
 
     private void setConfig() {
-        SlayerAreas.configSlayerIcons = config.removeSlayerIcons();
         SlayerAreas.configLockedShader = config.useLockedShader();
         SlayerAreas.configLockedMap = config.drawLockedMap();
         SlayerAreas.configRegionId = config.drawRegionId();
+
     }
 }

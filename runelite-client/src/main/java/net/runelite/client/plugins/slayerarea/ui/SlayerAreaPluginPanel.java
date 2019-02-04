@@ -5,6 +5,7 @@ import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import com.google.inject.Inject;
 import com.sun.org.apache.xpath.internal.operations.Bool;
+import net.runelite.api.Client;
 import net.runelite.client.plugins.config.ConfigPanel;
 import net.runelite.client.plugins.slayer.Task;
 import net.runelite.client.plugins.slayerarea.SlayerArea;
@@ -41,6 +42,9 @@ public class SlayerAreaPluginPanel extends PluginPanel {
     @Inject
     private SlayerAreaPlugin plugin;
 
+    @Inject
+    private Client client;
+
     private final List<AreaPanelItem> areaPanelList = new ArrayList<>();
     private final JPanel markerView = new JPanel(new GridBagLayout());
     private final IconTextField searchBar = new IconTextField();
@@ -57,7 +61,7 @@ public class SlayerAreaPluginPanel extends PluginPanel {
         topPanel.setLayout(new BorderLayout(0, 6));
         add(topPanel, BorderLayout.NORTH);
 
-        AreaCreateItem createItem = new AreaCreateItem(this);
+        AreaCreateItem createItem = new AreaCreateItem(this, client);
         topPanel.add(createItem, BorderLayout.NORTH);
 
         centerPanel = new JPanel(new BorderLayout());

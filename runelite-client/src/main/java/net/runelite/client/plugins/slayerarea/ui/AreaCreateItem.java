@@ -1,5 +1,7 @@
 package net.runelite.client.plugins.slayerarea.ui;
 
+import net.runelite.api.Client;
+import net.runelite.api.coords.WorldPoint;
 import net.runelite.client.plugins.slayerarea.SlayerArea;
 import net.runelite.client.plugins.slayerarea.SlayerAreas;
 import net.runelite.client.ui.ColorScheme;
@@ -11,9 +13,11 @@ import java.awt.*;
 public class AreaCreateItem extends AreaPanelItem {
     private SlayerAreaPluginPanel parent;
     private Boolean hide;
-    AreaCreateItem(SlayerAreaPluginPanel parent) {
+    private Client client;
+    AreaCreateItem(SlayerAreaPluginPanel parent, Client client) {
         super(-1, new SlayerArea());
         this.parent = parent;
+        this.client = client;
         setBackground(new Color(.10f,.15f,.25f));
     }
 
@@ -48,7 +52,8 @@ public class AreaCreateItem extends AreaPanelItem {
         JButton calcButton = new JButton("Calculate");
         calcButton.setLayout(new BorderLayout(0, 6));
         calcButton.addActionListener(e -> {
-            area = new SlayerArea();
+            WorldPoint localWorld = client.getLocalPlayer().getWorldLocation();
+            id = localWorld.getRegionID();
             rebuild();
         });
         add(calcButton, gbc);
@@ -61,6 +66,8 @@ public class AreaCreateItem extends AreaPanelItem {
             SlayerAreas.addArea(id, area);
             parent.addArea(id, area);
             parent.refresh();
+            area = new SlayerArea();
+            rebuild();
         });
         add(saveButton, gbc);
         gbc.gridy++;

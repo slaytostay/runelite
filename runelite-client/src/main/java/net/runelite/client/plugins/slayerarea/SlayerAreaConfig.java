@@ -9,8 +9,8 @@ public interface SlayerAreaConfig extends Config
 {
     @ConfigItem(
             keyName = "removeSlayerIcons",
-            name = "Remove slayer icons",
-            description = "Remove slayer icons when deactivating the WorldMap puglin",
+            name = "Draw slayer icons",
+            description = "Draw slayer area monster icons on map",
             position = 1
     )
     default boolean removeSlayerIcons()

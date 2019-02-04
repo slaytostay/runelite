@@ -25,37 +25,21 @@
  */
 package net.runelite.client.plugins.worldmap;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-import com.google.gson.reflect.TypeToken;
-import com.google.gson.stream.JsonReader;
 import com.google.inject.Inject;
 import com.google.inject.Provides;
 import java.awt.image.BufferedImage;
-import java.io.FileReader;
-import java.io.IOException;
-import java.lang.reflect.Type;
 import java.util.*;
-import java.util.concurrent.ScheduledExecutorService;
 
 import net.runelite.api.*;
-import net.runelite.api.coords.WorldPoint;
 import net.runelite.api.events.ConfigChanged;
 import net.runelite.api.events.ExperienceChanged;
 import net.runelite.api.events.GameStateChanged;
-import net.runelite.client.callback.ClientThread;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
-import net.runelite.client.game.ItemManager;
 import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
-import net.runelite.client.plugins.slayerarea.SlayerArea;
-import net.runelite.client.plugins.slayerarea.SlayerAreaPoint;
-import net.runelite.client.plugins.slayerarea.SlayerAreas;
-import net.runelite.client.ui.overlay.worldmap.WorldMapPoint;
 import net.runelite.client.ui.overlay.worldmap.WorldMapPointManager;
 import net.runelite.client.util.ImageUtil;
-import net.runelite.client.plugins.slayer.Task;
 
 @PluginDescriptor(
 	name = "World Map",
@@ -113,15 +97,6 @@ public class WorldMapPlugin extends Plugin
 	@Inject
 	private WorldMapPointManager worldMapPointManager;
 
-    @Inject
-    private ItemManager itemManager;
-
-    @Inject
-    private ClientThread clientThread;
-
-    @Inject
-    private ScheduledExecutorService executor;
-
 	private int agilityLevel = 0;
 	private int woodcuttingLevel = 0;
 
@@ -149,7 +124,6 @@ public class WorldMapPlugin extends Plugin
 		worldMapPointManager.removeIf(MinigamePoint.class::isInstance);
 		worldMapPointManager.removeIf(FarmingPatchPoint.class::isInstance);
 		worldMapPointManager.removeIf(RareTreePoint.class::isInstance);
-		if (SlayerAreas.configSlayerIcons) worldMapPointManager.removeIf(SlayerAreaPoint.class::isInstance);
 		agilityLevel = 0;
 		woodcuttingLevel = 0;
 	}
@@ -294,29 +268,6 @@ public class WorldMapPlugin extends Plugin
 				}
 			}).map(TeleportPoint::new)
 			.forEach(worldMapPointManager::add);
-
-		Map<Integer, SlayerArea> areas = SlayerAreas.getAreas();
-		if (areas == null || areas.size() <= 0) return;
-		for (Map.Entry<Integer, SlayerArea> entry : areas.entrySet()) {
-			int id = entry.getKey();
-			SlayerArea area = entry.getValue();
-
-			if (area.unlocked) continue;
-
-			int x = SlayerArea.getX(id) + 32;
-			int y = SlayerArea.getY(id) + 32;
-
-			WorldPoint point = new WorldPoint(x,y,0);
-			String tip = area.strongest;
-			if (client.getGameState().ordinal() >= GameState.LOGIN_SCREEN.ordinal()) {
-				clientThread.invoke(() -> {
-					BufferedImage icon = area.getImage(itemManager);
-					if (icon == null) icon = NOPE_ICON;
-					SlayerAreaPoint sap = new SlayerAreaPoint(point, tip, icon);
-					worldMapPointManager.add(sap);
-				});
-			}
-		}
 	}
 
 

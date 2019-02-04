@@ -738,10 +738,8 @@ public class GpuPlugin extends Plugin implements DrawCallbacks
 		{
 			int region = client.getMapRegions()[i];
 			if (!SlayerAreas.configLockedShader) loadedLockedRegions[i] = region;
-			if (SlayerAreas.getAreas().containsKey(region)) {
-				if (SlayerAreas.getAreas().get(region).unlocked) {
-					loadedLockedRegions[i] = region;
-				}
+			if (SlayerAreas.isUnlocked(region)) {
+				loadedLockedRegions[i] = region;
 			}
 		}
 

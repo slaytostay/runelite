@@ -1129,6 +1129,188 @@
     "strongest": "Ghost",
     "unlocked": false
   },
+  "8252": {
+    "name": "Lunar Isle (South East)",
+    "monsters": [
+      "Suqah"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Suqah",
+    "unlocked": false
+  },
+  "8253": {
+    "name": "Lunar Isle (North East)",
+    "monsters": [
+      "Suqah"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Suqah",
+    "unlocked": false
+  },
+  "8496": {
+    "name": "Port Tyras",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
+  "8508": {
+    "name": "Lunar Isle (South East)",
+    "monsters": [
+      "Rat",
+      "Suqah"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Suqah",
+    "unlocked": false
+  },
+  "8509": {
+    "name": "Lunar Isle (North East)",
+    "monsters": [
+      "Suqah"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Suqah",
+    "unlocked": false
+  },
+  "8751": {
+    "name": "Zul-Andra",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
+  "8752": {
+    "name": "Poison Waste",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
+  "8753": {
+    "name": "Tyras Camp",
+    "monsters": [
+      "Chicken",
+      "Bear cub",
+      "Grizzly bear"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Grizzly bear",
+    "unlocked": false
+  },
+  "8754": {
+    "name": "Elf Camp",
+    "monsters": [
+      "Elf warrior",
+      "Bear cub",
+      "Grizzly bear"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Elf warrior",
+    "unlocked": false
+  },
+  "8763": {
+    "name": "Pirates\u0027 Cove",
+    "monsters": [
+      "Rat",
+      "Moss giant"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Moss giant",
+    "unlocked": false
+  },
+  "9008": {
+    "name": "Zulrah\u0027s Shrine",
+    "monsters": [
+      "Zulrah"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Zulrah",
+    "unlocked": false
+  },
+  "9009": {
+    "name": "Isafdar",
+    "monsters": [
+      "Dire wolf",
+      "Bear cub",
+      "Grizzly bear"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Dire wolf",
+    "unlocked": false
+  },
+  "9010": {
+    "name": "Isafdar",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
   "9016": {
     "name": "Kraken Cove Entrance",
     "monsters": [],
@@ -1143,6 +1325,20 @@
       "unlocked": false
     },
     "strongest": "Kraken",
+    "unlocked": false
+  },
+  "9023": {
+    "name": "Ungael",
+    "monsters": [
+      "Vorkath"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Vorkath",
     "unlocked": false
   },
   "9263": {
@@ -1161,8 +1357,79 @@
     "strongest": "Thermonuclear smoke devil",
     "unlocked": false
   },
+  "9265": {
+    "name": "Lletya",
+    "monsters": [
+      "Elf warrior"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Elf warrior",
+    "unlocked": false
+  },
+  "9266": {
+    "name": "Underground Pass Exit",
+    "monsters": [
+      "Mourner"
+    ],
+    "below": {
+      "name": "Underground Pass Exit Cave",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Mourner",
+    "unlocked": false
+  },
+  "9267": {
+    "name": "Arandar",
+    "monsters": [
+      "Dire wolf",
+      "Mourner",
+      "Deadly red spider"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Dire wolf",
+    "unlocked": false
+  },
   "9270": {
     "name": "Eagles\u0027 Peak",
+    "monsters": [],
+    "below": {
+      "name": "Iban\u0027s Lair Pit (North)",
+      "monsters": [
+        "Blessed spider",
+        "Kalrag"
+      ],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Kalrag",
+    "unlocked": false
+  },
+  "9271": {
+    "name": "Piscatoris Hunter Area",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
+  "9272": {
+    "name": "Piscatoris Hunter Area",
     "monsters": [],
     "below": {
       "name": "",
@@ -1187,6 +1454,34 @@
     "strongest": "Skeleton mage",
     "unlocked": false
   },
+  "9275": {
+    "name": "Neitiznot",
+    "monsters": [
+      "Ice troll"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Ice troll",
+    "unlocked": false
+  },
+  "9276": {
+    "name": "Fremennik Isles (West)",
+    "monsters": [
+      "Ice troll"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Ice troll",
+    "unlocked": false
+  },
   "9519": {
     "name": "South of Castle Wars",
     "monsters": [
@@ -1201,6 +1496,41 @@
       "unlocked": false
     },
     "strongest": "Smoke devil",
+    "unlocked": false
+  },
+  "9522": {
+    "name": "Arandar",
+    "monsters": [],
+    "below": {
+      "name": "Underground Pass",
+      "monsters": [
+        "Rat",
+        "Blessed giant rat",
+        "Skeleton",
+        "Giant bat",
+        "Goblin"
+      ],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Giant bat",
+    "unlocked": false
+  },
+  "9523": {
+    "name": "Arandar",
+    "monsters": [],
+    "below": {
+      "name": "Underground Pass",
+      "monsters": [
+        "Blessed spider",
+        "Ogre",
+        "Skeleton",
+        "Zombie"
+      ],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Ogre",
     "unlocked": false
   },
   "9524": {
@@ -1250,6 +1580,36 @@
       "unlocked": false
     },
     "strongest": "",
+    "unlocked": false
+  },
+  "9531": {
+    "name": "Jatizso",
+    "monsters": [],
+    "below": {
+      "name": "Jatizso Mine",
+      "monsters": [
+        "Ice troll"
+      ],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Ice troll",
+    "unlocked": false
+  },
+  "9532": {
+    "name": "Fremennik Isles (East)",
+    "monsters": [
+      "Ice troll"
+    ],
+    "below": {
+      "name": "Fremennik Isles Dungeon",
+      "monsters": [
+        "Ice troll"
+      ],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Ice troll",
     "unlocked": false
   },
   "9540": {
@@ -1332,6 +1692,18 @@
     "strongest": "Skogre",
     "unlocked": false
   },
+  "9776": {
+    "name": "Castle Wars",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
   "9777": {
     "name": "Observatory",
     "monsters": [
@@ -1346,6 +1718,42 @@
       "unlocked": false
     },
     "strongest": "Grizzly bear",
+    "unlocked": false
+  },
+  "9778": {
+    "name": "Ourania Altar Entrance",
+    "monsters": [
+      "Grave scorpion",
+      "Ghost",
+      "Hill giant"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Hill giant",
+    "unlocked": false
+  },
+  "9779": {
+    "name": "West Argdougne (West)",
+    "monsters": [
+      "Rat",
+      "Wolf"
+    ],
+    "below": {
+      "name": "Underground Pass",
+      "monsters": [
+        "Giant bat",
+        "Goblin",
+        "Blessed spider",
+        "Zombie"
+      ],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Wolf",
     "unlocked": false
   },
   "9780": {
@@ -1445,6 +1853,18 @@
     "strongest": "Seagull",
     "unlocked": false
   },
+  "10029": {
+    "name": "Feldip Hills Hunter Area",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
   "10030": {
     "name": "Feldip Hills (North West)",
     "monsters": [
@@ -1528,9 +1948,26 @@
     "strongest": "Mounted terrorbird gnome",
     "unlocked": false
   },
+  "10035": {
+    "name": "West Argdougne (East)",
+    "monsters": [
+      "Rat",
+      "Ghost",
+      "Zombie"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Zombie",
+    "unlocked": false
+  },
   "10036": {
     "name": "Combat Training Camp",
     "monsters": [
+      "Rat",
       "Ogre"
     ],
     "below": {
@@ -1603,6 +2040,36 @@
     "strongest": "Dagannoth",
     "unlocked": false
   },
+  "10042": {
+    "name": "Waterbirth Island",
+    "monsters": [
+      "Hobgoblin"
+    ],
+    "below": {
+      "name": "Waterbirth Island Dungeon",
+      "monsters": [
+        "Dagannoth"
+      ],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Dagannoth",
+    "unlocked": false
+  },
+  "10044": {
+    "name": "Miscellania",
+    "monsters": [
+      "Chicken"
+    ],
+    "below": {
+      "name": "Miscellania Dungeon",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Chicken",
+    "unlocked": false
+  },
   "10284": {
     "name": "Corsair Cove (East)",
     "monsters": [
@@ -1615,6 +2082,18 @@
       "unlocked": false
     },
     "strongest": "Seagull",
+    "unlocked": false
+  },
+  "10285": {
+    "name": "Feldip Hills Hunter Area",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
     "unlocked": false
   },
   "10286": {
@@ -1789,6 +2268,18 @@
     "strongest": "Fire giant",
     "unlocked": false
   },
+  "10296": {
+    "name": "Lighthouse Bridge",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
   "10297": {
     "name": "Rellekka (South West)",
     "monsters": [],
@@ -1801,16 +2292,33 @@
     "strongest": "",
     "unlocked": false
   },
+  "10300": {
+    "name": "Etceteria",
+    "monsters": [
+      "Chicken",
+      "Rooster"
+    ],
+    "below": {
+      "name": "Etceteria Dungeon",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Sea snake",
+    "unlocked": false
+  },
   "10542": {
     "name": "Rantz\u0027 Cave Entrance",
-    "monsters": [],
+    "monsters": [
+      "Chompy bird"
+    ],
     "below": {
       "name": "",
       "monsters": [],
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "",
+    "strongest": "Chompy bird",
     "unlocked": false
   },
   "10544": {
@@ -1980,6 +2488,41 @@
     "strongest": "Hobgoblin",
     "unlocked": false
   },
+  "10794": {
+    "name": "Ape Atoll",
+    "monsters": [
+      "Bird",
+      "Jungle spider"
+    ],
+    "below": {
+      "name": "Ape Atoll Dungeon (East)",
+      "monsters": [
+        "Spider",
+        "Monkey zombie",
+        "Skeleton"
+      ],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Skeleton",
+    "unlocked": false
+  },
+  "10795": {
+    "name": "Ape Atoll Glider",
+    "monsters": [
+      "Bird",
+      "Jungle spider",
+      "Monkey archer"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Monkey archer",
+    "unlocked": false
+  },
   "10801": {
     "name": "Brimhaven Jungle (South)",
     "monsters": [
@@ -2112,6 +2655,18 @@
     "strongest": "Kurask",
     "unlocked": false
   },
+  "10809": {
+    "name": "East of Rellekka",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
   "10810": {
     "name": "Keldagrim Entrance",
     "monsters": [],
@@ -2130,6 +2685,18 @@
   },
   "10811": {
     "name": "Polar Hunter Area",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
+  "10821": {
+    "name": "Abandoned Mine (South West)",
     "monsters": [],
     "below": {
       "name": "",
@@ -2182,6 +2749,45 @@
       "unlocked": false
     },
     "strongest": "Guard (Goblin)",
+    "unlocked": false
+  },
+  "11050": {
+    "name": "Ape Atoll",
+    "monsters": [
+      "Bird",
+      "Jungle spider"
+    ],
+    "below": {
+      "name": "Ape Atoll Dungeon (West)",
+      "monsters": [
+        "Spider",
+        "Monkey zombie"
+      ],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Monkey zombie",
+    "unlocked": false
+  },
+  "11051": {
+    "name": "Marim",
+    "monsters": [
+      "Spider",
+      "Bird",
+      "Scorpion",
+      "Monkey guard",
+      "Monkey archer"
+    ],
+    "below": {
+      "name": "Temple of Marimbo",
+      "monsters": [
+        "Spider",
+        "Monkey zombie"
+      ],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Monkey guard",
     "unlocked": false
   },
   "11053": {
@@ -2377,6 +2983,18 @@
       "unlocked": false
     },
     "strongest": "Ice troll",
+    "unlocked": false
+  },
+  "11077": {
+    "name": "Abandoned Mine (South East)",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
     "unlocked": false
   },
   "11309": {
@@ -2632,6 +3250,21 @@
       "unlocked": false
     },
     "strongest": "Ice wolf",
+    "unlocked": false
+  },
+  "11562": {
+    "name": "Crash Island",
+    "monsters": [
+      "Bird",
+      "Scorpion"
+    ],
+    "below": {
+      "name": "Maniacal Monkeys",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Scorpion",
     "unlocked": false
   },
   "11565": {
@@ -3288,6 +3921,18 @@
     "strongest": "Fire giant",
     "unlocked": false
   },
+  "12296": {
+    "name": "Lighthouse Bridge",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
   "12337": {
     "name": "Wizard Tower",
     "monsters": [
@@ -3503,6 +4148,44 @@
     "strongest": "Rogue",
     "unlocked": false
   },
+  "12589": {
+    "name": "Quarry",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
+  "12590": {
+    "name": "Bandit Camp",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
+  "12591": {
+    "name": "Bedabin Camp",
+    "monsters": [
+      "Desert wolf"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Desert wolf",
+    "unlocked": false
+  },
   "12593": {
     "name": "Lumbridge Swamp (West)",
     "monsters": [
@@ -3714,6 +4397,64 @@
       "unlocked": false
     },
     "strongest": "Hellhound",
+    "unlocked": false
+  },
+  "12845": {
+    "name": "Pyramid",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
+  "12846": {
+    "name": "North of Pyramid",
+    "monsters": [
+      "Desert wolf"
+    ],
+    "below": {
+      "name": "Smoke Dungeon (West)",
+      "monsters": [
+        "Pyrefiend",
+        "Dust devil",
+        "Fire giant"
+      ],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Dust devil",
+    "unlocked": false
+  },
+  "12847": {
+    "name": "East of Bedabin Camp",
+    "monsters": [
+      "Desert wolf"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Desert wolf",
+    "unlocked": false
+  },
+  "12848": {
+    "name": "Kalphite Hives Entrance",
+    "monsters": [
+      "Desert wolf"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Desert wolf",
     "unlocked": false
   },
   "12849": {
@@ -3958,6 +4699,70 @@
     "strongest": "Scarabite",
     "unlocked": false
   },
+  "13101": {
+    "name": "East of Pyramid",
+    "monsters": [
+      "Jackal",
+      "Crocodile"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Crocodile",
+    "unlocked": false
+  },
+  "13102": {
+    "name": "Smoke Dungeon Entrance",
+    "monsters": [
+      "Desert wolf"
+    ],
+    "below": {
+      "name": "Smoke Dungeon (East)",
+      "monsters": [
+        "Pyrefiend",
+        "Fire giant"
+      ],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Pyrefiend",
+    "unlocked": false
+  },
+  "13103": {
+    "name": "Bandit Mining Camp",
+    "monsters": [
+      "Desert wolf"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Desert wolf",
+    "unlocked": false
+  },
+  "13104": {
+    "name": "Shantay Pass",
+    "monsters": [
+      "Desert wolf"
+    ],
+    "below": {
+      "name": "Kalphite Caves",
+      "monsters": [
+        "Kalphite worker",
+        "Kalphite soldier",
+        "Kalphite guardian"
+      ],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Kalphite guardian",
+    "unlocked": false
+  },
   "13105": {
     "name": "Al Kharid (South)",
     "monsters": [
@@ -4164,6 +4969,83 @@
     "strongest": "Vulture",
     "unlocked": false
   },
+  "13357": {
+    "name": "West of Nardah",
+    "monsters": [
+      "Jackal",
+      "Crocodile"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Crocodile",
+    "unlocked": false
+  },
+  "13358": {
+    "name": "Pollnivneach",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
+  "13359": {
+    "name": "North of Pollnivneach",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
+  "13360": {
+    "name": "West of Shantay Pass",
+    "monsters": [],
+    "below": {
+      "name": "Kalphite Cave (East)",
+      "monsters": [
+        "Kalphite soldier"
+      ],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Kalphite soldier",
+    "unlocked": false
+  },
+  "13361": {
+    "name": "Clan Wars",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
+  "13362": {
+    "name": "Duel Arena",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
   "13363": {
     "name": "Mage Training Arena",
     "monsters": [],
@@ -4204,6 +5086,20 @@
     "strongest": "Skeleton",
     "unlocked": false
   },
+  "13366": {
+    "name": "Silvarea",
+    "monsters": [
+      "Bat"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Bat",
+    "unlocked": false
+  },
   "13369": {
     "name": "East of Black Salamanders",
     "monsters": [
@@ -4230,6 +5126,152 @@
     "strongest": "",
     "unlocked": false
   },
+  "13614": {
+    "name": "North of Nardah",
+    "monsters": [
+      "Jackal"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Jackal",
+    "unlocked": false
+  },
+  "13615": {
+    "name": "Lizards",
+    "monsters": [
+      "Lizard",
+      "Jackal"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Lizard",
+    "unlocked": false
+  },
+  "13616": {
+    "name": "West of Uzer",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
+  "13617": {
+    "name": "Desert Eagle Station",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
+  "13618": {
+    "name": "Abandoned Mine Entrance",
+    "monsters": [],
+    "below": {
+      "name": "Abandoned Mine (Top)",
+      "monsters": [
+        "Bat",
+        "Giant bat",
+        "Skeleton"
+      ],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Skeleton",
+    "unlocked": false
+  },
+  "13619": {
+    "name": "Mort Myre Swamp Path",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
+  "13620": {
+    "name": "Mort Myre Swamp (South West)",
+    "monsters": [],
+    "below": {
+      "name": "Nature Grotto",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
+  "13621": {
+    "name": "Mort Myre Swamp (North West)",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
+  "13622": {
+    "name": "Paterdomus Temple",
+    "monsters": [
+      "Bat",
+      "Ghoul"
+    ],
+    "below": {
+      "name": "Paterdomus Cellar",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Ghoul",
+    "unlocked": false
+  },
+  "13623": {
+    "name": "Slayer Tower",
+    "monsters": [
+      "Aberrant spectre",
+      "Abyssal demon",
+      "Banshee",
+      "Bloodveld",
+      "Crawling hand",
+      "Gargoyle",
+      "Infernal mage",
+      "Nechrael"
+    ],
+    "below": {
+      "name": "Slayer Tower Basement",
+      "monsters": [
+        "Abyssal demon",
+        "Bloodveld",
+        "Gargoyle",
+        "Nechrael"
+      ],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Abyssal demon",
+    "unlocked": false
+  },
   "13872": {
     "name": "Ruins of Uzer",
     "monsters": [],
@@ -4245,6 +5287,585 @@
       "unlocked": false
     },
     "strongest": "Kalphite queen",
+    "unlocked": false
+  },
+  "13873": {
+    "name": "Burgh de Rott (South)",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
+  "13874": {
+    "name": "Burgh de Rott",
+    "monsters": [
+      "Rat",
+      "Feral vampyre"
+    ],
+    "below": {
+      "name": "Burgh de Rott Hideout",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Feral vampyre",
+    "unlocked": false
+  },
+  "13875": {
+    "name": "Mor\u0027ton",
+    "monsters": [
+      "Loar shade"
+    ],
+    "below": {
+      "name": "Shade Catacombs",
+      "monsters": [
+        "Loar shade",
+        "Phrin shade",
+        "Riyl shade",
+        "Asyn shade",
+        "Fiyr shade"
+      ],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Fiyr shade",
+    "unlocked": false
+  },
+  "13876": {
+    "name": "Mort Myre Swamp (South East)",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
+  "13877": {
+    "name": "Mort Myre Swamp (North East)",
+    "monsters": [],
+    "below": {
+      "name": "Myreque Shortcut",
+      "monsters": [
+        "Rat",
+        "Giant rat",
+        "Goblin",
+        "Hobgoblin",
+        "Poison spider",
+        "Deadly red spider"
+      ],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Poison spider",
+    "unlocked": false
+  },
+  "13878": {
+    "name": "Canafis",
+    "monsters": [
+      "Werewolf"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Werewolf",
+    "unlocked": false
+  },
+  "13879": {
+    "name": "Mausoleum",
+    "monsters": [],
+    "below": {
+      "name": "Experiment Cave (West)",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
+  "14129": {
+    "name": "Burgh de Rott Dock",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
+  "14130": {
+    "name": "Burgh de Rott (West)",
+    "monsters": [
+      "Vampyre juvenile"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Vampyre juvenile",
+    "unlocked": false
+  },
+  "14131": {
+    "name": "Barrows",
+    "monsters": [
+      "Loar shade"
+    ],
+    "below": {
+      "name": "Barrows Crypt",
+      "monsters": [
+        "Barrows brother",
+        "Skeleton",
+        "Crypt rat",
+        "Crypt spider",
+        "Giant crypt rat",
+        "Giant crypt spider"
+      ],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Barrows brother",
+    "unlocked": false
+  },
+  "14132": {
+    "name": "Castle Drakan",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
+  "14134": {
+    "name": "Haunted Woods (West)",
+    "monsters": [
+      "Bat",
+      "Feral vampyre"
+    ],
+    "below": {
+      "name": "Werewolf Agility Course",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Feral vampyre",
+    "unlocked": false
+  },
+  "14135": {
+    "name": "Fenkenstrain\u0027s Castle",
+    "monsters": [],
+    "below": {
+      "name": "Experiment Cave (East)",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
+  "14385": {
+    "name": "Meiyerditch (South)",
+    "monsters": [
+      "Vampyre juvinate",
+      "Vyrewatch"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Vyrewatch",
+    "unlocked": false
+  },
+  "14386": {
+    "name": "Meiyerditch (Middle)",
+    "monsters": [
+      "Vampyre juvinate",
+      "Vyrewatch"
+    ],
+    "below": {
+      "name": "Myreque Hideout",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Vyrewatch",
+    "unlocked": false
+  },
+  "14387": {
+    "name": "Meiyerditch (North)",
+    "monsters": [
+      "Vampyre juvinate",
+      "Vyrewatch"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Vyrewatch",
+    "unlocked": false
+  },
+  "14388": {
+    "name": "Darkmeyer",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
+  "14389": {
+    "name": "Haunted Woods (South East)",
+    "monsters": [
+      "Bat",
+      "Feral vampyre"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Feral vampyre",
+    "unlocked": false
+  },
+  "14390": {
+    "name": "Haunted Woods (East)",
+    "monsters": [
+      "Bat",
+      "Feral vampyre"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Feral vampyre",
+    "unlocked": false
+  },
+  "14391": {
+    "name": "Port Phasmatys Farm",
+    "monsters": [
+      "Undead chicken",
+      "Undead cow"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Undead cow",
+    "unlocked": false
+  },
+  "14638": {
+    "name": "Mos Le\u0027Harmless",
+    "monsters": [
+      "Rat"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Rat",
+    "unlocked": false
+  },
+  "14639": {
+    "name": "Mos Le\u0027Harmless (West)",
+    "monsters": [
+      "Monkey",
+      "Jungle horror"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Jungle horror",
+    "unlocked": false
+  },
+  "14642": {
+    "name": "Ver Sinhaza",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
+  "14643": {
+    "name": "Slepe (South West)",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
+  "14644": {
+    "name": "Slepe (North West)",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
+  "14645": {
+    "name": "South of Port Physmatis",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
+  "14646": {
+    "name": "Port Phasmatys",
+    "monsters": [
+      "Tortured soul"
+    ],
+    "below": {
+      "name": "Ectofuntus Basement",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Tortured soul",
+    "unlocked": false
+  },
+  "14647": {
+    "name": "Ectofuntus",
+    "monsters": [
+      "Tortured soul"
+    ],
+    "below": {
+      "name": "Port Phasmatys Brewery",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Tortured soul",
+    "unlocked": false
+  },
+  "14650": {
+    "name": "Tar Swamp",
+    "monsters": [
+      "Deranged archaeologist"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Deranged archaeologist",
+    "unlocked": false
+  },
+  "14651": {
+    "name": "West of Museum Camp",
+    "monsters": [
+      "Ancient zygomite"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Ancient zygomite",
+    "unlocked": false
+  },
+  "14652": {
+    "name": "Mushroom Forest",
+    "monsters": [
+      "Ancient zygomite"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Ancient zygomite",
+    "unlocked": false
+  },
+  "14894": {
+    "name": "Mos Le\u0027Harmless Caves Entrance",
+    "monsters": [
+      "Monkey",
+      "Jungle horror"
+    ],
+    "below": {
+      "name": "Mos Le\u0027Harmless Caves",
+      "monsters": [
+        "Giant bat",
+        "Cave horror"
+      ],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Cave horror",
+    "unlocked": false
+  },
+  "14895": {
+    "name": "Mos Le\u0027Harmless (East)",
+    "monsters": [
+      "Monkey",
+      "Jungle horror"
+    ],
+    "below": {
+      "name": "Mos Le\u0027Harmless Caves",
+      "monsters": [
+        "Giant bat",
+        "Cave horror"
+      ],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Cave horror",
+    "unlocked": false
+  },
+  "14899": {
+    "name": "Slepe (South East)",
+    "monsters": [
+      "Rat",
+      "Giant rat"
+    ],
+    "below": {
+      "name": "Slepe Dungeon (South)",
+      "monsters": [
+        "Rat"
+      ],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Giant rat",
+    "unlocked": false
+  },
+  "14900": {
+    "name": "Crombwick Manor",
+    "monsters": [
+      "Vampyre juvenile",
+      "Vyrewatch"
+    ],
+    "below": {
+      "name": "Slepe Dungeon (North)",
+      "monsters": [
+        "Bat"
+      ],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Vyrewatch",
+    "unlocked": false
+  },
+  "14901": {
+    "name": "North of Crombwick Manor",
+    "monsters": [
+      "Giant bat"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Giant bat",
+    "unlocked": false
+  },
+  "14906": {
+    "name": "Verdant Valley",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
+  "14908": {
+    "name": "House on the Hill (West)",
+    "monsters": [],
+    "below": {
+      "name": "Underwater (West)",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
+  "15148": {
+    "name": "Harmony",
+    "monsters": [
+      "Zombie pirate"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Zombie pirate",
+    "unlocked": false
+  },
+  "15151": {
+    "name": "Trouble Brewing",
+    "monsters": [
+      "Monkey",
+      "Jungle horror"
+    ],
+    "below": {
+      "name": "Mos Le\u0027Harmless Caves",
+      "monsters": [
+        "Giant bat",
+        "Cave horror"
+      ],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Cave horror",
     "unlocked": false
   }
 }
