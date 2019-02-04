@@ -1317,6 +1317,18 @@
     "strongest": "Moss giant",
     "unlocked": false
   },
+  "8781": {
+    "name": "Games Room",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": true
+  },
   "9008": {
     "name": "Zulrah\u0027s Shrine",
     "monsters": [
@@ -2403,6 +2415,18 @@
     "strongest": "Sea snake",
     "unlocked": false
   },
+  "10537": {
+    "name": "Pest Control",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
   "10542": {
     "name": "Rantz\u0027 Cave Entrance",
     "monsters": [
@@ -3346,6 +3370,20 @@
     "strongest": "Ice troll",
     "unlocked": false
   },
+  "11323": {
+    "name": "Ice Path (North)",
+    "monsters": [],
+    "below": {
+      "name": "Keldagrim (North West)",
+      "monsters": [
+        "Black guard (Dwarf)"
+      ],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Black guard (Dwarf)",
+    "unlocked": false
+  },
   "11325": {
     "name": "Weiss (West)",
     "monsters": [
@@ -3957,7 +3995,7 @@
     "unlocked": false
   },
   "12087": {
-    "name": "North of Monastary",
+    "name": "North of Monastery",
     "monsters": [
       "Scorpion"
     ],
@@ -4068,6 +4106,30 @@
     },
     "strongest": "Fire giant",
     "unlocked": false
+  },
+  "12109": {
+    "name": "Rogues\u0027 Den (South)",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": true
+  },
+  "12110": {
+    "name": "Rogues\u0027 Den",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": true
   },
   "12296": {
     "name": "Lighthouse Bridge",
