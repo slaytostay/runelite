@@ -101,8 +101,15 @@ class SlayerAreaOverlay extends Overlay
                 int labelWidth = (int) textBounds.getWidth() + 2 * LABEL_PADDING;
                 int labelHeight = (int) textBounds.getHeight() + 2 * LABEL_PADDING;
                 //graphics.fillRect(xPos, yPos, labelWidth, labelHeight);
+
                 if (!SlayerAreas.isUnlocked(regionId)) {
-                    graphics.setColor(new Color(0, 38, 72, 127));
+                    SlayerArea area = SlayerAreas.getAreas().get(regionId);
+                    Color color;
+                    if (area == null || area.strongest == null || area.strongest.equals(""))
+                        color = new Color(72, 38, 0, 200);
+                    else
+                        color = new Color(0, 38, 72, 200);
+                    graphics.setColor(color);
                     graphics.fillRect(xPos, yPos, regionPixelSize, regionPixelSize);
                 }
                 graphics.setColor(WHITE_TRANSLUCENT);

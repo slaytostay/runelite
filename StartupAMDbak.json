@@ -1,4 +1,28 @@
 {
+  "4663": {
+    "name": "West of Mount Quidamortem",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
+  "4664": {
+    "name": "West of Kebos Swamp",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
   "4918": {
     "name": "South of Mount Quidamortem",
     "monsters": [
@@ -656,6 +680,18 @@
     "strongest": "Ice wolf",
     "unlocked": false
   },
+  "6205": {
+    "name": "Unmarked Grave",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
   "6453": {
     "name": "Sand Crab Cave Entrance",
     "monsters": [],
@@ -793,6 +829,18 @@
   },
   "6461": {
     "name": "Wintertodt Camp",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
+  "6462": {
+    "name": "Windtertodt",
     "monsters": [],
     "below": {
       "name": "",
@@ -1357,6 +1405,18 @@
     "strongest": "Thermonuclear smoke devil",
     "unlocked": false
   },
+  "9264": {
+    "name": "East of Zulrah\u0027s Shrine",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
   "9265": {
     "name": "Lletya",
     "monsters": [
@@ -1496,6 +1556,30 @@
       "unlocked": false
     },
     "strongest": "Smoke devil",
+    "unlocked": false
+  },
+  "9520": {
+    "name": "Castle Wars Arena",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
+  "9521": {
+    "name": "East of Lletya",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
     "unlocked": false
   },
   "9522": {
@@ -1639,6 +1723,18 @@
       "unlocked": false
     },
     "strongest": "Mutated zygomite",
+    "unlocked": false
+  },
+  "9772": {
+    "name": "Myths\u0027 Guild",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
     "unlocked": false
   },
   "9773": {
@@ -2884,6 +2980,18 @@
     "strongest": "Jungle spider",
     "unlocked": false
   },
+  "11059": {
+    "name": "Fishing Platform",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
   "11060": {
     "name": "Entrana (West)",
     "monsters": [
@@ -3498,6 +3606,46 @@
       "unlocked": false
     },
     "strongest": "Black guard (Dwarf)",
+    "unlocked": false
+  },
+  "11821": {
+    "name": "East of Kharazi Jungle",
+    "monsters": [
+      "Monkey"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Monkey",
+    "unlocked": false
+  },
+  "11822": {
+    "name": "Karamja Glider",
+    "monsters": [
+      "Monkey"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Monkey",
+    "unlocked": false
+  },
+  "11823": {
+    "name": "Ship Yard",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
     "unlocked": false
   },
   "11824": {
@@ -4681,6 +4829,20 @@
     "strongest": "Scorpia",
     "unlocked": false
   },
+  "13099": {
+    "name": "Sophanem",
+    "monsters": [],
+    "below": {
+      "name": "Sophanem Dungeon",
+      "monsters": [
+        "Scarabite"
+      ],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Scarabite",
+    "unlocked": false
+  },
   "13100": {
     "name": "North of Sophanem",
     "monsters": [
@@ -4896,10 +5058,9 @@
     "unlocked": false
   },
   "13114": {
-    "name": "Venenatis",
+    "name": "West of Venenatis",
     "monsters": [
-      "Skeleton",
-      "Venenatis"
+      "Skeleton"
     ],
     "below": {
       "name": "",
@@ -4907,7 +5068,7 @@
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "Venenatis",
+    "strongest": "Skeleton",
     "unlocked": false
   },
   "13115": {
@@ -5100,6 +5261,30 @@
     "strongest": "Bat",
     "unlocked": false
   },
+  "13367": {
+    "name": "North of Silvarea",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
+  "13368": {
+    "name": "East of Ent Forest",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
   "13369": {
     "name": "East of Black Salamanders",
     "monsters": [
@@ -5112,6 +5297,56 @@
       "unlocked": false
     },
     "strongest": "Green dragon",
+    "unlocked": false
+  },
+  "13370": {
+    "name": "East of Venenatis",
+    "monsters": [
+      "Venenatis"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Venenatis",
+    "unlocked": false
+  },
+  "13371": {
+    "name": "East of Poison Spiders",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
+  "13372": {
+    "name": "Fountain of Rune",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
+  "13373": {
+    "name": "Volcanic Forge",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
     "unlocked": false
   },
   "13613": {
@@ -5442,6 +5677,20 @@
   },
   "14132": {
     "name": "Castle Drakan",
+    "monsters": [
+      "Vyrewatch"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Vyrewatch",
+    "unlocked": false
+  },
+  "14133": {
+    "name": "Vampyre Graveyard",
     "monsters": [],
     "below": {
       "name": "",
@@ -5472,6 +5721,18 @@
     "monsters": [],
     "below": {
       "name": "Experiment Cave (East)",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
+  "14142": {
+    "name": "Lithkren",
+    "monsters": [],
+    "below": {
+      "name": "",
       "monsters": [],
       "strongest": "",
       "unlocked": false
@@ -5526,14 +5787,16 @@
   },
   "14388": {
     "name": "Darkmeyer",
-    "monsters": [],
+    "monsters": [
+      "Vyrewatch"
+    ],
     "below": {
       "name": "",
       "monsters": [],
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "",
+    "strongest": "Vyrewatch",
     "unlocked": false
   },
   "14389": {
@@ -5824,6 +6087,18 @@
     "strongest": "",
     "unlocked": false
   },
+  "14907": {
+    "name": "Museum Camp",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
   "14908": {
     "name": "House on the Hill (West)",
     "monsters": [],
@@ -5866,6 +6141,30 @@
       "unlocked": false
     },
     "strongest": "Cave horror",
+    "unlocked": false
+  },
+  "15159": {
+    "name": "Dragontooth Island",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
+  "15163": {
+    "name": "Volcanic Mine",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
     "unlocked": false
   }
 }

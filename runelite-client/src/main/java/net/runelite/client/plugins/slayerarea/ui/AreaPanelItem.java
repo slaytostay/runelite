@@ -7,7 +7,6 @@ import net.runelite.client.plugins.slayerarea.SlayerAreas;
 import net.runelite.client.ui.ColorScheme;
 import net.runelite.client.ui.components.IconButton;
 import net.runelite.client.util.ImageUtil;
-import org.apache.commons.text.similarity.JaroWinklerDistance;
 
 import javax.swing.*;
 import javax.swing.text.JTextComponent;
@@ -20,7 +19,6 @@ import java.util.Arrays;
 import java.util.List;
 
 public class AreaPanelItem extends JPanel {
-    private static final JaroWinklerDistance DISTANCE = new JaroWinklerDistance();
     private static final ImageIcon ON_SWITCHER;
     private static final ImageIcon OFF_SWITCHER;
     protected GridBagConstraints gbc;
@@ -104,7 +102,7 @@ public class AreaPanelItem extends JPanel {
             if (field.getText().equals("")) {
                 area.below.monsters = new ArrayList<>();
                 return;
-            };
+            }
             area.below.monsters = Arrays.asList(field.getText().split(", "));
         });
 
@@ -241,13 +239,14 @@ public class AreaPanelItem extends JPanel {
                 if (!area.unlocked) return false;
             } else if (term.startsWith("locked")) {
                 if (area.unlocked) return false;
+            } else if (term.startsWith("surface")) {
+                int x = SlayerArea.getX(id);
+                int y = SlayerArea.getY(id);
+                if (x < 1152 || y < 2496 || x > 3903 || y > 4159) return false;
             } else {
                 List<String> values = area.getValues();
                 values.add(Integer.toString(id));
-                if (values.stream().noneMatch((t) ->
-                        t.contains(term) ||
-                                DISTANCE.apply(t, term) > 0.9
-                )) {
+                if (values.stream().noneMatch((t) -> t.contains(term))) {
                     return false;
                 }
             }
