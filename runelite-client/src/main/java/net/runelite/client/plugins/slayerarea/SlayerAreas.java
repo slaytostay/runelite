@@ -26,12 +26,29 @@ public class SlayerAreas {
     public static Boolean configLockedMap = true;
     public static Boolean configRegionId = true;
 
-    public static Boolean isUnlocked(int id) {
+    public static Boolean isUnlocked(int id) {return isUnlocked(id, false);}
+    public static Boolean isUnlocked(int id, boolean below) {
         SlayerArea area = areas.get(id);
         if (area != null) return area.unlocked;
         area = areas.get(id-100);
-        if (area != null) return area.unlocked;
+        if (below && area != null) return area.unlocked;
         return false;
+    }
+
+    public static SlayerArea getArea(int id) {return getArea(id, false);}
+    public static SlayerArea getArea(int id, boolean below) {
+        SlayerArea area = areas.get(id);
+        if (area != null) return area;
+        area = areas.get(id-100);
+        if (below && area != null) return area;
+        return null;
+    }
+
+    public static boolean isSurface(int id) {
+        int x = SlayerArea.getX(id);
+        int y = SlayerArea.getY(id);
+        if (x < 1152 || y < 2496 || x > 3903 || y > 4159) return false;
+        return true;
     }
 
     public static void readAreas() {

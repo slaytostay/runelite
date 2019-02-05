@@ -240,9 +240,7 @@ public class AreaPanelItem extends JPanel {
             } else if (term.startsWith("locked")) {
                 if (area.unlocked) return false;
             } else if (term.startsWith("surface")) {
-                int x = SlayerArea.getX(id);
-                int y = SlayerArea.getY(id);
-                if (x < 1152 || y < 2496 || x > 3903 || y > 4159) return false;
+                if (!SlayerAreas.isSurface(id)) return false;
             } else {
                 List<String> values = area.getValues();
                 values.add(Integer.toString(id));

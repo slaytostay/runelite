@@ -318,15 +318,15 @@
     "strongest": "Sulphur lizard",
     "unlocked": false
   },
-  "5436": {
-    "name": "North of the Forsaken Tower",
-    "monsters": [],
+  "5536": {
+    "name": "Karuulm Slayer Dungeon (North East)",
+    "monsters": [
+      "Alchemical hydra",
+      "Drake"
+    ],
     "below": {
-      "name": "Karuulm Slayer Dungeon (North East)",
-      "monsters": [
-        "Alchemical hydra",
-        "Drake"
-      ],
+      "name": "",
+      "monsters": [],
       "strongest": "",
       "unlocked": false
     },
@@ -1177,6 +1177,18 @@
     "strongest": "Ghost",
     "unlocked": false
   },
+  "7769": {
+    "name": "Player Owned House",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
   "8252": {
     "name": "Lunar Isle (South East)",
     "monsters": [
@@ -1737,6 +1749,32 @@
     "strongest": "Mutated zygomite",
     "unlocked": false
   },
+  "9551": {
+    "name": "Fight Cave",
+    "monsters": [
+      "TzTok-Jad"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "TzTok-Jad",
+    "unlocked": false
+  },
+  "9552": {
+    "name": "Fight Pit",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
   "9772": {
     "name": "Myths\u0027 Guild",
     "monsters": [],
@@ -1945,6 +1983,52 @@
       "unlocked": false
     },
     "strongest": "Cow",
+    "unlocked": false
+  },
+  "9807": {
+    "name": "Mor Ul Rek (South West)",
+    "monsters": [
+      "TzHaar-Ket"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "TzHaar-Ket",
+    "unlocked": false
+  },
+  "9808": {
+    "name": "TzHaar City",
+    "monsters": [
+      "TzHaar-Ket",
+      "TzHaar-Xil",
+      "TzHaar-Hur",
+      "TzHaar-Mej",
+      "TzHaar-Ket"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "TzHaar-Ket",
+    "unlocked": false
+  },
+  "9886": {
+    "name": "Waterbirth Isle Dungeon (West)",
+    "monsters": [
+      "Dagannoth"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Dagannoth",
     "unlocked": false
   },
   "10028": {
@@ -2176,6 +2260,34 @@
       "unlocked": false
     },
     "strongest": "Chicken",
+    "unlocked": false
+  },
+  "10063": {
+    "name": "Mor Ul Rek (South East)",
+    "monsters": [
+      "TzHaar-Ket"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "TzHaar-Ket",
+    "unlocked": false
+  },
+  "10064": {
+    "name": "Mor Ul Rek (North East)",
+    "monsters": [
+      "TzHaar-Ket"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "TzHaar-Ket",
     "unlocked": false
   },
   "10284": {
@@ -5062,7 +5174,7 @@
     "unlocked": false
   },
   "13110": {
-    "name": "Sawmill",
+    "name": "Lumber Yard",
     "monsters": [],
     "below": {
       "name": "Varrock Sewers (East)",

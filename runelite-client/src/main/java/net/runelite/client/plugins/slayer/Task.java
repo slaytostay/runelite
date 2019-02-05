@@ -162,7 +162,7 @@ public enum Task
 	THERMONUCLEAR_SMOKE_DEVIL("Thermonuclear Smoke Devil", ItemID.PET_SMOKE_DEVIL),
 	TROLLS("Trolls", ItemID.TROLL_GUARD, "Mountain troll", "Thrower troll", "Ice troll", "Troll general", "Troll spectator", "Rock (Troll)"),
 	TUROTH("Turoth", ItemID.TUROTH),
-	TZHAAR("Tzhaar", ItemID.ENSOULED_TZHAAR_HEAD),
+	TZHAAR("Tzhaar", ItemID.ENSOULED_TZHAAR_HEAD, "TzHaar-Ket", "TzHaar-Xil", "TzHaar-Hur", "TzHaar-Mej", "TzHaar-Ket"),
 	VAMPIRES("Vampires", ItemID.STAKE, "Vampyre juvenile", "Feral vampyre", "Vyrewatch"),
 	VENENATIS("Venenatis", ItemID.VENENATIS_SPIDERLING),
 	VETION("Vet'ion", ItemID.VETION_JR),

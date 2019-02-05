@@ -51,6 +51,7 @@ import jogamp.newt.awt.NewtFactoryAWT;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.*;
 import net.runelite.api.coords.LocalPoint;
+import net.runelite.api.coords.WorldPoint;
 import net.runelite.api.events.GameStateChanged;
 import net.runelite.api.hooks.DrawCallbacks;
 import net.runelite.client.callback.ClientThread;
@@ -725,20 +726,39 @@ public class GpuPlugin extends Plugin implements DrawCallbacks
 		gl.glUseProgram(0);
 	}
 
-	private void createLockedRegions() {
-		int bx = client.getBaseX()*128, by = client.getBaseY()*128;
-		gl.glUniform1i(uniBaseX, bx);
-		gl.glUniform1i(uniBaseY, by);
+	private boolean instanceRegionUnlocked() {
+		if (!SlayerAreas.configLockedShader) return true;
+		for (int i = 0; i < client.getMapRegions().length; i++) {
+			int region = client.getMapRegions()[i];
+			if (SlayerAreas.isUnlocked(region)) return true;
+		}
+		return false;
+	}
 
+	private void createLockedRegions() {
 		for (int i = 0; i < loadedLockedRegions.length; i++) {
 			loadedLockedRegions[i] = 0;
 		}
 
+		int bx, by;
+		if (client.isInInstancedRegion() && instanceRegionUnlocked()) {
+			bx = -1;
+			by = -1;
+			gl.glUniform1i(uniBaseX, bx);
+			gl.glUniform1i(uniBaseY, by);
+			gl.glUniform4iv(uniLockedRegions, 36, regionCoords, 0);
+			return;
+		} else {
+			bx = client.getBaseX() * 128;
+			by = client.getBaseY() * 128;
+		}
+		gl.glUniform1i(uniBaseX, bx);
+		gl.glUniform1i(uniBaseY, by);
+
 		for (int i = 0; i < client.getMapRegions().length; i++)
 		{
 			int region = client.getMapRegions()[i];
-			if (!SlayerAreas.configLockedShader) loadedLockedRegions[i] = region;
-			if (SlayerAreas.isUnlocked(region)) {
+			if (!SlayerAreas.configLockedShader || client.isInInstancedRegion() || SlayerAreas.isUnlocked(region, true)) {
 				loadedLockedRegions[i] = region;
 			}
 		}
@@ -746,14 +766,10 @@ public class GpuPlugin extends Plugin implements DrawCallbacks
 		for (int i = 0; i < loadedLockedRegions.length; i++) {
 			int region = loadedLockedRegions[i];
 			int j = i*4;
-			regionCoords[j+0] = (region >> 8) << 13;
+			regionCoords[j  ] = (region >> 8) << 13;
 			regionCoords[j+1] = (region & 255) << 13;
-			regionCoords[j+2] = regionCoords[j+0] + 8192;
+			regionCoords[j+2] = regionCoords[j  ] + 8192;
 			regionCoords[j+3] = regionCoords[j+1] + 8192;
-		}
-
-		for (int i = 0; i < regionCoords.length; i++) {
-			int coord = regionCoords[i];
 		}
 
 		gl.glUniform4iv(uniLockedRegions, 36, regionCoords, 0);
