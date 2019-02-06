@@ -4766,12 +4766,12 @@
     "unlocked": false
   },
   "12848": {
-    "name": "Kalphite Hives Entrance",
+    "name": "Kalphite Lair Entrance",
     "monsters": [
       "Desert wolf"
     ],
     "below": {
-      "name": "",
+      "name": "Tears of Guthix",
       "monsters": [],
       "strongest": "",
       "unlocked": false
@@ -4884,7 +4884,7 @@
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "Zombie",
+    "strongest": "Skeleton",
     "unlocked": false
   },
   "12855": {
@@ -5181,13 +5181,12 @@
       "monsters": [
         "Giant rat",
         "Skeleton",
-        "Spider",
-        "Zombie"
+        "Spider"
       ],
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "Zombie",
+    "strongest": "Skeleton",
     "unlocked": false
   },
   "13111": {

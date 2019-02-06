@@ -124,6 +124,7 @@ public class DevToolsPlugin extends Plugin
 	private DevToolsButton detachedCamera;
 	private DevToolsButton widgetInspector;
 	private DevToolsButton varInspector;
+	private DevToolsButton setClientBounds;
 	private NavigationButton navButton;
 
 	@Provides
@@ -164,6 +165,8 @@ public class DevToolsPlugin extends Plugin
 		detachedCamera = new DevToolsButton("Detached Camera");
 		widgetInspector = new DevToolsButton("Widget Inspector");
 		varInspector = new DevToolsButton("Var Inspector");
+
+		setClientBounds = new DevToolsButton("Set Bounds");
 
 		overlayManager.add(overlay);
 		overlayManager.add(locationOverlay);
