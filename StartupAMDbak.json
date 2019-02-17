@@ -442,7 +442,7 @@
       "unlocked": false
     },
     "strongest": "Spider",
-    "unlocked": false
+    "unlocked": true
   },
   "5941": {
     "name": "Land\u0027s End",
@@ -540,6 +540,7 @@
     "name": "Xeric\u0027s Inferno",
     "monsters": [
       "Bat",
+      "Giant bat",
       "Dwarf",
       "Spider"
     ],
@@ -549,13 +550,14 @@
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "Dwarf",
+    "strongest": "Giant bat",
     "unlocked": false
   },
   "5948": {
     "name": "Blast Mine",
     "monsters": [
-      "Spider"
+      "Spider",
+      "Bat"
     ],
     "below": {
       "name": "",
@@ -563,7 +565,7 @@
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "Spider",
+    "strongest": "Bat",
     "unlocked": false
   },
   "6197": {
@@ -1046,7 +1048,7 @@
       "unlocked": false
     },
     "strongest": "Rat",
-    "unlocked": false
+    "unlocked": true
   },
   "6971": {
     "name": "Piscarilius (North West)",
@@ -1176,6 +1178,22 @@
     },
     "strongest": "Ghost",
     "unlocked": false
+  },
+  "7505": {
+    "name": "Vault of War",
+    "monsters": [
+      "Goblin",
+      "Wolf",
+      "Minotaur"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Minotaur",
+    "unlocked": true
   },
   "7769": {
     "name": "Player Owned House",
@@ -3575,7 +3593,8 @@
   "11568": {
     "name": "Karambwan Fishing Spot",
     "monsters": [
-      "Monkey"
+      "Monkey",
+      "Harpie bug swarm"
     ],
     "below": {
       "name": "",
@@ -3583,7 +3602,7 @@
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "Monkey",
+    "strongest": "Harpie bug swarm",
     "unlocked": false
   },
   "11569": {
@@ -4037,7 +4056,7 @@
       "unlocked": false
     },
     "strongest": "Seagull",
-    "unlocked": false
+    "unlocked": true
   },
   "12083": {
     "name": "Falador Farm",
@@ -4053,7 +4072,7 @@
       "unlocked": false
     },
     "strongest": "Cow",
-    "unlocked": false
+    "unlocked": true
   },
   "12084": {
     "name": "Falador (East)",
@@ -4589,7 +4608,7 @@
       "unlocked": false
     },
     "strongest": "Rat",
-    "unlocked": false
+    "unlocked": true
   },
   "12598": {
     "name": "Grand Exchange",
@@ -4766,12 +4785,12 @@
     "unlocked": false
   },
   "12848": {
-    "name": "Kalphite Hives Entrance",
+    "name": "Kalphite Lair Entrance",
     "monsters": [
       "Desert wolf"
     ],
     "below": {
-      "name": "",
+      "name": "Tears of Guthix",
       "monsters": [],
       "strongest": "",
       "unlocked": false
@@ -4884,7 +4903,7 @@
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "Zombie",
+    "strongest": "Skeleton",
     "unlocked": false
   },
   "12855": {
@@ -5181,13 +5200,12 @@
       "monsters": [
         "Giant rat",
         "Skeleton",
-        "Spider",
-        "Zombie"
+        "Spider"
       ],
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "Zombie",
+    "strongest": "Skeleton",
     "unlocked": false
   },
   "13111": {
