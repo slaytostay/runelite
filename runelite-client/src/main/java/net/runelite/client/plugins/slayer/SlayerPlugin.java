@@ -592,7 +592,7 @@ public class SlayerPlugin extends Plugin
 
 		// add and update counter, set timer
 		addCounter();
-		counter.setText(String.valueOf(amount));
+		counter.setCount(amount);
 		infoTimer = Instant.now();
 	}
 
