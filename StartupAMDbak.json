@@ -802,16 +802,14 @@
   },
   "6459": {
     "name": "Arceuus Library",
-    "monsters": [
-      "Bat"
-    ],
+    "monsters": [],
     "below": {
       "name": "",
       "monsters": [],
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "Bat",
+    "strongest": "",
     "unlocked": false
   },
   "6460": {
@@ -939,18 +937,20 @@
       "unlocked": false
     },
     "strongest": "Giant bat",
-    "unlocked": false
+    "unlocked": true
   },
   "6715": {
     "name": "Blood Altar",
-    "monsters": [],
+    "monsters": [
+      "Bat"
+    ],
     "below": {
       "name": "",
       "monsters": [],
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "",
+    "strongest": "Bat",
     "unlocked": false
   },
   "6716": {
@@ -2390,7 +2390,7 @@
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "Giant bat",
+    "strongest": "Skeleton",
     "unlocked": false
   },
   "10289": {
@@ -2633,7 +2633,7 @@
       "unlocked": false
     },
     "strongest": "Guard dog",
-    "unlocked": false
+    "unlocked": true
   },
   "10548": {
     "name": "Ardougne Farm",
@@ -3803,7 +3803,7 @@
       "unlocked": false
     },
     "strongest": "Monkey",
-    "unlocked": false
+    "unlocked": true
   },
   "11823": {
     "name": "Ship Yard",
@@ -4304,7 +4304,7 @@
       "unlocked": false
     },
     "strongest": "Zombie",
-    "unlocked": false
+    "unlocked": true
   },
   "12339": {
     "name": "Draynor Village (North)",
@@ -4575,7 +4575,7 @@
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "Goblin",
+    "strongest": "Cow",
     "unlocked": false
   },
   "12596": {
@@ -4836,8 +4836,8 @@
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "Goblin",
-    "unlocked": false
+    "strongest": "Cow",
+    "unlocked": true
   },
   "12851": {
     "name": "Lumbridge (North East)",
@@ -4853,7 +4853,7 @@
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "Goblin",
+    "strongest": "Cow",
     "unlocked": false
   },
   "12852": {
