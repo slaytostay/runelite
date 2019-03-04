@@ -1056,6 +1056,20 @@ public interface Client extends GameEngine
 	ClanMember[] getClanMembers();
 
 	/**
+	 * Gets the clan owner of the currently joined clan chat
+	 *
+	 * @return
+	 */
+	String getClanOwner();
+
+	/**
+	 * Gets the clan chat name of the currently joined clan chat
+	 *
+	 * @return
+	 */
+	String getClanChatName();
+
+	/**
 	 * Gets an array of players in the friends list.
 	 *
 	 * @return the friends list
@@ -1576,7 +1590,9 @@ public interface Client extends GameEngine
 	void setSpellSelected(boolean selected);
 
 	/**
-     * Returns client item composition cache
+	 * Returns client item composition cache
 	 */
 	NodeCache getItemCompositionCache();
+
+	EnumComposition getEnum(int id);
 }

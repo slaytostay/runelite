@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017, Adam <Adam@sigterm.info>
+ * Copyright (c) 2019, Shaun Dreclin <https://github.com/ShaunDreclin>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -22,46 +22,15 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.runelite.http.service.ws;
+package net.runelite.api;
 
-import java.util.UUID;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
-
-public class SessionManager
+/**
+ * Utility class used for mapping enum IDs.
+ * <p>
+ * Note: This class is not complete and may be missing mapped IDs.
+ */
+public final class EnumID
 {
-	private static final ConcurrentMap<UUID, WSService> sessions = new ConcurrentHashMap<>();
-
-	public static void changeSessionUID(WSService service, UUID uuid)
-	{
-		synchronized (service)
-		{
-			remove(service);
-			service.setUuid(uuid);
-			sessions.put(uuid, service);
-		}
-	}
-
-	static void remove(WSService service)
-	{
-		synchronized (service)
-		{
-			UUID current = service.getUuid();
-			if (current != null)
-			{
-				sessions.remove(current);
-				service.setUuid(null);
-			}
-		}
-	}
-
-	public static WSService findSession(UUID uuid)
-	{
-		return sessions.get(uuid);
-	}
-
-	public static int getCount()
-	{
-		return sessions.size();
-	}
+	public static final int MUSIC_TRACK_NAMES = 812;
+	public static final int MUSIC_TRACK_IDS = 819;
 }

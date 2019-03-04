@@ -24,6 +24,8 @@
  */
 package net.runelite.mixins;
 
+import com.google.common.cache.Cache;
+import com.google.common.cache.CacheBuilder;
 import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
@@ -32,6 +34,7 @@ import javax.annotation.Nullable;
 import javax.inject.Named;
 import net.runelite.api.ChatMessageType;
 import net.runelite.api.ClanMember;
+import net.runelite.api.EnumComposition;
 import net.runelite.api.Friend;
 import net.runelite.api.GameState;
 import net.runelite.api.GrandExchangeOffer;
@@ -74,9 +77,9 @@ import net.runelite.api.events.BoostedLevelChanged;
 import net.runelite.api.events.CanvasSizeChanged;
 import net.runelite.api.events.ChatMessage;
 import net.runelite.api.events.ClanChanged;
+import net.runelite.api.events.ClientTick;
 import net.runelite.api.events.DraggingWidgetChanged;
 import net.runelite.api.events.ExperienceChanged;
-import net.runelite.api.events.ClientTick;
 import net.runelite.api.events.GameStateChanged;
 import net.runelite.api.events.GrandExchangeOfferChanged;
 import net.runelite.api.events.MenuEntryAdded;
@@ -106,6 +109,7 @@ import net.runelite.rs.api.RSChatLineBuffer;
 import net.runelite.rs.api.RSClanMemberManager;
 import net.runelite.rs.api.RSClient;
 import net.runelite.rs.api.RSDeque;
+import net.runelite.rs.api.RSEnum;
 import net.runelite.rs.api.RSFriendContainer;
 import net.runelite.rs.api.RSFriendManager;
 import net.runelite.rs.api.RSHashTable;
@@ -116,7 +120,6 @@ import net.runelite.rs.api.RSItem;
 import net.runelite.rs.api.RSItemContainer;
 import net.runelite.rs.api.RSNPC;
 import net.runelite.rs.api.RSName;
-import net.runelite.rs.api.RSNameable;
 import net.runelite.rs.api.RSPlayer;
 import net.runelite.rs.api.RSSpritePixels;
 import net.runelite.rs.api.RSWidget;
@@ -175,6 +178,16 @@ public abstract class RSClientMixin implements RSClient
 
 	@Inject
 	static int skyboxColor;
+
+	@Inject
+	private final Cache<Integer, RSEnum> enumCache = CacheBuilder.newBuilder()
+		.maximumSize(64)
+		.build();
+
+	@Inject
+	public RSClientMixin()
+	{
+	}
 
 	@Inject
 	@Override
@@ -711,7 +724,21 @@ public abstract class RSClientMixin implements RSClient
 	public ClanMember[] getClanMembers()
 	{
 		final RSClanMemberManager clanMemberManager = getClanMemberManager();
-		return clanMemberManager != null ? (ClanMember[]) getClanMemberManager().getNameables() : null;
+		return clanMemberManager != null ? getClanMemberManager().getNameables() : null;
+	}
+
+	@Inject
+	@Override
+	public String getClanOwner()
+	{
+		return getClanMemberManager().getClanOwner();
+	}
+
+	@Inject
+	@Override
+	public String getClanChatName()
+	{
+		return getClanMemberManager().getClanChatName();
 	}
 
 	@Inject
@@ -730,8 +757,7 @@ public abstract class RSClientMixin implements RSClient
 			return null;
 		}
 
-		RSNameable[] nameables = friendContainer.getNameables();
-		return (Friend[]) nameables;
+		return friendContainer.getNameables();
 	}
 
 	@Inject
@@ -769,8 +795,7 @@ public abstract class RSClientMixin implements RSClient
 			return null;
 		}
 
-		RSNameable[] nameables = ignoreContainer.getNameables();
-		return (Ignore[]) nameables;
+		return ignoreContainer.getNameables();
 	}
 
 	@Inject
@@ -999,6 +1024,7 @@ public abstract class RSClientMixin implements RSClient
 	public static void settingsChanged(int idx)
 	{
 		VarbitChanged varbitChanged = new VarbitChanged();
+		varbitChanged.setIndex(idx);
 		client.getCallbacks().post(varbitChanged);
 	}
 
@@ -1441,5 +1467,22 @@ public abstract class RSClientMixin implements RSClient
 		}
 
 		return false;
+	}
+
+	@Inject
+	@Override
+	public EnumComposition getEnum(int id)
+	{
+		assert isClientThread() : "getEnum must be called on client thread";
+
+		RSEnum rsEnum = enumCache.getIfPresent(id);
+		if (rsEnum != null)
+		{
+			return rsEnum;
+		}
+
+		rsEnum = getRsEnum(id);
+		enumCache.put(id, rsEnum);
+		return rsEnum;
 	}
 }

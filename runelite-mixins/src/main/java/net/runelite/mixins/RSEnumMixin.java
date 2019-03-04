@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017, Adam <Adam@sigterm.info>
+ * Copyright (c) 2019, Adam <Adam@sigterm.info>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -22,19 +22,54 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.runelite.api.events;
+package net.runelite.mixins;
 
-import lombok.Data;
+import net.runelite.api.mixins.Inject;
+import net.runelite.api.mixins.Mixin;
+import net.runelite.rs.api.RSEnum;
 
-/**
- * An event where a new RuneLite account session has been opened
- * with the server.
- * <p>
- * Note: This event is not to be confused with a RuneScape session,
- * it has nothing to do with whether an account is being logged in.
- */
-@Data
-public class SessionOpen
+@Mixin(RSEnum.class)
+public abstract class RSEnumMixin implements RSEnum
 {
+	@Inject
+	@Override
+	public int getIntValue(int key)
+	{
+		final int[] keys = getKeys();
+		if (keys == null)
+		{
+			return getDefaultInt();
+		}
 
+		for (int i = 0; i < keys.length; ++i)
+		{
+			if (keys[i] == key)
+			{
+				final int[] values = getIntVals();
+				return values[i];
+			}
+		}
+		return getDefaultInt();
+	}
+
+	@Inject
+	@Override
+	public String getStringValue(int key)
+	{
+		final int[] keys = getKeys();
+		if (keys == null)
+		{
+			return getDefaultString();
+		}
+
+		for (int i = 0; i < keys.length; ++i)
+		{
+			if (keys[i] == key)
+			{
+				final String[] values = getStringVals();
+				return values[i];
+			}
+		}
+		return getDefaultString();
+	}
 }
