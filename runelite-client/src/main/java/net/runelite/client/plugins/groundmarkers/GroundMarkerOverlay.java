@@ -66,13 +66,20 @@ public class GroundMarkerOverlay extends Overlay
 		final Collection<ColorTileMarker> points = plugin.getPoints();
 		for (final ColorTileMarker point : points)
 		{
-			if (point.getWorldPoint().getPlane() != client.getPlane())
+			WorldPoint worldPoint = point.getWorldPoint();
+			if (worldPoint.getPlane() != client.getPlane())
 			{
 				continue;
 			}
 
-			final Color tileColor = config.rememberTileColors() ? point.getColor() : config.markerColor();
-			drawTile(graphics, point.getWorldPoint(), tileColor);
+			Color tileColor = point.getColor();
+			if (tileColor == null || !config.rememberTileColors())
+			{
+				// If this is an old tile which has no color, or rememberTileColors is off, use marker color
+				tileColor = config.markerColor();
+			}
+
+			drawTile(graphics, worldPoint, tileColor);
 		}
 
 		return null;

@@ -29,12 +29,11 @@ import com.google.common.base.Strings;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.google.inject.Provides;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 import javax.inject.Inject;
 import lombok.AccessLevel;
@@ -79,7 +78,7 @@ public class GroundMarkerPlugin extends Plugin
 	private boolean hotKeyPressed;
 
 	@Getter(AccessLevel.PACKAGE)
-	private final Set<ColorTileMarker> points = new HashSet<>();
+	private final List<ColorTileMarker> points = new ArrayList<>();
 
 	@Inject
 	private Client client;
@@ -102,11 +101,6 @@ public class GroundMarkerPlugin extends Plugin
 	@Inject
 	private KeyManager keyManager;
 
-	private void saveColorTileMarkers(int regionId, Collection<ColorTileMarker> points)
-	{
-		savePoints(regionId, translateFromColorTileMarker(points));
-	}
-
 	private void savePoints(int regionId, Collection<GroundMarkerPoint> points)
 	{
 		if (points == null || points.isEmpty())
@@ -127,28 +121,9 @@ public class GroundMarkerPlugin extends Plugin
 			return Collections.emptyList();
 		}
 
-		Collection<GroundMarkerPoint> configPoints = GSON.fromJson(json, new GroundMarkerListTypeToken().getType());
-
-		if (configPoints.stream().anyMatch(point -> point.getColor() == null))
-		{
-			log.debug("Adding color to old ground marker(s) of region " + regionId);
-			configPoints = configPoints.stream()
-				.map(point ->
-				{
-					if (point.getColor() != null)
-					{
-						return point;
-					}
-					return new GroundMarkerPoint(point.getRegionId(), point.getRegionX(), point.getRegionY(), point.getZ(), config.markerColor());
-				})
-				.collect(Collectors.toSet());
-			savePoints(regionId, configPoints);
-		}
-		return configPoints;
-	}
-
-	private static class GroundMarkerListTypeToken extends TypeToken<List<GroundMarkerPoint>>
-	{
+		// CHECKSTYLE:OFF
+		return GSON.fromJson(json, new TypeToken<List<GroundMarkerPoint>>(){}.getType());
+		// CHECKSTYLE:ON
 	}
 
 	@Provides
@@ -172,8 +147,8 @@ public class GroundMarkerPlugin extends Plugin
 		{
 			// load points for region
 			log.debug("Loading points for region {}", regionId);
-			final Collection<GroundMarkerPoint> configPoints = getPoints(regionId);
-			final Collection<ColorTileMarker> colorTileMarkers = translateToColorTileMarker(configPoints);
+			Collection<GroundMarkerPoint> regionPoints = getPoints(regionId);
+			Collection<ColorTileMarker> colorTileMarkers = translateToColorTileMarker(regionPoints);
 			points.addAll(colorTileMarkers);
 		}
 	}
@@ -187,7 +162,7 @@ public class GroundMarkerPlugin extends Plugin
 	 */
 	private Collection<ColorTileMarker> translateToColorTileMarker(Collection<GroundMarkerPoint> points)
 	{
-		if (points == null || points.isEmpty())
+		if (points.isEmpty())
 		{
 			return Collections.emptyList();
 		}
@@ -201,29 +176,7 @@ public class GroundMarkerPlugin extends Plugin
 				final Collection<WorldPoint> localWorldPoints = WorldPoint.toLocalInstance(client, colorTile.getWorldPoint());
 				return localWorldPoints.stream().map(wp -> new ColorTileMarker(wp, colorTile.getColor()));
 			})
-			.collect(Collectors.toSet());
-	}
-
-	/**
-	 * Translate a collection of color tile markers to a set of ground marker points
-	 *
-	 * @param points {@link ColorTileMarker}s to be converted to {@link GroundMarkerPoint}s
-	 * @return A set of ground marker points, converted from the passed color tile markers
-	 */
-	private static Set<GroundMarkerPoint> translateFromColorTileMarker(Collection<ColorTileMarker> points)
-	{
-		if (points == null || points.isEmpty())
-		{
-			return Collections.emptySet();
-		}
-
-		return points.stream()
-			.map(point ->
-			{
-				final WorldPoint worldPoint = point.getWorldPoint();
-				return new GroundMarkerPoint(worldPoint.getRegionID(), worldPoint.getRegionX(), worldPoint.getRegionY(), worldPoint.getPlane(), point.getColor());
-			})
-			.collect(Collectors.toSet());
+			.collect(Collectors.toList());
 	}
 
 	@Subscribe
@@ -304,27 +257,23 @@ public class GroundMarkerPlugin extends Plugin
 			return;
 		}
 
-		final WorldPoint worldPoint = WorldPoint.fromLocalInstance(client, localPoint);
-		final ColorTileMarker point = new ColorTileMarker(worldPoint, config.markerColor());
+		WorldPoint worldPoint = WorldPoint.fromLocalInstance(client, localPoint);
+
+		int regionId = worldPoint.getRegionID();
+		GroundMarkerPoint point = new GroundMarkerPoint(regionId, worldPoint.getRegionX(), worldPoint.getRegionY(), client.getPlane(), config.markerColor());
 		log.debug("Updating point: {} - {}", point, worldPoint);
 
-		if (points.contains(point))
+		List<GroundMarkerPoint> groundMarkerPoints = new ArrayList<>(getPoints(regionId));
+		if (groundMarkerPoints.contains(point))
 		{
-			points.remove(point);
+			groundMarkerPoints.remove(point);
 		}
 		else
 		{
-			// Remove any points on the same tile but are of a different color.
-			// Add a new point if no tile was removed, or if remembering tile colors is enabled, which means the marked
-			// tile was previously of a different color than the new tile marking.
-			if (!points.removeIf(p -> p.sameTile(point)) || config.rememberTileColors())
-			{
-				points.add(point);
-			}
+			groundMarkerPoints.add(point);
 		}
 
-		final int regionId = worldPoint.getRegionID();
-		saveColorTileMarkers(regionId, points);
+		savePoints(regionId, groundMarkerPoints);
 
 		loadPoints();
 	}

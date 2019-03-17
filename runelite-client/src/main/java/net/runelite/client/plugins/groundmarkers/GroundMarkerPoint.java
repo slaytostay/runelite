@@ -26,12 +26,14 @@
 package net.runelite.client.plugins.groundmarkers;
 
 import java.awt.Color;
+import lombok.EqualsAndHashCode;
 import lombok.Value;
 
 /**
  * Used for serialization of ground marker points.
  */
 @Value
+@EqualsAndHashCode(exclude = { "color" })
 class GroundMarkerPoint
 {
 	private int regionId;
