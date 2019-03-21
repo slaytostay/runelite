@@ -551,7 +551,7 @@
       "unlocked": false
     },
     "strongest": "Giant bat",
-    "unlocked": false
+    "unlocked": true
   },
   "5948": {
     "name": "Blast Mine",
@@ -1195,8 +1195,8 @@
     "strongest": "Minotaur",
     "unlocked": true
   },
-  "7769": {
-    "name": "Player Owned House",
+  "7513": {
+    "name": "Player Owned House (East)",
     "monsters": [],
     "below": {
       "name": "",
@@ -1205,7 +1205,19 @@
       "unlocked": false
     },
     "strongest": "",
-    "unlocked": false
+    "unlocked": true
+  },
+  "7769": {
+    "name": "Player Owned House (West)",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": true
   },
   "8252": {
     "name": "Lunar Isle (South East)",
@@ -1973,7 +1985,7 @@
       "unlocked": false
     },
     "strongest": "Mounted terrorbird gnome",
-    "unlocked": false
+    "unlocked": true
   },
   "9796": {
     "name": "Evil Chicken\u0027s Lair",
@@ -2314,12 +2326,14 @@
       "Seagull"
     ],
     "below": {
-      "name": "",
-      "monsters": [],
+      "name": "Ape Atoll Dungeon",
+      "monsters": [
+        "Monkey"
+      ],
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "Seagull",
+    "strongest": "Monkey",
     "unlocked": false
   },
   "10285": {
@@ -2660,13 +2674,13 @@
       "name": "Temple of Ikov (Middle West)",
       "monsters": [
         "Giant bat",
-        "Scorpion",
+        "King scorpion",
         "Skeleton"
       ],
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "Giant bat",
+    "strongest": "Skeleton",
     "unlocked": false
   },
   "10550": {
@@ -2675,12 +2689,14 @@
       "Guard dog"
     ],
     "below": {
-      "name": "",
-      "monsters": [],
+      "name": "Temple of Ikov (North)",
+      "monsters": [
+        "Leser demon"
+      ],
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "Guard dog",
+    "strongest": "Lesser demon",
     "unlocked": false
   },
   "10551": {
@@ -3112,13 +3128,13 @@
       "Rat"
     ],
     "below": {
-      "name": "",
+      "name": "Brimhaven Agility Arena",
       "monsters": [],
       "strongest": "",
       "unlocked": false
     },
     "strongest": "Guard dog",
-    "unlocked": false
+    "unlocked": true
   },
   "11058": {
     "name": "Brimhaven Harbour",
@@ -3205,7 +3221,7 @@
       "unlocked": false
     },
     "strongest": "Pyrefiend",
-    "unlocked": false
+    "unlocked": true
   },
   "11065": {
     "name": "Mountain Camp",
@@ -3843,7 +3859,7 @@
       "unlocked": false
     },
     "strongest": "Giant rat",
-    "unlocked": false
+    "unlocked": true
   },
   "11826": {
     "name": "Rimmington",
@@ -3875,7 +3891,8 @@
   "11828": {
     "name": "Falador (West)",
     "monsters": [
-      "Duck"
+      "Duck",
+      "Chicken"
     ],
     "below": {
       "name": "",
@@ -3884,7 +3901,7 @@
       "unlocked": false
     },
     "strongest": "Duck",
-    "unlocked": false
+    "unlocked": true
   },
   "11829": {
     "name": "Doric\u0027s Anvil",
@@ -3915,7 +3932,7 @@
       "unlocked": false
     },
     "strongest": "Icefiend",
-    "unlocked": false
+    "unlocked": true
   },
   "11831": {
     "name": "North of Goblin Village",
@@ -4322,7 +4339,7 @@
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "Zombie",
+    "strongest": "Skeleton",
     "unlocked": false
   },
   "12340": {
@@ -4563,7 +4580,7 @@
     "unlocked": false
   },
   "12595": {
-    "name": "Lumbridge (North West)",
+    "name": "Farmer Fred\u0027s",
     "monsters": [
       "Chicken",
       "Cow",
@@ -4576,7 +4593,7 @@
       "unlocked": false
     },
     "strongest": "Cow",
-    "unlocked": false
+    "unlocked": true
   },
   "12596": {
     "name": "Champions\u0027 Guild",
@@ -4625,7 +4642,7 @@
       "unlocked": false
     },
     "strongest": "Deadly red spider",
-    "unlocked": false
+    "unlocked": true
   },
   "12599": {
     "name": "North of Grand Exchange",
@@ -4869,7 +4886,7 @@
       "unlocked": false
     },
     "strongest": "Goblin",
-    "unlocked": false
+    "unlocked": true
   },
   "12853": {
     "name": "Varrock Square",
@@ -4904,7 +4921,7 @@
       "unlocked": false
     },
     "strongest": "Skeleton",
-    "unlocked": false
+    "unlocked": true
   },
   "12855": {
     "name": "South of Chaos Temple",
@@ -5247,7 +5264,7 @@
       "unlocked": false
     },
     "strongest": "Hill giant",
-    "unlocked": false
+    "unlocked": true
   },
   "13114": {
     "name": "West of Venenatis",
