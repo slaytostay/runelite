@@ -125,7 +125,7 @@
       "unlocked": false
     },
     "strongest": "Goblin",
-    "unlocked": false
+    "unlocked": true
   },
   "5175": {
     "name": "Lizardman Settlement",
@@ -617,7 +617,7 @@
       "unlocked": false
     },
     "strongest": "Grizzly bear",
-    "unlocked": false
+    "unlocked": true
   },
   "6201": {
     "name": "Lizardman Canyon (East)",
@@ -789,7 +789,8 @@
     "name": "Arceuus Bank",
     "monsters": [
       "Bat",
-      "Rat"
+      "Rat",
+      "Giant bat"
     ],
     "below": {
       "name": "",
@@ -797,8 +798,8 @@
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "Bat",
-    "unlocked": false
+    "strongest": "Giant bat",
+    "unlocked": true
   },
   "6459": {
     "name": "Arceuus Library",
@@ -1177,7 +1178,7 @@
       "unlocked": false
     },
     "strongest": "Ghost",
-    "unlocked": false
+    "unlocked": true
   },
   "7505": {
     "name": "Vault of War",
@@ -1197,6 +1198,18 @@
   },
   "7513": {
     "name": "Player Owned House (East)",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": true
+  },
+  "7758": {
+    "name": "Pinball Realm",
     "monsters": [],
     "below": {
       "name": "",
@@ -1894,7 +1907,7 @@
       "unlocked": false
     },
     "strongest": "Grizzly bear",
-    "unlocked": false
+    "unlocked": true
   },
   "9778": {
     "name": "Ourania Altar Entrance",
@@ -2292,6 +2305,18 @@
     "strongest": "Chicken",
     "unlocked": false
   },
+  "10058": {
+    "name": "Evil Bob\u0027s Realm",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": true
+  },
   "10063": {
     "name": "Mor Ul Rek (South East)",
     "monsters": [
@@ -2663,7 +2688,7 @@
       "unlocked": false
     },
     "strongest": "Cow",
-    "unlocked": false
+    "unlocked": true
   },
   "10549": {
     "name": "Ranging Guild",
@@ -3445,7 +3470,7 @@
       "unlocked": false
     },
     "strongest": "Big wolf",
-    "unlocked": false
+    "unlocked": true
   },
   "11319": {
     "name": "Warriors\u0027 Guild",
@@ -3640,12 +3665,14 @@
       "Rat"
     ],
     "below": {
-      "name": "",
-      "monsters": [],
+      "name": "Melzar\u0027s Maze Basement",
+      "monsters": [
+        "Lesser demon"
+      ],
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "Ghost",
+    "strongest": "Lesser demon",
     "unlocked": false
   },
   "11571": {
@@ -4112,7 +4139,8 @@
   "12085": {
     "name": "Dwarven Mine Entrance",
     "monsters": [
-      "Dwarf"
+      "Dwarf",
+      "Black guard (Dwarf)"
     ],
     "below": {
       "name": "Dwarven Mine (North East)",
@@ -4124,14 +4152,15 @@
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "Scorpion",
+    "strongest": "Black guard (Dwarf)",
     "unlocked": false
   },
   "12086": {
     "name": "Monastery",
     "monsters": [
       "Dwarf",
-      "Icefiend"
+      "Icefiend",
+      "Guard (Dwarf)"
     ],
     "below": {
       "name": "",
@@ -4139,7 +4168,7 @@
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "Icefiend",
+    "strongest": "Icefiend, Guard (Dwarf)",
     "unlocked": false
   },
   "12087": {
@@ -4561,7 +4590,7 @@
       "unlocked": false
     },
     "strongest": "Wall beast",
-    "unlocked": false
+    "unlocked": true
   },
   "12594": {
     "name": "Lumbridge (South West)",
@@ -4577,7 +4606,7 @@
       "unlocked": false
     },
     "strongest": "Goblin",
-    "unlocked": false
+    "unlocked": true
   },
   "12595": {
     "name": "Farmer Fred\u0027s",
@@ -4871,7 +4900,7 @@
       "unlocked": false
     },
     "strongest": "Cow",
-    "unlocked": false
+    "unlocked": true
   },
   "12852": {
     "name": "Varrock Stone Circle",
@@ -5123,7 +5152,7 @@
       "Desert wolf"
     ],
     "below": {
-      "name": "Kalphite Caves",
+      "name": "Kalphite Cave (Middle)",
       "monsters": [
         "Kalphite worker",
         "Kalphite soldier",
@@ -5142,12 +5171,14 @@
       "Spider"
     ],
     "below": {
-      "name": "",
-      "monsters": [],
+      "name": "Kalphite Cave (North)",
+      "monsters": [
+        "Kalphite soldier"
+      ],
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "Scorpion",
+    "strongest": "Kalphite soldier",
     "unlocked": false
   },
   "13106": {
@@ -5195,7 +5226,7 @@
       "unlocked": false
     },
     "strongest": "Black bear",
-    "unlocked": false
+    "unlocked": true
   },
   "13109": {
     "name": "East of Varrock",

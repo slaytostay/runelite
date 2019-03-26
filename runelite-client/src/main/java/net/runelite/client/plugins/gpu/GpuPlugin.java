@@ -57,10 +57,8 @@ import net.runelite.api.hooks.DrawCallbacks;
 import net.runelite.client.callback.ClientThread;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
-import net.runelite.client.plugins.Plugin;
-import net.runelite.client.plugins.PluginDescriptor;
-import net.runelite.client.plugins.PluginInstantiationException;
-import net.runelite.client.plugins.PluginManager;
+import net.runelite.client.plugins.*;
+
 import static net.runelite.client.plugins.gpu.GLUtil.glDeleteBuffer;
 import static net.runelite.client.plugins.gpu.GLUtil.glDeleteFrameBuffer;
 import static net.runelite.client.plugins.gpu.GLUtil.glDeleteRenderbuffers;
@@ -73,6 +71,9 @@ import static net.runelite.client.plugins.gpu.GLUtil.glGenRenderbuffer;
 import static net.runelite.client.plugins.gpu.GLUtil.glGenTexture;
 import static net.runelite.client.plugins.gpu.GLUtil.glGenVertexArrays;
 import static net.runelite.client.plugins.gpu.GLUtil.inputStreamToString;
+
+import net.runelite.client.plugins.dollycam.DollyCamConfig;
+import net.runelite.client.plugins.dollycam.DollyCamPlugin;
 import net.runelite.client.plugins.gpu.config.AntiAliasingMode;
 import net.runelite.client.plugins.gpu.template.Template;
 import net.runelite.client.plugins.slayerarea.SlayerArea;
@@ -88,6 +89,7 @@ import net.runelite.client.util.OSType;
 	tags = {"fog", "draw distance"}
 )
 @Slf4j
+@PluginDependency(DollyCamPlugin.class)
 public class GpuPlugin extends Plugin implements DrawCallbacks
 {
 	// This is the maximum number of triangles the compute shaders support
@@ -117,6 +119,9 @@ public class GpuPlugin extends Plugin implements DrawCallbacks
 
 	@Inject
 	private PluginManager pluginManager;
+
+	@Inject
+	private DollyCamPlugin dolly;
 
 	private Canvas canvas;
 	private JAWTWindow jawtWindow;
@@ -778,8 +783,8 @@ public class GpuPlugin extends Plugin implements DrawCallbacks
 	@Override
 	public void drawScene(int cameraX, int cameraY, int cameraZ, int cameraPitch, int cameraYaw, int plane)
 	{
-		centerX = client.getCenterX();
-		centerY = client.getCenterY();
+		centerX = dolly.getCenterX();
+		centerY = dolly.getCenterY();
 
 		final Scene scene = client.getScene();
 		final int drawDistance = Math.max(0, Math.min(MAX_DISTANCE, config.drawDistance()));
@@ -972,14 +977,14 @@ public class GpuPlugin extends Plugin implements DrawCallbacks
 		gl.glBindBuffer(gl.GL_UNIFORM_BUFFER, uniformBufferId);
 		uniformBuffer.clear();
 		uniformBuffer
-			.put(client.getCameraYaw())
-			.put(client.getCameraPitch())
+			.put(dolly.getCameraYaw())
+			.put(dolly.getCameraPitch())
 			.put(centerX)
 			.put(centerY)
-			.put(client.getScale())
-			.put(client.getCameraX2())
-			.put(client.getCameraY2())
-			.put(client.getCameraZ2());
+			.put(dolly.getScale())
+			.put(dolly.getCameraX2())
+			.put(dolly.getCameraY2())
+			.put(dolly.getCameraZ2());
 		uniformBuffer.flip();
 
 		gl.glBufferSubData(gl.GL_UNIFORM_BUFFER, 0, uniformBuffer.limit() * Integer.BYTES, uniformBuffer);
@@ -1434,7 +1439,7 @@ public class GpuPlugin extends Plugin implements DrawCallbacks
 			buffer.put(tc);
 			buffer.put(targetBufferOffset);
 			buffer.put(FLAG_SCENE_BUFFER | (model.getRadius() << 12) | orientation);
-			buffer.put(x + client.getCameraX2()).put(y + client.getCameraY2()).put(z + client.getCameraZ2());
+			buffer.put(x + dolly.getCameraX2()).put(y + dolly.getCameraY2()).put(z + dolly.getCameraZ2());
 
 			targetBufferOffset += tc * 3;
 		}
@@ -1477,7 +1482,7 @@ public class GpuPlugin extends Plugin implements DrawCallbacks
 				buffer.put(len / 3);
 				buffer.put(targetBufferOffset);
 				buffer.put((model.getRadius() << 12) | orientation);
-				buffer.put(x + client.getCameraX2()).put(y + client.getCameraY2()).put(z + client.getCameraZ2());
+				buffer.put(x + dolly.getCameraX2()).put(y + dolly.getCameraY2()).put(z + dolly.getCameraZ2());
 
 				tempOffset += len;
 				if (hasUv)
