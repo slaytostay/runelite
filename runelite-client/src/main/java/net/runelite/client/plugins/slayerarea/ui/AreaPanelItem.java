@@ -4,6 +4,7 @@ import net.runelite.client.plugins.config.ConfigPanel;
 import net.runelite.client.plugins.slayer.Task;
 import net.runelite.client.plugins.slayerarea.SlayerArea;
 import net.runelite.client.plugins.slayerarea.SlayerAreas;
+import net.runelite.client.plugins.slayerarea.SlayerMaster;
 import net.runelite.client.ui.ColorScheme;
 import net.runelite.client.ui.components.IconButton;
 import net.runelite.client.util.ImageUtil;
@@ -234,6 +235,21 @@ public class AreaPanelItem extends JPanel {
                     } else {
                         return false;
                     }
+                } else {
+                    return false;
+                }
+            } else if (term.startsWith("m:")) {
+                final String s = term.substring(2);
+                SlayerMaster master = SlayerMaster.getMaster(s);
+                if (area.strongest != null && master != null) {
+                    boolean result = false;
+                    for (String monster : master.getMonsters()) {
+                        if (matchesSearchTerms( new String[] {"t:" + monster} ) ) {
+                            result = true;
+                            break;
+                        }
+                    }
+                    if (!result) return false;
                 }
             } else if (term.startsWith("unlocked")) {
                 if (!area.unlocked) return false;

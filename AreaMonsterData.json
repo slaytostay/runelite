@@ -79,7 +79,7 @@
       "unlocked": false
     },
     "strongest": "Cow",
-    "unlocked": false
+    "unlocked": true
   },
   "4922": {
     "name": "Farming Guild",
@@ -1033,7 +1033,7 @@
       "unlocked": false
     },
     "strongest": "Rat",
-    "unlocked": false
+    "unlocked": true
   },
   "6970": {
     "name": "Piscarilius (South West)",
@@ -1094,7 +1094,7 @@
       "unlocked": false
     },
     "strongest": "Cow",
-    "unlocked": false
+    "unlocked": true
   },
   "7223": {
     "name": "Vinery",
@@ -1152,7 +1152,7 @@
       "unlocked": false
     },
     "strongest": "Rat",
-    "unlocked": false
+    "unlocked": true
   },
   "7227": {
     "name": "Piscarilius Bank",
@@ -1180,6 +1180,18 @@
     "strongest": "Ghost",
     "unlocked": true
   },
+  "7504": {
+    "name": "Molly\u0027s Realm",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": true
+  },
   "7505": {
     "name": "Vault of War",
     "monsters": [
@@ -1194,6 +1206,18 @@
       "unlocked": false
     },
     "strongest": "Minotaur",
+    "unlocked": true
+  },
+  "7507": {
+    "name": "Lumbridge Diner Realm",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
     "unlocked": true
   },
   "7513": {
@@ -1231,6 +1255,21 @@
     },
     "strongest": "",
     "unlocked": true
+  },
+  "8076": {
+    "name": "Ogress Cave (South Middle)",
+    "monsters": [
+      "Ogress shaman",
+      "Ogress warrior"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Ogress warriro",
+    "unlocked": false
   },
   "8252": {
     "name": "Lunar Isle (South East)",
@@ -2143,7 +2182,7 @@
       "unlocked": false
     },
     "strongest": "Ogre",
-    "unlocked": false
+    "unlocked": true
   },
   "10033": {
     "name": "Tree Gnome Village",
@@ -4570,7 +4609,7 @@
       "unlocked": false
     },
     "strongest": "Desert wolf",
-    "unlocked": false
+    "unlocked": true
   },
   "12593": {
     "name": "Lumbridge Swamp (West)",
@@ -5398,15 +5437,17 @@
   },
   "13359": {
     "name": "North of Pollnivneach",
-    "monsters": [],
+    "monsters": [
+      "Lizard"
+    ],
     "below": {
       "name": "",
       "monsters": [],
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "",
-    "unlocked": false
+    "strongest": "Lizard",
+    "unlocked": true
   },
   "13360": {
     "name": "West of Shantay Pass",

@@ -53,7 +53,7 @@ public class SlayerAreas {
 
     public static void readAreas() {
         Type mapType = new TypeToken<Map<Integer, SlayerArea>>(){}.getType();
-        try (JsonReader reader = new JsonReader(new FileReader(AREA_FILE + ".json"));) {
+        try (JsonReader reader = new JsonReader(new FileReader(AREA_FILE + ".json"))) {
             Gson gson = new Gson();
             areas = gson.fromJson(reader, mapType);
         } catch(IOException ex) {

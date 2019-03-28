@@ -36,8 +36,11 @@ import com.jogamp.opengl.GLDrawable;
 import com.jogamp.opengl.GLDrawableFactory;
 import com.jogamp.opengl.GLException;
 import com.jogamp.opengl.GLProfile;
-
-import java.awt.*;
+import java.awt.Canvas;
+import java.awt.Dimension;
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
 import java.nio.ByteBuffer;
@@ -46,6 +49,7 @@ import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.util.function.Function;
 import javax.inject.Inject;
+import jogamp.nativewindow.SurfaceScaleUtils;
 import jogamp.nativewindow.jawt.x11.X11JAWTWindow;
 import jogamp.newt.awt.NewtFactoryAWT;
 import lombok.extern.slf4j.Slf4j;
@@ -59,18 +63,7 @@ import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
 import net.runelite.client.plugins.*;
 
-import static net.runelite.client.plugins.gpu.GLUtil.glDeleteBuffer;
-import static net.runelite.client.plugins.gpu.GLUtil.glDeleteFrameBuffer;
-import static net.runelite.client.plugins.gpu.GLUtil.glDeleteRenderbuffers;
-import static net.runelite.client.plugins.gpu.GLUtil.glDeleteTexture;
-import static net.runelite.client.plugins.gpu.GLUtil.glDeleteVertexArrays;
-import static net.runelite.client.plugins.gpu.GLUtil.glGenBuffers;
-import static net.runelite.client.plugins.gpu.GLUtil.glGetInteger;
-import static net.runelite.client.plugins.gpu.GLUtil.glGenFrameBuffer;
-import static net.runelite.client.plugins.gpu.GLUtil.glGenRenderbuffer;
-import static net.runelite.client.plugins.gpu.GLUtil.glGenTexture;
-import static net.runelite.client.plugins.gpu.GLUtil.glGenVertexArrays;
-import static net.runelite.client.plugins.gpu.GLUtil.inputStreamToString;
+import static net.runelite.client.plugins.gpu.GLUtil.*;
 
 import net.runelite.client.plugins.dollycam.DollyCamConfig;
 import net.runelite.client.plugins.dollycam.DollyCamPlugin;
@@ -1079,7 +1072,7 @@ public class GpuPlugin extends Plugin implements DrawCallbacks
 				renderWidthOff       = (int) Math.floor(scaleFactorX * (renderWidthOff )) - padding;
 			}
 
-			gl.glViewport(renderWidthOff, renderCanvasHeight - renderViewportHeight - renderHeightOff, renderViewportWidth, renderViewportHeight);
+			glDpiAwareViewport(renderWidthOff, renderCanvasHeight - renderViewportHeight - renderHeightOff, renderViewportWidth, renderViewportHeight);
 
 			gl.glUseProgram(glProgram);
 
@@ -1214,11 +1207,11 @@ public class GpuPlugin extends Plugin implements DrawCallbacks
 		if (client.isStretchedEnabled())
 		{
 			Dimension dim = client.getStretchedDimensions();
-			gl.glViewport(0, 0, dim.width, dim.height);
+			glDpiAwareViewport(0, 0, dim.width, dim.height);
 		}
 		else
 		{
-			gl.glViewport(0, 0, canvasWidth, canvasHeight);
+			glDpiAwareViewport(0, 0, canvasWidth, canvasHeight);
 		}
 
 		// Use the texture bound in the first pass
@@ -1515,4 +1508,18 @@ public class GpuPlugin extends Plugin implements DrawCallbacks
 		}
 	}
 
+	private int getScaledValue(final double scale, final int value)
+	{
+		return SurfaceScaleUtils.scale(value, (float) scale);
+	}
+
+	private void glDpiAwareViewport(final int x, final int y, final int width, final int height)
+	{
+		final AffineTransform t = ((Graphics2D) canvas.getGraphics()).getTransform();
+		gl.glViewport(
+			getScaledValue(t.getScaleX(), x),
+			getScaledValue(t.getScaleY(), y),
+			getScaledValue(t.getScaleX(), width),
+			getScaledValue(t.getScaleY(), height));
+	}
 }

@@ -79,7 +79,7 @@
       "unlocked": false
     },
     "strongest": "Cow",
-    "unlocked": false
+    "unlocked": true
   },
   "4922": {
     "name": "Farming Guild",
@@ -1094,7 +1094,7 @@
       "unlocked": false
     },
     "strongest": "Cow",
-    "unlocked": false
+    "unlocked": true
   },
   "7223": {
     "name": "Vinery",
@@ -1231,6 +1231,21 @@
     },
     "strongest": "",
     "unlocked": true
+  },
+  "8076": {
+    "name": "Ogress Cave (South Middle)",
+    "monsters": [
+      "Ogress shaman",
+      "Ogress warrior"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Ogress warriro",
+    "unlocked": false
   },
   "8252": {
     "name": "Lunar Isle (South East)",
@@ -1943,7 +1958,7 @@
       "unlocked": false
     },
     "strongest": "Wolf",
-    "unlocked": false
+    "unlocked": true
   },
   "9780": {
     "name": "Outpost",
@@ -2143,7 +2158,7 @@
       "unlocked": false
     },
     "strongest": "Ogre",
-    "unlocked": false
+    "unlocked": true
   },
   "10033": {
     "name": "Tree Gnome Village",
@@ -3143,7 +3158,7 @@
       "unlocked": false
     },
     "strongest": "Jungle spider",
-    "unlocked": false
+    "unlocked": true
   },
   "11057": {
     "name": "Brimhaven",
@@ -3758,7 +3773,7 @@
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "Ice spider",
+    "strongest": "Cyclops",
     "unlocked": true
   },
   "11576": {
@@ -4159,7 +4174,6 @@
     "name": "Monastery",
     "monsters": [
       "Dwarf",
-      "Icefiend",
       "Guard (Dwarf)"
     ],
     "below": {
@@ -4168,7 +4182,7 @@
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "Icefiend, Guard (Dwarf)",
+    "strongest": "Guard (Dwarf)",
     "unlocked": false
   },
   "12087": {
@@ -4571,7 +4585,7 @@
       "unlocked": false
     },
     "strongest": "Desert wolf",
-    "unlocked": false
+    "unlocked": true
   },
   "12593": {
     "name": "Lumbridge Swamp (West)",
@@ -5179,7 +5193,7 @@
       "unlocked": false
     },
     "strongest": "Kalphite soldier",
-    "unlocked": false
+    "unlocked": true
   },
   "13106": {
     "name": "Al Kharid (North)",
@@ -5399,15 +5413,17 @@
   },
   "13359": {
     "name": "North of Pollnivneach",
-    "monsters": [],
+    "monsters": [
+      "Lizard"
+    ],
     "below": {
       "name": "",
       "monsters": [],
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "",
-    "unlocked": false
+    "strongest": "Lizard",
+    "unlocked": true
   },
   "13360": {
     "name": "West of Shantay Pass",
