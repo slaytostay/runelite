@@ -1033,7 +1033,7 @@
       "unlocked": false
     },
     "strongest": "Rat",
-    "unlocked": false
+    "unlocked": true
   },
   "6970": {
     "name": "Piscarilius (South West)",
@@ -1152,7 +1152,7 @@
       "unlocked": false
     },
     "strongest": "Rat",
-    "unlocked": false
+    "unlocked": true
   },
   "7227": {
     "name": "Piscarilius Bank",
@@ -1180,6 +1180,18 @@
     "strongest": "Ghost",
     "unlocked": true
   },
+  "7504": {
+    "name": "Molly\u0027s Realm",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": true
+  },
   "7505": {
     "name": "Vault of War",
     "monsters": [
@@ -1194,6 +1206,18 @@
       "unlocked": false
     },
     "strongest": "Minotaur",
+    "unlocked": true
+  },
+  "7507": {
+    "name": "Lumbridge Diner Realm",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
     "unlocked": true
   },
   "7513": {
