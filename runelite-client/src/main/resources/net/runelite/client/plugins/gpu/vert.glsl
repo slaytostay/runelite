@@ -97,7 +97,7 @@ void main()
     ivec4 region = lockedRegions[i];
     if (region.x == 0) { continue; }
     if (baseX < 0 || baseY < 0) {
-        gray = 0;
+        //gray = 0;
         break;
     }
     if ((vertex.x + baseX) >= region.x && (vertex.x + baseX) <= region.z && (vertex.z + baseY) >= region.y && (vertex.z + baseY) <= region.w) {

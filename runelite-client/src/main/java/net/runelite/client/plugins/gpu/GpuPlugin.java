@@ -24,7 +24,6 @@
  */
 package net.runelite.client.plugins.gpu;
 
-import com.google.common.graph.Graph;
 import com.google.inject.Provides;
 import com.jogamp.nativewindow.awt.AWTGraphicsConfiguration;
 import com.jogamp.nativewindow.awt.JAWTWindow;
@@ -53,26 +52,33 @@ import jogamp.nativewindow.SurfaceScaleUtils;
 import jogamp.nativewindow.jawt.x11.X11JAWTWindow;
 import jogamp.newt.awt.NewtFactoryAWT;
 import lombok.extern.slf4j.Slf4j;
-import net.runelite.api.*;
-import net.runelite.api.coords.LocalPoint;
-import net.runelite.api.coords.WorldPoint;
+import net.runelite.api.BufferProvider;
+import net.runelite.api.Client;
+import net.runelite.api.Constants;
+import net.runelite.api.GameState;
+import net.runelite.api.Model;
+import net.runelite.api.NodeCache;
+import net.runelite.api.Perspective;
+import net.runelite.api.Renderable;
+import net.runelite.api.Scene;
+import net.runelite.api.SceneTileModel;
+import net.runelite.api.SceneTilePaint;
+import net.runelite.api.Texture;
+import net.runelite.api.TextureProvider;
 import net.runelite.api.events.GameStateChanged;
 import net.runelite.api.hooks.DrawCallbacks;
 import net.runelite.client.callback.ClientThread;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
-import net.runelite.client.plugins.*;
-
+import net.runelite.client.plugins.Plugin;
+import net.runelite.client.plugins.PluginDescriptor;
+import net.runelite.client.plugins.PluginInstantiationException;
+import net.runelite.client.plugins.PluginManager;
 import static net.runelite.client.plugins.gpu.GLUtil.*;
-
-import net.runelite.client.plugins.dollycam.DollyCamConfig;
-import net.runelite.client.plugins.dollycam.DollyCamPlugin;
 import net.runelite.client.plugins.gpu.config.AntiAliasingMode;
 import net.runelite.client.plugins.gpu.template.Template;
-import net.runelite.client.plugins.slayerarea.SlayerArea;
 import net.runelite.client.plugins.slayerarea.SlayerAreas;
 import net.runelite.client.ui.DrawManager;
-import net.runelite.client.ui.overlay.components.LineComponent;
 import net.runelite.client.util.OSType;
 
 @PluginDescriptor(
@@ -82,7 +88,6 @@ import net.runelite.client.util.OSType;
 	tags = {"fog", "draw distance"}
 )
 @Slf4j
-@PluginDependency(DollyCamPlugin.class)
 public class GpuPlugin extends Plugin implements DrawCallbacks
 {
 	// This is the maximum number of triangles the compute shaders support
@@ -112,9 +117,6 @@ public class GpuPlugin extends Plugin implements DrawCallbacks
 
 	@Inject
 	private PluginManager pluginManager;
-
-	@Inject
-	private DollyCamPlugin dolly;
 
 	private Canvas canvas;
 	private JAWTWindow jawtWindow;
@@ -776,8 +778,8 @@ public class GpuPlugin extends Plugin implements DrawCallbacks
 	@Override
 	public void drawScene(int cameraX, int cameraY, int cameraZ, int cameraPitch, int cameraYaw, int plane)
 	{
-		centerX = dolly.getCenterX();
-		centerY = dolly.getCenterY();
+		centerX = client.getCenterX();
+		centerY = client.getCenterY();
 
 		final Scene scene = client.getScene();
 		final int drawDistance = Math.max(0, Math.min(MAX_DISTANCE, config.drawDistance()));
@@ -970,14 +972,14 @@ public class GpuPlugin extends Plugin implements DrawCallbacks
 		gl.glBindBuffer(gl.GL_UNIFORM_BUFFER, uniformBufferId);
 		uniformBuffer.clear();
 		uniformBuffer
-			.put(dolly.getCameraYaw())
-			.put(dolly.getCameraPitch())
+			.put(client.getCameraYaw())
+			.put(client.getCameraPitch())
 			.put(centerX)
 			.put(centerY)
-			.put(dolly.getScale())
-			.put(dolly.getCameraX2())
-			.put(dolly.getCameraY2())
-			.put(dolly.getCameraZ2());
+			.put(client.getScale())
+			.put(client.getCameraX2())
+			.put(client.getCameraY2())
+			.put(client.getCameraZ2());
 		uniformBuffer.flip();
 
 		gl.glBufferSubData(gl.GL_UNIFORM_BUFFER, 0, uniformBuffer.limit() * Integer.BYTES, uniformBuffer);
@@ -1432,7 +1434,7 @@ public class GpuPlugin extends Plugin implements DrawCallbacks
 			buffer.put(tc);
 			buffer.put(targetBufferOffset);
 			buffer.put(FLAG_SCENE_BUFFER | (model.getRadius() << 12) | orientation);
-			buffer.put(x + dolly.getCameraX2()).put(y + dolly.getCameraY2()).put(z + dolly.getCameraZ2());
+			buffer.put(x + client.getCameraX2()).put(y + client.getCameraY2()).put(z + client.getCameraZ2());
 
 			targetBufferOffset += tc * 3;
 		}
@@ -1475,7 +1477,7 @@ public class GpuPlugin extends Plugin implements DrawCallbacks
 				buffer.put(len / 3);
 				buffer.put(targetBufferOffset);
 				buffer.put((model.getRadius() << 12) | orientation);
-				buffer.put(x + dolly.getCameraX2()).put(y + dolly.getCameraY2()).put(z + dolly.getCameraZ2());
+				buffer.put(x + client.getCameraX2()).put(y + client.getCameraY2()).put(z + client.getCameraZ2());
 
 				tempOffset += len;
 				if (hasUv)
