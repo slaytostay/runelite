@@ -4106,6 +4106,18 @@
     "strongest": "Ice spider",
     "unlocked": false
   },
+  "11930": {
+    "name": "Goblin Cook Instance",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": true
+  },
   "12081": {
     "name": "Port Sarim Jail",
     "monsters": [
