@@ -316,7 +316,7 @@
       "unlocked": false
     },
     "strongest": "Sulphur lizard",
-    "unlocked": false
+    "unlocked": true
   },
   "5536": {
     "name": "Karuulm Slayer Dungeon (North East)",
@@ -457,7 +457,7 @@
       "unlocked": false
     },
     "strongest": "Grizzly bear",
-    "unlocked": false
+    "unlocked": true
   },
   "5942": {
     "name": "Old Memorial",
@@ -994,7 +994,7 @@
       "unlocked": false
     },
     "strongest": "Guard dog",
-    "unlocked": false
+    "unlocked": true
   },
   "6967": {
     "name": "Tithe Farm (South)",
@@ -1256,6 +1256,18 @@
     "strongest": "",
     "unlocked": true
   },
+  "8010": {
+    "name": "Mime Show Realm",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": true
+  },
   "8076": {
     "name": "Ogress Cave (South Middle)",
     "monsters": [
@@ -1268,8 +1280,8 @@
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "Ogress warriro",
-    "unlocked": false
+    "strongest": "Ogress warrior",
+    "unlocked": true
   },
   "8252": {
     "name": "Lunar Isle (South East)",
@@ -1298,6 +1310,18 @@
     },
     "strongest": "Suqah",
     "unlocked": false
+  },
+  "8261": {
+    "name": "Evil Bob\u0027s Balloon Realm",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": true
   },
   "8496": {
     "name": "Port Tyras",
@@ -1962,7 +1986,7 @@
       "unlocked": false
     },
     "strongest": "Hill giant",
-    "unlocked": false
+    "unlocked": true
   },
   "9779": {
     "name": "West Argdougne (West)",
@@ -2193,7 +2217,9 @@
       "Hill giant",
       "Rat",
       "Spider",
-      "Terrorbird"
+      "Terrorbird",
+      "Wolf",
+      "Ogre"
     ],
     "below": {
       "name": "Tree Gnome Village Dungeon",
@@ -2205,7 +2231,7 @@
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "Hill giant",
+    "strongest": "Wolf",
     "unlocked": false
   },
   "10034": {
@@ -2469,7 +2495,7 @@
       "unlocked": false
     },
     "strongest": "Skeleton",
-    "unlocked": false
+    "unlocked": true
   },
   "10289": {
     "name": "Fight Arena",
@@ -2483,7 +2509,7 @@
       "unlocked": false
     },
     "strongest": "Poison spider",
-    "unlocked": false
+    "unlocked": true
   },
   "10290": {
     "name": "Clocktower",
@@ -2522,7 +2548,7 @@
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "Cyclops",
+    "strongest": "Wolf",
     "unlocked": false
   },
   "10292": {
@@ -2745,7 +2771,7 @@
       "unlocked": false
     },
     "strongest": "Skeleton",
-    "unlocked": false
+    "unlocked": true
   },
   "10550": {
     "name": "McGrubor\u0027s Wood",
@@ -5665,7 +5691,7 @@
       "unlocked": false
     },
     "strongest": "Jackal",
-    "unlocked": false
+    "unlocked": true
   },
   "13615": {
     "name": "Lizards",
