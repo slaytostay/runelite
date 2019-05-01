@@ -26,6 +26,7 @@
 package net.runelite.client.plugins.loottracker;
 
 import com.google.common.collect.HashMultiset;
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Multiset;
 import com.google.common.collect.Multisets;
 import com.google.inject.Provides;
@@ -37,6 +38,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.regex.Matcher;
@@ -97,9 +99,16 @@ public class LootTrackerPlugin extends Plugin
 	private static final Pattern CLUE_SCROLL_PATTERN = Pattern.compile("You have completed [0-9]+ ([a-z]+) Treasure Trails.");
 	private static final int THEATRE_OF_BLOOD_REGION = 12867;
 
-	// Brimstone loot handling
-	private static final String BRIMSTONE_CHEST_MESSAGE = "You find some treasure in the chest!";
-	private static final String BRIMSTONE_CHEST_EVENT_TYPE = "Brimstone Chest";
+	// Herbiboar loot handling
+	private static final String HERBIBOAR_LOOTED_MESSAGE = "You harvest herbs from the herbiboar, whereupon it escapes.";
+	private static final String HERBIBOR_EVENT = "Herbiboar";
+
+	// Chest loot handling
+	private static final String CHEST_LOOTED_MESSAGE = "You find some treasure in the chest!";
+	private static final Map<Integer, String> CHEST_EVENT_TYPES = ImmutableMap.of(
+		5179, "Brimstone Chest",
+		11573, "Crystal Chest"
+	);
 
 	@Inject
 	private ClientToolbar clientToolbar;
@@ -368,24 +377,31 @@ public class LootTrackerPlugin extends Plugin
 	@Subscribe
 	public void onChatMessage(ChatMessage event)
 	{
-		if (event.getType() != ChatMessageType.SERVER && event.getType() != ChatMessageType.FILTERED)
+		if (event.getType() != ChatMessageType.GAMEMESSAGE && event.getType() != ChatMessageType.SPAM)
 		{
 			return;
 		}
 
 		final String message = event.getMessage();
 
-		if (message.equals(BRIMSTONE_CHEST_MESSAGE))
+		if (message.equals(CHEST_LOOTED_MESSAGE))
 		{
-			eventType = BRIMSTONE_CHEST_EVENT_TYPE;
-
-			final ItemContainer itemContainer = client.getItemContainer(InventoryID.INVENTORY);
-			if (itemContainer != null)
+			final int regionID = client.getLocalPlayer().getWorldLocation().getRegionID();
+			if (!CHEST_EVENT_TYPES.containsKey(regionID))
 			{
-				inventorySnapshot = HashMultiset.create();
-				Arrays.stream(itemContainer.getItems())
-						.forEach(item -> inventorySnapshot.add(item.getId(), item.getQuantity()));
+				return;
 			}
+
+			eventType = CHEST_EVENT_TYPES.get(regionID);
+			takeInventorySnapshot();
+
+			return;
+		}
+
+		if (message.equals(HERBIBOAR_LOOTED_MESSAGE))
+		{
+			eventType = HERBIBOR_EVENT;
+			takeInventorySnapshot();
 
 			return;
 		}
@@ -397,6 +413,9 @@ public class LootTrackerPlugin extends Plugin
 			final String type = m.group(1).toLowerCase();
 			switch (type)
 			{
+				case "beginner":
+					eventType = "Clue Scroll (Beginner)";
+					break;
 				case "easy":
 					eventType = "Clue Scroll (Easy)";
 					break;
@@ -419,21 +438,30 @@ public class LootTrackerPlugin extends Plugin
 	@Subscribe
 	public void onItemContainerChanged(ItemContainerChanged event)
 	{
-		if (eventType == null || !eventType.equals(BRIMSTONE_CHEST_EVENT_TYPE))
+		if (eventType != null && (CHEST_EVENT_TYPES.containsValue(eventType) || HERBIBOR_EVENT.equals(eventType)))
 		{
-			return;
-		}
+			if (event.getItemContainer() != client.getItemContainer(InventoryID.INVENTORY))
+			{
+				return;
+			}
 
-		if (event.getItemContainer() != client.getItemContainer(InventoryID.INVENTORY))
-		{
-			return;
+			processChestLoot(eventType, event.getItemContainer());
+			eventType = null;
 		}
-
-		processBrimstoneChestLoot(event.getItemContainer());
-		eventType = null;
 	}
 
-	private void processBrimstoneChestLoot(ItemContainer inventoryContainer)
+	private void takeInventorySnapshot()
+	{
+		final ItemContainer itemContainer = client.getItemContainer(InventoryID.INVENTORY);
+		if (itemContainer != null)
+		{
+			inventorySnapshot = HashMultiset.create();
+			Arrays.stream(itemContainer.getItems())
+					.forEach(item -> inventorySnapshot.add(item.getId(), item.getQuantity()));
+		}
+	}
+
+	private void processChestLoot(String chestType, ItemContainer inventoryContainer)
 	{
 		if (inventorySnapshot != null)
 		{
@@ -448,11 +476,11 @@ public class LootTrackerPlugin extends Plugin
 				.collect(Collectors.toList());
 
 			final LootTrackerItem[] entries = buildEntries(stack(items));
-			SwingUtilities.invokeLater(() -> panel.add(BRIMSTONE_CHEST_EVENT_TYPE, -1, entries));
+			SwingUtilities.invokeLater(() -> panel.add(chestType, -1, entries));
 
 			if (lootTrackerClient != null && config.saveLoot())
 			{
-				LootRecord lootRecord = new LootRecord(BRIMSTONE_CHEST_EVENT_TYPE, LootRecordType.EVENT, toGameItems(items), Instant.now());
+				LootRecord lootRecord = new LootRecord(chestType, LootRecordType.EVENT, toGameItems(items), Instant.now());
 				lootTrackerClient.submit(lootRecord);
 			}
 

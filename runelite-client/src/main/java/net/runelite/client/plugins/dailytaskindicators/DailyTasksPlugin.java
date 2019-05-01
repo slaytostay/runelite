@@ -65,7 +65,8 @@ public class DailyTasksPlugin extends Plugin
 	private static final String FLAX_MESSAGE = "You have bowstrings waiting to be converted from flax from the Flax keeper.";
 	private static final String BONEMEAL_MESSAGE = "You have bonemeal and slime waiting to be collected from Robin.";
 	private static final int BONEMEAL_PER_DIARY = 13;
-	private static final String RELOG_MESSAGE = " (Requires relog)";
+	private static final String DYNAMITE_MESSAGE = "You have dynamite waiting to be collected from Thirus.";
+	private static final String RELOG_MESSAGE = " (May require a relog)";
 
 	@Inject
 	private Client client;
@@ -153,6 +154,12 @@ public class DailyTasksPlugin extends Plugin
 			{
 				checkBonemeal(dailyReset);
 			}
+
+			if (config.showDynamite())
+			{
+				checkDynamite(dailyReset);
+			}
+
 		}
 	}
 
@@ -167,7 +174,7 @@ public class DailyTasksPlugin extends Plugin
 			}
 			else if (dailyReset)
 			{
-				sendChatMessage(HERB_BOX_MESSAGE + RELOG_MESSAGE);
+				sendChatMessage(HERB_BOX_MESSAGE);
 			}
 		}
 	}
@@ -197,7 +204,7 @@ public class DailyTasksPlugin extends Plugin
 			}
 			else if (dailyReset)
 			{
-				sendChatMessage(ESSENCE_MESSAGE + RELOG_MESSAGE);
+				sendChatMessage(ESSENCE_MESSAGE);
 			}
 		}
 	}
@@ -212,7 +219,7 @@ public class DailyTasksPlugin extends Plugin
 			}
 			else if (dailyReset)
 			{
-				sendChatMessage(RUNES_MESSAGE + RELOG_MESSAGE);
+				sendChatMessage(RUNES_MESSAGE);
 			}
 		}
 	}
@@ -227,7 +234,7 @@ public class DailyTasksPlugin extends Plugin
 			}
 			else if (dailyReset)
 			{
-				sendChatMessage(SAND_MESSAGE + RELOG_MESSAGE);
+				sendChatMessage(SAND_MESSAGE);
 			}
 		}
 	}
@@ -242,7 +249,7 @@ public class DailyTasksPlugin extends Plugin
 			}
 			else if (dailyReset)
 			{
-				sendChatMessage(FLAX_MESSAGE + RELOG_MESSAGE);
+				sendChatMessage(FLAX_MESSAGE);
 			}
 		}
 	}
@@ -267,7 +274,22 @@ public class DailyTasksPlugin extends Plugin
 			}
 			else if (dailyReset)
 			{
-				sendChatMessage(BONEMEAL_MESSAGE + RELOG_MESSAGE);
+				sendChatMessage(BONEMEAL_MESSAGE);
+			}
+		}
+	}
+
+	private void checkDynamite(boolean dailyReset)
+	{
+		if (client.getVar(Varbits.DIARY_KOUREND_MEDIUM) == 1)
+		{
+			if (client.getVar(Varbits.DAILY_DYNAMITE_COLLECTED) == 0)
+			{
+				sendChatMessage(DYNAMITE_MESSAGE);
+			}
+			else if (dailyReset)
+			{
+				sendChatMessage(DYNAMITE_MESSAGE);
 			}
 		}
 	}
@@ -281,7 +303,7 @@ public class DailyTasksPlugin extends Plugin
 
 		chatMessageManager.queue(
 			QueuedMessage.builder()
-				.type(ChatMessageType.GAME)
+				.type(ChatMessageType.CONSOLE)
 				.runeLiteFormattedMessage(message)
 				.build());
 	}

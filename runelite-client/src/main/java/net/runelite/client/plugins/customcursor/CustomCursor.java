@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2016-2017, Adam <Adam@sigterm.info>
+ * Copyright (c) 2018, Kruithne <kruithne@gmail.com>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -22,12 +22,33 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.runelite.rs.api;
+package net.runelite.client.plugins.customcursor;
 
-import net.runelite.mapping.Import;
+import java.awt.image.BufferedImage;
+import lombok.Getter;
+import net.runelite.client.util.ImageUtil;
 
-public interface RSCombatInfo2
+public enum CustomCursor
 {
-	@Import("healthScale")
-	int getHealthScale();
+	RS3_GOLD("RS3 Gold", "cursor-rs3-gold.png"),
+	RS3_SILVER("RS3 Silver", "cursor-rs3-silver.png"),
+	DRAGON_DAGGER("Dragon Dagger", "cursor-dragon-dagger.png"),
+	TROUT("Trout", "cursor-trout.png"),
+	DRAGON_SCIMITAR("Dragon Scimitar", "cursor-dragon-scimitar.png");
+
+	private final String name;
+	@Getter
+	private final BufferedImage cursorImage;
+
+	CustomCursor(String name, String icon)
+	{
+		this.name = name;
+		this.cursorImage = ImageUtil.getResourceStreamFromClass(CustomCursorPlugin.class, icon);
+	}
+
+	@Override
+	public String toString()
+	{
+		return name;
+	}
 }

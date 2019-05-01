@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2017, Devin French <https://github.com/devinfrench>
+ * Copyright (c) 2019, Hydrox6 <ikada@protonmail.ch>
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -22,53 +22,65 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.runelite.api.queries;
+package net.runelite.client.plugins.itemidentification;
 
-import net.runelite.api.Client;
-import net.runelite.api.Query;
-import net.runelite.api.widgets.WidgetItem;
+import java.awt.Color;
+import net.runelite.client.config.Config;
+import net.runelite.client.config.ConfigGroup;
+import net.runelite.client.config.ConfigItem;
 
-public abstract class WidgetItemQuery extends Query<WidgetItem, WidgetItemQuery>
+@ConfigGroup("itemidentification")
+public interface ItemIdentificationConfig extends Config
 {
-
-	public WidgetItemQuery idEquals(int... ids)
+	@ConfigItem(
+		keyName = "identificationType",
+		name = "Identification Type",
+		position = -4,
+		description = "How much to show of the item name"
+	)
+	default ItemIdentificationMode identificationType()
 	{
-		predicate = and(item ->
-		{
-			for (int id : ids)
-			{
-				if (item.getId() == id)
-				{
-					return true;
-				}
-			}
-			return false;
-		});
-		return this;
+		return ItemIdentificationMode.SHORT;
 	}
 
-	public WidgetItemQuery indexEquals(int... indexes)
+	@ConfigItem(
+		keyName = "textColor",
+		name = "Color",
+		position = -3,
+		description = "The colour of the identification text"
+	)
+	default Color textColor()
 	{
-		predicate = and(item ->
-		{
-			for (int index : indexes)
-			{
-				if (item.getIndex() == index)
-				{
-					return true;
-				}
-			}
-			return false;
-		});
-		return this;
+		return Color.WHITE;
 	}
 
-	public WidgetItemQuery quantityEquals(int quantity)
+	@ConfigItem(
+		keyName = "showSeeds",
+		name = "Seeds",
+		description = "Show identification on Seeds"
+	)
+	default boolean showSeeds()
 	{
-		predicate = and(item -> item.getQuantity() == quantity);
-		return this;
+		return true;
 	}
 
-	@Override
-	public abstract WidgetItem[] result(Client client);
+	@ConfigItem(
+		keyName = "showHerbs",
+		name = "Herbs",
+		description = "Show identification on Herbs"
+	)
+	default boolean showHerbs()
+	{
+		return false;
+	}
+
+	@ConfigItem(
+		keyName = "showSaplings",
+		name = "Saplings",
+		description = "Show identification on Saplings and Seedlings"
+	)
+	default boolean showSaplings()
+	{
+		return true;
+	}
 }

@@ -37,6 +37,7 @@ import java.awt.Graphics2D;
 import java.awt.GraphicsConfiguration;
 import java.awt.LayoutManager;
 import java.awt.Rectangle;
+import java.awt.Toolkit;
 import java.awt.TrayIcon;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
@@ -233,10 +234,12 @@ public class ClientUI
 			if (inTitle)
 			{
 				titleToolbar.addComponent(event.getButton(), button);
+				titleToolbar.revalidate();
 			}
 			else
 			{
 				pluginToolbar.addComponent(event.getButton(), button);
+				pluginToolbar.revalidate();
 			}
 		});
 	}
@@ -247,7 +250,9 @@ public class ClientUI
 		SwingUtilities.invokeLater(() ->
 		{
 			pluginToolbar.removeComponent(event.getButton());
+			pluginToolbar.revalidate();
 			titleToolbar.removeComponent(event.getButton());
+			titleToolbar.revalidate();
 			final PluginPanel pluginPanel = event.getButton().getPanel();
 
 			if (pluginPanel != null)
@@ -604,6 +609,38 @@ public class ClientUI
 
 		frame.requestFocus();
 		giveClientFocus();
+	}
+
+	/**
+	 * Changes cursor for client window. Requires ${@link ClientUI#open(RuneLite)} to be called first.
+	 * FIXME: This is working properly only on Windows, Linux and Mac are displaying cursor incorrectly
+	 * @param image cursor image
+	 * @param name cursor name
+	 */
+	public void setCursor(final BufferedImage image, final String name)
+	{
+		if (container == null)
+		{
+			return;
+		}
+
+		final java.awt.Point hotspot = new java.awt.Point(container.getX(), container.getY());
+		final Cursor cursorAwt = Toolkit.getDefaultToolkit().createCustomCursor(image, hotspot, name);
+		container.setCursor(cursorAwt);
+	}
+
+	/**
+	 * Resets client window cursor to default one.
+	 * @see ClientUI#setCursor(BufferedImage, String)
+	 */
+	public void resetCursor()
+	{
+		if (container == null)
+		{
+			return;
+		}
+
+		container.setCursor(Cursor.getDefaultCursor());
 	}
 
 	/**
