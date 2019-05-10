@@ -375,7 +375,7 @@
       "unlocked": false
     },
     "strongest": "Hill giant",
-    "unlocked": false
+    "unlocked": true
   },
   "5689": {
     "name": "Chasm of Fire Entrance",
@@ -852,6 +852,30 @@
     "strongest": "",
     "unlocked": false
   },
+  "6475": {
+    "name": "Misthalyn Mansion",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": true
+  },
+  "6575": {
+    "name": "Misthalyn Mansion",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": true
+  },
   "6710": {
     "name": "Salpetre Mine (South)",
     "monsters": [
@@ -1222,6 +1246,18 @@
   },
   "7513": {
     "name": "Player Owned House (East)",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": true
+  },
+  "7754": {
+    "name": "Quiz Realm",
     "monsters": [],
     "below": {
       "name": "",
@@ -1670,6 +1706,20 @@
       "unlocked": false
     },
     "strongest": "Ice troll",
+    "unlocked": false
+  },
+  "9295": {
+    "name": "Witchhaven Dungeon",
+    "monsters": [
+      "Giant lobster"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Giant lobster",
     "unlocked": false
   },
   "9519": {
@@ -2700,12 +2750,14 @@
     "below": {
       "name": "Brimhaven Dungeon (North West)",
       "monsters": [
-        "Moss giant"
+        "Moss giant",
+        "Baby green dragon",
+        "Fire giant"
       ],
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "Moss giant",
+    "strongest": "Fire giant",
     "unlocked": false
   },
   "10546": {
@@ -3294,7 +3346,7 @@
       "unlocked": false
     },
     "strongest": "Ice giant",
-    "unlocked": false
+    "unlocked": true
   },
   "11064": {
     "name": "Golden Apple Tree",
@@ -4211,7 +4263,7 @@
       "unlocked": false
     },
     "strongest": "King scorpion",
-    "unlocked": false
+    "unlocked": true
   },
   "12085": {
     "name": "Dwarven Mine Entrance",
@@ -4384,6 +4436,18 @@
     "strongest": "",
     "unlocked": true
   },
+  "12119": {
+    "name": "Ouriana Altar",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": true
+  },
   "12296": {
     "name": "Lighthouse Bridge",
     "monsters": [],
@@ -4536,7 +4600,7 @@
       "unlocked": false
     },
     "strongest": "Earth warrior",
-    "unlocked": false
+    "unlocked": true
   },
   "12345": {
     "name": "Ghost Pit",
@@ -4608,7 +4672,7 @@
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "Rogue",
+    "strongest": "Giant bat",
     "unlocked": false
   },
   "12589": {
@@ -4862,6 +4926,33 @@
     "strongest": "Hellhound",
     "unlocked": false
   },
+  "12619": {
+    "name": "Sergeant Damien Realm",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": true
+  },
+  "12844": {
+    "name": "North of Menaphos",
+    "monsters": [
+      "Jackal",
+      "Crocodile"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Crocodile",
+    "unlocked": false
+  },
   "12845": {
     "name": "Pyramid",
     "monsters": [],
@@ -4939,7 +5030,7 @@
       "unlocked": false
     },
     "strongest": "Wall beast",
-    "unlocked": false
+    "unlocked": true
   },
   "12850": {
     "name": "Lumbridge Castle",
@@ -5385,7 +5476,7 @@
       "unlocked": false
     },
     "strongest": "Skeleton",
-    "unlocked": false
+    "unlocked": true
   },
   "13115": {
     "name": "South of Callisto",
@@ -5459,7 +5550,7 @@
       "unlocked": false
     },
     "strongest": "Crocodile",
-    "unlocked": false
+    "unlocked": true
   },
   "13358": {
     "name": "Pollnivneach",
