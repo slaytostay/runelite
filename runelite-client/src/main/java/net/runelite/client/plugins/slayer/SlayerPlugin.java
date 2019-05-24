@@ -712,7 +712,7 @@ public class SlayerPlugin extends Plugin
 		} else {
 			taskLogItems.add(log);
 			try (Writer writer = new FileWriter("TaskLog.json")) {
-				Gson gson = new GsonBuilder().create();
+				Gson gson = new GsonBuilder().setPrettyPrinting().create();
 				gson.toJson(taskLogItems, writer);
 			} catch (IOException ex) {
 				System.out.println(ex.toString());

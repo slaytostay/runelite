@@ -164,8 +164,8 @@ public class GpuPlugin extends Plugin implements DrawCallbacks
 	private final IntBuffer uniformBuffer = GpuIntBuffer.allocateDirect(5 + 3 + 2048 * 4);
 	private final float[] textureOffsets = new float[128];
 
-	private final int[] loadedLockedRegions = new int[9];
-	private final int[] regionCoords = new int[36];
+	private final int[] loadedLockedRegions = new int[12];
+	private final int[] regionCoords = new int[48];
 
 	private GpuIntBuffer vertexBuffer;
 	private GpuFloatBuffer uvBuffer;
@@ -746,7 +746,7 @@ public class GpuPlugin extends Plugin implements DrawCallbacks
 			by = -1;
 			gl.glUniform1i(uniBaseX, bx);
 			gl.glUniform1i(uniBaseY, by);
-			gl.glUniform4iv(uniLockedRegions, 36, regionCoords, 0);
+			gl.glUniform4iv(uniLockedRegions, 48, regionCoords, 0);
 			return;
 		} else {
 			bx = client.getBaseX() * 128;
@@ -772,7 +772,7 @@ public class GpuPlugin extends Plugin implements DrawCallbacks
 			regionCoords[j+3] = regionCoords[j+1] + 8192;
 		}
 
-		gl.glUniform4iv(uniLockedRegions, 36, regionCoords, 0);
+		gl.glUniform4iv(uniLockedRegions, 48, regionCoords, 0);
 	}
 
 	@Override
