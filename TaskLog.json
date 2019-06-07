@@ -1011,5 +1011,86 @@
     "taskName": "Hill giants",
     "amount": 86,
     "initialAmount": 86
+  },
+  {
+    "time": "2019-05-24T16:17:47.131Z",
+    "taskName": "Hill giants",
+    "amount": 49,
+    "initialAmount": 0
+  },
+  {
+    "time": "2019-05-29T12:09:20.191Z",
+    "taskName": "Dagannoth",
+    "amount": 12,
+    "initialAmount": 85
+  },
+  {
+    "time": "2019-05-30T13:15:21.376Z",
+    "taskName": "Hill giants",
+    "amount": 48,
+    "initialAmount": 0
+  },
+  {
+    "time": "2019-06-05T12:15:01.341Z",
+    "npcName": "Turael",
+    "taskName": "Minotaurs",
+    "amount": 12,
+    "initialAmount": 12
+  },
+  {
+    "time": "2019-06-05T12:24:58.444Z",
+    "npcName": "Turael",
+    "taskName": "Rats",
+    "amount": 32,
+    "initialAmount": 32
+  },
+  {
+    "time": "2019-06-05T12:30:31.539Z",
+    "npcName": "Turael",
+    "taskName": "Skeletons",
+    "amount": 30,
+    "initialAmount": 30
+  },
+  {
+    "time": "2019-06-05T12:50:07.447Z",
+    "npcName": "Turael",
+    "taskName": "Cave crawlers",
+    "amount": 21,
+    "initialAmount": 21
+  },
+  {
+    "time": "2019-06-05T13:00:34.257Z",
+    "npcName": "Turael",
+    "taskName": "Rats",
+    "amount": 29,
+    "initialAmount": 29
+  },
+  {
+    "time": "2019-06-05T13:02:55.911Z",
+    "npcName": "Turael",
+    "taskName": "Kalphite",
+    "amount": 27,
+    "initialAmount": 27
+  },
+  {
+    "time": "2019-06-05T16:12:56.518Z",
+    "npcName": "Turael",
+    "taskName": "Ghosts",
+    "amount": 43,
+    "initialAmount": 43
+  },
+  {
+    "time": "2019-06-05T16:29:45.312Z",
+    "npcName": "Turael",
+    "taskName": "Rats",
+    "amount": 25,
+    "initialAmount": 25
+  },
+  {
+    "time": "2019-06-05T16:32:45.339Z",
+    "npcName": "Turael",
+    "taskName": "Dwarves",
+    "amount": 23,
+    "initialAmount": 23
   }
 ]
