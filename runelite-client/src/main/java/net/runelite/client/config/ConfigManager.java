@@ -347,9 +347,9 @@ public class ConfigManager
 		}
 
 		T t = (T) Proxy.newProxyInstance(clazz.getClassLoader(), new Class<?>[]
-			{
-				clazz
-			}, handler);
+				{
+						clazz
+				}, handler);
 
 		return t;
 	}
@@ -446,18 +446,18 @@ public class ConfigManager
 		}
 
 		final List<ConfigItemDescriptor> items = Arrays.stream(inter.getMethods())
-			.filter(m -> m.getParameterCount() == 0)
-			.map(m -> new ConfigItemDescriptor(
-				m.getDeclaredAnnotation(ConfigItem.class),
-				m.getReturnType(),
-				m.getDeclaredAnnotation(Range.class),
-				m.getDeclaredAnnotation(Alpha.class)
-			))
-			.sorted((a, b) -> ComparisonChain.start()
-				.compare(a.getItem().position(), b.getItem().position())
-				.compare(a.getItem().name(), b.getItem().name())
-				.result())
-			.collect(Collectors.toList());
+				.filter(m -> m.getParameterCount() == 0)
+				.map(m -> new ConfigItemDescriptor(
+						m.getDeclaredAnnotation(ConfigItem.class),
+						m.getReturnType(),
+						m.getDeclaredAnnotation(Range.class),
+						m.getDeclaredAnnotation(Alpha.class)
+				))
+				.sorted((a, b) -> ComparisonChain.start()
+						.compare(a.getItem().position(), b.getItem().position())
+						.compare(a.getItem().name(), b.getItem().name())
+						.result())
+				.collect(Collectors.toList());
 
 		return new ConfigDescriptor(group, items);
 	}
