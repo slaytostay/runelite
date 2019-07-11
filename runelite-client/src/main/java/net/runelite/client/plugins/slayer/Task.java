@@ -28,7 +28,6 @@ package net.runelite.client.plugins.slayer;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import lombok.Getter;
@@ -224,7 +223,8 @@ public enum Task
 		if (task != null) return task;
 		task = tasks.get(taskName.toLowerCase() + "s");
 		if (task != null) return task;
-		for (Task v : tasks.values()) {
+		for (Task v : tasks.values())
+		{
 			String[] targets = v.getTargetNames();
 			if (targets == null || targets.length <= 0) continue;
 			List<String> tlist = Arrays.asList(targets);
@@ -234,9 +234,12 @@ public enum Task
 		return task;
 	}
 
-	public static Task searchTask(String term) {
-		for (Task v : tasks.values()) {
-			if (v.name.toLowerCase().contains(term.toLowerCase())) {
+	public static Task searchTask(String term)
+	{
+		for (Task v : tasks.values())
+		{
+			if (v.name.toLowerCase().contains(term.toLowerCase()))
+			{
 				return v;
 			}
 		}

@@ -40,7 +40,9 @@ import java.io.Writer;
 import java.lang.reflect.Type;
 import java.time.Duration;
 import java.time.Instant;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -88,9 +90,9 @@ import net.runelite.client.util.Text;
 import net.runelite.http.api.chat.ChatClient;
 
 @PluginDescriptor(
-	name = "Slayer",
-	description = "Show additional slayer task related information",
-	tags = {"combat", "notifications", "overlay", "tasks"}
+		name = "Slayer",
+		description = "Show additional slayer task related information",
+		tags = {"combat", "notifications", "overlay", "tasks"}
 )
 @Slf4j
 public class SlayerPlugin extends Plugin
@@ -228,8 +230,8 @@ public class SlayerPlugin extends Plugin
 		overlayManager.add(targetMinimapOverlay);
 
 		if (client.getGameState() == GameState.LOGGED_IN
-			&& config.amount() != -1
-			&& !config.taskName().isEmpty())
+				&& config.amount() != -1
+				&& !config.taskName().isEmpty())
 		{
 			points = config.points();
 			streak = config.streak();
@@ -275,8 +277,8 @@ public class SlayerPlugin extends Plugin
 				break;
 			case LOGGED_IN:
 				if (config.amount() != -1
-					&& !config.taskName().isEmpty()
-					&& loginFlag)
+						&& !config.taskName().isEmpty()
+						&& loginFlag)
 				{
 					points = config.points();
 					streak = config.streak();
@@ -643,8 +645,8 @@ public class SlayerPlugin extends Plugin
 		if (task != null)
 		{
 			Arrays.stream(task.getTargetNames())
-				.map(String::toLowerCase)
-				.forEach(targetNames::add);
+					.map(String::toLowerCase)
+					.forEach(targetNames::add);
 
 			targetNames.add(taskName.toLowerCase().replaceAll("s$", ""));
 		}
@@ -663,7 +665,8 @@ public class SlayerPlugin extends Plugin
 		}
 	}
 
-	private class TaskLogItem {
+	private class TaskLogItem
+	{
 		private String time;
 		private String npcName;
 		private String taskName;
@@ -691,14 +694,18 @@ public class SlayerPlugin extends Plugin
 		rebuildTargetNames(task);
 		rebuildTargetList();
 
-		Type REVIEW_TYPE = new TypeToken<List<TaskLogItem>>() {
+		Type REVIEW_TYPE = new TypeToken<List<TaskLogItem>>()
+		{
 		}.getType();
 		List<TaskLogItem> taskLogItems = new ArrayList<>();
-		try (JsonReader reader = new JsonReader(new FileReader("TaskLog.json"));) {
+		try (JsonReader reader = new JsonReader(new FileReader("TaskLog.json"));)
+		{
 			Gson gson = new Gson();
 			taskLogItems = gson.fromJson(reader, REVIEW_TYPE);
-		} catch(IOException ex) {
-			System.out.println (ex.toString());
+		}
+		catch (IOException ex)
+		{
+			System.out.println(ex.toString());
 		}
 		TaskLogItem log = new TaskLogItem();
 		log.time = infoTimer.toString();
@@ -706,15 +713,21 @@ public class SlayerPlugin extends Plugin
 		log.taskName = taskName.substring(0, 1).toUpperCase() + taskName.substring(1).toLowerCase();
 		log.amount = amount;
 		log.initialAmount = initialAmount;
-		TaskLogItem last = taskLogItems.get(taskLogItems.size()-1);
-		if (last.initialAmount == log.initialAmount && last.taskName.equals(log.taskName) && log.amount <= last.amount) {
+		TaskLogItem last = taskLogItems.get(taskLogItems.size() - 1);
+		if (last.initialAmount == log.initialAmount && last.taskName.equals(log.taskName) && log.amount <= last.amount)
+		{
 
-		} else {
+		}
+		else
+		{
 			taskLogItems.add(log);
-			try (Writer writer = new FileWriter("TaskLog.json")) {
+			try (Writer writer = new FileWriter("TaskLog.json"))
+			{
 				Gson gson = new GsonBuilder().setPrettyPrinting().create();
 				gson.toJson(taskLogItems, writer);
-			} catch (IOException ex) {
+			}
+			catch (IOException ex)
+			{
 				System.out.println(ex.toString());
 			}
 		}
@@ -743,15 +756,15 @@ public class SlayerPlugin extends Plugin
 		}
 
 		taskTooltip += ColorUtil.wrapWithColorTag("Pts:", Color.YELLOW)
-			+ " %s</br>"
-			+ ColorUtil.wrapWithColorTag("Streak:", Color.YELLOW)
-			+ " %s";
+				+ " %s</br>"
+				+ ColorUtil.wrapWithColorTag("Streak:", Color.YELLOW)
+				+ " %s";
 
 		if (initialAmount > 0)
 		{
 			taskTooltip += "</br>"
-				+ ColorUtil.wrapWithColorTag("Start:", Color.YELLOW)
-				+ " " + initialAmount;
+					+ ColorUtil.wrapWithColorTag("Start:", Color.YELLOW)
+					+ " " + initialAmount;
 		}
 
 		counter = new TaskCounter(taskImg, this, amount);
@@ -788,7 +801,7 @@ public class SlayerPlugin extends Plugin
 		else
 		{
 			player = Text.removeTags(chatMessage.getName())
-				.replace('\u00A0', ' ');
+					.replace('\u00A0', ' ');
 		}
 
 		net.runelite.http.api.chat.Task task;
@@ -803,7 +816,7 @@ public class SlayerPlugin extends Plugin
 		}
 
 		if (TASK_STRING_VALIDATION.matcher(task.getTask()).find() || task.getTask().length() > TASK_STRING_MAX_LENGTH ||
-			TASK_STRING_VALIDATION.matcher(task.getLocation()).find() || task.getLocation().length() > TASK_STRING_MAX_LENGTH)
+				TASK_STRING_VALIDATION.matcher(task.getLocation()).find() || task.getLocation().length() > TASK_STRING_MAX_LENGTH)
 		{
 			log.debug("Validation failed for task name or location: {}", task);
 			return;
@@ -828,11 +841,11 @@ public class SlayerPlugin extends Plugin
 		}
 
 		String response = new ChatMessageBuilder()
-			.append(ChatColorType.NORMAL)
-			.append("Slayer Task: ")
-			.append(ChatColorType.HIGHLIGHT)
-			.append(sb.toString())
-			.build();
+				.append(ChatColorType.NORMAL)
+				.append("Slayer Task: ")
+				.append(ChatColorType.HIGHLIGHT)
+				.append(sb.toString())
+				.build();
 
 		final MessageNode messageNode = chatMessage.getMessageNode();
 		messageNode.setRuneLiteFormatMessage(response);

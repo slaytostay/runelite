@@ -124,7 +124,8 @@ class WorldMapRegionOverlay extends Overlay
 				int labelWidth = (int) textBounds.getWidth() + 2 * LABEL_PADDING;
 				int labelHeight = (int) textBounds.getHeight() + 2 * LABEL_PADDING;
 				//graphics.fillRect(xPos, yPos, labelWidth, labelHeight);
-				if ((!SlayerAreas.getAreas().containsKey(regionId) || !SlayerAreas.getAreas().get(regionId).unlocked)) {
+				if ((!SlayerAreas.getAreas().containsKey(regionId) || !SlayerAreas.getAreas().get(regionId).unlocked))
+				{
 					graphics.setColor(new Color(0, 38, 72, 127));
 					graphics.fillRect(xPos, yPos, regionPixelSize, regionPixelSize);
 				}

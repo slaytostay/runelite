@@ -25,7 +25,8 @@
  */
 package net.runelite.client.plugins.devtools;
 
-import java.awt.*;
+import java.awt.GridLayout;
+import java.awt.Rectangle;
 import javax.inject.Inject;
 import javax.swing.JPanel;
 import net.runelite.api.Client;
@@ -92,9 +93,10 @@ class DevToolsPanel extends PluginPanel
 		container.add(plugin.getExamine());
 
 		container.add(plugin.getSetClientBounds());
-		plugin.getSetClientBounds().addActionListener((ev) -> {
+		plugin.getSetClientBounds().addActionListener((ev) ->
+		{
 			ContainableFrame frame = clientUi.getFrame();
-			Rectangle clientBounds = new Rectangle(0,240,1726,931);
+			Rectangle clientBounds = new Rectangle(0, 240, 1726, 931);
 			frame.setBounds(clientBounds);
 			frame.revalidateMinimumSize();
 		});
