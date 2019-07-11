@@ -318,6 +318,21 @@
     "strongest": "Sulphur lizard",
     "unlocked": true
   },
+  "5436": {
+    "name": "North of the Forsaken Tower",
+    "monsters": [],
+    "below": {
+      "name": "Karuulm Slayer Dungeon (North East)",
+      "monsters": [
+        "Alchemical Hydra",
+        "Drake"
+      ],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Alchemical hydra",
+    "unlocked": false
+  },
   "5536": {
     "name": "Karuulm Slayer Dungeon (North East)",
     "monsters": [
@@ -2716,6 +2731,20 @@
       "unlocked": false
     },
     "strongest": "Sea snake",
+    "unlocked": false
+  },
+  "10301": {
+    "name": "Here be penguins",
+    "monsters": [
+      "Penguin"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Penguin",
     "unlocked": false
   },
   "10537": {
