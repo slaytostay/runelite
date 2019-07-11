@@ -4316,7 +4316,7 @@
       "unlocked": false
     },
     "strongest": "Guard (Dwarf)",
-    "unlocked": false
+    "unlocked": true
   },
   "12087": {
     "name": "North of Monastery",
@@ -4528,7 +4528,7 @@
       "unlocked": false
     },
     "strongest": "Skeleton",
-    "unlocked": false
+    "unlocked": true
   },
   "12340": {
     "name": "Draynor Manor",
@@ -5729,7 +5729,7 @@
       "unlocked": false
     },
     "strongest": "Kalphite soldier",
-    "unlocked": false
+    "unlocked": true
   },
   "13361": {
     "name": "Clan Wars",

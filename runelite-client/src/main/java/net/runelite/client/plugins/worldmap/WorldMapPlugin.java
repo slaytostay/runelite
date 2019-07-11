@@ -28,11 +28,18 @@ package net.runelite.client.plugins.worldmap;
 import com.google.inject.Inject;
 import com.google.inject.Provides;
 import java.awt.image.BufferedImage;
-import java.util.*;
-
-import net.runelite.api.*;
+import java.util.Arrays;
+import net.runelite.api.Client;
+import net.runelite.api.Experience;
+import net.runelite.api.GameState;
+import net.runelite.api.Skill;
+import net.runelite.api.Quest;
+import net.runelite.api.QuestState;
 import net.runelite.api.events.ConfigChanged;
 import net.runelite.api.events.ExperienceChanged;
+import net.runelite.api.events.WidgetLoaded;
+import net.runelite.api.widgets.WidgetID;
+import net.runelite.client.callback.ClientThread;
 import net.runelite.api.events.GameStateChanged;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
@@ -52,6 +59,9 @@ public class WorldMapPlugin extends Plugin
 	static final BufferedImage BLANK_ICON;
 	private static final BufferedImage FAIRY_TRAVEL_ICON;
 	private static final BufferedImage NOPE_ICON;
+	private static final BufferedImage NOT_STARTED_ICON;
+	private static final BufferedImage STARTED_ICON;
+	private static final BufferedImage FINISHED_ICON;
 	private static final BufferedImage AREA_ICON;
 
 	static final String CONFIG_KEY = "worldmap";
@@ -78,6 +88,9 @@ public class WorldMapPlugin extends Plugin
 		//A size of 17 gives us a buffer when triggering tooltips
 		final int iconBufferSize = 17;
 
+		//Quest icons are a bit bigger.
+		final int questIconBufferSize = 22;
+
 		BLANK_ICON = new BufferedImage(iconBufferSize, iconBufferSize, BufferedImage.TYPE_INT_ARGB);
 		AREA_ICON =  ImageUtil.getResourceStreamFromClass(WorldMapPlugin.class, "royal_seed_pod_teleport_icon.png");
 
@@ -88,10 +101,25 @@ public class WorldMapPlugin extends Plugin
 		NOPE_ICON = new BufferedImage(iconBufferSize, iconBufferSize, BufferedImage.TYPE_INT_ARGB);
 		final BufferedImage nopeImage = ImageUtil.getResourceStreamFromClass(WorldMapPlugin.class, "nope_icon.png");
 		NOPE_ICON.getGraphics().drawImage(nopeImage, 1, 1, null);
+
+		NOT_STARTED_ICON = new BufferedImage(questIconBufferSize, questIconBufferSize, BufferedImage.TYPE_INT_ARGB);
+		final BufferedImage notStartedIcon = ImageUtil.getResourceStreamFromClass(WorldMapPlugin.class, "quest_not_started_icon.png");
+		NOT_STARTED_ICON.getGraphics().drawImage(notStartedIcon, 4, 4, null);
+
+		STARTED_ICON = new BufferedImage(questIconBufferSize, questIconBufferSize, BufferedImage.TYPE_INT_ARGB);
+		final BufferedImage startedIcon = ImageUtil.getResourceStreamFromClass(WorldMapPlugin.class, "quest_started_icon.png");
+		STARTED_ICON.getGraphics().drawImage(startedIcon, 4, 4, null);
+
+		FINISHED_ICON = new BufferedImage(questIconBufferSize, questIconBufferSize, BufferedImage.TYPE_INT_ARGB);
+		final BufferedImage finishedIcon = ImageUtil.getResourceStreamFromClass(WorldMapPlugin.class, "quest_completed_icon.png");
+		FINISHED_ICON.getGraphics().drawImage(finishedIcon, 4, 4, null);
 	}
 
 	@Inject
 	private Client client;
+
+	@Inject
+	private ClientThread clientThread;
 
 	@Inject
 	private WorldMapConfig config;
@@ -174,6 +202,17 @@ public class WorldMapPlugin extends Plugin
 		}
 	}
 
+	@Subscribe
+	public void onWidgetLoaded(WidgetLoaded widgetLoaded)
+	{
+		if (widgetLoaded.getGroupId() == WidgetID.WORLD_MAP_GROUP_ID)
+		{
+			// Quest icons are per-account due to showing quest status,
+			// so we recreate them each time the map is loaded
+			updateQuestStartPointIcons();
+		}
+	}
+
 	private void updateAgilityIcons()
 	{
 		worldMapPointManager.removeIf(AgilityShortcutPoint.class::isInstance);
@@ -210,6 +249,7 @@ public class WorldMapPlugin extends Plugin
 	{
 		updateAgilityIcons();
 		updateRareTreeIcons();
+		updateQuestStartPointIcons();
 
 		worldMapPointManager.removeIf(FairyRingPoint.class::isInstance);
 		if (config.fairyRingIcon() || config.fairyRingTooltips())
@@ -226,14 +266,6 @@ public class WorldMapPlugin extends Plugin
 		{
 			Arrays.stream(MinigameLocation.values())
 				.map(value -> new MinigamePoint(value, BLANK_ICON))
-				.forEach(worldMapPointManager::add);
-		}
-
-		worldMapPointManager.removeIf(QuestStartPoint.class::isInstance);
-		if (config.questStartTooltips())
-		{
-			Arrays.stream(QuestStartLocation.values())
-				.map(value -> new QuestStartPoint(value, BLANK_ICON))
 				.forEach(worldMapPointManager::add);
 		}
 
@@ -282,7 +314,73 @@ public class WorldMapPlugin extends Plugin
 			.forEach(worldMapPointManager::add);
 	}
 
+	private void updateQuestStartPointIcons()
+	{
+		worldMapPointManager.removeIf(QuestStartPoint.class::isInstance);
 
+		if (!config.questStartTooltips())
+		{
+			return;
+		}
+
+		// Must setup the quest icons on the client thread, after the player has logged in.
+		clientThread.invokeLater(() ->
+		{
+			if (client.getGameState() != GameState.LOGGED_IN)
+			{
+				return false;
+			}
+
+			Arrays.stream(QuestStartLocation.values())
+				.map(this::createQuestStartPoint)
+				.forEach(worldMapPointManager::add);
+			return true;
+		});
+	}
+
+	private QuestStartPoint createQuestStartPoint(QuestStartLocation data)
+	{
+		Quest[] quests = data.getQuests();
+
+		// Get first uncompleted quest. Else, return the last quest.
+		Quest quest = null;
+		for (int i = 0; i < quests.length; i++)
+		{
+			if (quests[i].getState(client) != QuestState.FINISHED)
+			{
+				quest = quests[i];
+				break;
+			}
+		}
+		if (quest == null)
+		{
+			quest = quests[quests.length - 1];
+		}
+
+		BufferedImage icon = BLANK_ICON;
+		String tooltip = "";
+		if (quest != null)
+		{
+			tooltip = quest.getName();
+			switch (quest.getState(client))
+			{
+				case FINISHED:
+					icon = FINISHED_ICON;
+					tooltip += " - Finished";
+					break;
+				case IN_PROGRESS:
+					icon = STARTED_ICON;
+					tooltip += " - Started";
+					break;
+				case NOT_STARTED:
+					icon = NOT_STARTED_ICON;
+					tooltip += " - Not Started";
+					break;
+			}
+		}
+
+		return new QuestStartPoint(data.getLocation(), icon, tooltip);
+	}
 }
 
 
