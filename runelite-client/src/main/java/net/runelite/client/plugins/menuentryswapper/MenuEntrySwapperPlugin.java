@@ -262,12 +262,12 @@ public class MenuEntrySwapperPlugin extends Plugin
 		ItemComposition itemComposition = client.getItemDefinition(itemId);
 		String itemName = itemComposition.getName();
 		String option = "Use";
-		int shiftClickActionindex = itemComposition.getShiftClickActionIndex();
+		int shiftClickActionIndex = itemComposition.getShiftClickActionIndex();
 		String[] inventoryActions = itemComposition.getInventoryActions();
 
-		if (shiftClickActionindex >= 0 && shiftClickActionindex < inventoryActions.length)
+		if (shiftClickActionIndex >= 0 && shiftClickActionIndex < inventoryActions.length)
 		{
-			option = inventoryActions[shiftClickActionindex];
+			option = inventoryActions[shiftClickActionIndex];
 		}
 
 		MenuEntry[] entries = event.getMenuEntries();
@@ -531,6 +531,10 @@ public class MenuEntrySwapperPlugin extends Plugin
 		else if (config.swapBirdhouseEmpty() && option.equals("interact") && target.contains("birdhouse"))
 		{
 			swap("empty", option, target, true);
+		}
+		else if (config.swapQuick() && option.equals("enter"))
+		{
+			swap("quick-enter", option, target, true);
 		}
 		else if (config.swapQuick() && option.equals("ring"))
 		{
