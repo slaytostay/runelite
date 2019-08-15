@@ -27,6 +27,7 @@ package net.runelite.client.plugins.loottracker;
 
 import com.google.common.collect.HashMultiset;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Multiset;
 import com.google.common.collect.Multisets;
 import com.google.inject.Provides;
@@ -36,6 +37,7 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -87,6 +89,7 @@ import net.runelite.http.api.loottracker.GameItem;
 import net.runelite.http.api.loottracker.LootRecord;
 import net.runelite.http.api.loottracker.LootRecordType;
 import net.runelite.http.api.loottracker.LootTrackerClient;
+import org.apache.commons.lang3.ArrayUtils;
 
 @PluginDescriptor(
 	name = "Loot Tracker",
@@ -103,7 +106,17 @@ public class LootTrackerPlugin extends Plugin
 
 	// Herbiboar loot handling
 	private static final String HERBIBOAR_LOOTED_MESSAGE = "You harvest herbs from the herbiboar, whereupon it escapes.";
-	private static final String HERBIBOR_EVENT = "Herbiboar";
+	private static final String HERBIBOAR_EVENT = "Herbiboar";
+
+	// Hespori loot handling
+	private static final String HESPORI_LOOTED_MESSAGE = "You have successfully cleared this patch for new crops.";
+	private static final String HESPORI_EVENT = "Hespori";
+	private static final int HESPORI_REGION = 5021;
+
+	// Gauntlet loot handling
+	private static final String GAUNTLET_LOOTED_MESSAGE = "You open the chest.";
+	private static final String GAUNTLET_EVENT = "The Gauntlet";
+	private static final int GAUNTLET_LOBBY_REGION = 12127;
 
 	// Chest loot handling
 	private static final String CHEST_LOOTED_MESSAGE = "You find some treasure in the chest!";
@@ -112,8 +125,12 @@ public class LootTrackerPlugin extends Plugin
 		5179, "Brimstone Chest",
 		11573, "Crystal Chest",
 		12093, "Larran's big chest",
-		13113, "Larran's small chest"
+		13113, "Larran's small chest",
+		13151, "Elven Crystal Chest"
 	);
+
+	// Last man standing map regions
+	private static final Set<Integer> LAST_MAN_STANDING_REGIONS = ImmutableSet.of(13658, 13659, 13914, 13915, 13916);
 
 	@Inject
 	private ClientToolbar clientToolbar;
@@ -317,6 +334,12 @@ public class LootTrackerPlugin extends Plugin
 	@Subscribe
 	public void onPlayerLootReceived(final PlayerLootReceived playerLootReceived)
 	{
+		// Ignore Last Man Standing player loots
+		if (isAtLMS())
+		{
+			return;
+		}
+
 		final Player player = playerLootReceived.getPlayer();
 		final Collection<ItemStack> items = playerLootReceived.getItems();
 		final String name = player.getName();
@@ -368,6 +391,10 @@ public class LootTrackerPlugin extends Plugin
 				// event type should be set via ChatMessage for clue scrolls.
 				// Clue Scrolls use same InventoryID as Barrows
 				container = client.getItemContainer(InventoryID.BARROWS_REWARD);
+				break;
+			case (WidgetID.KINGDOM_GROUP_ID):
+				eventType = "Kingdom of Miscellania";
+				container = client.getItemContainer(InventoryID.KINGDOM_OF_MISCELLANIA);
 				break;
 			default:
 				return;
@@ -426,9 +453,24 @@ public class LootTrackerPlugin extends Plugin
 
 		if (message.equals(HERBIBOAR_LOOTED_MESSAGE))
 		{
-			eventType = HERBIBOR_EVENT;
+			eventType = HERBIBOAR_EVENT;
 			takeInventorySnapshot();
 
+			return;
+		}
+
+		final int regionID = client.getLocalPlayer().getWorldLocation().getRegionID();
+		if (HESPORI_REGION == regionID && message.equals(HESPORI_LOOTED_MESSAGE))
+		{
+			eventType = HESPORI_EVENT;
+			takeInventorySnapshot();
+			return;
+		}
+
+		if (GAUNTLET_LOBBY_REGION == regionID && message.equals(GAUNTLET_LOOTED_MESSAGE))
+		{
+			eventType = GAUNTLET_EVENT;
+			takeInventorySnapshot();
 			return;
 		}
 
@@ -464,7 +506,10 @@ public class LootTrackerPlugin extends Plugin
 	@Subscribe
 	public void onItemContainerChanged(ItemContainerChanged event)
 	{
-		if (eventType != null && (CHEST_EVENT_TYPES.containsValue(eventType) || HERBIBOR_EVENT.equals(eventType)))
+		if (CHEST_EVENT_TYPES.containsValue(eventType)
+			|| HERBIBOAR_EVENT.equals(eventType)
+			|| HESPORI_EVENT.equals(eventType)
+			|| GAUNTLET_EVENT.equals(eventType))
 		{
 			if (event.getItemContainer() != client.getItemContainer(InventoryID.INVENTORY))
 			{
@@ -567,16 +612,34 @@ public class LootTrackerPlugin extends Plugin
 
 	private Collection<LootTrackerRecord> convertToLootTrackerRecord(final Collection<LootRecord> records)
 	{
-		Collection<LootTrackerRecord> trackerRecords = new ArrayList<>();
-		for (LootRecord record : records)
-		{
-			LootTrackerItem[] drops = record.getDrops().stream().map(itemStack ->
-				buildLootTrackerItem(itemStack.getId(), itemStack.getQty())
-			).toArray(LootTrackerItem[]::new);
+		return records.stream()
+			.sorted(Comparator.comparing(LootRecord::getTime))
+			.map(record ->
+			{
+				LootTrackerItem[] drops = record.getDrops().stream().map(itemStack ->
+					buildLootTrackerItem(itemStack.getId(), itemStack.getQty())
+				).toArray(LootTrackerItem[]::new);
 
-			trackerRecords.add(new LootTrackerRecord(record.getEventId(), "", drops, -1));
+				return new LootTrackerRecord(record.getEventId(), "", drops);
+			})
+			.collect(Collectors.toCollection(ArrayList::new));
+	}
+
+	/**
+	 * Is player at the Last Man Standing minigame
+	 */
+	private boolean isAtLMS()
+	{
+		final int[] mapRegions = client.getMapRegions();
+
+		for (int region : LAST_MAN_STANDING_REGIONS)
+		{
+			if (ArrayUtils.contains(mapRegions, region))
+			{
+				return true;
+			}
 		}
 
-		return trackerRecords;
+		return false;
 	}
 }

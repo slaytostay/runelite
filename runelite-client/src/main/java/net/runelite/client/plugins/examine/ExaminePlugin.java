@@ -37,11 +37,14 @@ import net.runelite.api.ChatMessageType;
 import net.runelite.api.Client;
 import net.runelite.api.Constants;
 import net.runelite.api.ItemComposition;
+import net.runelite.api.ItemID;
 import net.runelite.api.events.ChatMessage;
 import net.runelite.api.events.GameStateChanged;
 import net.runelite.api.events.MenuOptionClicked;
 import net.runelite.api.widgets.Widget;
+import net.runelite.api.widgets.WidgetID;
 import net.runelite.api.widgets.WidgetInfo;
+import static net.runelite.api.widgets.WidgetInfo.SEED_VAULT_ITEM_CONTAINER;
 import static net.runelite.api.widgets.WidgetInfo.TO_CHILD;
 import static net.runelite.api.widgets.WidgetInfo.TO_GROUP;
 import net.runelite.api.widgets.WidgetItem;
@@ -201,6 +204,12 @@ public class ExaminePlugin extends Plugin
 		{
 			final int itemId = pendingExamine.getId();
 			final int itemQuantity = pendingExamine.getQuantity();
+
+			if (itemId == ItemID.COINS_995)
+			{
+				return;
+			}
+
 			itemComposition = itemManager.getItemComposition(itemId);
 
 			if (itemComposition != null)
@@ -301,6 +310,24 @@ public class ExaminePlugin extends Plugin
 			}
 		}
 		else if (WidgetInfo.LOOTING_BAG_CONTAINER.getGroupId() == widgetGroup)
+		{
+			Widget[] children = widget.getDynamicChildren();
+			if (actionParam < children.length)
+			{
+				Widget widgetItem = children[actionParam];
+				return new int[]{widgetItem.getItemQuantity(), widgetItem.getItemId()};
+			}
+		}
+		else if (WidgetID.SEED_VAULT_GROUP_ID == widgetGroup)
+		{
+			Widget[] children = client.getWidget(SEED_VAULT_ITEM_CONTAINER).getDynamicChildren();
+			if (actionParam < children.length)
+			{
+				Widget widgetItem = children[actionParam];
+				return new int[]{widgetItem.getItemQuantity(), widgetItem.getItemId()};
+			}
+		}
+		else if (WidgetID.SEED_VAULT_INVENTORY_GROUP_ID == widgetGroup)
 		{
 			Widget[] children = widget.getDynamicChildren();
 			if (actionParam < children.length)

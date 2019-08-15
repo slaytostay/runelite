@@ -1024,6 +1024,18 @@
     "strongest": "",
     "unlocked": false
   },
+  "6965": {
+    "name": "Crabclaw Isle",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": false
+  },
   "6966": {
     "name": "Xeric\u0027s Glade",
     "monsters": [
@@ -1134,24 +1146,31 @@
     "name": "Tithe Farm",
     "monsters": [],
     "below": {
-      "name": "",
-      "monsters": [],
+      "name": "Sarachnis\u0027 Lair",
+      "monsters": [
+        "Sarachnis"
+      ],
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "",
+    "strongest": "Sarachnis",
     "unlocked": false
   },
   "7223": {
     "name": "Vinery",
     "monsters": [],
     "below": {
-      "name": "",
-      "monsters": [],
+      "name": "Forthos Dungeon",
+      "monsters": [
+        "Temple spider",
+        "Undead druid",
+        "Baby dragon",
+        "Red dragon"
+      ],
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "",
+    "strongest": "Red dragon",
     "unlocked": false
   },
   "7224": {
