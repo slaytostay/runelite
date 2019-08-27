@@ -277,7 +277,7 @@ public enum Task
 	}
 
 	@Nullable
-	static Task getTask(String taskName)
+	public static Task getTask(String taskName)
 	{
 		Task task = tasks.get(taskName.toLowerCase());
 		if (task != null) return task;

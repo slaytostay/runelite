@@ -1092,5 +1092,12 @@
     "taskName": "Dwarves",
     "amount": 23,
     "initialAmount": 23
+  },
+  {
+    "time": "2019-08-27T10:11:17.806Z",
+    "npcName": "Vannaka",
+    "taskName": "Cave crawlers",
+    "amount": 83,
+    "initialAmount": 83
   }
 ]
