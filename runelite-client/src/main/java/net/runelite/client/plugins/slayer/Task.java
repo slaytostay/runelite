@@ -165,7 +165,7 @@ public enum Task
 	TROLLS("Trolls", ItemID.TROLL_GUARD, "Mountain troll", "Thrower troll", "Ice troll", "Troll general", "Troll spectator", "Rock (Troll)"),
 	TUROTH("Turoth", ItemID.TUROTH),
 	TZHAAR("Tzhaar", ItemID.ENSOULED_TZHAAR_HEAD, "TzHaar-Ket", "TzHaar-Xil", "TzHaar-Hur", "TzHaar-Mej", "TzHaar-Ket"),
-	VAMPIRES("Vampires", ItemID.STAKE, "Vampyre juvenile", "Feral vampyre", "Vyrewatch"),
+	VAMPIRES("Vampyres", ItemID.STAKE, "Vampyre juvenile", "Feral vampyre", "Vyrewatch", "Vampire"),
 	VENENATIS("Venenatis", ItemID.VENENATIS_SPIDERLING),
 	VETION("Vet'ion", ItemID.VETION_JR),
 	VORKATH("Vorkath", ItemID.VORKI),
