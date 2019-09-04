@@ -33,7 +33,7 @@ uniform vec4 configGrayColor;
 uniform float configGrayAmount;
 
 in vec4 Color;
-centroid in float fHsl;
+in float fHsl;
 in vec4 fUv;
 in float fogAmount;
 in float grayAmount;
