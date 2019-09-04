@@ -94,7 +94,7 @@ public class ConfigManager
 	public ConfigManager(ScheduledExecutorService scheduledExecutorService)
 	{
 		this.executor = scheduledExecutorService;
-		this.propertiesFile = getPropertiesFile();
+		this.propertiesFile = getPropertiesFile(RuneLite.RUNELITE_DIR);
 
 		executor.scheduleWithFixedDelay(this::sendConfig, 30, 30, TimeUnit.SECONDS);
 	}
@@ -115,22 +115,22 @@ public class ConfigManager
 			this.client = new ConfigClient(session.getUuid());
 		}
 
-		this.propertiesFile = getPropertiesFile();
+		this.propertiesFile = getPropertiesFile(RuneLite.RUNELITE_DIR);
 
 		load(); // load profile specific config
 	}
 
-	private File getLocalPropertiesFile()
+	private File getLocalPropertiesFile(File dir)
 	{
-		return new File(RuneLite.RUNELITE_DIR, SETTINGS_FILE_NAME);
+		return new File(dir, SETTINGS_FILE_NAME);
 	}
 
-	private File getPropertiesFile()
+	private File getPropertiesFile(File dir)
 	{
 		// Sessions that aren't logged in have no username
 		if (session == null || session.getUsername() == null)
 		{
-			return getLocalPropertiesFile();
+			return getLocalPropertiesFile(dir);
 		}
 		else
 		{
@@ -271,7 +271,7 @@ public class ConfigManager
 			return;
 		}
 
-		syncPropertiesFromFile(getLocalPropertiesFile());
+		syncPropertiesFromFile(getLocalPropertiesFile(RuneLite.RUNELITE_DIR));
 	}
 
 	private synchronized void loadFromFile()

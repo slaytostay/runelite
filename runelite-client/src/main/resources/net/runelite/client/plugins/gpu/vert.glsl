@@ -26,7 +26,7 @@
 #version 330
 
 #define TILE_SIZE 128
-#define LOCKED_REGIONS_SIZE 48
+#define LOCKED_REGIONS_SIZE 12
 
 #define FOG_SCENE_EDGE_MIN TILE_SIZE
 #define FOG_SCENE_EDGE_MAX (103 * TILE_SIZE)
@@ -51,9 +51,10 @@ uniform int useFog;
 uniform int fogDepth;
 uniform int drawDistance;
 
+uniform int useGray;
 uniform int baseX;
 uniform int baseY;
-uniform ivec4 lockedRegions[LOCKED_REGIONS_SIZE];
+uniform int lockedRegions[LOCKED_REGIONS_SIZE];
 
 out ivec3 vPosition;
 out vec4 vColor;
@@ -66,6 +67,32 @@ out float vGrayAmount;
 
 float fogFactorLinear(const float dist, const float start, const float end) {
   return 1.0 - clamp((dist - start) / (end - start), 0.0, 1.0);
+}
+
+const ivec2 regionOffsets[5] = ivec2[](
+  ivec2(0,0), ivec2(-1,-1), ivec2(-1,1), ivec2(1,-1), ivec2(1,1)
+);
+
+int toRegionId(int x, int y) {
+  return (x >> 13 << 8) + (y >> 13);
+}
+
+float b_convert(float n) {
+  return clamp(abs(n), 0.0, 1.0);
+}
+
+float isLocked(int x, int y) {
+  x = x + baseX;
+  y = y + baseY;
+  float result = 1.0;
+  for (int i = 0; i < LOCKED_REGIONS_SIZE; ++i) {
+    for (int j = 0; j < regionOffsets.length(); ++j) {
+      ivec2 off = regionOffsets[j];
+      int region = toRegionId(x + off.x, y + off.y);
+      result = result * (lockedRegions[i] - region);
+    }
+  }
+  return b_convert(result);
 }
 
 void main()
@@ -92,19 +119,5 @@ void main()
 
   vFogAmount = fogFactorLinear(fogDistance, 0, fogDepth * TILE_SIZE) * useFog;
 
-  float gray = 1;
-  for (int i = 0; i < LOCKED_REGIONS_SIZE; i++) {
-    ivec4 region = lockedRegions[i];
-    if (region.x == 0) { continue; }
-    if (baseX < 0 || baseY < 0) {
-        gray = 0;
-        break;
-    }
-    if ((vertex.x + baseX) >= region.x && (vertex.x + baseX) <= region.z && (vertex.z + baseY) >= region.y && (vertex.z + baseY) <= region.w) {
-    //if ((vertex.x + baseX) == region.x || (vertex.x + baseX) == region.z || (vertex.z + baseY) == region.y || (vertex.z + baseY) == region.w) {
-      gray = 0;
-      break;
-    }
-  }
-  vGrayAmount = gray;
+  vGrayAmount = useGray * isLocked(int(vertex.x), int(vertex.z));
 }

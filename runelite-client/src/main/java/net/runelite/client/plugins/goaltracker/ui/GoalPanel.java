@@ -1,34 +1,59 @@
-package net.runelite.client.plugins.resize.ui;
+/*
+ * Copyright (c) 2019, Slay to Stay, <https://github.com/slaytostay>
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *
+ * 1. Redistributions of source code must retain the above copyright notice, this
+ *    list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright notice,
+ *    this list of conditions and the following disclaimer in the documentation
+ *    and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+ * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+package net.runelite.client.plugins.goaltracker.ui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import javax.swing.BorderFactory;
+import javax.swing.Box;
 import javax.swing.ImageIcon;
-import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JSpinner;
-import javax.swing.SpinnerModel;
-import javax.swing.SpinnerNumberModel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.border.Border;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
-import javax.swing.event.ChangeListener;
-import net.runelite.client.plugins.resize.ResizePlugin;
-import net.runelite.client.plugins.resize.ResizeProfile;
+import net.runelite.client.plugins.goaltracker.Goal;
+import net.runelite.client.plugins.goaltracker.GoalTrackerPlugin;
 import net.runelite.client.ui.ColorScheme;
 import net.runelite.client.ui.FontManager;
 import net.runelite.client.ui.components.FlatTextField;
 import net.runelite.client.util.ImageUtil;
 
-public class ResizeProfilePanel extends JPanel
+public class GoalPanel extends JPanel
 {
 	private static final int DEFAULT_FILL_OPACITY = 75;
 
@@ -36,18 +61,18 @@ public class ResizeProfilePanel extends JPanel
 			BorderFactory.createMatteBorder(0, 0, 1, 0, ColorScheme.DARK_GRAY_COLOR),
 			BorderFactory.createLineBorder(ColorScheme.DARKER_GRAY_COLOR));
 
-	private static final ImageIcon VISIBLE_ICON;
-	private static final ImageIcon VISIBLE_HOVER_ICON;
-	private static final ImageIcon INVISIBLE_ICON;
-	private static final ImageIcon INVISIBLE_HOVER_ICON;
+	private static final ImageIcon CHECKED_ICON;
+	private static final ImageIcon CHECKED_HOVER_ICON;
+	private static final ImageIcon CHECKBOX_ICON;
+	private static final ImageIcon CHECKBOX_HOVER_ICON;
 
 	private static final ImageIcon DELETE_ICON;
 	private static final ImageIcon DELETE_HOVER_ICON;
 
-	private final ResizePlugin plugin;
-	private final ResizeProfile profile;
+	private final GoalTrackerPlugin plugin;
+	private final Goal goal;
 
-	private final JLabel visibilityLabel = new JLabel();
+	private final JLabel completeLabel = new JLabel();
 	private final JLabel deleteLabel = new JLabel();
 
 	private final FlatTextField nameInput = new FlatTextField();
@@ -55,25 +80,30 @@ public class ResizeProfilePanel extends JPanel
 	private final JLabel cancel = new JLabel("Cancel");
 	private final JLabel rename = new JLabel("Rename");
 
+	private final JTextField chunkInput = new JTextField("", 20);
+	private final JTextArea requirementsInput = new JTextArea();
+
+	private GridBagConstraints gbc;
+
 	static
 	{
-		final BufferedImage visibleImg = ImageUtil.getResourceStreamFromClass(ResizePlugin.class, "visible_icon.png");
-		VISIBLE_ICON = new ImageIcon(visibleImg);
-		VISIBLE_HOVER_ICON = new ImageIcon(ImageUtil.alphaOffset(visibleImg, -100));
+		final BufferedImage checkedImg = ImageUtil.getResourceStreamFromClass(GoalTrackerPlugin.class, "checked_icon.png");
+		CHECKED_ICON = new ImageIcon(checkedImg);
+		CHECKED_HOVER_ICON = new ImageIcon(ImageUtil.alphaOffset(checkedImg, -100));
 
-		final BufferedImage invisibleImg = ImageUtil.getResourceStreamFromClass(ResizePlugin.class, "invisible_icon.png");
-		INVISIBLE_ICON = new ImageIcon(invisibleImg);
-		INVISIBLE_HOVER_ICON = new ImageIcon(ImageUtil.alphaOffset(invisibleImg, -100));
+		final BufferedImage checkboxImg = ImageUtil.getResourceStreamFromClass(GoalTrackerPlugin.class, "checkbox_icon.png");
+		CHECKBOX_ICON = new ImageIcon(checkboxImg);
+		CHECKBOX_HOVER_ICON = new ImageIcon(ImageUtil.alphaOffset(checkboxImg, -100));
 
-		final BufferedImage deleteImg = ImageUtil.getResourceStreamFromClass(ResizePlugin.class, "delete_icon.png");
+		final BufferedImage deleteImg = ImageUtil.getResourceStreamFromClass(GoalTrackerPlugin.class, "delete_icon.png");
 		DELETE_ICON = new ImageIcon(deleteImg);
 		DELETE_HOVER_ICON = new ImageIcon(ImageUtil.alphaOffset(deleteImg, -100));
 	}
 
-	ResizeProfilePanel(ResizePlugin plugin, ResizeProfile profile)
+	GoalPanel(GoalTrackerPlugin plugin, Goal goal)
 	{
 		this.plugin = plugin;
-		this.profile = profile;
+		this.goal = goal;
 
 		setLayout(new BorderLayout());
 		setBackground(ColorScheme.DARKER_GRAY_COLOR);
@@ -94,7 +124,7 @@ public class ResizeProfilePanel extends JPanel
 			@Override
 			public void mousePressed(MouseEvent mouseEvent)
 			{
-				profile.setName(nameInput.getText());
+				goal.setName(nameInput.getText());
 				plugin.updateConfig();
 
 				nameInput.setEditable(false);
@@ -124,7 +154,7 @@ public class ResizeProfilePanel extends JPanel
 			public void mousePressed(MouseEvent mouseEvent)
 			{
 				nameInput.setEditable(false);
-				nameInput.setText(profile.getName());
+				nameInput.setText(goal.getName());
 				updateNameActions(false);
 				requestFocusInWindow();
 			}
@@ -170,7 +200,7 @@ public class ResizeProfilePanel extends JPanel
 		nameActions.add(cancel, BorderLayout.WEST);
 		nameActions.add(rename, BorderLayout.CENTER);
 
-		nameInput.setText(profile.getName());
+		nameInput.setText(goal.getName());
 		nameInput.setBorder(null);
 		nameInput.setEditable(false);
 		nameInput.setBackground(ColorScheme.DARKER_GRAY_COLOR);
@@ -181,61 +211,59 @@ public class ResizeProfilePanel extends JPanel
 		nameWrapper.add(nameInput, BorderLayout.CENTER);
 		nameWrapper.add(nameActions, BorderLayout.EAST);
 
-		JPanel bottomContainer = new JPanel(new BorderLayout());
+		JPanel bottomContainer = new JPanel(new GridBagLayout());
 		bottomContainer.setBorder(new EmptyBorder(8, 0, 8, 0));
 		bottomContainer.setBackground(ColorScheme.DARKER_GRAY_COLOR);
+
+		gbc = new GridBagConstraints();
+		gbc.fill = GridBagConstraints.HORIZONTAL;
+		gbc.weightx = 1;
+		gbc.gridx = 0;
+		gbc.gridy = 0;
 
 		JPanel leftActions = new JPanel(new BorderLayout());
 		leftActions.setBackground(ColorScheme.DARKER_GRAY_COLOR);
 
-		JPanel positionPanel = createPositionPanel(profile.getPosition().width, profile.getPosition().height);
-		JPanel sizePanel = createSizePanel(profile.getSize().width, profile.getSize().height);
-
-		leftActions.add(positionPanel, BorderLayout.NORTH);
-		leftActions.add(sizePanel, BorderLayout.SOUTH);
-
 		JPanel rightActions = new JPanel(new FlowLayout(FlowLayout.RIGHT, 8, 0));
 		rightActions.setBackground(ColorScheme.DARKER_GRAY_COLOR);
 
-		visibilityLabel.setToolTipText(profile.isVisible() ? "Deactivated" : "Activate resize profile");
-		visibilityLabel.addMouseListener(new MouseAdapter()
+		completeLabel.setToolTipText(goal.isCompleted() ? "Completed" : "Complete");
+		completeLabel.addMouseListener(new MouseAdapter()
 		{
 			@Override
 			public void mousePressed(MouseEvent mouseEvent)
 			{
-				if (profile.isVisible()) return;
-				plugin.disableProfiles();
-				profile.setVisible(true);
-				updateVisibility();
+				goal.setCompleted(!goal.isCompleted());
+				updateCompletion();
 			}
 
 			@Override
 			public void mouseEntered(MouseEvent mouseEvent)
 			{
-				visibilityLabel.setIcon(profile.isVisible() ? VISIBLE_HOVER_ICON : INVISIBLE_HOVER_ICON);
+				completeLabel.setIcon(goal.isCompleted() ? CHECKED_HOVER_ICON : CHECKBOX_HOVER_ICON);
 			}
 
 			@Override
 			public void mouseExited(MouseEvent mouseEvent)
 			{
-				updateVisibility();
+				updateCompletion();
 			}
 		});
 
 		deleteLabel.setIcon(DELETE_ICON);
-		deleteLabel.setToolTipText("Delete resize profile");
+		deleteLabel.setToolTipText("Delete goal");
 		deleteLabel.addMouseListener(new MouseAdapter()
 		{
 			@Override
 			public void mousePressed(MouseEvent mouseEvent)
 			{
-				int confirm = JOptionPane.showConfirmDialog(ResizeProfilePanel.this,
-						"Are you sure you want to permanently delete this resize profile?",
+				int confirm = JOptionPane.showConfirmDialog(GoalPanel.this,
+						"Are you sure you want to permanently delete this goal?",
 						"Warning", JOptionPane.OK_CANCEL_OPTION);
 
 				if (confirm == 0)
 				{
-					plugin.deleteProfile(profile);
+					plugin.deleteGoal(goal);
 				}
 			}
 
@@ -252,67 +280,54 @@ public class ResizeProfilePanel extends JPanel
 			}
 		});
 
-		rightActions.add(visibilityLabel);
-		rightActions.add(deleteLabel);
+		JPanel chunkWrapper = new JPanel(new BorderLayout(3, 0));
+		chunkWrapper.setPreferredSize(new Dimension(0, 24));
+		chunkWrapper.setBackground(ColorScheme.DARKER_GRAY_COLOR);
 
-		bottomContainer.add(leftActions, BorderLayout.WEST);
-		bottomContainer.add(rightActions, BorderLayout.EAST);
+		chunkInput.setText(Integer.toString(goal.getChunk()));
+		chunkInput.setPreferredSize(new Dimension(0, 24));
+		chunkInput.addFocusListener(new FocusAdapter()
+		{
+			@Override
+			public void focusLost(FocusEvent e)
+			{
+				int chunk = goal.getChunk();
+				try
+				{
+					chunk = Integer.parseInt(chunkInput.getText());
+				}
+				catch (Exception ex)
+				{
+
+				}
+				goal.setChunk(chunk);
+				chunkInput.setText(Integer.toString(goal.getChunk()));
+			}
+		});
+
+		JLabel chunkLabel = new JLabel("Chunk ID:");
+		chunkLabel.setBorder(BorderFactory.createEmptyBorder(0, 8, 0, 0));
+		chunkWrapper.add(chunkLabel, BorderLayout.WEST);
+		chunkWrapper.add(chunkInput, BorderLayout.CENTER);
+		bottomContainer.add(chunkWrapper, gbc);
+		gbc.gridy++;
+		bottomContainer.add(Box.createRigidArea(new Dimension(0, 10)), gbc);
+		gbc.gridy++;
+
+		bottomContainer.add(new RequirementsPanel(plugin, goal), gbc);
+		gbc.gridy++;
+		bottomContainer.add(Box.createRigidArea(new Dimension(0, 10)), gbc);
+		gbc.gridy++;
+
+		rightActions.add(completeLabel);
+		rightActions.add(deleteLabel);
+		bottomContainer.add(rightActions, gbc);
+		gbc.gridy++;
 
 		add(nameWrapper, BorderLayout.NORTH);
 		add(bottomContainer, BorderLayout.CENTER);
 
-		updateVisibility();
-	}
-
-	private JPanel createPositionPanel(int width, int height)
-	{
-		JPanel dimensionPanel = new JPanel();
-		dimensionPanel.setLayout(new BorderLayout());
-
-		JSpinner widthSpinner = createSpinner(width);
-		JSpinner heightSpinner = createSpinner(height);
-
-		ChangeListener listener = e -> updatePosition((Integer) widthSpinner.getValue(), (Integer) heightSpinner.getValue());
-
-		widthSpinner.addChangeListener(listener);
-		heightSpinner.addChangeListener(listener);
-
-		dimensionPanel.add(widthSpinner, BorderLayout.WEST);
-		dimensionPanel.add(new JLabel(" x "), BorderLayout.CENTER);
-		dimensionPanel.add(heightSpinner, BorderLayout.EAST);
-
-		return dimensionPanel;
-	}
-
-	private JPanel createSizePanel(int width, int height)
-	{
-		JPanel dimensionPanel = new JPanel();
-		dimensionPanel.setLayout(new BorderLayout());
-
-		JSpinner widthSpinner = createSpinner(width);
-		JSpinner heightSpinner = createSpinner(height);
-
-		ChangeListener listener = e -> updateSize((Integer) widthSpinner.getValue(), (Integer) heightSpinner.getValue());
-
-		widthSpinner.addChangeListener(listener);
-		heightSpinner.addChangeListener(listener);
-
-		dimensionPanel.add(widthSpinner, BorderLayout.WEST);
-		dimensionPanel.add(new JLabel(" x "), BorderLayout.CENTER);
-		dimensionPanel.add(heightSpinner, BorderLayout.EAST);
-
-		return dimensionPanel;
-	}
-
-	private JSpinner createSpinner(int value)
-	{
-		SpinnerModel model = new SpinnerNumberModel(value, Integer.MIN_VALUE, Integer.MAX_VALUE, 1);
-		JSpinner spinner = new JSpinner(model);
-		Component editor = spinner.getEditor();
-		JFormattedTextField spinnerTextField = ((JSpinner.DefaultEditor) editor).getTextField();
-		spinnerTextField.setColumns(4);
-
-		return spinner;
+		updateCompletion();
 	}
 
 	private void updateNameActions(boolean saveAndCancel)
@@ -328,22 +343,9 @@ public class ResizeProfilePanel extends JPanel
 		}
 	}
 
-	private void updateVisibility()
+	private void updateCompletion()
 	{
-		visibilityLabel.setIcon(profile.isVisible() ? VISIBLE_ICON : INVISIBLE_ICON);
+		completeLabel.setIcon(goal.isCompleted() ? CHECKED_ICON : CHECKBOX_ICON);
 		plugin.updateConfig();
 	}
-
-	private void updatePosition(int x, int y)
-	{
-		profile.setPosition(new Dimension(x, y));
-		plugin.updateConfig();
-	}
-
-	private void updateSize(int w, int h)
-	{
-		profile.setSize(new Dimension(w, h));
-		plugin.updateConfig();
-	}
-
 }
