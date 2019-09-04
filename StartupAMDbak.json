@@ -1763,6 +1763,22 @@
     "strongest": "Giant lobster",
     "unlocked": false
   },
+  "9362": {
+    "name": "Observatory Dungeon",
+    "monsters": [
+      "Goblin",
+      "Poison spider",
+      "Rat"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Goblin",
+    "unlocked": true
+  },
   "9519": {
     "name": "South of Castle Wars",
     "monsters": [
@@ -2234,12 +2250,14 @@
       "Seagull"
     ],
     "below": {
-      "name": "",
-      "monsters": [],
+      "name": "Ape Atoll Dungeon",
+      "monsters": [
+        "Monkey"
+      ],
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "Seagull",
+    "strongest": "Monkey",
     "unlocked": false
   },
   "10029": {
@@ -2401,7 +2419,7 @@
       "unlocked": false
     },
     "strongest": "Guard (Dwarf)",
-    "unlocked": false
+    "unlocked": true
   },
   "10039": {
     "name": "Barbarian Outpost",
@@ -4249,7 +4267,7 @@
       "unlocked": false
     },
     "strongest": "Ice spider",
-    "unlocked": false
+    "unlocked": true
   },
   "11930": {
     "name": "Goblin Cook Instance",
@@ -4349,7 +4367,7 @@
       "unlocked": false
     },
     "strongest": "Black guard (Dwarf)",
-    "unlocked": false
+    "unlocked": true
   },
   "12086": {
     "name": "Monastery",
@@ -4725,7 +4743,7 @@
       "unlocked": false
     },
     "strongest": "Lesser demon",
-    "unlocked": false
+    "unlocked": true
   },
   "12349": {
     "name": "Mage Arena",
@@ -5289,7 +5307,8 @@
     "name": "Scorpion Pit",
     "monsters": [
       "Scorpion",
-      "Wolf"
+      "Wolf",
+      "Chaos elemental"
     ],
     "below": {
       "name": "Scorpia\u0027s Lair",
@@ -5299,8 +5318,8 @@
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "Scorpia",
-    "unlocked": false
+    "strongest": "Chaos elemental",
+    "unlocked": true
   },
   "12889": {
     "name": "Raids",
@@ -5590,7 +5609,6 @@
   "13117": {
     "name": "Rogues\u0027 Castle",
     "monsters": [
-      "Chaos elemental",
       "Rogue"
     ],
     "below": {
@@ -5599,7 +5617,7 @@
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "Chaos elemental",
+    "strongest": "Rogue",
     "unlocked": false
   },
   "13136": {

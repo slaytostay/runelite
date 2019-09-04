@@ -1099,5 +1099,110 @@
     "taskName": "Cave crawlers",
     "amount": 83,
     "initialAmount": 83
+  },
+  {
+    "time": "2019-08-31T15:13:23.256Z",
+    "npcName": "Turael",
+    "taskName": "Dwarves",
+    "amount": 27,
+    "initialAmount": 27
+  },
+  {
+    "time": "2019-08-31T15:34:16.291Z",
+    "npcName": "Turael",
+    "taskName": "Goblins",
+    "amount": 40,
+    "initialAmount": 40
+  },
+  {
+    "time": "2019-08-31T15:40:10.964Z",
+    "npcName": "Turael",
+    "taskName": "Minotaurs",
+    "amount": 14,
+    "initialAmount": 14
+  },
+  {
+    "time": "2019-08-31T15:44:02.616Z",
+    "npcName": "Turael",
+    "taskName": "Kalphite",
+    "amount": 46,
+    "initialAmount": 46
+  },
+  {
+    "time": "2019-08-31T15:59:45.090Z",
+    "npcName": "Turael",
+    "taskName": "Rats",
+    "amount": 23,
+    "initialAmount": 23
+  },
+  {
+    "time": "2019-08-31T16:03:50.640Z",
+    "npcName": "Turael",
+    "taskName": "Cave crawlers",
+    "amount": 43,
+    "initialAmount": 43
+  },
+  {
+    "time": "2019-08-31T16:15:40.589Z",
+    "npcName": "Turael",
+    "taskName": "Goblins",
+    "amount": 44,
+    "initialAmount": 44
+  },
+  {
+    "time": "2019-08-31T17:16:36.244Z",
+    "npcName": "Turael",
+    "taskName": "Dwarves",
+    "amount": 41,
+    "initialAmount": 41
+  },
+  {
+    "time": "2019-08-31T17:53:51.358Z",
+    "npcName": "Turael",
+    "taskName": "Monkeys",
+    "amount": 47,
+    "initialAmount": 47
+  },
+  {
+    "time": "2019-08-31T18:07:08.295Z",
+    "npcName": "Vannaka",
+    "taskName": "Rockslugs",
+    "amount": 71,
+    "initialAmount": 71
+  },
+  {
+    "time": "2019-08-31T19:24:09.158Z",
+    "npcName": "Krystilia",
+    "taskName": "Chaos elemental",
+    "amount": 3,
+    "initialAmount": 3
+  },
+  {
+    "time": "2019-08-31T22:59:01.352Z",
+    "npcName": "Krystilia",
+    "taskName": "Spiders",
+    "amount": 96,
+    "initialAmount": 96
+  },
+  {
+    "time": "2019-09-01T00:06:31.046Z",
+    "npcName": "Krystilia",
+    "taskName": "Lesser demons",
+    "amount": 93,
+    "initialAmount": 93
+  },
+  {
+    "time": "2019-09-01T19:03:21.164Z",
+    "npcName": "Krystilia",
+    "taskName": "Fire giants",
+    "amount": 127,
+    "initialAmount": 127
+  },
+  {
+    "time": "2019-09-03T20:13:06.454Z",
+    "npcName": "Krystilia",
+    "taskName": "Revenants",
+    "amount": 98,
+    "initialAmount": 98
   }
 ]
