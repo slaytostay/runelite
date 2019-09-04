@@ -239,7 +239,7 @@ public class GpuPlugin extends Plugin implements DrawCallbacks
 	private int uniBlockLarge;
 	private int uniBlockMain;
 	private int uniSmoothBanding;
-  
+
 	private int uniUseGray;
 	private int uniUseHardBorder;
 	private int uniGrayAmount;
@@ -766,7 +766,7 @@ public class GpuPlugin extends Plugin implements DrawCallbacks
 		{
 			loadedLockedRegions[i] = 0;
 		}
-    
+
 		for (int i = 0; i < client.getMapRegions().length; i++)
 		{
 			int region = client.getMapRegions()[i];
@@ -775,7 +775,7 @@ public class GpuPlugin extends Plugin implements DrawCallbacks
 				loadedLockedRegions[i] = region;
 			}
 		}
-    
+
 		gl.glUniform1i(uniBaseX, bx);
 		gl.glUniform1i(uniBaseY, by);
 		gl.glUniform1iv(uniLockedRegions, 12, loadedLockedRegions, 0);
@@ -980,14 +980,14 @@ public class GpuPlugin extends Plugin implements DrawCallbacks
 		gl.glBindBuffer(gl.GL_UNIFORM_BUFFER, uniformBufferId);
 		uniformBuffer.clear();
 		uniformBuffer
-			.put(yaw)
-			.put(pitch)
-			.put(centerX)
-			.put(centerY)
-			.put(client.getScale())
-			.put(client.getCameraX2())
-			.put(client.getCameraY2())
-			.put(client.getCameraZ2());
+				.put(yaw)
+				.put(pitch)
+				.put(centerX)
+				.put(centerY)
+				.put(client.getScale())
+				.put(client.getCameraX2())
+				.put(client.getCameraY2())
+				.put(client.getCameraZ2());
 		uniformBuffer.flip();
 
 		gl.glBufferSubData(gl.GL_UNIFORM_BUFFER, 0, uniformBuffer.limit() * Integer.BYTES, uniformBuffer);
@@ -1092,7 +1092,7 @@ public class GpuPlugin extends Plugin implements DrawCallbacks
 			gl.glUniform4f(uniFogColor, (sky >> 16 & 0xFF) / 255f, (sky >> 8 & 0xFF) / 255f, (sky & 0xFF) / 255f, 1f);
 			gl.glUniform1i(uniFogDepth, fogDepth);
 			gl.glUniform1i(uniDrawDistance, drawDistance * Perspective.LOCAL_TILE_SIZE);
-      
+
 			gl.glUniform1i(uniUseHardBorder, RegionLocker.hardBorder ? 1 : 0);
 			gl.glUniform1f(uniGrayAmount, RegionLocker.grayAmount / 255f);
 			gl.glUniform4f(uniGrayColor, RegionLocker.grayColor.getRed() / 255f, RegionLocker.grayColor.getGreen() / 255f, RegionLocker.grayColor.getBlue() / 255f, RegionLocker.grayColor.getAlpha() / 255f);

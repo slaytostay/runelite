@@ -121,7 +121,7 @@ class RegionLockerOverlay extends Overlay
 				boolean containsRegion =  RegionLocker.hasRegion(regionId) ^ config.invertMapOverlay();
 				boolean unlockable = regionType == RegionTypes.UNLOCKABLE;
 				boolean blacklisted = RegionLocker.isBlacklisted(regionId);
-				if (containsRegion || unlockable || blacklisted && !(RegionLocker.getY(regionId) >= 4160))
+				if ((containsRegion || unlockable || blacklisted) && !(RegionLocker.getY(regionId) >= 4160))
 				{
 					Color color;
 					if (blacklisted)
