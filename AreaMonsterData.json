@@ -1333,6 +1333,21 @@
     "strongest": "",
     "unlocked": true
   },
+  "8008": {
+    "name": "Mourner Tunnel (East)",
+    "monsters": [
+      "Mourner",
+      "Dark beast"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Dark beast",
+    "unlocked": false
+  },
   "8010": {
     "name": "Mime Show Realm",
     "monsters": [],
@@ -1962,6 +1977,21 @@
     "strongest": "Mutated zygomite",
     "unlocked": false
   },
+  "9545": {
+    "name": "Viyeldi caves",
+    "monsters": [
+      "Death wing",
+      "Lesser demon"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Death wing",
+    "unlocked": false
+  },
   "9551": {
     "name": "Fight Cave",
     "monsters": [
@@ -2049,7 +2079,7 @@
       "unlocked": false
     },
     "strongest": "Skogre",
-    "unlocked": false
+    "unlocked": true
   },
   "9776": {
     "name": "Castle Wars",
@@ -2670,7 +2700,7 @@
       "unlocked": false
     },
     "strongest": "Wolf",
-    "unlocked": false
+    "unlocked": true
   },
   "10292": {
     "name": "Chaos Druid Tower",
@@ -5604,7 +5634,7 @@
       "unlocked": false
     },
     "strongest": "Callisto",
-    "unlocked": false
+    "unlocked": true
   },
   "13117": {
     "name": "Rogues\u0027 Castle",

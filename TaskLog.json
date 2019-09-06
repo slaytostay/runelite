@@ -1204,5 +1204,89 @@
     "taskName": "Revenants",
     "amount": 98,
     "initialAmount": 98
+  },
+  {
+    "time": "2019-09-04T21:48:42.281Z",
+    "npcName": "Krystilia",
+    "taskName": "Skeletons",
+    "amount": 96,
+    "initialAmount": 96
+  },
+  {
+    "time": "2019-09-04T22:15:08.450Z",
+    "npcName": "Krystilia",
+    "taskName": "Dark warriors",
+    "amount": 75,
+    "initialAmount": 75
+  },
+  {
+    "time": "2019-09-04T22:45:02.154Z",
+    "npcName": "Krystilia",
+    "taskName": "Chaos druids",
+    "amount": 75,
+    "initialAmount": 75
+  },
+  {
+    "time": "2019-09-05T11:02:55.433Z",
+    "npcName": "Vannaka",
+    "taskName": "Callisto",
+    "amount": 3,
+    "initialAmount": 3
+  },
+  {
+    "time": "2019-09-05T19:36:34.629Z",
+    "npcName": "Vannaka",
+    "taskName": "Cave crawlers",
+    "amount": 88,
+    "initialAmount": 88
+  },
+  {
+    "time": "2019-09-05T20:01:01.937Z",
+    "npcName": "Vannaka",
+    "taskName": "Cave bugs",
+    "amount": 11,
+    "initialAmount": 11
+  },
+  {
+    "time": "2019-09-05T20:08:06.990Z",
+    "npcName": "Vannaka",
+    "taskName": "Pyrefiends",
+    "amount": 71,
+    "initialAmount": 71
+  },
+  {
+    "time": "2019-09-05T20:52:50.447Z",
+    "npcName": "Turael",
+    "taskName": "Zombies",
+    "amount": 41,
+    "initialAmount": 41
+  },
+  {
+    "time": "2019-09-05T22:57:11.334Z",
+    "npcName": "Turael",
+    "taskName": "Goblins",
+    "amount": 46,
+    "initialAmount": 46
+  },
+  {
+    "time": "2019-09-05T23:04:37.090Z",
+    "npcName": "Turael",
+    "taskName": "Wolves",
+    "amount": 19,
+    "initialAmount": 19
+  },
+  {
+    "time": "2019-09-06T00:33:38.116Z",
+    "npcName": "Turael",
+    "taskName": "Rats",
+    "amount": 27,
+    "initialAmount": 27
+  },
+  {
+    "time": "2019-09-06T00:36:39.352Z",
+    "npcName": "Turael",
+    "taskName": "Birds",
+    "amount": 46,
+    "initialAmount": 46
   }
 ]
