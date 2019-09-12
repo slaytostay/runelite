@@ -175,6 +175,7 @@ public class RegionLocker
 	public static boolean isBlacklisted(int regionId)
 	{
 		SlayerArea area = SlayerAreas.getArea(regionId);
+		if (area == null) area = SlayerAreas.getArea(regionId - 100);
 		return area == null || area.strongest == null || area.strongest.equals("");
 	}
 

@@ -360,7 +360,7 @@
       "unlocked": false
     },
     "strongest": "Skeleton",
-    "unlocked": false
+    "unlocked": true
   },
   "5687": {
     "name": "Shayziens\u0027 Walls (North East)",
@@ -506,7 +506,7 @@
       "unlocked": false
     },
     "strongest": "Zombie",
-    "unlocked": false
+    "unlocked": true
   },
   "5944": {
     "name": "Shayzien Bank",
@@ -733,7 +733,7 @@
       "unlocked": false
     },
     "strongest": "Duck",
-    "unlocked": false
+    "unlocked": true
   },
   "6455": {
     "name": "Hosidius Station",
@@ -786,7 +786,6 @@
         "Brutal black dragon",
         "Brutal blue dragon",
         "Brutal red dragon",
-        "Dark beast",
         "Fire giant",
         "Hellhound",
         "Hill giant",
@@ -797,7 +796,7 @@
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "Dark beast",
+    "strongest": "Brutal black dragon",
     "unlocked": false
   },
   "6458": {
@@ -920,7 +919,7 @@
       "unlocked": false
     },
     "strongest": "Wolf",
-    "unlocked": false
+    "unlocked": true
   },
   "6712": {
     "name": "East of Hosidius Mess",
@@ -1245,6 +1244,20 @@
     "strongest": "Ghost",
     "unlocked": true
   },
+  "7490": {
+    "name": "Black Knights\u0027 Fortress Basement",
+    "monsters": [
+      "Rat"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Rat",
+    "unlocked": true
+  },
   "7504": {
     "name": "Molly\u0027s Realm",
     "monsters": [],
@@ -1331,6 +1344,20 @@
       "unlocked": false
     },
     "strongest": "",
+    "unlocked": true
+  },
+  "7940": {
+    "name": "Black Knights\u0027 Fortress Basement",
+    "monsters": [
+      "Rat"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Rat",
     "unlocked": true
   },
   "8008": {
@@ -1904,7 +1931,7 @@
       "unlocked": false
     },
     "strongest": "Hellhound",
-    "unlocked": false
+    "unlocked": true
   },
   "9526": {
     "name": "Gnome Ball Field",
@@ -1978,7 +2005,7 @@
     "unlocked": false
   },
   "9545": {
-    "name": "Viyeldi caves",
+    "name": "Viyeldi Caves",
     "monsters": [
       "Death wing",
       "Lesser demon"
@@ -2371,7 +2398,7 @@
       "unlocked": false
     },
     "strongest": "Wolf",
-    "unlocked": false
+    "unlocked": true
   },
   "10034": {
     "name": "Battlefield of Khazard",
@@ -2385,7 +2412,7 @@
       "unlocked": false
     },
     "strongest": "Mounted terrorbird gnome",
-    "unlocked": false
+    "unlocked": true
   },
   "10035": {
     "name": "West Argdougne (East)",
@@ -2857,7 +2884,7 @@
       "unlocked": false
     },
     "strongest": "Fire giant",
-    "unlocked": false
+    "unlocked": true
   },
   "10545": {
     "name": "Port Khazard",
@@ -2873,7 +2900,7 @@
       "unlocked": false
     },
     "strongest": "Fire giant",
-    "unlocked": false
+    "unlocked": true
   },
   "10546": {
     "name": "Tower of Life",
@@ -2958,14 +2985,16 @@
   },
   "10551": {
     "name": "Road to Rellekka",
-    "monsters": [],
+    "monsters": [
+      "Wolf"
+    ],
     "below": {
       "name": "",
       "monsters": [],
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "",
+    "strongest": "Wolf",
     "unlocked": false
   },
   "10552": {
@@ -3361,7 +3390,7 @@
       "unlocked": false
     },
     "strongest": "Jungle spider",
-    "unlocked": false
+    "unlocked": true
   },
   "11056": {
     "name": "Tai Bwo Wannai (North)",
@@ -4050,6 +4079,34 @@
       "unlocked": false
     },
     "strongest": "Black guard (Dwarf)",
+    "unlocked": false
+  },
+  "11588": {
+    "name": "Waterbirth Dungeon",
+    "monsters": [
+      "Dagganoth Kings"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Dagganoth Kings",
+    "unlocked": false
+  },
+  "11589": {
+    "name": "Waterbirth Dungeon",
+    "monsters": [
+      "Dagganoth Kings"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Dagganoth Kings",
     "unlocked": false
   },
   "11821": {
@@ -5024,7 +5081,7 @@
       "unlocked": false
     },
     "strongest": "Giant spider",
-    "unlocked": false
+    "unlocked": true
   },
   "12605": {
     "name": "Deserted Keep",
@@ -5634,7 +5691,7 @@
       "unlocked": false
     },
     "strongest": "Callisto",
-    "unlocked": true
+    "unlocked": false
   },
   "13117": {
     "name": "Rogues\u0027 Castle",
@@ -5903,7 +5960,7 @@
       "unlocked": false
     },
     "strongest": "Bat",
-    "unlocked": false
+    "unlocked": true
   },
   "13367": {
     "name": "North of Silvarea",
@@ -6152,7 +6209,7 @@
       "unlocked": false
     },
     "strongest": "Lizard",
-    "unlocked": false
+    "unlocked": true
   },
   "13616": {
     "name": "West of Uzer",
@@ -6929,6 +6986,20 @@
       "unlocked": false
     },
     "strongest": "",
+    "unlocked": false
+  },
+  "15164": {
+    "name": "House on the Hill (East)",
+    "monsters": [],
+    "below": {
+      "name": "Fossil Island Underwater",
+      "monsters": [
+        "Lobstrosity"
+      ],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Lobstrosity",
     "unlocked": false
   }
 }
