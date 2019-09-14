@@ -9,5 +9,7 @@ latestTag=$(git describe --tags `git rev-list --tags --max-count=1`)
 
 # Checkout latest tag
 git pull origin master
-git pull upstream tags/$latestTag
+# git pull upstream tags/$latestTag
+git pull upstream master
+
 

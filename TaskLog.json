@@ -1540,5 +1540,117 @@
     "taskName": "Rogues",
     "amount": 77,
     "initialAmount": 77
+  },
+  {
+    "time": "2019-09-13T11:44:20.343Z",
+    "npcName": "Krystilia",
+    "taskName": "Dark warriors",
+    "amount": 83,
+    "initialAmount": 83
+  },
+  {
+    "time": "2019-09-13T12:16:36.199Z",
+    "npcName": "Krystilia",
+    "taskName": "Mammoths",
+    "amount": 81,
+    "initialAmount": 81
+  },
+  {
+    "time": "2019-09-13T14:04:15.308Z",
+    "npcName": "Krystilia",
+    "taskName": "Earth warriors",
+    "amount": 123,
+    "initialAmount": 123
+  },
+  {
+    "time": "2019-09-13T15:32:33.225Z",
+    "npcName": "Krystilia",
+    "taskName": "Spiders",
+    "amount": 90,
+    "initialAmount": 90
+  },
+  {
+    "time": "2019-09-13T18:14:29.809Z",
+    "npcName": "Krystilia",
+    "taskName": "Magic axes",
+    "amount": 78,
+    "initialAmount": 78
+  },
+  {
+    "time": "2019-09-13T18:59:42.533Z",
+    "npcName": "Krystilia",
+    "taskName": "Ice giants",
+    "amount": 105,
+    "initialAmount": 105
+  },
+  {
+    "time": "2019-09-13T19:02:38.953Z",
+    "npcName": "Krystilia",
+    "taskName": "Magic axes",
+    "amount": 124,
+    "initialAmount": 124
+  },
+  {
+    "time": "2019-09-13T20:05:52.469Z",
+    "npcName": "Krystilia",
+    "taskName": "Venenatis",
+    "amount": 3,
+    "initialAmount": 3
+  },
+  {
+    "time": "2019-09-13T20:14:38.182Z",
+    "npcName": "Krystilia",
+    "taskName": "Magic axes",
+    "amount": 124,
+    "initialAmount": 124
+  },
+  {
+    "time": "2019-09-13T21:17:40.910Z",
+    "npcName": "Krystilia",
+    "taskName": "Dark warriors",
+    "amount": 102,
+    "initialAmount": 102
+  },
+  {
+    "time": "2019-09-13T21:40:36.965Z",
+    "npcName": "Krystilia",
+    "taskName": "Lesser demons",
+    "amount": 96,
+    "initialAmount": 96
+  },
+  {
+    "time": "2019-09-14T09:35:29.467Z",
+    "npcName": "Krystilia",
+    "taskName": "Dark warriors",
+    "amount": 93,
+    "initialAmount": 93
+  },
+  {
+    "time": "2019-09-14T09:56:10.798Z",
+    "npcName": "Krystilia",
+    "taskName": "Mammoths",
+    "amount": 101,
+    "initialAmount": 101
+  },
+  {
+    "time": "2019-09-14T10:00:33.055Z",
+    "npcName": "Krystilia",
+    "taskName": "Ice giants",
+    "amount": 107,
+    "initialAmount": 107
+  },
+  {
+    "time": "2019-09-14T10:00:41.454Z",
+    "npcName": "Krystilia",
+    "taskName": "Scorpions",
+    "amount": 80,
+    "initialAmount": 80
+  },
+  {
+    "time": "2019-09-14T10:19:52.510Z",
+    "npcName": "Krystilia",
+    "taskName": "Hellhounds",
+    "amount": 89,
+    "initialAmount": 89
   }
 ]

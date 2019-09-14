@@ -4483,7 +4483,7 @@
       "unlocked": false
     },
     "strongest": "Scorpion",
-    "unlocked": false
+    "unlocked": true
   },
   "12088": {
     "name": "Dark Warriors\u0027 Fortress",
@@ -5010,7 +5010,7 @@
       "unlocked": false
     },
     "strongest": "Mammoth",
-    "unlocked": false
+    "unlocked": true
   },
   "12601": {
     "name": "Graveyard of Shadows",
@@ -5675,7 +5675,7 @@
       "unlocked": false
     },
     "strongest": "Poison spider",
-    "unlocked": false
+    "unlocked": true
   },
   "13116": {
     "name": "Demonic Ruins",
@@ -5705,7 +5705,7 @@
       "unlocked": false
     },
     "strongest": "Rogue",
-    "unlocked": false
+    "unlocked": true
   },
   "13136": {
     "name": "Raids",
