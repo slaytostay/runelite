@@ -1652,5 +1652,11 @@
     "taskName": "Hellhounds",
     "amount": 89,
     "initialAmount": 89
+  },
+  {
+    "time": "2019-09-15T21:26:52.832Z",
+    "taskName": "Black demons",
+    "amount": 2,
+    "initialAmount": 105
   }
 ]
