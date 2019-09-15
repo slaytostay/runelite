@@ -8,3 +8,5 @@ project.properties
 .project
 .settings/
 .classpath
+/scripts/mvn-build.sh
+/scripts/slaylite.py
