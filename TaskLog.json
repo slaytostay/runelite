@@ -1654,9 +1654,38 @@
     "initialAmount": 89
   },
   {
-    "time": "2019-09-15T21:26:52.832Z",
+    "time": "2019-09-15T12:03:02.313Z",
+    "npcName": "Krystilia",
+    "taskName": "Ice giants",
+    "amount": 131,
+    "initialAmount": 131
+  },
+  {
+    "time": "2019-09-15T12:03:10.113Z",
+    "npcName": "Krystilia",
+    "taskName": "Fire giants",
+    "amount": 128,
+    "initialAmount": 128
+  },
+  {
+    "time": "2019-09-15T12:03:19.134Z",
+    "npcName": "Krystilia",
+    "taskName": "Ice warriors",
+    "amount": 119,
+    "initialAmount": 119
+  },
+  {
+    "time": "2019-09-15T12:03:26.931Z",
+    "npcName": "Krystilia",
+    "taskName": "Spiders",
+    "amount": 91,
+    "initialAmount": 91
+  },
+  {
+    "time": "2019-09-15T12:23:35.110Z",
+    "npcName": "Krystilia",
     "taskName": "Black demons",
-    "amount": 2,
+    "amount": 105,
     "initialAmount": 105
   }
 ]
