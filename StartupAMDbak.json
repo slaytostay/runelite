@@ -4756,7 +4756,7 @@
       "unlocked": false
     },
     "strongest": "Black demon",
-    "unlocked": false
+    "unlocked": true
   },
   "12344": {
     "name": "Statue of a Warrior",
@@ -5028,7 +5028,7 @@
       "unlocked": false
     },
     "strongest": "Hellhound",
-    "unlocked": false
+    "unlocked": true
   },
   "12602": {
     "name": "Black Chinchompas",
@@ -5337,7 +5337,7 @@
       "unlocked": false
     },
     "strongest": "Hellhound",
-    "unlocked": false
+    "unlocked": true
   },
   "12858": {
     "name": "Bone Yard",

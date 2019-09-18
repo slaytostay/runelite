@@ -1687,5 +1687,26 @@
     "taskName": "Black demons",
     "amount": 105,
     "initialAmount": 105
+  },
+  {
+    "time": "2019-09-16T20:07:16.488Z",
+    "npcName": "Krystilia",
+    "taskName": "Bears",
+    "amount": 99,
+    "initialAmount": 99
+  },
+  {
+    "time": "2019-09-16T20:47:41.819Z",
+    "npcName": "Krystilia",
+    "taskName": "Greater demons",
+    "amount": 113,
+    "initialAmount": 113
+  },
+  {
+    "time": "2019-09-16T22:47:45.308Z",
+    "npcName": "Krystilia",
+    "taskName": "Hellhounds",
+    "amount": 75,
+    "initialAmount": 75
   }
 ]
