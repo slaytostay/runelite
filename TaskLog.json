@@ -1708,5 +1708,278 @@
     "taskName": "Hellhounds",
     "amount": 75,
     "initialAmount": 75
+  },
+  {
+    "time": "2019-09-19T21:28:47.449Z",
+    "npcName": "Vannaka",
+    "taskName": "Hobgoblins",
+    "amount": 83,
+    "initialAmount": 83
+  },
+  {
+    "time": "2019-09-19T22:06:16.486Z",
+    "npcName": "Vannaka",
+    "taskName": "Wall beasts",
+    "amount": 12,
+    "initialAmount": 12
+  },
+  {
+    "time": "2019-09-19T22:23:13.967Z",
+    "npcName": "Vannaka",
+    "taskName": "Fire giants",
+    "amount": 118,
+    "initialAmount": 118
+  },
+  {
+    "time": "2019-09-19T22:24:05.587Z",
+    "npcName": "Vannaka",
+    "taskName": "Moss giants",
+    "amount": 74,
+    "initialAmount": 74
+  },
+  {
+    "time": "2019-09-20T00:02:51.968Z",
+    "npcName": "Vannaka",
+    "taskName": "Cave crawlers",
+    "amount": 70,
+    "initialAmount": 70
+  },
+  {
+    "time": "2019-09-20T00:02:59.147Z",
+    "npcName": "Vannaka",
+    "taskName": "Moss giants",
+    "amount": 113,
+    "initialAmount": 113
+  },
+  {
+    "time": "2019-09-20T01:15:56.505Z",
+    "npcName": "Vannaka",
+    "taskName": "Jellies",
+    "amount": 64,
+    "initialAmount": 64
+  },
+  {
+    "time": "2019-09-20T10:02:16.982Z",
+    "npcName": "Vannaka",
+    "taskName": "Crocodiles",
+    "amount": 89,
+    "initialAmount": 89
+  },
+  {
+    "time": "2019-09-20T14:18:26.798Z",
+    "npcName": "Vannaka",
+    "taskName": "Ice warriors",
+    "amount": 82,
+    "initialAmount": 82
+  },
+  {
+    "time": "2019-09-20T16:06:31.251Z",
+    "npcName": "Vannaka",
+    "taskName": "Hill giants",
+    "amount": 89,
+    "initialAmount": 89
+  },
+  {
+    "time": "2019-09-20T17:24:21.456Z",
+    "npcName": "Vannaka",
+    "taskName": "Pyrefiends",
+    "amount": 103,
+    "initialAmount": 103
+  },
+  {
+    "time": "2019-09-20T17:24:29.855Z",
+    "npcName": "Vannaka",
+    "taskName": "Trolls",
+    "amount": 83,
+    "initialAmount": 83
+  },
+  {
+    "time": "2019-09-20T20:40:46.083Z",
+    "npcName": "Vannaka",
+    "taskName": "Rockslugs",
+    "amount": 70,
+    "initialAmount": 70
+  },
+  {
+    "time": "2019-09-20T20:40:53.904Z",
+    "npcName": "Vannaka",
+    "taskName": "Kalphite",
+    "amount": 97,
+    "initialAmount": 97
+  },
+  {
+    "time": "2019-09-20T21:24:55.824Z",
+    "npcName": "Vannaka",
+    "taskName": "Turoth",
+    "amount": 91,
+    "initialAmount": 91
+  },
+  {
+    "time": "2019-09-20T22:41:50.916Z",
+    "npcName": "Vannaka",
+    "taskName": "Moss giants",
+    "amount": 120,
+    "initialAmount": 120
+  },
+  {
+    "time": "2019-09-21T12:07:16.072Z",
+    "npcName": "Vannaka",
+    "taskName": "Ankou",
+    "amount": 33,
+    "initialAmount": 33
+  },
+  {
+    "time": "2019-09-21T13:10:30.937Z",
+    "npcName": "Vannaka",
+    "taskName": "Cave slimes",
+    "amount": 18,
+    "initialAmount": 18
+  },
+  {
+    "time": "2019-09-21T13:18:20.105Z",
+    "npcName": "Vannaka",
+    "taskName": "Hellhounds",
+    "amount": 54,
+    "initialAmount": 54
+  },
+  {
+    "time": "2019-09-21T15:44:18.604Z",
+    "npcName": "Vannaka",
+    "taskName": "Jellies",
+    "amount": 89,
+    "initialAmount": 89
+  },
+  {
+    "time": "2019-09-21T20:57:09.594Z",
+    "npcName": "Vannaka",
+    "taskName": "Hellhounds",
+    "amount": 75,
+    "initialAmount": 75
+  },
+  {
+    "time": "2019-09-23T18:51:11.097Z",
+    "npcName": "Vannaka",
+    "taskName": "Turoth",
+    "amount": 108,
+    "initialAmount": 108
+  },
+  {
+    "time": "2019-09-23T20:48:48.896Z",
+    "npcName": "Vannaka",
+    "taskName": "Basilisks",
+    "amount": 70,
+    "initialAmount": 70
+  },
+  {
+    "time": "2019-09-23T22:36:30.475Z",
+    "npcName": "Vannaka",
+    "taskName": "Rockslugs",
+    "amount": 110,
+    "initialAmount": 110
+  },
+  {
+    "time": "2019-09-24T11:56:53.993Z",
+    "npcName": "Vannaka",
+    "taskName": "Turoth",
+    "amount": 106,
+    "initialAmount": 106
+  },
+  {
+    "time": "2019-09-24T11:57:29.413Z",
+    "npcName": "Vannaka",
+    "taskName": "Hill giants",
+    "amount": 85,
+    "initialAmount": 85
+  },
+  {
+    "time": "2019-09-24T12:39:20.209Z",
+    "npcName": "Vannaka",
+    "taskName": "Hobgoblins",
+    "amount": 93,
+    "initialAmount": 93
+  },
+  {
+    "time": "2019-09-24T13:07:35.859Z",
+    "npcName": "Vannaka",
+    "taskName": "Cave bugs",
+    "amount": 10,
+    "initialAmount": 10
+  },
+  {
+    "time": "2019-09-24T14:45:23.037Z",
+    "npcName": "Vannaka",
+    "taskName": "Fire giants",
+    "amount": 104,
+    "initialAmount": 104
+  },
+  {
+    "time": "2019-09-24T21:49:01.833Z",
+    "npcName": "Vannaka",
+    "taskName": "Cave slimes",
+    "amount": 15,
+    "initialAmount": 15
+  },
+  {
+    "time": "2019-09-24T22:02:01.399Z",
+    "npcName": "Vannaka",
+    "taskName": "Wall beasts",
+    "amount": 15,
+    "initialAmount": 15
+  },
+  {
+    "time": "2019-09-24T22:18:20.237Z",
+    "npcName": "Vannaka",
+    "taskName": "Hobgoblins",
+    "amount": 91,
+    "initialAmount": 91
+  },
+  {
+    "time": "2019-09-25T15:59:27.276Z",
+    "npcName": "Vannaka",
+    "taskName": "Cave slimes",
+    "amount": 13,
+    "initialAmount": 13
+  },
+  {
+    "time": "2019-09-25T16:06:21.329Z",
+    "npcName": "Vannaka",
+    "taskName": "Hobgoblins",
+    "amount": 73,
+    "initialAmount": 73
+  },
+  {
+    "time": "2019-09-25T16:33:01.990Z",
+    "npcName": "Vannaka",
+    "taskName": "Fire giants",
+    "amount": 70,
+    "initialAmount": 70
+  },
+  {
+    "time": "2019-09-25T16:33:13.395Z",
+    "npcName": "Vannaka",
+    "taskName": "Trolls",
+    "amount": 89,
+    "initialAmount": 89
+  },
+  {
+    "time": "2019-09-25T20:24:39.755Z",
+    "npcName": "Vannaka",
+    "taskName": "Cave bugs",
+    "amount": 18,
+    "initialAmount": 18
+  },
+  {
+    "time": "2019-09-25T20:30:37.010Z",
+    "npcName": "Vannaka",
+    "taskName": "Ogres",
+    "amount": 67,
+    "initialAmount": 67
+  },
+  {
+    "time": "2019-09-25T21:29:32.074Z",
+    "npcName": "Vannaka",
+    "taskName": "Trolls",
+    "amount": 80,
+    "initialAmount": 80
   }
 ]
