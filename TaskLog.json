@@ -1981,5 +1981,40 @@
     "taskName": "Trolls",
     "amount": 80,
     "initialAmount": 80
+  },
+  {
+    "time": "2019-09-26T19:35:07.805Z",
+    "npcName": "Vannaka",
+    "taskName": "Ice giants",
+    "amount": 54,
+    "initialAmount": 54
+  },
+  {
+    "time": "2019-09-26T21:01:07.434Z",
+    "npcName": "Vannaka",
+    "taskName": "Cave bugs",
+    "amount": 13,
+    "initialAmount": 13
+  },
+  {
+    "time": "2019-09-26T21:06:58.503Z",
+    "npcName": "Vannaka",
+    "taskName": "Fire giants",
+    "amount": 119,
+    "initialAmount": 119
+  },
+  {
+    "time": "2019-09-26T21:07:18.903Z",
+    "npcName": "Vannaka",
+    "taskName": "Jellies",
+    "amount": 111,
+    "initialAmount": 111
+  },
+  {
+    "time": "2019-09-27T10:16:13.789Z",
+    "npcName": "Krystilia",
+    "taskName": "Revenants",
+    "amount": 54,
+    "initialAmount": 54
   }
 ]

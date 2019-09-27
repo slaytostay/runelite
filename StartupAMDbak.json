@@ -37,7 +37,7 @@
       "unlocked": false
     },
     "strongest": "Mountain troll",
-    "unlocked": false
+    "unlocked": true
   },
   "4919": {
     "name": "Mount Quidamortem",
@@ -2045,6 +2045,35 @@
     "strongest": "",
     "unlocked": false
   },
+  "9634": {
+    "name": "Basilis Dungeon (South West)",
+    "monsters": [
+      "Dagannoth",
+      "Basilisk knight"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Basilisk knight",
+    "unlocked": false
+  },
+  "9635": {
+    "name": "Basilisk Dungeon (North West)",
+    "monsters": [
+      "Dagannoth"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Dagannoth",
+    "unlocked": false
+  },
   "9772": {
     "name": "Myths\u0027 Guild",
     "monsters": [],
@@ -2227,6 +2256,22 @@
     "strongest": "Mounted terrorbird gnome",
     "unlocked": true
   },
+  "9790": {
+    "name": "Island of Stone",
+    "monsters": [],
+    "below": {
+      "name": "Basilisk Dungeon (South East)",
+      "monsters": [
+        "Basilisk knight",
+        "Basilisk",
+        "Daganoth"
+      ],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Basilisk knight",
+    "unlocked": false
+  },
   "9796": {
     "name": "Evil Chicken\u0027s Lair",
     "monsters": [
@@ -2289,6 +2334,20 @@
   },
   "9886": {
     "name": "Waterbirth Isle Dungeon (West)",
+    "monsters": [
+      "Dagannoth"
+    ],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Dagannoth",
+    "unlocked": false
+  },
+  "9891": {
+    "name": "Basilisk Dungeon (North West)",
     "monsters": [
       "Dagannoth"
     ],
@@ -2742,7 +2801,7 @@
       "unlocked": false
     },
     "strongest": "Ogre",
-    "unlocked": false
+    "unlocked": true
   },
   "10293": {
     "name": "Fishing Guild",
@@ -3038,7 +3097,7 @@
       "unlocked": false
     },
     "strongest": "Hobgoblin",
-    "unlocked": false
+    "unlocked": true
   },
   "10794": {
     "name": "Ape Atoll",
@@ -3767,7 +3826,7 @@
       "unlocked": false
     },
     "strongest": "Rock (Troll)",
-    "unlocked": false
+    "unlocked": true
   },
   "11321": {
     "name": "Troll Stronghold",
@@ -4801,7 +4860,7 @@
       "unlocked": false
     },
     "strongest": "Hobgoblin",
-    "unlocked": false
+    "unlocked": true
   },
   "12347": {
     "name": "Lava Maze (South East)",
