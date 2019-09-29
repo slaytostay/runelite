@@ -4572,7 +4572,7 @@
       "unlocked": false
     },
     "strongest": "Bandit",
-    "unlocked": false
+    "unlocked": true
   },
   "12090": {
     "name": "Obelisk 27",
@@ -4605,7 +4605,7 @@
       "unlocked": false
     },
     "strongest": "King scorpion",
-    "unlocked": false
+    "unlocked": true
   },
   "12092": {
     "name": "Lava Maze (North West)",

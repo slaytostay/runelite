@@ -4220,7 +4220,7 @@
       "unlocked": false
     },
     "strongest": "Mogre",
-    "unlocked": false
+    "unlocked": true
   },
   "11825": {
     "name": "Thurgo\u0027s Hut",
@@ -4572,7 +4572,7 @@
       "unlocked": false
     },
     "strongest": "Bandit",
-    "unlocked": false
+    "unlocked": true
   },
   "12090": {
     "name": "Obelisk 27",
@@ -4605,7 +4605,7 @@
       "unlocked": false
     },
     "strongest": "King scorpion",
-    "unlocked": false
+    "unlocked": true
   },
   "12092": {
     "name": "Lava Maze (North West)",
@@ -5182,7 +5182,7 @@
       "unlocked": false
     },
     "strongest": "Crocodile",
-    "unlocked": false
+    "unlocked": true
   },
   "12845": {
     "name": "Pyramid",
