@@ -2268,5 +2268,320 @@
     "taskName": "Cave crawlers",
     "amount": 100,
     "initialAmount": 100
+  },
+  {
+    "time": "2019-09-30T14:50:08.371Z",
+    "npcName": "Vannaka",
+    "taskName": "Hobgoblins",
+    "amount": 90,
+    "initialAmount": 90
+  },
+  {
+    "time": "2019-09-30T14:50:16.172Z",
+    "npcName": "Vannaka",
+    "taskName": "Crocodiles",
+    "amount": 87,
+    "initialAmount": 87
+  },
+  {
+    "time": "2019-09-30T14:50:29.969Z",
+    "npcName": "Vannaka",
+    "taskName": "Rockslugs",
+    "amount": 91,
+    "initialAmount": 91
+  },
+  {
+    "time": "2019-09-30T15:18:55.109Z",
+    "npcName": "Vannaka",
+    "taskName": "Cave crawlers",
+    "amount": 119,
+    "initialAmount": 119
+  },
+  {
+    "time": "2019-09-30T15:45:41.067Z",
+    "npcName": "Vannaka",
+    "taskName": "Hellhounds",
+    "amount": 59,
+    "initialAmount": 59
+  },
+  {
+    "time": "2019-09-30T21:30:24.485Z",
+    "npcName": "Vannaka",
+    "taskName": "Hill giants",
+    "amount": 94,
+    "initialAmount": 94
+  },
+  {
+    "time": "2019-09-30T22:09:54.572Z",
+    "npcName": "Vannaka",
+    "taskName": "Crocodiles",
+    "amount": 79,
+    "initialAmount": 79
+  },
+  {
+    "time": "2019-09-30T22:10:01.772Z",
+    "npcName": "Vannaka",
+    "taskName": "Ankou",
+    "amount": 25,
+    "initialAmount": 25
+  },
+  {
+    "time": "2019-09-30T22:25:45.128Z",
+    "npcName": "Vannaka",
+    "taskName": "Hobgoblins",
+    "amount": 117,
+    "initialAmount": 117
+  },
+  {
+    "time": "2019-09-30T22:25:51.748Z",
+    "npcName": "Vannaka",
+    "taskName": "Rockslugs",
+    "amount": 87,
+    "initialAmount": 87
+  },
+  {
+    "time": "2019-09-30T22:48:05.375Z",
+    "npcName": "Vannaka",
+    "taskName": "Ogres",
+    "amount": 63,
+    "initialAmount": 63
+  },
+  {
+    "time": "2019-10-01T08:15:47.053Z",
+    "npcName": "Turael",
+    "taskName": "Lizards",
+    "amount": 43,
+    "initialAmount": 43
+  },
+  {
+    "time": "2019-10-01T08:37:54.496Z",
+    "npcName": "Turael",
+    "taskName": "Cows",
+    "amount": 29,
+    "initialAmount": 29
+  },
+  {
+    "time": "2019-10-01T08:42:56.991Z",
+    "npcName": "Turael",
+    "taskName": "Ghosts",
+    "amount": 37,
+    "initialAmount": 37
+  },
+  {
+    "time": "2019-10-01T08:52:41.492Z",
+    "npcName": "Turael",
+    "taskName": "Dogs",
+    "amount": 36,
+    "initialAmount": 36
+  },
+  {
+    "time": "2019-10-01T09:09:51.897Z",
+    "npcName": "Turael",
+    "taskName": "Bears",
+    "amount": 18,
+    "initialAmount": 18
+  },
+  {
+    "time": "2019-10-01T09:15:15.954Z",
+    "npcName": "Turael",
+    "taskName": "Minotaurs",
+    "amount": 14,
+    "initialAmount": 14
+  },
+  {
+    "time": "2019-10-01T09:22:01.617Z",
+    "npcName": "Turael",
+    "taskName": "Bears",
+    "amount": 26,
+    "initialAmount": 26
+  },
+  {
+    "time": "2019-10-01T09:29:00.333Z",
+    "npcName": "Turael",
+    "taskName": "Scorpions",
+    "amount": 37,
+    "initialAmount": 37
+  },
+  {
+    "time": "2019-10-01T09:36:49.028Z",
+    "npcName": "Turael",
+    "taskName": "Icefiends",
+    "amount": 17,
+    "initialAmount": 17
+  },
+  {
+    "time": "2019-10-01T09:40:40.673Z",
+    "npcName": "Turael",
+    "taskName": "Cave crawlers",
+    "amount": 34,
+    "initialAmount": 34
+  },
+  {
+    "time": "2019-10-01T09:49:55.161Z",
+    "npcName": "Turael",
+    "taskName": "Cave bugs",
+    "amount": 13,
+    "initialAmount": 13
+  },
+  {
+    "time": "2019-10-01T09:52:51.027Z",
+    "npcName": "Turael",
+    "taskName": "Ghosts",
+    "amount": 17,
+    "initialAmount": 17
+  },
+  {
+    "time": "2019-10-01T09:58:25.867Z",
+    "npcName": "Turael",
+    "taskName": "Rats",
+    "amount": 45,
+    "initialAmount": 45
+  },
+  {
+    "time": "2019-10-01T10:03:13.313Z",
+    "npcName": "Turael",
+    "taskName": "Spiders",
+    "amount": 17,
+    "initialAmount": 17
+  },
+  {
+    "time": "2019-10-01T11:42:33.627Z",
+    "npcName": "Turael",
+    "taskName": "Skeletons",
+    "amount": 49,
+    "initialAmount": 49
+  },
+  {
+    "time": "2019-10-01T11:56:26.203Z",
+    "npcName": "Turael",
+    "taskName": "Spiders",
+    "amount": 47,
+    "initialAmount": 47
+  },
+  {
+    "time": "2019-10-01T14:17:48.133Z",
+    "npcName": "Turael",
+    "taskName": "Monkeys",
+    "amount": 45,
+    "initialAmount": 45
+  },
+  {
+    "time": "2019-10-01T14:52:15.819Z",
+    "npcName": "Vannaka",
+    "taskName": "Hobgoblins",
+    "amount": 104,
+    "initialAmount": 104
+  },
+  {
+    "time": "2019-10-01T14:52:22.417Z",
+    "npcName": "Vannaka",
+    "taskName": "Pyrefiends",
+    "amount": 70,
+    "initialAmount": 70
+  },
+  {
+    "time": "2019-10-01T16:29:49.066Z",
+    "npcName": "Turael",
+    "taskName": "Bats",
+    "amount": 27,
+    "initialAmount": 27
+  },
+  {
+    "time": "2019-10-01T16:54:19.012Z",
+    "npcName": "Turael",
+    "taskName": "Icefiends",
+    "amount": 15,
+    "initialAmount": 15
+  },
+  {
+    "time": "2019-10-01T16:59:26.398Z",
+    "npcName": "Turael",
+    "taskName": "Bats",
+    "amount": 44,
+    "initialAmount": 44
+  },
+  {
+    "time": "2019-10-01T17:39:23.463Z",
+    "npcName": "Turael",
+    "taskName": "Cows",
+    "amount": 40,
+    "initialAmount": 40
+  },
+  {
+    "time": "2019-10-01T17:47:49.147Z",
+    "npcName": "Turael",
+    "taskName": "Zombies",
+    "amount": 17,
+    "initialAmount": 17
+  },
+  {
+    "time": "2019-10-01T21:16:38.054Z",
+    "npcName": "Vannaka",
+    "taskName": "Ice warriors",
+    "amount": 84,
+    "initialAmount": 84
+  },
+  {
+    "time": "2019-10-01T21:16:45.254Z",
+    "npcName": "Vannaka",
+    "taskName": "Turoth",
+    "amount": 100,
+    "initialAmount": 100
+  },
+  {
+    "time": "2019-10-01T21:16:54.875Z",
+    "npcName": "Vannaka",
+    "taskName": "Ankou",
+    "amount": 35,
+    "initialAmount": 35
+  },
+  {
+    "time": "2019-10-01T21:39:14.417Z",
+    "npcName": "Vannaka",
+    "taskName": "Trolls",
+    "amount": 100,
+    "initialAmount": 100
+  },
+  {
+    "time": "2019-10-01T21:39:28.816Z",
+    "npcName": "Vannaka",
+    "taskName": "Earth warriors",
+    "amount": 41,
+    "initialAmount": 41
+  },
+  {
+    "time": "2019-10-01T21:39:37.217Z",
+    "npcName": "Vannaka",
+    "taskName": "Hobgoblins",
+    "amount": 70,
+    "initialAmount": 70
+  },
+  {
+    "time": "2019-10-01T21:57:30.389Z",
+    "npcName": "Vannaka",
+    "taskName": "Hill giants",
+    "amount": 107,
+    "initialAmount": 107
+  },
+  {
+    "time": "2019-10-01T22:32:16.354Z",
+    "npcName": "Vannaka",
+    "taskName": "Fire giants",
+    "amount": 70,
+    "initialAmount": 70
+  },
+  {
+    "time": "2019-10-01T23:57:04.508Z",
+    "npcName": "Vannaka",
+    "taskName": "Earth warriors",
+    "amount": 63,
+    "initialAmount": 63
+  },
+  {
+    "time": "2019-10-01T23:57:15.908Z",
+    "npcName": "Vannaka",
+    "taskName": "Turoth",
+    "amount": 82,
+    "initialAmount": 82
   }
 ]

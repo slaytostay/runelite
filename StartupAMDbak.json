@@ -993,7 +993,7 @@
       "unlocked": false
     },
     "strongest": "Bat",
-    "unlocked": false
+    "unlocked": true
   },
   "6716": {
     "name": "Dark Altar",
@@ -2487,7 +2487,7 @@
       "unlocked": false
     },
     "strongest": "Zombie",
-    "unlocked": false
+    "unlocked": true
   },
   "10036": {
     "name": "Combat Training Camp",
@@ -2502,7 +2502,7 @@
       "unlocked": false
     },
     "strongest": "Ogre",
-    "unlocked": false
+    "unlocked": true
   },
   "10037": {
     "name": "Glarial\u0027s Tomb Entrance",
@@ -2822,7 +2822,7 @@
       "unlocked": false
     },
     "strongest": "Giant bat",
-    "unlocked": false
+    "unlocked": true
   },
   "10294": {
     "name": "Coal Trucks",
@@ -3181,7 +3181,7 @@
       "unlocked": false
     },
     "strongest": "Hellhound",
-    "unlocked": false
+    "unlocked": true
   },
   "10804": {
     "name": "Legends\u0027 Guild",
@@ -3213,7 +3213,7 @@
       "unlocked": false
     },
     "strongest": "Ice spider",
-    "unlocked": false
+    "unlocked": true
   },
   "10806": {
     "name": "Seers\u0027 Village",
@@ -3434,7 +3434,7 @@
       "unlocked": false
     },
     "strongest": "Jungle spider",
-    "unlocked": false
+    "unlocked": true
   },
   "11055": {
     "name": "Tai Bwo Wannai (South)",
@@ -4220,7 +4220,7 @@
       "unlocked": false
     },
     "strongest": "Mogre",
-    "unlocked": false
+    "unlocked": true
   },
   "11825": {
     "name": "Thurgo\u0027s Hut",
@@ -5182,7 +5182,7 @@
       "unlocked": false
     },
     "strongest": "Crocodile",
-    "unlocked": false
+    "unlocked": true
   },
   "12845": {
     "name": "Pyramid",
