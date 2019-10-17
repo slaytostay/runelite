@@ -53,12 +53,12 @@ import net.runelite.client.events.ChatInput;
 import net.runelite.client.input.KeyManager;
 import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
+import net.runelite.client.plugins.slayerarea.SlayerAreas;
 import net.runelite.client.ui.ClientToolbar;
 import net.runelite.client.ui.NavigationButton;
 import net.runelite.client.ui.overlay.OverlayManager;
 import net.runelite.client.util.ImageUtil;
 import net.runelite.client.util.LinkBrowser;
-import net.runelite.client.util.Text;
 import static net.runelite.client.util.Text.sanitize;
 import net.runelite.http.api.chat.ChatClient;
 
@@ -231,7 +231,7 @@ public class RegionLockerPlugin extends Plugin
 
 	private boolean chunkAmountSubmit(ChatInput chatInput, String value)
 	{
-		final int kc = Text.fromCSV(config.unlockedRegions()).size();
+		final int kc = SlayerAreas.getAreas().size();
 		if (kc <= 0)
 		{
 			return false;
