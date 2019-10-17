@@ -2713,7 +2713,7 @@
       "strongest": "",
       "unlocked": false
     },
-    "strongest": "Ogre shaman",
+    "strongest": "Blue dragon",
     "unlocked": false
   },
   "10288": {
@@ -3697,7 +3697,7 @@
       "unlocked": false
     },
     "strongest": "Lesser demon",
-    "unlocked": false
+    "unlocked": true
   },
   "11314": {
     "name": "Crandor (South)",
@@ -4333,7 +4333,7 @@
       "unlocked": false
     },
     "strongest": "Green dragon",
-    "unlocked": false
+    "unlocked": true
   },
   "11833": {
     "name": "Ruins",
@@ -4557,7 +4557,7 @@
       "unlocked": false
     },
     "strongest": "Dark warrior",
-    "unlocked": false
+    "unlocked": true
   },
   "12089": {
     "name": "Bandit Camp",
@@ -4705,7 +4705,7 @@
       "unlocked": false
     },
     "strongest": "Lesser demon",
-    "unlocked": false
+    "unlocked": true
   },
   "12338": {
     "name": "Draynor Village (South)",
@@ -5011,7 +5011,7 @@
       "unlocked": false
     },
     "strongest": "Evil chicken",
-    "unlocked": false
+    "unlocked": true
   },
   "12597": {
     "name": "Varrock West Bank",
@@ -5240,7 +5240,7 @@
       "unlocked": false
     },
     "strongest": "Desert wolf",
-    "unlocked": false
+    "unlocked": true
   },
   "12849": {
     "name": "Lumbridge Swamp (East)",
@@ -5378,7 +5378,7 @@
       "unlocked": false
     },
     "strongest": "Elder chaos druid",
-    "unlocked": false
+    "unlocked": true
   },
   "12857": {
     "name": "Obelisk 19",
@@ -5555,7 +5555,7 @@
       "unlocked": false
     },
     "strongest": "Desert wolf",
-    "unlocked": false
+    "unlocked": true
   },
   "13104": {
     "name": "Shantay Pass",
@@ -5621,7 +5621,7 @@
       "unlocked": false
     },
     "strongest": "Scorpion",
-    "unlocked": false
+    "unlocked": true
   },
   "13108": {
     "name": "Varrock Mine (South East)",
@@ -5691,7 +5691,7 @@
       "unlocked": false
     },
     "strongest": "Ent",
-    "unlocked": false
+    "unlocked": true
   },
   "13113": {
     "name": "Black Salamanders",
