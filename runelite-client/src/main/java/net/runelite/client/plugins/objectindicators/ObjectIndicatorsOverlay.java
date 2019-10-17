@@ -26,11 +26,12 @@ package net.runelite.client.plugins.objectindicators;
 
 import java.awt.Dimension;
 import java.awt.Graphics2D;
-import java.awt.Polygon;
+import java.awt.Shape;
 import javax.inject.Inject;
 import net.runelite.api.Client;
 import net.runelite.api.DecorativeObject;
 import net.runelite.api.GameObject;
+import net.runelite.api.GroundObject;
 import net.runelite.api.TileObject;
 import net.runelite.api.WallObject;
 import net.runelite.client.ui.overlay.Overlay;
@@ -66,8 +67,8 @@ class ObjectIndicatorsOverlay extends Overlay
 				continue;
 			}
 
-			final Polygon polygon;
-			Polygon polygon2 = null;
+			final Shape polygon;
+			Shape polygon2 = null;
 
 			if (object instanceof GameObject)
 			{
@@ -82,6 +83,10 @@ class ObjectIndicatorsOverlay extends Overlay
 			{
 				polygon = ((DecorativeObject) object).getConvexHull();
 				polygon2 = ((DecorativeObject) object).getConvexHull2();
+			}
+			else if (object instanceof GroundObject)
+			{
+				polygon = ((GroundObject) object).getConvexHull();
 			}
 			else
 			{
