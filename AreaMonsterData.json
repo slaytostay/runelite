@@ -1638,6 +1638,22 @@
     "strongest": "Vorkath",
     "unlocked": false
   },
+  "9262": {
+    "name": "Ocean",
+    "monsters": [],
+    "below": {
+      "name": "Observatory Dungeon",
+      "monsters": [
+        "Goblin",
+        "Poison spider",
+        "Rat"
+      ],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "Goblin",
+    "unlocked": true
+  },
   "9263": {
     "name": "South West of Castle Wars",
     "monsters": [
@@ -2765,7 +2781,7 @@
       "unlocked": false
     },
     "strongest": "Ogre",
-    "unlocked": false
+    "unlocked": true
   },
   "10291": {
     "name": "East Ardougne (West)",
@@ -3264,7 +3280,7 @@
       "unlocked": false
     },
     "strongest": "Kurask",
-    "unlocked": false
+    "unlocked": true
   },
   "10809": {
     "name": "East of Rellekka",
@@ -4048,7 +4064,7 @@
       "unlocked": false
     },
     "strongest": "Blue dragon",
-    "unlocked": false
+    "unlocked": true
   },
   "11574": {
     "name": "Heroes\u0027 Guild",
@@ -4292,7 +4308,7 @@
       "unlocked": false
     },
     "strongest": "Blue dragon",
-    "unlocked": false
+    "unlocked": true
   },
   "11830": {
     "name": "Goblin Village",
@@ -4413,6 +4429,30 @@
       "unlocked": false
     },
     "strongest": "Ice spider",
+    "unlocked": true
+  },
+  "11854": {
+    "name": "Rogue\u0027s Maze",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": true
+  },
+  "11855": {
+    "name": "Rogue\u0027s Maze",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
     "unlocked": true
   },
   "11930": {
@@ -4657,6 +4697,18 @@
   },
   "12110": {
     "name": "Rogues\u0027 Den",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": true
+  },
+  "12111": {
+    "name": "Rogue\u0027s Maze",
     "monsters": [],
     "below": {
       "name": "",
