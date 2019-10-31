@@ -88,9 +88,9 @@ float isLocked(int x, int y) {
 
 void main() {
   ivec3 cameraPos = ivec3(cameraX, cameraY, cameraZ);
-  ivec3 screenA = toScreen(vPosition[0] - cameraPos, cameraYaw, cameraPitch, centerX, centerY, zoom);
-  ivec3 screenB = toScreen(vPosition[1] - cameraPos, cameraYaw, cameraPitch, centerX, centerY, zoom);
-  ivec3 screenC = toScreen(vPosition[2] - cameraPos, cameraYaw, cameraPitch, centerX, centerY, zoom);
+  vec3 screenA = toScreen(vPosition[0] - cameraPos, cameraYaw, cameraPitch, centerX, centerY, zoom);
+  vec3 screenB = toScreen(vPosition[1] - cameraPos, cameraYaw, cameraPitch, centerX, centerY, zoom);
+  vec3 screenC = toScreen(vPosition[2] - cameraPos, cameraYaw, cameraPitch, centerX, centerY, zoom);
 
   if (-screenA.z < 50 || -screenB.z < 50 || -screenC.z < 50) {
     // the client does not draw a triangle if any vertex distance is <50
