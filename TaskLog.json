@@ -3290,5 +3290,138 @@
     "taskName": "Green dragons",
     "amount": 63,
     "initialAmount": 63
+  },
+  {
+    "time": "2019-10-30T14:42:44.960Z",
+    "npcName": "Vannaka",
+    "taskName": "Ice giants",
+    "amount": 49,
+    "initialAmount": 49
+  },
+  {
+    "time": "2019-10-30T15:13:53.775Z",
+    "npcName": "Vannaka",
+    "taskName": "Cave slimes",
+    "amount": 18,
+    "initialAmount": 18
+  },
+  {
+    "time": "2019-10-30T15:57:52.555Z",
+    "npcName": "Vannaka",
+    "taskName": "Ice giants",
+    "amount": 50,
+    "initialAmount": 50
+  },
+  {
+    "time": "2019-10-30T16:29:54.107Z",
+    "npcName": "Vannaka",
+    "taskName": "Mogres",
+    "amount": 118,
+    "initialAmount": 118
+  },
+  {
+    "time": "2019-10-30T16:30:02.507Z",
+    "npcName": "Vannaka",
+    "taskName": "Hellhounds",
+    "amount": 41,
+    "initialAmount": 41
+  },
+  {
+    "time": "2019-10-30T17:15:26.686Z",
+    "npcName": "Vannaka",
+    "taskName": "Trolls",
+    "amount": 66,
+    "initialAmount": 66
+  },
+  {
+    "time": "2019-10-30T19:35:40.683Z",
+    "npcName": "Vannaka",
+    "taskName": "Wall beasts",
+    "amount": 13,
+    "initialAmount": 13
+  },
+  {
+    "time": "2019-10-30T19:49:09.523Z",
+    "npcName": "Vannaka",
+    "taskName": "Cave bugs",
+    "amount": 14,
+    "initialAmount": 14
+  },
+  {
+    "time": "2019-10-30T19:57:13.803Z",
+    "npcName": "Krystilia",
+    "taskName": "Rogues",
+    "amount": 112,
+    "initialAmount": 112
+  },
+  {
+    "time": "2019-10-30T20:28:44.490Z",
+    "npcName": "Krystilia",
+    "taskName": "Skeletons",
+    "amount": 98,
+    "initialAmount": 98
+  },
+  {
+    "time": "2019-10-30T20:53:08.619Z",
+    "npcName": "Krystilia",
+    "taskName": "Scorpions",
+    "amount": 83,
+    "initialAmount": 83
+  },
+  {
+    "time": "2019-10-30T21:11:23.849Z",
+    "npcName": "Krystilia",
+    "taskName": "Bears",
+    "amount": 88,
+    "initialAmount": 88
+  },
+  {
+    "time": "2019-10-30T21:38:19.990Z",
+    "npcName": "Krystilia",
+    "taskName": "Greater demons",
+    "amount": 135,
+    "initialAmount": 135
+  },
+  {
+    "time": "2019-10-30T21:38:38.567Z",
+    "npcName": "Krystilia",
+    "taskName": "Skeletons",
+    "amount": 80,
+    "initialAmount": 80
+  },
+  {
+    "time": "2019-10-30T21:57:29.785Z",
+    "npcName": "Krystilia",
+    "taskName": "Mammoths",
+    "amount": 125,
+    "initialAmount": 125
+  },
+  {
+    "time": "2019-10-30T21:57:46.581Z",
+    "npcName": "Krystilia",
+    "taskName": "Lesser demons",
+    "amount": 91,
+    "initialAmount": 91
+  },
+  {
+    "time": "2019-10-30T21:58:02.802Z",
+    "npcName": "Krystilia",
+    "taskName": "Earth warriors",
+    "amount": 121,
+    "initialAmount": 121
+  },
+  {
+    "time": "2019-10-30T22:46:11.210Z",
+    "npcName": "Krystilia",
+    "taskName": "Scorpions",
+    "amount": 87,
+    "initialAmount": 87
+  },
+  {
+    "time": "2019-10-30T23:04:00.398Z",
+    "npcName": "Krystilia",
+    "taskName": "Revenants",
+    "amount": 78,
+    "initialAmount": 78
   }
 ]
