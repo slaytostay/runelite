@@ -2419,7 +2419,7 @@
       "unlocked": false
     },
     "strongest": "Ogre",
-    "unlocked": false
+    "unlocked": true
   },
   "10031": {
     "name": "Gu\u0027Tanoth",
@@ -4045,7 +4045,7 @@
       "unlocked": false
     },
     "strongest": "Blue dragon",
-    "unlocked": false
+    "unlocked": true
   },
   "11573": {
     "name": "Taverly",
@@ -5177,7 +5177,7 @@
       "unlocked": false
     },
     "strongest": "Lava dragon",
-    "unlocked": false
+    "unlocked": true
   },
   "12604": {
     "name": "Spider Den",
@@ -6109,7 +6109,7 @@
       "unlocked": false
     },
     "strongest": "Green dragon",
-    "unlocked": false
+    "unlocked": true
   },
   "13370": {
     "name": "East of Venenatis",
@@ -7042,6 +7042,18 @@
     },
     "strongest": "",
     "unlocked": false
+  },
+  "14936": {
+    "name": "Motherlode Mine",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": true
   },
   "15148": {
     "name": "Harmony",
