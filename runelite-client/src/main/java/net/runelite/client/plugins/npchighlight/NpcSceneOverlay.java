@@ -49,6 +49,9 @@ import net.runelite.client.ui.overlay.OverlayLayer;
 import net.runelite.client.ui.overlay.OverlayPosition;
 import net.runelite.client.ui.overlay.OverlayUtil;
 import net.runelite.client.util.Text;
+import net.runelite.http.api.worlds.WorldClient;
+import net.runelite.http.api.worlds.WorldResult;
+import net.runelite.http.api.worlds.WorldType;
 
 public class NpcSceneOverlay extends Overlay
 {
@@ -66,13 +69,16 @@ public class NpcSceneOverlay extends Overlay
 	private final Client client;
 	private final NpcIndicatorsConfig config;
 	private final NpcIndicatorsPlugin plugin;
+	private final WorldClient worldClient;
+	private WorldResult worlds;
 
 	@Inject
-	NpcSceneOverlay(Client client, NpcIndicatorsConfig config, NpcIndicatorsPlugin plugin)
+	NpcSceneOverlay(Client client, NpcIndicatorsConfig config, NpcIndicatorsPlugin plugin, WorldClient worldClient)
 	{
 		this.client = client;
 		this.config = config;
 		this.plugin = plugin;
+		this.worldClient = worldClient;
 		setPosition(OverlayPosition.DYNAMIC);
 		setLayer(OverlayLayer.ABOVE_SCENE);
 	}
@@ -179,10 +185,32 @@ public class NpcSceneOverlay extends Overlay
 			String npcName = Text.removeTags(actor.getName());
 			Point textLocation = actor.getCanvasTextLocation(graphics, npcName, actor.getLogicalHeight() + 40);
 
+			if (worlds == null) fetchWorlds();
+			if (worlds != null && worlds.findWorld(client.getWorld()).getTypes().contains(WorldType.MEMBERS))
+			{
+				npcName = "MEMBERS!";
+				textLocation = actor.getCanvasTextLocation(graphics, npcName, actor.getLogicalHeight() + 40);
+				color = Color.RED;
+			}
+
 			if (textLocation != null)
 			{
 				OverlayUtil.renderTextLocation(graphics, textLocation, npcName, color);
 			}
+		}
+
+
+	}
+
+	private void fetchWorlds()
+	{
+		try
+		{
+			this.worlds = worldClient.lookupWorlds();
+		}
+		catch (Exception e)
+		{
+			System.out.println(e.toString());
 		}
 	}
 
