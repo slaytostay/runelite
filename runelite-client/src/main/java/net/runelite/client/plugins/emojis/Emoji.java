@@ -80,6 +80,11 @@ enum Emoji
 	EYES("O.O"),
 	SWEAT(";;"),
 	PILE_OF_POO("~@~"),
+	FIRE("(/\\)"),
+	ALIEN("(@.@)"),
+	EGGPLANT("8=D"),
+	WAVE("(^_^)/"),
+	HEART_EYES("(*.*)"),
 	PIGCHAMO("Pigchamo"),
 	FIVEHEAD("5head"),
 	CAVES(":caves:");
