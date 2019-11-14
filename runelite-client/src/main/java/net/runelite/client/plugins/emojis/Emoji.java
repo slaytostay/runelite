@@ -85,7 +85,6 @@ enum Emoji
 	EGGPLANT("8=D"),
 	WAVE("(^_^)/"),
 	HEART_EYES("(*.*)"),
-	PILE_OF_POO("~@~"),
 	PIGCHAMO("Pigchamo"),
 	FIVEHEAD("5head"),
 	CAVES(":caves:");
