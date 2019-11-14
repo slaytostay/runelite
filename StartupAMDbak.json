@@ -1638,6 +1638,18 @@
     "strongest": "Vorkath",
     "unlocked": false
   },
+  "9035": {
+    "name": "Chaos Altar",
+    "monsters": [],
+    "below": {
+      "name": "",
+      "monsters": [],
+      "strongest": "",
+      "unlocked": false
+    },
+    "strongest": "",
+    "unlocked": true
+  },
   "9262": {
     "name": "Ocean",
     "monsters": [],
@@ -3693,7 +3705,7 @@
       "unlocked": false
     },
     "strongest": "Harpie bug swarm",
-    "unlocked": false
+    "unlocked": true
   },
   "11313": {
     "name": "Karamja Vulcano",

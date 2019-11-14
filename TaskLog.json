@@ -3654,5 +3654,124 @@
     "taskName": "Moss giants",
     "amount": 66,
     "initialAmount": 66
+  },
+  {
+    "time": "2019-11-13T10:31:03.582Z",
+    "npcName": "Vannaka",
+    "taskName": "Harpie bug swarms",
+    "amount": 82,
+    "initialAmount": 82
+  },
+  {
+    "time": "2019-11-13T11:42:50.068Z",
+    "npcName": "Vannaka",
+    "taskName": "Trolls",
+    "amount": 111,
+    "initialAmount": 111
+  },
+  {
+    "time": "2019-11-13T11:42:57.889Z",
+    "npcName": "Vannaka",
+    "taskName": "Basilisks",
+    "amount": 63,
+    "initialAmount": 63
+  },
+  {
+    "time": "2019-11-13T12:39:44.608Z",
+    "npcName": "Vannaka",
+    "taskName": "Jellies",
+    "amount": 109,
+    "initialAmount": 109
+  },
+  {
+    "time": "2019-11-13T15:30:20.843Z",
+    "npcName": "Vannaka",
+    "taskName": "Earth warriors",
+    "amount": 45,
+    "initialAmount": 45
+  },
+  {
+    "time": "2019-11-13T15:30:31.062Z",
+    "npcName": "Vannaka",
+    "taskName": "Bronze dragons",
+    "amount": 12,
+    "initialAmount": 12
+  },
+  {
+    "time": "2019-11-13T15:30:38.842Z",
+    "npcName": "Vannaka",
+    "taskName": "Cave bugs",
+    "amount": 10,
+    "initialAmount": 10
+  },
+  {
+    "time": "2019-11-13T17:28:07.994Z",
+    "npcName": "Vannaka",
+    "taskName": "Turoth",
+    "amount": 94,
+    "initialAmount": 94
+  },
+  {
+    "time": "2019-11-13T17:28:19.975Z",
+    "npcName": "Vannaka",
+    "taskName": "Cave crawlers",
+    "amount": 64,
+    "initialAmount": 64
+  },
+  {
+    "time": "2019-11-13T17:41:21.934Z",
+    "npcName": "Vannaka",
+    "taskName": "Blue dragons",
+    "amount": 77,
+    "initialAmount": 77
+  },
+  {
+    "time": "2019-11-13T20:46:09.360Z",
+    "npcName": "Vannaka",
+    "taskName": "Cave bugs",
+    "amount": 15,
+    "initialAmount": 15
+  },
+  {
+    "time": "2019-11-13T20:51:13.087Z",
+    "npcName": "Vannaka",
+    "taskName": "Bronze dragons",
+    "amount": 14,
+    "initialAmount": 14
+  },
+  {
+    "time": "2019-11-13T20:51:19.647Z",
+    "npcName": "Vannaka",
+    "taskName": "Turoth",
+    "amount": 117,
+    "initialAmount": 117
+  },
+  {
+    "time": "2019-11-13T20:51:26.246Z",
+    "npcName": "Vannaka",
+    "taskName": "Hobgoblins",
+    "amount": 62,
+    "initialAmount": 62
+  },
+  {
+    "time": "2019-11-13T21:07:04.264Z",
+    "npcName": "Vannaka",
+    "taskName": "Lizards",
+    "amount": 117,
+    "initialAmount": 117
+  },
+  {
+    "time": "2019-11-13T21:53:49.369Z",
+    "npcName": "Vannaka",
+    "taskName": "Bronze dragons",
+    "amount": 10,
+    "initialAmount": 10
+  },
+  {
+    "time": "2019-11-13T21:53:58.967Z",
+    "npcName": "Vannaka",
+    "taskName": "Harpie bug swarms",
+    "amount": 118,
+    "initialAmount": 118
   }
 ]
