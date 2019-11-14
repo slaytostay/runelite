@@ -3656,6 +3656,34 @@
     "initialAmount": 66
   },
   {
+    "time": "2019-11-09T21:08:03.473Z",
+    "npcName": "Vannaka",
+    "taskName": "Cave bugs",
+    "amount": 10,
+    "initialAmount": 10
+  },
+  {
+    "time": "2019-11-09T21:13:24.573Z",
+    "npcName": "Vannaka",
+    "taskName": "Turoth",
+    "amount": 65,
+    "initialAmount": 65
+  },
+  {
+    "time": "2019-11-09T22:01:00.951Z",
+    "npcName": "Vannaka",
+    "taskName": "Mogres",
+    "amount": 92,
+    "initialAmount": 92
+  },
+  {
+    "time": "2019-11-09T22:01:08.738Z",
+    "npcName": "Vannaka",
+    "taskName": "Ankou",
+    "amount": 35,
+    "initialAmount": 35
+  },
+  {
     "time": "2019-11-13T10:31:03.582Z",
     "npcName": "Vannaka",
     "taskName": "Harpie bug swarms",
