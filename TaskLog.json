@@ -3801,5 +3801,208 @@
     "taskName": "Harpie bug swarms",
     "amount": 118,
     "initialAmount": 118
+  },
+  {
+    "time": "2019-11-14T15:10:44.769Z",
+    "npcName": "Vannaka",
+    "taskName": "Cave slimes",
+    "amount": 10,
+    "initialAmount": 10
+  },
+  {
+    "time": "2019-11-14T15:16:59.861Z",
+    "npcName": "Vannaka",
+    "taskName": "Earth warriors",
+    "amount": 70,
+    "initialAmount": 70
+  },
+  {
+    "time": "2019-11-14T15:17:06.513Z",
+    "npcName": "Vannaka",
+    "taskName": "Basilisks",
+    "amount": 67,
+    "initialAmount": 67
+  },
+  {
+    "time": "2019-11-14T16:00:23.432Z",
+    "npcName": "Vannaka",
+    "taskName": "Hobgoblins",
+    "amount": 86,
+    "initialAmount": 86
+  },
+  {
+    "time": "2019-11-14T16:21:06.253Z",
+    "npcName": "Vannaka",
+    "taskName": "Jellies",
+    "amount": 88,
+    "initialAmount": 88
+  },
+  {
+    "time": "2019-11-14T17:59:13.580Z",
+    "npcName": "Vannaka",
+    "taskName": "Turoth",
+    "amount": 87,
+    "initialAmount": 87
+  },
+  {
+    "time": "2019-11-14T17:59:21.985Z",
+    "npcName": "Vannaka",
+    "taskName": "Lesser demons",
+    "amount": 115,
+    "initialAmount": 115
+  },
+  {
+    "time": "2019-11-14T17:59:31.591Z",
+    "npcName": "Vannaka",
+    "taskName": "Harpie bug swarms",
+    "amount": 68,
+    "initialAmount": 68
+  },
+  {
+    "time": "2019-11-14T18:37:53.255Z",
+    "npcName": "Vannaka",
+    "taskName": "Rockslugs",
+    "amount": 110,
+    "initialAmount": 110
+  },
+  {
+    "time": "2019-11-14T18:58:40.898Z",
+    "npcName": "Vannaka",
+    "taskName": "Bronze dragons",
+    "amount": 11,
+    "initialAmount": 11
+  },
+  {
+    "time": "2019-11-14T18:58:47.496Z",
+    "npcName": "Vannaka",
+    "taskName": "Ankou",
+    "amount": 25,
+    "initialAmount": 25
+  },
+  {
+    "time": "2019-11-14T19:09:55.706Z",
+    "npcName": "Vannaka",
+    "taskName": "Pyrefiends",
+    "amount": 99,
+    "initialAmount": 99
+  },
+  {
+    "time": "2019-11-14T19:41:17.681Z",
+    "npcName": "Vannaka",
+    "taskName": "Cave crawlers",
+    "amount": 92,
+    "initialAmount": 92
+  },
+  {
+    "time": "2019-11-14T20:07:19.303Z",
+    "npcName": "Vannaka",
+    "taskName": "Moss giants",
+    "amount": 120,
+    "initialAmount": 120
+  },
+  {
+    "time": "2019-11-14T20:07:28.279Z",
+    "npcName": "Vannaka",
+    "taskName": "Kalphite",
+    "amount": 94,
+    "initialAmount": 94
+  },
+  {
+    "time": "2019-11-14T20:34:32.833Z",
+    "npcName": "Vannaka",
+    "taskName": "Hobgoblins",
+    "amount": 86,
+    "initialAmount": 86
+  },
+  {
+    "time": "2019-11-14T20:56:36.081Z",
+    "npcName": "Vannaka",
+    "taskName": "Ice warriors",
+    "amount": 72,
+    "initialAmount": 72
+  },
+  {
+    "time": "2019-11-14T20:56:48.671Z",
+    "npcName": "Vannaka",
+    "taskName": "Bronze dragons",
+    "amount": 19,
+    "initialAmount": 19
+  },
+  {
+    "time": "2019-11-14T20:56:53.474Z",
+    "npcName": "Vannaka",
+    "taskName": "Lizards",
+    "amount": 108,
+    "initialAmount": 108
+  },
+  {
+    "time": "2019-11-14T21:51:17.862Z",
+    "npcName": "Vannaka",
+    "taskName": "Basilisks",
+    "amount": 109,
+    "initialAmount": 109
+  },
+  {
+    "time": "2019-11-14T22:55:13.761Z",
+    "npcName": "Vannaka",
+    "taskName": "Ice warriors",
+    "amount": 119,
+    "initialAmount": 119
+  },
+  {
+    "time": "2019-11-14T22:55:19.746Z",
+    "npcName": "Vannaka",
+    "taskName": "Earth warriors",
+    "amount": 71,
+    "initialAmount": 71
+  },
+  {
+    "time": "2019-11-14T22:55:28.703Z",
+    "npcName": "Vannaka",
+    "taskName": "Moss giants",
+    "amount": 81,
+    "initialAmount": 81
+  },
+  {
+    "time": "2019-11-15T11:33:52.528Z",
+    "npcName": "Vannaka",
+    "taskName": "Hill giants",
+    "amount": 70,
+    "initialAmount": 70
+  },
+  {
+    "time": "2019-11-15T11:58:00.674Z",
+    "npcName": "Vannaka",
+    "taskName": "Cockatrice",
+    "amount": 116,
+    "initialAmount": 116
+  },
+  {
+    "time": "2019-11-18T22:24:43.620Z",
+    "npcName": "Vannaka",
+    "taskName": "Fire giants",
+    "amount": 70,
+    "initialAmount": 70
+  },
+  {
+    "time": "2019-11-18T22:24:51.420Z",
+    "npcName": "Vannaka",
+    "taskName": "Cave bugs",
+    "amount": 19,
+    "initialAmount": 19
+  },
+  {
+    "time": "2019-11-18T22:31:41.101Z",
+    "npcName": "Vannaka",
+    "taskName": "Earth warriors",
+    "amount": 52,
+    "initialAmount": 52
+  },
+  {
+    "time": "2019-11-18T22:31:47.701Z",
+    "npcName": "Vannaka",
+    "taskName": "Lesser demons",
+    "amount": 94,
+    "initialAmount": 94
   }
 ]
