@@ -1,6 +1,5 @@
 /*
- * Copyright (c) 2016-2017, Adam <Adam@sigterm.info>
- * Copyright (c) 2018, Tomas Slusny <slusnucky@gmail.com>
+ * Copyright (c) 2019 Abex
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -25,67 +24,72 @@
  */
 package net.runelite.client.rs;
 
-import java.io.BufferedReader;
+import java.io.FilterInputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import net.runelite.http.api.RuneLiteAPI;
-import okhttp3.HttpUrl;
-import okhttp3.Request;
-import okhttp3.Response;
+import java.io.InputStream;
+import java.io.OutputStream;
+import lombok.Getter;
+import lombok.Setter;
 
-class ClientConfigLoader
+class TeeInputStream extends FilterInputStream
 {
-	private ClientConfigLoader()
+	@Getter
+	@Setter
+	private OutputStream out;
+
+	TeeInputStream(InputStream in)
 	{
+		super(in);
 	}
 
-	static RSConfig fetch(HttpUrl url) throws IOException
+	@Override
+	public int read(byte[] b, int off, int len) throws IOException
 	{
-		final Request request = new Request.Builder()
-			.url(url)
-			.build();
+		int thisRead = super.read(b, off, len);
 
-		final RSConfig config = new RSConfig();
-
-		try (final Response response = RuneLiteAPI.CLIENT.newCall(request).execute())
+		if (thisRead > 0)
 		{
-			if (!response.isSuccessful())
-			{
-				throw new IOException("Unsuccessful response: " + response.message());
-			}
-
-			String str;
-			final BufferedReader in = new BufferedReader(new InputStreamReader(response.body().byteStream()));
-			while ((str = in.readLine()) != null)
-			{
-				int idx = str.indexOf('=');
-
-				if (idx == -1)
-				{
-					continue;
-				}
-
-				String s = str.substring(0, idx);
-
-				switch (s)
-				{
-					case "param":
-						str = str.substring(idx + 1);
-						idx = str.indexOf('=');
-						s = str.substring(0, idx);
-
-						config.getAppletProperties().put(s, str.substring(idx + 1));
-						break;
-					case "msg":
-						// ignore
-						break;
-					default:
-						config.getClassLoaderProperties().put(s, str.substring(idx + 1));
-						break;
-				}
-			}
+			out.write(b, off, thisRead);
 		}
 
-		return config;
+		return thisRead;
+	}
+
+	@Override
+	public int read() throws IOException
+	{
+		int val = super.read();
+		if (val != -1)
+		{
+			out.write(val);
+		}
+		return val;
+	}
+
+	@Override
+	public long skip(long n) throws IOException
+	{
+		byte[] buf = new byte[(int) Math.min(n, 0x4000)];
+		long total = 0;
+		for (; n > 0; )
+		{
+			int read = (int) Math.min(n, buf.length);
+
+			read = read(buf, 0, read);
+			if (read == -1)
+			{
+				break;
+			}
+
+			total += read;
+			n -= read;
+		}
+		return total;
+	}
+
+	@Override
+	public boolean markSupported()
+	{
+		return false;
 	}
 }

@@ -1,6 +1,5 @@
 /*
- * Copyright (c) 2016-2017, Adam <Adam@sigterm.info>
- * Copyright (c) 2018, Tomas Slusny <slusnucky@gmail.com>
+ * Copyright (c) 2019 Abex
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -25,67 +24,58 @@
  */
 package net.runelite.client.rs;
 
-import java.io.BufferedReader;
+import java.io.FilterInputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import net.runelite.http.api.RuneLiteAPI;
-import okhttp3.HttpUrl;
-import okhttp3.Request;
-import okhttp3.Response;
+import java.io.InputStream;
+import java.util.function.IntConsumer;
 
-class ClientConfigLoader
+class CountingInputStream extends FilterInputStream
 {
-	private ClientConfigLoader()
+	private final IntConsumer changed;
+
+	CountingInputStream(InputStream in, IntConsumer changed)
 	{
+		super(in);
+		this.changed = changed;
 	}
 
-	static RSConfig fetch(HttpUrl url) throws IOException
+	private int read = 0;
+
+	@Override
+	public int read(byte[] b, int off, int len) throws IOException
 	{
-		final Request request = new Request.Builder()
-			.url(url)
-			.build();
-
-		final RSConfig config = new RSConfig();
-
-		try (final Response response = RuneLiteAPI.CLIENT.newCall(request).execute())
+		int thisRead = super.read(b, off, len);
+		if (thisRead > 0)
 		{
-			if (!response.isSuccessful())
-			{
-				throw new IOException("Unsuccessful response: " + response.message());
-			}
-
-			String str;
-			final BufferedReader in = new BufferedReader(new InputStreamReader(response.body().byteStream()));
-			while ((str = in.readLine()) != null)
-			{
-				int idx = str.indexOf('=');
-
-				if (idx == -1)
-				{
-					continue;
-				}
-
-				String s = str.substring(0, idx);
-
-				switch (s)
-				{
-					case "param":
-						str = str.substring(idx + 1);
-						idx = str.indexOf('=');
-						s = str.substring(0, idx);
-
-						config.getAppletProperties().put(s, str.substring(idx + 1));
-						break;
-					case "msg":
-						// ignore
-						break;
-					default:
-						config.getClassLoaderProperties().put(s, str.substring(idx + 1));
-						break;
-				}
-			}
+			this.read += thisRead;
 		}
+		changed.accept(this.read);
+		return thisRead;
+	}
 
-		return config;
+	@Override
+	public int read() throws IOException
+	{
+		int val = super.read();
+		if (val != -1)
+		{
+			this.read++;
+		}
+		return val;
+	}
+
+	@Override
+	public long skip(long n) throws IOException
+	{
+		long thisRead = in.skip(n);
+		this.read += thisRead;
+		changed.accept(this.read);
+		return thisRead;
+	}
+
+	@Override
+	public boolean markSupported()
+	{
+		return false;
 	}
 }
