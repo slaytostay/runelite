@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018, Adam <Adam@sigterm.info>
+ * Copyright (c) 2019 Abex
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -22,11 +22,74 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.runelite.api;
+package net.runelite.client.rs;
 
-/**
- * Represents the friend and ignore list manager.
- */
-public interface FriendManager
+import java.io.FilterInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import lombok.Getter;
+import lombok.Setter;
+
+class TeeInputStream extends FilterInputStream
 {
+	@Getter
+	@Setter
+	private OutputStream out;
+
+	TeeInputStream(InputStream in)
+	{
+		super(in);
+	}
+
+	@Override
+	public int read(byte[] b, int off, int len) throws IOException
+	{
+		int thisRead = super.read(b, off, len);
+
+		if (thisRead > 0)
+		{
+			out.write(b, off, thisRead);
+		}
+
+		return thisRead;
+	}
+
+	@Override
+	public int read() throws IOException
+	{
+		int val = super.read();
+		if (val != -1)
+		{
+			out.write(val);
+		}
+		return val;
+	}
+
+	@Override
+	public long skip(long n) throws IOException
+	{
+		byte[] buf = new byte[(int) Math.min(n, 0x4000)];
+		long total = 0;
+		for (; n > 0; )
+		{
+			int read = (int) Math.min(n, buf.length);
+
+			read = read(buf, 0, read);
+			if (read == -1)
+			{
+				break;
+			}
+
+			total += read;
+			n -= read;
+		}
+		return total;
+	}
+
+	@Override
+	public boolean markSupported()
+	{
+		return false;
+	}
 }

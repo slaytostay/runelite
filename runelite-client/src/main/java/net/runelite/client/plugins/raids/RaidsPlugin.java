@@ -24,20 +24,24 @@
  */
 package net.runelite.client.plugins.raids;
 
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Joiner;
 import com.google.inject.Binder;
 import com.google.inject.Provides;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.time.Instant;
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import java.util.concurrent.ScheduledExecutorService;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import javax.inject.Inject;
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.ChatMessageType;
 import net.runelite.api.Client;
@@ -53,7 +57,6 @@ import net.runelite.api.Tile;
 import net.runelite.api.VarPlayer;
 import net.runelite.api.Varbits;
 import net.runelite.api.events.ChatMessage;
-import net.runelite.client.events.ConfigChanged;
 import net.runelite.api.events.VarbitChanged;
 import net.runelite.client.callback.ClientThread;
 import net.runelite.client.chat.ChatColorType;
@@ -64,6 +67,7 @@ import net.runelite.client.chat.QueuedMessage;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
 import net.runelite.client.events.ChatInput;
+import net.runelite.client.events.ConfigChanged;
 import net.runelite.client.events.OverlayMenuClicked;
 import net.runelite.client.game.SpriteManager;
 import net.runelite.client.plugins.Plugin;
@@ -95,8 +99,8 @@ public class RaidsPlugin extends Plugin
 	private static final String RAID_COMPLETE_MESSAGE = "Congratulations - your raid is complete!";
 	private static final DecimalFormat DECIMAL_FORMAT = new DecimalFormat("###.##");
 	private static final DecimalFormat POINTS_FORMAT = new DecimalFormat("#,###");
-	private static final Pattern ROTATION_REGEX = Pattern.compile("\\[(.*?)]");
 	private static final String LAYOUT_COMMAND = "!layout";
+	private static final int MAX_LAYOUT_LEN = 300;
 
 	@Inject
 	private ChatMessageManager chatMessageManager;
@@ -141,17 +145,18 @@ public class RaidsPlugin extends Plugin
 	private ScheduledExecutorService scheduledExecutorService;
 
 	@Getter
-	private final ArrayList<String> roomWhitelist = new ArrayList<>();
+	private final Set<String> roomWhitelist = new HashSet<String>();
 
 	@Getter
-	private final ArrayList<String> roomBlacklist = new ArrayList<>();
+	private final Set<String> roomBlacklist = new HashSet<String>();
 
 	@Getter
-	private final ArrayList<String> rotationWhitelist = new ArrayList<>();
+	private final Set<String> rotationWhitelist = new HashSet<String>();
 
 	@Getter
-	private final ArrayList<String> layoutWhitelist = new ArrayList<>();
+	private final Set<String> layoutWhitelist = new HashSet<String>();
 
+	@Setter(AccessLevel.PACKAGE) // for the test
 	@Getter
 	private Raid raid;
 
@@ -398,38 +403,28 @@ public class RaidsPlugin extends Plugin
 		}
 	}
 
-	private void updateLists()
+	@VisibleForTesting
+	void updateLists()
 	{
 		updateList(roomWhitelist, config.whitelistedRooms());
 		updateList(roomBlacklist, config.blacklistedRooms());
-		updateList(rotationWhitelist, config.whitelistedRotations());
 		updateList(layoutWhitelist, config.whitelistedLayouts());
+
+		// Update rotation whitelist
+		rotationWhitelist.clear();
+		for (String line : config.whitelistedRotations().split("\\n"))
+		{
+			rotationWhitelist.add(line.toLowerCase().replace(" ", ""));
+		}
 	}
 
-	private void updateList(ArrayList<String> list, String input)
+	private void updateList(Collection<String> list, String input)
 	{
 		list.clear();
-
-		if (list == rotationWhitelist)
-		{
-			Matcher m = ROTATION_REGEX.matcher(input);
-			while (m.find())
-			{
-				String rotation = m.group(1).toLowerCase();
-
-				if (!list.contains(rotation))
-				{
-					list.add(rotation);
-				}
-			}
-		}
-		else
-		{
-			list.addAll(Text.fromCSV(input.toLowerCase()));
-		}
+		list.addAll(Text.fromCSV(input.toLowerCase()));
 	}
 
-	int getRotationMatches()
+	boolean getRotationMatches()
 	{
 		RaidRoom[] combatRooms = raid.getCombatRooms();
 		String rotation = Arrays.stream(combatRooms)
@@ -437,7 +432,7 @@ public class RaidsPlugin extends Plugin
 			.map(String::toLowerCase)
 			.collect(Collectors.joining(","));
 
-		return rotationWhitelist.contains(rotation) ? combatRooms.length : 0;
+		return rotationWhitelist.contains(rotation);
 	}
 
 	private Point findLobbyBase()
@@ -643,6 +638,12 @@ public class RaidsPlugin extends Plugin
 			.map(RaidRoom::getName)
 			.toArray());
 
+		if (layoutMessage.length() > MAX_LAYOUT_LEN)
+		{
+			log.debug("layout message too long! {}", layoutMessage.length());
+			return;
+		}
+
 		String response = new ChatMessageBuilder()
 			.append(ChatColorType.HIGHLIGHT)
 			.append("Layout: ")
@@ -665,9 +666,9 @@ public class RaidsPlugin extends Plugin
 		}
 
 		final String playerName = client.getLocalPlayer().getName();
-		RaidRoom[] rooms = raid.getRooms();
+		List<RaidRoom> orderedRooms = raid.getOrderedRooms();
 
-		LayoutRoom[] layoutRooms = Arrays.stream(rooms)
+		LayoutRoom[] layoutRooms = orderedRooms.stream()
 			.map(room -> LayoutRoom.valueOf(room.name()))
 			.toArray(LayoutRoom[]::new);
 
