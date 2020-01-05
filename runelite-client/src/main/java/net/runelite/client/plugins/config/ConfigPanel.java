@@ -84,7 +84,7 @@ import net.runelite.client.util.SwingUtil;
 import net.runelite.client.util.Text;
 
 @Slf4j
-class ConfigPanel extends PluginPanel
+public class ConfigPanel extends PluginPanel
 {
 	private static final int SPINNER_FIELD_WIDTH = 6;
 	static final ImageIcon BACK_ICON;

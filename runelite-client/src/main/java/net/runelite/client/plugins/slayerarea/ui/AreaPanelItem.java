@@ -4,6 +4,8 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -22,7 +24,6 @@ import net.runelite.client.plugins.slayerarea.SlayerArea;
 import net.runelite.client.plugins.slayerarea.SlayerAreas;
 import net.runelite.client.plugins.slayerarea.SlayerMaster;
 import net.runelite.client.ui.ColorScheme;
-import net.runelite.client.ui.components.IconButton;
 import net.runelite.client.util.ImageUtil;
 
 public class AreaPanelItem extends JPanel
@@ -40,9 +41,9 @@ public class AreaPanelItem extends JPanel
 		BufferedImage onSwitcher = ImageUtil.getResourceStreamFromClass(ConfigPanel.class, "switcher_on.png");
 		ON_SWITCHER = new ImageIcon(onSwitcher);
 		BufferedImage offSwitcherImage = ImageUtil.flipImage(
-				ImageUtil.grayscaleOffset(
+				ImageUtil.luminanceOffset(
 						ImageUtil.grayscaleImage(onSwitcher),
-						0.61f
+						-150
 				),
 				true,
 				false
@@ -167,12 +168,17 @@ public class AreaPanelItem extends JPanel
 
 	private void addButtons()
 	{
-		IconButton toggleButton = new IconButton(OFF_SWITCHER);
+		JLabel toggleButton = new JLabel(OFF_SWITCHER);
 		updateToggleButton(toggleButton);
-		toggleButton.addActionListener(e ->
+		toggleButton.addMouseListener(new MouseAdapter()
 		{
-			area.unlocked = !area.unlocked;
-			updateToggleButton(toggleButton);
+			@Override
+			public void mousePressed(MouseEvent mouseEvent)
+			{
+
+				area.unlocked = !area.unlocked;
+				updateToggleButton(toggleButton);
+			}
 		});
 		add(toggleButton, gbc);
 		gbc.gridy++;
@@ -240,7 +246,7 @@ public class AreaPanelItem extends JPanel
 		buildPanel();
 	}
 
-	private void updateToggleButton(IconButton button)
+	private void updateToggleButton(JLabel button)
 	{
 		button.setIcon(area.unlocked ? ON_SWITCHER : OFF_SWITCHER);
 	}
