@@ -22,61 +22,60 @@
  * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package net.runelite.client.rs;
+package net.runelite.client.util;
 
+import java.io.FilterInputStream;
 import java.io.IOException;
-import java.util.ArrayDeque;
-import java.util.Collections;
-import java.util.EnumSet;
-import java.util.List;
-import java.util.Queue;
-import java.util.Random;
-import java.util.function.Supplier;
-import java.util.stream.Collectors;
-import lombok.extern.slf4j.Slf4j;
-import net.runelite.http.api.RuneLiteAPI;
-import net.runelite.http.api.worlds.World;
-import net.runelite.http.api.worlds.WorldClient;
-import net.runelite.http.api.worlds.WorldType;
+import java.io.InputStream;
+import java.util.function.IntConsumer;
 
-@Slf4j
-class HostSupplier implements Supplier<String>
+public class CountingInputStream extends FilterInputStream
 {
-	private final Random random = new Random(System.nanoTime());
-	private Queue<String> hosts = new ArrayDeque<>();
+	private final IntConsumer changed;
+
+	public CountingInputStream(InputStream in, IntConsumer changed)
+	{
+		super(in);
+		this.changed = changed;
+	}
+
+	private int read = 0;
 
 	@Override
-	public String get()
+	public int read(byte[] b, int off, int len) throws IOException
 	{
-		if (!hosts.isEmpty())
+		int thisRead = super.read(b, off, len);
+		if (thisRead > 0)
 		{
-			return hosts.poll();
+			this.read += thisRead;
 		}
+		changed.accept(this.read);
+		return thisRead;
+	}
 
-		try
+	@Override
+	public int read() throws IOException
+	{
+		int val = super.read();
+		if (val != -1)
 		{
-			List<String> newHosts = new WorldClient(RuneLiteAPI.CLIENT)
-				.lookupWorlds()
-				.getWorlds()
-				.stream()
-				.filter(w -> w.getTypes().isEmpty() || EnumSet.of(WorldType.MEMBERS).equals(w.getTypes()))
-				.map(World::getAddress)
-				.collect(Collectors.toList());
-
-			Collections.shuffle(newHosts, random);
-
-			hosts.addAll(newHosts.subList(0, 16));
+			this.read++;
 		}
-		catch (IOException e)
-		{
-			log.warn("Unable to retrieve world list", e);
-		}
+		return val;
+	}
 
-		while (hosts.size() < 2)
-		{
-			hosts.add("oldschool" + (random.nextInt(50) + 1) + ".runescape.COM");
-		}
+	@Override
+	public long skip(long n) throws IOException
+	{
+		long thisRead = in.skip(n);
+		this.read += thisRead;
+		changed.accept(this.read);
+		return thisRead;
+	}
 
-		return hosts.poll();
+	@Override
+	public boolean markSupported()
+	{
+		return false;
 	}
 }
