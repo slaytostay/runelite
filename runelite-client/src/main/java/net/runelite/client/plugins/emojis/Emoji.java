@@ -86,7 +86,6 @@ enum Emoji
 	WAVE("(^_^)/"),
 	HEART_EYES("(*.*)"),
 	FACEPALM("M-)"),
-	HEART_EYES("(*.*)"),
 	PIGCHAMO("Pigchamo"),
 	FIVEHEAD("5head"),
 	CAVES(":caves:");
